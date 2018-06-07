@@ -17,7 +17,7 @@ default:
       selenium2:
         wd_host: "http://127.0.0.1:8643/wd/hub"
       javascript_session: selenium2
-      base_url: http://drupal-skeleton.local
+      base_url: http://federated-search-demo.local
     Drupal\DrupalExtension:
       blackbox: ~
       api_driver: 'drupal'
@@ -33,4 +33,4 @@ default:
 circle:
   extensions:
     Behat\MinkExtension:
-      base_url: http://drupal-skeleton.local:8000
+      base_url: http://federated-search-demo.local:8000
