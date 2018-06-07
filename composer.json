@@ -32,6 +32,7 @@
     ],
     "require": {
         "composer/installers": "^1.0",
+        "cweagans/composer-patches": "^1.6",
         "drupal-composer/drupal-scaffold": "^2.3",
         "drupal/coder": "^8.0",
         "drupal/config_installer": "^1.7",
@@ -47,9 +48,6 @@
         "palantirnet/the-build": "^1.7",
         "palantirnet/the-vagrant": "^2.0.1"
     },
-    "suggest": {
-        "cweagans/composer-patches": "Try ^1.0. Apply patches to packages, especially Drupal.org contrib."
-    },
     "conflict": {
         "drupal/drupal": "*"
     },
@@ -64,6 +62,11 @@
             "web/profiles/contrib/{$name}": ["type:drupal-profile"],
             "web/themes/contrib/{$name}": ["type:drupal-theme"],
             "drush/contrib/{$name}": ["type:drupal-drush"]
+        },
+        "patches": {
+            "drupal/config_installer": {
+                "Allow config installer to find themes.": "https://www.drupal.org/files/issues/2018-05-28/2975675-2.patch"
+            }
         }
     }    
 }
