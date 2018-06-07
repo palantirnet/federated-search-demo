@@ -1,0 +1,89 @@
+uuid: aaef234f-6e4e-445c-a742-871715ec99f6
+langcode: en
+status: true
+dependencies:
+  config:
+    - search_api.server.local_server
+  module:
+    - search_api
+    - search_api_federated_solr
+    - node
+id: federated_search
+name: 'Federated search'
+description: 'Federated search index'
+read_only: false
+field_settings:
+  federated_title:
+    label: 'Federated Title'
+    property_path: federated_field
+    type: string
+    configuration:
+      field_data:
+        node:
+          article: ''
+          page: ''
+          recipe: ''
+  federated_type:
+    label: 'Federated Type'
+    property_path: federated_field
+    type: string
+    configuration:
+      field_data:
+        node:
+          article: Article
+          page: 'Basic Page'
+          recipe: Recipe
+  rendered_item:
+    label: 'Rendered HTML output'
+    property_path: rendered_item
+    type: text
+    configuration:
+      roles:
+        anonymous: anonymous
+      view_mode:
+        'entity:node':
+          article: default
+          page: default
+          recipe: default
+  site_name:
+    label: 'Site Name'
+    property_path: federated_field
+    type: string
+    configuration:
+      field_data:
+        node:
+          article: 'Demo Drupal 8'
+          page: 'Demo Drupal 8'
+          recipe: 'Demo Drupal 8'
+  url:
+    label: URI
+    property_path: federated_field
+    type: string
+    configuration:
+      field_data:
+        node:
+          article: '[node:url:absolute]'
+          page: '[node:url:absolute]'
+          recipe: '[node:url:absolute]'
+datasource_settings:
+  'entity:node':
+    bundles:
+      default: true
+      selected: {  }
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  rendered_item: {  }
+  add_url: {  }
+  aggregated_field: {  }
+  federated_field: {  }
+  site_name: {  }
+  federated_terms: {  }
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  index_directly: true
+  cron_limit: 50
+server: local_server
