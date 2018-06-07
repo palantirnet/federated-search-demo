@@ -12,7 +12,7 @@ backend_config:
   connector: standard
   connector_config:
     scheme: http
-    host: localhost
+    host: federated-search-demo.local
     port: '8983'
     path: /solr
     core: drupal8
