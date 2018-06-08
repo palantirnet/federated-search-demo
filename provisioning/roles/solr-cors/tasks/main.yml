@@ -1,0 +1,49 @@
+---
+- name: Install Jetty Servlets
+  become: yes
+  get_url:
+    url: http://central.maven.org/maven2/org/eclipse/jetty/jetty-servlets/9.4.10.v20180503/jetty-servlets-9.4.10.v20180503.jar
+    dest: /opt/solr/example/solr-webapp/webapp/WEB-INF/lib/jetty-servlets-9.4.10.v20180503.jar
+
+- name: Install Jetty Util
+  become: yes
+  get_url:
+    url: http://central.maven.org/maven2/org/eclipse/jetty/jetty-util/9.4.10.v20180503/jetty-util-9.4.10.v20180503.jar
+    dest: /opt/solr/example/solr-webapp/webapp/WEB-INF/lib/jetty-util-9.4.10.v20180503.jar
+
+- name: Add CORS configuration to Solr
+  become: yes
+  blockinfile:
+    path: /opt/solr/example/solr-webapp/webapp/WEB-INF/web.xml
+    marker: "<!-- {mark} ANSIBLE MANAGED BLOCK -->"
+    # Multi-line matches were not working, so this more brittle match will be used.
+    # The lines need to go right after the <web-app> tag.
+    insertbefore: "<!-- Uncomment if you are trying to use a Resin version before 3.0.19."
+    content: |
+      <filter>
+        <filter-name>cross-origin</filter-name>
+        <filter-class>org.eclipse.jetty.servlets.CrossOriginFilter</filter-class>
+        <init-param>
+          <param-name>allowedOrigins</param-name>
+          <param-value>*</param-value>
+        </init-param>
+        <init-param>
+          <param-name>allowedMethods</param-name>
+          <param-value>GET,POST,OPTIONS,DELETE,PUT,HEAD</param-value>
+        </init-param>
+        <init-param>
+          <param-name>allowedHeaders</param-name>
+          <param-value>origin, content-type, accept</param-value>
+        </init-param>
+      </filter>
+
+      <filter-mapping>
+        <filter-name>cross-origin</filter-name>
+        <url-pattern>/*</url-pattern>
+      </filter-mapping>
+
+- name: Restart Solr
+  become: yes
+  service:
+    name: solr
+    state: restarted

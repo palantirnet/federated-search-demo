@@ -17,7 +17,7 @@ ansible_https_enabled = false
 ansible_project_web_root = "web"
 ansible_timezone = "America/Chicago"
 ansible_system_packages = []
-ansible_custom_playbook = ""
+ansible_custom_playbook = "provisioning/federated-search-demo.yml"
 # end tunables
 
 Vagrant.configure(2) do |config|
