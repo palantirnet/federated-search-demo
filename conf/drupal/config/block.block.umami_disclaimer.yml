@@ -1,14 +1,10 @@
-uuid: 10a2f85a-c88e-4a39-875a-601786588131
+uuid: 86e924f6-3dc8-4b3f-88e3-a74413588d55
 langcode: en
 status: true
 dependencies:
-  content:
-    - 'block_content:disclaimer_block:9b4dcd67-99f3-48d0-93c9-2c46648b29de'
   enforced:
     module:
       - demo_umami_content
-  module:
-    - block_content
   theme:
     - umami
 _core:
