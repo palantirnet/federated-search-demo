@@ -1,0 +1,21 @@
+uuid: 10106514-1ce9-4f1b-8b06-7847ba3b0e28
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_federated_terms
+    - taxonomy.vocabulary.recipe_category
+  module:
+    - search_api_federated_solr
+id: taxonomy_term.recipe_category.field_federated_terms
+field_name: field_federated_terms
+entity_type: taxonomy_term
+bundle: recipe_category
+label: 'Federated terms'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: federated_terms

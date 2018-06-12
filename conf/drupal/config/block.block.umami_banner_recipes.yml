@@ -1,14 +1,11 @@
-uuid: d78f55c1-da2e-4602-b155-f0bb23c4a3a8
+uuid: 33c73a60-f64a-4dec-a59f-f63bcb8fa3f1
 langcode: en
 status: true
 dependencies:
-  content:
-    - 'block_content:banner_block:4c7d58a3-a45d-412d-9068-259c57e40541'
   enforced:
     module:
       - demo_umami_content
   module:
-    - block_content
     - system
   theme:
     - umami

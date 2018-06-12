@@ -1,0 +1,47 @@
+uuid: 4a059143-2477-477e-ac32-bc8ee00fa490
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.tags.field_federated_terms
+    - taxonomy.vocabulary.tags
+  module:
+    - path
+    - search_api_federated_solr
+    - text
+id: taxonomy_term.tags.default
+targetEntityType: taxonomy_term
+bundle: tags
+mode: default
+content:
+  description:
+    type: text_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_federated_terms:
+    weight: 31
+    settings:
+      size: 75
+      placeholder: ''
+    third_party_settings: {  }
+    type: federated_terms_textfield
+    region: content
+  name:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

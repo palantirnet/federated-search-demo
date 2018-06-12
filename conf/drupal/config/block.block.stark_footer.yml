@@ -1,0 +1,26 @@
+uuid: e91ff548-f414-4b06-b754-77d7a76bebe8
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.footer
+  module:
+    - system
+  theme:
+    - stark
+_core:
+  default_config_hash: V_A9DLAFRV_t_apxzqNfQOEPYgPTWrJcMp_D4TKfsoU
+id: stark_footer
+theme: stark
+region: footer
+weight: 0
+provider: null
+plugin: 'system_menu_block:footer'
+settings:
+  id: 'system_menu_block:footer'
+  label: 'Tell us what you think'
+  provider: system
+  label_display: '1'
+  level: 1
+  depth: 0
+visibility: {  }
