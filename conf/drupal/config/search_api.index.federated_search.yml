@@ -81,6 +81,10 @@ field_settings:
           article: '[node:url:absolute]'
           page: '[node:url:absolute]'
           recipe: '[node:url:absolute]'
+  federated_terms:
+    label: 'Federated terms'
+    property_path: federated_terms
+    type: string
 datasource_settings:
   'entity:node':
     bundles:
