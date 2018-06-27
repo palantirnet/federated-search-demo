@@ -47,8 +47,8 @@ If you update Vagrant, you may need to update your vagrant plugins with `vagrant
   drush si config_installer -y
   # Reinstall the demo content module to get demo content.
   # This will also be indexed in the search server.
-  drush pm-uninstall demo_umami_content
-  drush en demo_umami_content
+  drush pm-uninstall demo_umami_content -y
+  drush en demo_umami_content -y
   ```
 7. Visit your site at [federated-search-demo.local](http://federated-search-demo.local)
 
