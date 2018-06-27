@@ -38,8 +38,9 @@ If you update Vagrant, you may need to update your vagrant plugins with `vagrant
     vagrant up
   ```
 3. You will be prompted for the administration password on your host machine
-4. Log in to the virtual machine (the VM): `vagrant ssh`
-5. From within the VM, build and install the Drupal site:
+4. Create necessary local files, `vendor/bin/phing build`
+5. Log in to the virtual machine (the VM): `vagrant ssh`
+6. From within the VM, build and install the Drupal site:
 
   ```
   drush si config_installer -y
@@ -48,7 +49,7 @@ If you update Vagrant, you may need to update your vagrant plugins with `vagrant
   drush pm-uninstall demo_umami_content
   drush en demo_umami_content
   ```
-6. Visit your site at [federated-search-demo.local](http://federated-search-demo.local)
+7. Visit your site at [federated-search-demo.local](http://federated-search-demo.local)
 
 ## How do I work on this?
 
