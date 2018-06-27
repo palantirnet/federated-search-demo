@@ -30,7 +30,7 @@ If you update Vagrant, you may need to update your vagrant plugins with `vagrant
 
 ## Getting Started
 
-1. Clone the project from github: `git clone https://github.com/palantirnet/federated-search-demo.git`
+1. Clone the project from github: `git clone git@github.com:palantirnet/federated-search-demo.git`
 2. From inside the project root, run:
 
   ```
