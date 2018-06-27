@@ -43,6 +43,7 @@ If you update Vagrant, you may need to update your vagrant plugins with `vagrant
 6. From within the VM, build and install the Drupal site:
 
   ```
+  cd /var/www/federated-search-demo.local/web
   drush si config_installer -y
   # Reinstall the demo content module to get demo content.
   # This will also be indexed in the search server.
