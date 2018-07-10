@@ -50,7 +50,7 @@ field_settings:
     property_path: site_name
     type: string
     configuration:
-      site_name: 'Drupal 8'
+      site_name: 'Umami Demo'
   federated_date:
     label: 'Federated Date'
     property_path: federated_field

@@ -3,7 +3,7 @@ facet:
     set_default: 0
 index:
   id: federated_search
-  has_site_name_property: false
+  has_site_name_property: true
   server_url: 'http://federated-search-demo.local:8983/solr/drupal8/select'
 content:
   no_results: ''
@@ -12,3 +12,4 @@ results:
   rows: ''
 pagination:
   buttons: ''
+path: /search-app
