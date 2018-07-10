@@ -1,0 +1,36 @@
+<?php
+
+/**
+ * @file
+ * Contains federated_styles.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function federated_styles_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the federated_styles module.
+    case 'help.page.federated_styles':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Adds styles for Federated Search') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_page_attachments_alter().
+ */
+function federated_styles_page_attachments_alter(array &$page) {
+
+  // Add the search style overrides to the search results page.
+  $route_match = \Drupal::routeMatch();
+  if ($route_match->getRouteName() === 'search_api_federated_solr.search') {
+    $page['#attached']['library'][] = 'federated_styles/search-theme';
+  }
+}
