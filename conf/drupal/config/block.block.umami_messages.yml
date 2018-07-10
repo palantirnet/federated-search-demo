@@ -11,7 +11,7 @@ _core:
 id: umami_messages
 theme: umami
 region: highlighted
-weight: -8
+weight: -6
 provider: null
 plugin: system_messages_block
 settings:

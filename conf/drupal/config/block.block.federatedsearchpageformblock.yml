@@ -1,0 +1,20 @@
+uuid: 2b594c75-8b1b-4bee-a0f1-8d3b09432ddf
+langcode: en
+status: true
+dependencies:
+  module:
+    - search_api_federated_solr
+  theme:
+    - umami
+id: federatedsearchpageformblock
+theme: umami
+region: highlighted
+weight: -7
+provider: null
+plugin: federated_search_page_form_block
+settings:
+  id: federated_search_page_form_block
+  label: 'Federated Search Page Form block'
+  provider: search_api_federated_solr
+  label_display: '0'
+visibility: {  }
