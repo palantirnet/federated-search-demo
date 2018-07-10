@@ -38,18 +38,8 @@ If you update Vagrant, you may need to update your vagrant plugins with `vagrant
     vagrant up
   ```
 3. You will be prompted for the administration password on your host machine
-4. Create necessary local files, `vendor/bin/phing build`
-5. Log in to the virtual machine (the VM): `vagrant ssh`
-6. From within the VM, build and install the Drupal site:
-
-  ```
-  cd /var/www/federated-search-demo.local/web
-  drush si config_installer -y
-  # Reinstall the demo content module to get demo content.
-  # This will also be indexed in the search server.
-  drush pm-uninstall demo_umami_content -y
-  drush en demo_umami_content -y
-  ```
+4. Log in to the virtual machine (the VM): `vagrant ssh`
+5. Build, install, and enable demo content: `phing build install`
 7. Visit your site at [federated-search-demo.local](http://federated-search-demo.local)
 
 ## How do I work on this?
@@ -59,14 +49,8 @@ You can edit code, update documentation, and run git commands by opening files d
 To run project-related commands other than `vagrant up` and `vagrant ssh`:
 
 * SSH into the VM with `vagrant ssh`
-* You'll be in your project root, at the path `/var/www/uw-stout.local/`
+* You'll be in your project root, at the path `/var/www/federated-search-demo.local/`
 * You can run `composer`, `drush`, and `phing` commands from here
-
-To work on the styleguide:
-
-* SSH in to the VM with `vagrant ssh`
-* Go to the styleguide directory: `cd styleguide`; you'll be at the path `/var/www/federated-search-demo.local/styleguide`
-* You can run butler from here with `npm run butler`, then view the styleguide in your browser at [federated-search-demo.local:4000](http://federated-search-demo.local:4000)
 
 Avoid committing to git from within your VM, because your commits won't be properly attributed to you. If you must, make sure you [create a global .gitignore [internal]](https://github.com/palantirnet/documentation/wiki/Using-the-gitignore-File) within your VM at `/home/vagrant/.gitignore`, and configure your name and email for proper attribution:
 
@@ -82,23 +66,13 @@ You can refresh/reset your local Drupal site at any time. SSH into your VM and t
 1. Download the most current dependencies: `composer install`
 2. Rebuild your local CSS and Drupal settings file: `phing build`
 3. Reinstall Drupal: `phing install`
-4. Run your migrations: `phing migrate`
-5. ... OR run all three phing targets at once: `phing build install migrate`
+5. ... OR run all phing targets at once: `phing build install`
 
 Additional information on developing for Drupal within this environment is in [docs/general/drupal_development.md](docs/general/drupal_development.md).
 
 ## Deployment
 
-@todo This section needs to be customized per-project.
-
-## Styleguide Development
-
-* Serve the styleguide and watch for changes:
-  * From your VM: `cd styleguide && npm run butler`
-  * Visit [federated-search-demo.local:4000](http://federated-search-demo.local:4000)
-  * Hit control+c to stop
-
-Complete Butler usage is documented in [docs/general/styleguide_development.md](docs/general/styleguide_development.md).
+This project is for demo purposes only and is not to be deployed.
 
 ## Additional Documentation
 

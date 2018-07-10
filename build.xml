@@ -20,6 +20,10 @@
     <!-- Target: install -->
     <target name="install" description="Install the application.">
         <phingcall target="drupal-install" />
+
+        <phingcall target="drupal-reinstall-module">
+            <property name="module" value="demo_umami_content" />
+        </phingcall>
     </target>
 
 
