@@ -7,7 +7,7 @@ dependencies:
     - taxonomy.vocabulary.tags
   module:
     - path
-    - search_api_federated_solr
+    - search_api_fields
     - text
 id: taxonomy_term.tags.default
 targetEntityType: taxonomy_term
@@ -28,7 +28,7 @@ content:
       size: 75
       placeholder: ''
     third_party_settings: {  }
-    type: federated_terms_textfield
+    type: mapped_terms_textfield
     region: content
   name:
     type: string_textfield
