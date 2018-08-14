@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   module:
-    - search_api_fields
+    - search_api_field_map
     - taxonomy
 id: taxonomy_term.field_federated_terms
 field_name: field_federated_terms
@@ -12,7 +12,7 @@ type: mapped_terms
 settings:
   max_length: '255'
   is_ascii: false
-module: search_api_fields
+module: search_api_field_map
 locked: false
 cardinality: 1
 translatable: true

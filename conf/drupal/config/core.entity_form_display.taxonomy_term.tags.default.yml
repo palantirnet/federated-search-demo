@@ -7,7 +7,7 @@ dependencies:
     - taxonomy.vocabulary.tags
   module:
     - path
-    - search_api_fields
+    - search_api_field_map
     - text
 id: taxonomy_term.tags.default
 targetEntityType: taxonomy_term

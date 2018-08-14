@@ -7,7 +7,7 @@ dependencies:
     - taxonomy.vocabulary.recipe_category
   module:
     - path
-    - search_api_fields
+    - search_api_field_map
     - text
 id: taxonomy_term.recipe_category.default
 targetEntityType: taxonomy_term

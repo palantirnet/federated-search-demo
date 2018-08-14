@@ -6,7 +6,7 @@ dependencies:
     - search_api.server.local_server
   module:
     - search_api
-    - search_api_fields
+    - search_api_field_map
     - node
 id: federated_search
 name: 'Federated search'
@@ -68,9 +68,9 @@ field_settings:
     configuration:
       field_data:
         node:
-          article: '[node:field_image:search_api_fields_image:url]'
-          page: '[node:field_image:search_api_fields_image:url]'
-          recipe: '[node:field_image:search_api_fields_image:url]'
+          article: '[node:field_image:search_api_federated_solr_image:url]'
+          page: '[node:field_image:search_api_federated_solr_image:url]'
+          recipe: '[node:field_image:search_api_federated_solr_image:url]'
   url:
     label: URI
     property_path: mapped_field
