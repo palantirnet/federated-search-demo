@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "01472126f919fc24ca4c9f22ccd5b363",
+    "content-hash": "c1b6b5cbae17920b10827b2a52b294a1",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1149,7 +1149,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.8",
-                    "datestamp": "1523872384",
+                    "datestamp": "1531985581",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -1224,7 +1224,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.2",
-                    "datestamp": "1523090287",
+                    "datestamp": "1529312013",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -1702,12 +1702,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:palantirnet/search_api_federated_solr.git",
-                "reference": "baedb1c47b1f43bf6c81241e13faa3eccf0ab116"
+                "reference": "054b1fd81e35e3965a6a844592da2e3b92ffb928"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/palantirnet/search_api_federated_solr/zipball/baedb1c47b1f43bf6c81241e13faa3eccf0ab116",
-                "reference": "baedb1c47b1f43bf6c81241e13faa3eccf0ab116",
+                "url": "https://api.github.com/repos/palantirnet/search_api_federated_solr/zipball/054b1fd81e35e3965a6a844592da2e3b92ffb928",
+                "reference": "054b1fd81e35e3965a6a844592da2e3b92ffb928",
                 "shasum": ""
             },
             "require": {
@@ -1726,7 +1726,7 @@
             "support": {
                 "source": "https://github.com/palantirnet/search_api_federated_solr/tree/master"
             },
-            "time": "2018-06-12T15:49:08+00:00"
+            "time": "2018-08-13T22:47:11+00:00"
         },
         {
             "name": "paragonie/random_compat",
@@ -5331,16 +5331,16 @@
         },
         {
             "name": "palantirnet/the-vagrant",
-            "version": "2.0.1",
+            "version": "2.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/palantirnet/the-vagrant.git",
-                "reference": "b580add968b4a3b5e7dcb5a3ed3d81ce69508be4"
+                "reference": "65ea444103f57b7428b788945cf73b4b19743c6d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/palantirnet/the-vagrant/zipball/b580add968b4a3b5e7dcb5a3ed3d81ce69508be4",
-                "reference": "b580add968b4a3b5e7dcb5a3ed3d81ce69508be4",
+                "url": "https://api.github.com/repos/palantirnet/the-vagrant/zipball/65ea444103f57b7428b788945cf73b4b19743c6d",
+                "reference": "65ea444103f57b7428b788945cf73b4b19743c6d",
                 "shasum": ""
             },
             "require": {
@@ -5361,7 +5361,7 @@
                 }
             ],
             "description": "Install a Vagrant environment into a Drupal project.",
-            "time": "2018-04-06T20:15:47+00:00"
+            "time": "2018-08-14T19:44:45+00:00"
         },
         {
             "name": "pdepend/pdepend",
