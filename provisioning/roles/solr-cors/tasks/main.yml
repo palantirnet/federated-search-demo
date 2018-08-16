@@ -14,7 +14,7 @@
 - name: Add CORS configuration to Solr
   become: yes
   blockinfile:
-    path: /opt/solr/example/solr-webapp/webapp/WEB-INF/web.xml
+    dest: /opt/solr/example/solr-webapp/webapp/WEB-INF/web.xml
     marker: "<!-- {mark} ANSIBLE MANAGED BLOCK -->"
     # Multi-line matches were not working, so this more brittle match will be used.
     # The lines need to go right after the <web-app> tag.
