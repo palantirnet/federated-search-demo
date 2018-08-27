@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "c1b6b5cbae17920b10827b2a52b294a1",
+    "content-hash": "9b05db75f4f29dfeb3e51d7672f56db6",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -838,6 +838,68 @@
             "time": "2017-03-18T10:28:49+00:00"
         },
         {
+            "name": "drupal/config_inspector",
+            "version": "1.0.0-beta1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/config_inspector",
+                "reference": "8.x-1.0-beta1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/config_inspector-8.x-1.0-beta1.zip",
+                "reference": "8.x-1.0-beta1",
+                "shasum": "3ba3a31ea02323203ceae7ef7f80c091ced2e2f3"
+            },
+            "require": {
+                "drupal/core": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0-beta1",
+                    "datestamp": "1448357340",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Beta releases are not covered by Drupal security advisories."
+                    }
+                },
+                "patches_applied": {
+                    "2843729: Filter entities with schema errors": "https://www.drupal.org/files/issues/filter_entities_with-2843729-7.patch"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Gábor Hojtsy",
+                    "homepage": "https://www.drupal.org/user/4166"
+                },
+                {
+                    "name": "Jose Reyero",
+                    "homepage": "https://www.drupal.org/user/4299"
+                },
+                {
+                    "name": "aspilicious",
+                    "homepage": "https://www.drupal.org/user/172527"
+                },
+                {
+                    "name": "vijaycs85",
+                    "homepage": "https://www.drupal.org/user/93488"
+                }
+            ],
+            "description": "Provides a configuration data and structure inspector tool.",
+            "homepage": "https://www.drupal.org/project/config_inspector",
+            "support": {
+                "source": "http://cgit.drupalcode.org/config_inspector"
+            }
+        },
+        {
             "name": "drupal/config_installer",
             "version": "1.8.0",
             "source": {
@@ -1224,7 +1286,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.2",
-                    "datestamp": "1529312013",
+                    "datestamp": "1523090287",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -1698,16 +1760,16 @@
         },
         {
             "name": "palantirnet/search_api_federated_solr",
-            "version": "dev-master",
+            "version": "dev-PL-34-schema-settings",
             "source": {
                 "type": "git",
                 "url": "git@github.com:palantirnet/search_api_federated_solr.git",
-                "reference": "054b1fd81e35e3965a6a844592da2e3b92ffb928"
+                "reference": "5f690b20b2bf558dc7d0907acae1434beeb8faba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/palantirnet/search_api_federated_solr/zipball/054b1fd81e35e3965a6a844592da2e3b92ffb928",
-                "reference": "054b1fd81e35e3965a6a844592da2e3b92ffb928",
+                "url": "https://api.github.com/repos/palantirnet/search_api_federated_solr/zipball/5f690b20b2bf558dc7d0907acae1434beeb8faba",
+                "reference": "5f690b20b2bf558dc7d0907acae1434beeb8faba",
                 "shasum": ""
             },
             "require": {
@@ -1724,9 +1786,9 @@
                 "Drupal"
             ],
             "support": {
-                "source": "https://github.com/palantirnet/search_api_federated_solr/tree/master"
+                "source": "https://github.com/palantirnet/search_api_federated_solr/tree/PL-34-schema-settings"
             },
-            "time": "2018-08-13T22:47:11+00:00"
+            "time": "2018-08-20T13:47:26+00:00"
         },
         {
             "name": "paragonie/random_compat",
@@ -6460,6 +6522,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "drupal/config_inspector": 10,
         "palantirnet/search_api_federated_solr": 20
     },
     "prefer-stable": true,
