@@ -33,7 +33,15 @@
         </init-param>
         <init-param>
           <param-name>allowedHeaders</param-name>
-          <param-value>origin, content-type, accept</param-value>
+          <param-value>origin, content-type, cache-control, accept, options, authorization, x-requested-with</param-value>
+        </init-param>
+        <init-param>
+          <param-name>supportsCredentials</param-name>
+          <param-value>true</param-value>
+        </init-param>
+        <init-param>
+          <param-name>chainPreflight</param-name>
+          <param-value>false</param-value>
         </init-param>
       </filter>
 
