@@ -1,0 +1,36 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the federated terms module.
+ */
+
+use Drupal\taxonomy\Entity\Term;
+
+
+ function federated_terms_install() {
+   $veggie_term = Term::load(7);
+   $veggie_term->field_federated_terms[] = "Dietary Needs>Vegetarian";
+   $veggie_term->save();
+
+   $veggie_term = Term::load(12);
+   $veggie_term->field_federated_terms[] = "Recipe Category>Main Course";
+   $veggie_term->save();
+
+   $veggie_term = Term::load(23);
+   $veggie_term->field_federated_terms[] = "Recipe Category>Accompaniment";
+   $veggie_term->save();
+
+   $veggie_term = Term::load(22);
+   $veggie_term->field_federated_terms[] = "Recipe Category>Dessert";
+   $veggie_term->save();
+
+   $veggie_term = Term::load(15);
+   $veggie_term->field_federated_terms[] = "Recipe Category>Snack";
+   $veggie_term->save();
+
+   $veggie_term = Term::load(18);
+   $veggie_term->field_federated_terms[] = "Recipe Category>Starter";
+   $veggie_term->save();
+
+ }
