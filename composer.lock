@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c1b6b5cbae17920b10827b2a52b294a1",
+    "content-hash": "5ba3c57dcb51abf57a9ee561d379e427",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1698,16 +1698,49 @@
         },
         {
             "name": "palantirnet/search_api_federated_solr",
-            "version": "dev-master",
+            "version": "dev-PL-6-generalize-search-api-fields",
             "source": {
                 "type": "git",
                 "url": "git@github.com:palantirnet/search_api_federated_solr.git",
-                "reference": "054b1fd81e35e3965a6a844592da2e3b92ffb928"
+                "reference": "5d11facdc70e3b56cec7b1cb949752a8d3633cff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/palantirnet/search_api_federated_solr/zipball/054b1fd81e35e3965a6a844592da2e3b92ffb928",
-                "reference": "054b1fd81e35e3965a6a844592da2e3b92ffb928",
+                "url": "https://api.github.com/repos/palantirnet/search_api_federated_solr/zipball/5d11facdc70e3b56cec7b1cb949752a8d3633cff",
+                "reference": "5d11facdc70e3b56cec7b1cb949752a8d3633cff",
+                "shasum": ""
+            },
+            "require": {
+                "drupal/core": "^8.0",
+                "drupal/search_api_solr": "^1.2",
+                "drupal/token": "^1.1",
+                "palantirnet/search_api_field_map": "dev-master"
+            },
+            "type": "drupal-module",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "description": "Allows indexing multiple Drupal sites into a single Solr search index.",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "https://github.com/palantirnet/search_api_federated_solr/tree/PL-6-generalize-search-api-fields"
+            },
+            "time": "2018-08-28T13:20:40+00:00"
+        },
+        {
+            "name": "palantirnet/search_api_field_map",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:palantirnet/search_api_field_map.git",
+                "reference": "35403a67efd05bf455b95217e40b737d0e46c5b7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/palantirnet/search_api_field_map/zipball/35403a67efd05bf455b95217e40b737d0e46c5b7",
+                "reference": "35403a67efd05bf455b95217e40b737d0e46c5b7",
                 "shasum": ""
             },
             "require": {
@@ -1719,14 +1752,15 @@
             "license": [
                 "GPL-2.0+"
             ],
-            "description": "Allows indexing multiple Drupal sites into a single Solr search index.",
+            "description": "Allows indexing multiple Drupal sites into a single Solr search index by field.",
             "keywords": [
                 "Drupal"
             ],
             "support": {
-                "source": "https://github.com/palantirnet/search_api_federated_solr/tree/master"
+                "source": "https://github.com/palantirnet/search_api_field_map/tree/master",
+                "issues": "https://github.com/palantirnet/search_api_field_map/issues"
             },
-            "time": "2018-08-13T22:47:11+00:00"
+            "time": "2018-08-14T17:48:22+00:00"
         },
         {
             "name": "paragonie/random_compat",
