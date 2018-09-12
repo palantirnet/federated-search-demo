@@ -1,4 +1,22 @@
 ---
 - hosts: all
+
+  vars:
+    web_root: "/var/www/federated-search-demo.local/web"
+
+    sites:
+      -
+        name: federated-search-demo
+        hostname: federated-search-demo.local
+        database: drupal
+        docroot: "{{ web_root }}"
+      -
+        name: federated-search-d7
+        docroot: "{{ web_root }}/d7/web"
+        hostname: federated-search-demo.d7.local
+        database: federated-search-d7
+
   roles:
+    - { role: mysql }
+    - { role: apache }
     - { role: solr-cors }

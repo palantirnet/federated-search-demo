@@ -12,7 +12,9 @@ end
 # tunables
 project     = 'federated-search-demo'
 hostname    = "#{project}.local"
-extra_hostnames = []
+extra_hostnames = [
+  'federated-search-demo.d7.local',
+]
 
 ansible_solr_enabled = true
 ansible_https_enabled = true
