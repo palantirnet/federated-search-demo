@@ -1,0 +1,51 @@
+{
+  "name": "palantirnet/drupal-skeleton",
+  "description": "A Drupal 7 project template.",
+  "type": "project",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Palantir.net",
+      "email": "info@palantir.net"
+    }
+  ],
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "preferred-install": "dist",
+  "config": {
+    "sort-packages": true
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://packages.drupal.org/7"
+    }
+  ],
+  "require": {
+    "composer/installers": "^1.0",
+    "derhasi/composer-preserve-paths": "0.1.*",
+    "drupal/drupal": "7.*"
+  },
+  "suggest": {
+    "cweagans/composer-patches": "Try ^1.0. Apply patches to packages, especially Drupal.org contrib."
+  },
+  "conflict": {
+    "drupal/core": "8.*"
+  },
+  "extra": {
+    "installer-paths": {
+      "web/": ["type:drupal-core"],
+      "web/sites/all/libraries/{$name}/": ["type:drupal-library"],
+      "web/sites/all/modules/contrib/{$name}/": ["type:drupal-module"],
+      "web/profiles/contrib/{$name}/": ["type:drupal-profile"],
+      "web/sites/all/themes/contrib/{$name}/": ["type:drupal-theme"]
+    },
+    "preserve-paths": [
+      "web/sites/all/modules/contrib",
+      "web/sites/all/themes/contrib",
+      "web/sites/all/libraries",
+      "web/sites/default/settings.php",
+      "web/sites/default/files"
+    ]
+  }
+}
