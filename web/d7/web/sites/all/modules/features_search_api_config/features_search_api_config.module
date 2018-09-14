@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Search API config feature.
+ */
+
+include_once 'features_search_api_config.features.inc';
