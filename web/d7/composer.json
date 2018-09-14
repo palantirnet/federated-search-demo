@@ -1,5 +1,5 @@
 {
-  "name": "palantirnet/drupal-skeleton",
+  "name": "palantirnet/federated-search-d7",
   "description": "A Drupal 7 project template.",
   "type": "project",
   "license": "proprietary",
@@ -19,12 +19,23 @@
     {
       "type": "composer",
       "url": "https://packages.drupal.org/7"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/palantirnet/search_api_federated_solr.git"
     }
   ],
   "require": {
     "composer/installers": "^1.0",
     "derhasi/composer-preserve-paths": "0.1.*",
-    "drupal/drupal": "7.*"
+    "drupal/devel": "^1.6",
+    "drupal/drupal": "7.*",
+    "drupal/features": "^2.10",
+    "drupal/search_api": "^1.24",
+    "drupal/search_api_solr": "^1.12",
+    "drupal/strongarm": "^2.0",
+    "drupal/token": "^1.7",
+    "palantirnet/search_api_federated_solr": "7.x-dev"
   },
   "suggest": {
     "cweagans/composer-patches": "Try ^1.0. Apply patches to packages, especially Drupal.org contrib."
