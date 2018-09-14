@@ -3,13 +3,15 @@ settings.php
 services.yml
 !conf/drupal/settings.php
 !conf/drupal/services.yml
-web/d7/web/sites/*/files
+web/sites/*/files
 
 # Ignore Drupal contrib downloaded by Composer
-web/d7/web/core
-web/d7/web/modules/contrib
-web/d7/web/themes/contrib/
-web/d7/web/profiles/contrib/
+web/misc
+web/includes
+web/themes
+web/profiles
+web/modules
+web/scripts
 
 # Ignore regular Composer dependencies
 /vendor/
