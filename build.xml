@@ -40,6 +40,27 @@
 
     </target>
 
+    <!-- Target: install -->
+    <target name="install-d7" description="Install the D7 site.">
+        <drush command="site-install" assume="yes" root="/var/www/federated-search-demo.local/web/d7/web">
+            <option name="site-name">Federated SOLR D7</option>
+            <option name="account-pass">admin</option>
+            <param>standard</param>
+        </drush>
+        <drush command="pm-enable" assume="yes" root="/var/www/federated-search-demo.local/web/d7/web">
+            <param>features_search_api_config</param>
+        </drush>
+        <drush command="pm-enable" assume="yes" root="/var/www/federated-search-demo.local/web/d7/web">
+            <param>devel_generate</param>
+        </drush>
+        <drush command="pm-disable" assume="yes" root="/var/www/federated-search-demo.local/web/d7/web">
+            <param>overlay</param>
+        </drush>
+        <drush command="generate-content" assume="yes" root="/var/www/federated-search-demo.local/web/d7/web">
+            <param>10</param>
+        </drush>
+    </target>
+
 
     <!-- Target: migrate -->
     <target name="migrate" description="Run the migrations.">
