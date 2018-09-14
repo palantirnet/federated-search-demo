@@ -50,7 +50,7 @@ To run project-related commands other than `vagrant up` and `vagrant ssh`:
 * SSH into the VM with `vagrant ssh`
 * You'll be in your project root, at the path `/var/www/federated-search-demo.local/`
 * You can run `composer`, `drush`, and `phing` commands from here
-* Go to the path `/var/www/federated-search-demo.local/web/d7` to work on the d7 site.
+* Go to the path `/var/www/federated-search-demo.local/web/d7` to add new modules to the d7 site.
 
 Avoid committing to git from within your VM, because your commits won't be properly attributed to you. If you must, make sure you [create a global .gitignore [internal]](https://github.com/palantirnet/documentation/wiki/Using-the-gitignore-File) within your VM at `/home/vagrant/.gitignore`, and configure your name and email for proper attribution:
 
@@ -63,11 +63,12 @@ git config --global user.name 'My Name'
 
 You can refresh/reset your local Drupal site at any time. SSH into your VM and then:
 
-1. Download the most current dependencies: `composer install`
-2. Rebuild your local CSS and Drupal settings file: `phing build`
-3. Reinstall Drupal 8: `phing install`
-4. Reinstall Drupal 7: `phing install-d7`
-5. ... OR run all phing targets at once: `phing build install install-d7`
+1. Download the most current dependencies for D8: `composer install`
+2. Download the most current dependencies for D7: `cd web/d7` then `composer install`. Don't forget to return to the project root to run the phing commands.
+3. Rebuild your local CSS and Drupal settings file: `phing build`
+4. Reinstall Drupal 8: `phing install`
+5. Reinstall Drupal 7: `phing install-d7`
+6. ... OR run all phing targets at once: `phing build install install-d7`
 
 Additional information on developing for Drupal within this environment is in [docs/general/drupal_development.md](docs/general/drupal_development.md).
 
