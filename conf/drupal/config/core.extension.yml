@@ -35,6 +35,7 @@ module:
   responsive_image: 0
   search_api: 0
   search_api_federated_solr: 0
+  search_api_field_map: 0
   search_api_solr: 0
   shortcut: 0
   system: 0

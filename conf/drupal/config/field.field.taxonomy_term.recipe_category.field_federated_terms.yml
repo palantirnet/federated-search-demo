@@ -6,7 +6,7 @@ dependencies:
     - field.storage.taxonomy_term.field_federated_terms
     - taxonomy.vocabulary.recipe_category
   module:
-    - search_api_federated_solr
+    - search_api_field_map
 id: taxonomy_term.recipe_category.field_federated_terms
 field_name: field_federated_terms
 entity_type: taxonomy_term
@@ -18,4 +18,4 @@ translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: federated_terms
+field_type: mapped_terms
