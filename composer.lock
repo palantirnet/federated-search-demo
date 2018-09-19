@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "5ba3c57dcb51abf57a9ee561d379e427",
+    "content-hash": "73308606f930395ddf3150f5f0cfb799",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1698,16 +1698,16 @@
         },
         {
             "name": "palantirnet/search_api_federated_solr",
-            "version": "dev-PL-6-generalize-search-api-fields",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "git@github.com:palantirnet/search_api_federated_solr.git",
-                "reference": "98335e5eb3ffc042fac40d6d4ae01dfbf2e14602"
+                "reference": "a04466b2785317e9fca422d5f0cbe98b931a5260"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/palantirnet/search_api_federated_solr/zipball/98335e5eb3ffc042fac40d6d4ae01dfbf2e14602",
-                "reference": "98335e5eb3ffc042fac40d6d4ae01dfbf2e14602",
+                "url": "https://api.github.com/repos/palantirnet/search_api_federated_solr/zipball/a04466b2785317e9fca422d5f0cbe98b931a5260",
+                "reference": "a04466b2785317e9fca422d5f0cbe98b931a5260",
                 "shasum": ""
             },
             "require": {
@@ -1725,9 +1725,9 @@
                 "Drupal"
             ],
             "support": {
-                "source": "https://github.com/palantirnet/search_api_federated_solr/tree/PL-6-generalize-search-api-fields"
+                "source": "https://github.com/palantirnet/search_api_federated_solr/tree/master"
             },
-            "time": "2018-08-28T18:42:59+00:00"
+            "time": "2018-09-19T19:18:01+00:00"
         },
         {
             "name": "palantirnet/search_api_field_map",

@@ -31,7 +31,7 @@
         },
         {
             "type": "vcs",
-            "url": "https://github.com/palantirnet/search_api_field_map.git"
+            "url": "git@github.com:palantirnet/search_api_field_map.git"
         }
     ],
     "require": {
@@ -42,7 +42,7 @@
         "drupal/coder": "^8.0",
         "drupal/config_installer": "^1.7",
         "drupal/core": "^8.5",
-        "palantirnet/search_api_federated_solr": "dev-PL-6-generalize-search-api-fields"
+        "palantirnet/search_api_federated_solr": "dev-master"
     },
     "require-dev": {
         "behat/behat": "^3.1",
