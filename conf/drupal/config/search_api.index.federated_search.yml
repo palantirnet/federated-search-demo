@@ -6,7 +6,7 @@ dependencies:
     - search_api.server.local_server
   module:
     - search_api
-    - search_api_federated_solr
+    - search_api_field_map
     - node
 id: federated_search
 name: 'Federated search'
@@ -15,7 +15,7 @@ read_only: false
 field_settings:
   federated_title:
     label: 'Federated Title'
-    property_path: federated_field
+    property_path: mapped_field
     type: string
     configuration:
       field_data:
@@ -25,7 +25,7 @@ field_settings:
           recipe: '[node:title]'
   federated_type:
     label: 'Federated Type'
-    property_path: federated_field
+    property_path: mapped_field
     type: string
     configuration:
       field_data:
@@ -53,7 +53,7 @@ field_settings:
       site_name: 'Umami Demo'
   federated_date:
     label: 'Federated Date'
-    property_path: federated_field
+    property_path: mapped_field
     type: date
     configuration:
       field_data:
@@ -63,7 +63,7 @@ field_settings:
           recipe: '[node:created:custom:Y-m-d\TH:i:s\Z]'
   federated_image:
     label: 'Federated Image'
-    property_path: federated_field
+    property_path: mapped_field
     type: string
     configuration:
       field_data:
@@ -73,7 +73,7 @@ field_settings:
           recipe: '[node:field_image:search_api_federated_solr_image:url]'
   url:
     label: URI
-    property_path: federated_field
+    property_path: mapped_field
     type: string
     configuration:
       field_data:
@@ -83,7 +83,7 @@ field_settings:
           recipe: '[node:url:absolute]'
   federated_terms:
     label: 'Federated terms'
-    property_path: federated_terms
+    property_path: mapped_terms
     type: string
 datasource_settings:
   'entity:node':
@@ -114,9 +114,9 @@ processor_settings:
     weights:
       preprocess_index: -15
       preprocess_query: -15
-  federated_field: {  }
+  mapped_field: {  }
   site_name: {  }
-  federated_terms: {  }
+  mapped_terms: {  }
 tracker_settings:
   default:
     indexing_order: fifo

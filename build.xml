@@ -24,6 +24,20 @@
         <phingcall target="drupal-reinstall-module">
             <property name="module" value="demo_umami_content" />
         </phingcall>
+
+        <drush command="pm-enable" assume="yes">
+            <param>federated_terms</param>
+        </drush>
+        <drush command="pm-uninstall" assume="yes">
+            <param>federated_terms</param>
+        </drush>
+        <drush command="sapi-c" assume="yes">
+            <param>federated_search</param>
+        </drush>
+        <drush command="sapi-i" assume="yes">
+            <param>federated_search</param>
+        </drush>
+
     </target>
 
 

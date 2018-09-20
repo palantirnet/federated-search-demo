@@ -5,7 +5,7 @@ dependencies: {  }
 _core:
   default_config_hash: AE_L5K4gUUzxlRbULerDr9fEszruFHLSgUv1bQ9IZlI
 name: search_api_federated_solr_image
-label: 'Federated image'
+label: 'Mapped field image'
 effects:
   53bfd1aa-5a4e-4750-b0d2-1a1ae1f04bce:
     uuid: 53bfd1aa-5a4e-4750-b0d2-1a1ae1f04bce
