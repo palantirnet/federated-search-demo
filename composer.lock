@@ -5352,6 +5352,39 @@
             "time": "2018-06-03T11:33:10+00:00"
         },
         {
+            "name": "palantirnet/search_api_field_map",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:palantirnet/search_api_field_map.git",
+                "reference": "fd943685e2885396b5956908ea25a0a03dc199ae"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/palantirnet/search_api_field_map/zipball/fd943685e2885396b5956908ea25a0a03dc199ae",
+                "reference": "fd943685e2885396b5956908ea25a0a03dc199ae",
+                "shasum": ""
+            },
+            "require": {
+                "drupal/core": "^8.0",
+                "drupal/search_api_solr": "^1.2",
+                "drupal/token": "^1.1"
+            },
+            "type": "drupal-module",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "description": "Allows indexing multiple Drupal sites into a single Solr search index by field.",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "https://github.com/palantirnet/search_api_field_map/tree/master",
+                "issues": "https://github.com/palantirnet/search_api_field_map/issues"
+            },
+            "time": "2018-08-28T18:40:53+00:00"
+        },
+        {
             "name": "palantirnet/the-build",
             "version": "1.7.0",
             "source": {
