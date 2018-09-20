@@ -1764,12 +1764,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:palantirnet/search_api_federated_solr.git",
-                "reference": "5f690b20b2bf558dc7d0907acae1434beeb8faba"
+                "reference": "7f6085453595aaa238e59194d028ae97271fbfad"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/palantirnet/search_api_federated_solr/zipball/5f690b20b2bf558dc7d0907acae1434beeb8faba",
-                "reference": "5f690b20b2bf558dc7d0907acae1434beeb8faba",
+                "url": "https://api.github.com/repos/palantirnet/search_api_federated_solr/zipball/7f6085453595aaa238e59194d028ae97271fbfad",
+                "reference": "7f6085453595aaa238e59194d028ae97271fbfad",
                 "shasum": ""
             },
             "require": {
@@ -1788,7 +1788,7 @@
             "support": {
                 "source": "https://github.com/palantirnet/search_api_federated_solr/tree/PL-34-schema-settings"
             },
-            "time": "2018-08-20T13:47:26+00:00"
+            "time": "2018-09-20T16:22:36+00:00"
         },
         {
             "name": "paragonie/random_compat",
