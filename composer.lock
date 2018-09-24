@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "19f17ed4977bcd2a98c560ed1783e515",
+    "content-hash": "d6d0636b27398c166cc61eb5205356f2",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -868,7 +868,7 @@
                     }
                 },
                 "patches_applied": {
-                    "2843729: Filter entities with schema errors": "https://www.drupal.org/files/issues/filter_entities_with-2843729-7.patch"
+                    "2843729: Filter entities with schema errors": "https://www.drupal.org/files/issues/2018-09-24/filter_entities_with-2843729-17.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
