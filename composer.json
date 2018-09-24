@@ -40,6 +40,7 @@
         "drupal-composer/drupal-scaffold": "^2.3",
         "drupal/admin_toolbar": "^1.24",
         "drupal/coder": "^8.0",
+        "drupal/config_inspector": "^1.0@beta",
         "drupal/config_installer": "^1.7",
         "drupal/core": "^8.5",
         "palantirnet/search_api_federated_solr": "dev-master"
@@ -72,6 +73,9 @@
         "patches": {
             "drupal/config_installer": {
                 "Allow config installer to find themes.": "https://www.drupal.org/files/issues/2018-05-28/2975675-2.patch"
+            },
+            "drupal/config_inspector": {
+                "2843729: Filter entities with schema errors": "https://www.drupal.org/files/issues/2018-09-24/filter_entities_with-2843729-17.patch"
             }
         }
     }    

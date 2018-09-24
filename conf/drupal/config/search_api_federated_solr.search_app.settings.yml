@@ -1,15 +1,17 @@
 facet:
   site_name:
-    set_default: 0
+    set_default: false
 index:
   id: federated_search
   has_site_name_property: true
   server_url: 'http://federated-search-demo.local:8983/solr/drupal8/select'
+  username: ''
+  password: ''
 content:
   no_results: ''
   search_prompt: ''
 results:
-  rows: ''
+  rows: null
 pagination:
-  buttons: ''
+  buttons: null
 path: /search-app
