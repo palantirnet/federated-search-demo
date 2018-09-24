@@ -52,8 +52,8 @@
       "web/sites/all/themes/contrib/{$name}/": ["type:drupal-theme"]
     },
     "preserve-paths": [
-      "web/sites/all/modules/contrib",
-      "web/sites/all/themes/contrib",
+      "web/sites/all/modules",
+      "web/sites/all/themes",
       "web/sites/all/libraries",
       "web/sites/default/settings.php",
       "web/sites/default/files"
