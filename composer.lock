@@ -1,7 +1,7 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
     "content-hash": "d6d0636b27398c166cc61eb5205356f2",
@@ -1764,12 +1764,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:palantirnet/search_api_federated_solr.git",
-                "reference": "1183cc161ec49fea014c16d183a3a1aaee08d286"
+                "reference": "2fc7902813e30841e981b5df4c2e8598f53fbe60"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/palantirnet/search_api_federated_solr/zipball/1183cc161ec49fea014c16d183a3a1aaee08d286",
-                "reference": "1183cc161ec49fea014c16d183a3a1aaee08d286",
+                "url": "https://api.github.com/repos/palantirnet/search_api_federated_solr/zipball/2fc7902813e30841e981b5df4c2e8598f53fbe60",
+                "reference": "2fc7902813e30841e981b5df4c2e8598f53fbe60",
                 "shasum": ""
             },
             "require": {
@@ -1789,7 +1789,7 @@
             "support": {
                 "source": "https://github.com/palantirnet/search_api_federated_solr/tree/master"
             },
-            "time": "2018-09-21T15:17:14+00:00"
+            "time": "2018-10-02T20:56:14+00:00"
         },
         {
             "name": "palantirnet/search_api_field_map",
@@ -1797,12 +1797,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:palantirnet/search_api_field_map.git",
-                "reference": "5c251765c56624409f57fe806b4354620ff495a8"
+                "reference": "c6005baae305b68ecb61d67ec376c2d7917846e6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/palantirnet/search_api_field_map/zipball/5c251765c56624409f57fe806b4354620ff495a8",
-                "reference": "5c251765c56624409f57fe806b4354620ff495a8",
+                "url": "https://api.github.com/repos/palantirnet/search_api_field_map/zipball/c6005baae305b68ecb61d67ec376c2d7917846e6",
+                "reference": "c6005baae305b68ecb61d67ec376c2d7917846e6",
                 "shasum": ""
             },
             "require": {
@@ -1822,7 +1822,7 @@
                 "source": "https://github.com/palantirnet/search_api_field_map/tree/master",
                 "issues": "https://github.com/palantirnet/search_api_field_map/issues"
             },
-            "time": "2018-09-21T15:11:30+00:00"
+            "time": "2018-10-02T20:20:38+00:00"
         },
         {
             "name": "paragonie/random_compat",
