@@ -1,7 +1,7 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
     "content-hash": "d6d0636b27398c166cc61eb5205356f2",
@@ -1767,12 +1767,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:palantirnet/search_api_federated_solr.git",
-                "reference": "2fc7902813e30841e981b5df4c2e8598f53fbe60"
+                "reference": "6e242988eb0d9a8eed515dfbfb014a18a767cf08"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/palantirnet/search_api_federated_solr/zipball/2fc7902813e30841e981b5df4c2e8598f53fbe60",
-                "reference": "2fc7902813e30841e981b5df4c2e8598f53fbe60",
+                "url": "https://api.github.com/repos/palantirnet/search_api_federated_solr/zipball/6e242988eb0d9a8eed515dfbfb014a18a767cf08",
+                "reference": "6e242988eb0d9a8eed515dfbfb014a18a767cf08",
                 "shasum": ""
             },
             "require": {
@@ -1792,7 +1792,7 @@
             "support": {
                 "source": "https://github.com/palantirnet/search_api_federated_solr/tree/master"
             },
-            "time": "2018-10-02T20:56:14+00:00"
+            "time": "2018-10-12T21:34:06+00:00"
         },
         {
             "name": "palantirnet/search_api_field_map",
