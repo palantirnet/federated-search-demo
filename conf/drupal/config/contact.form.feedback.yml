@@ -7,7 +7,7 @@ _core:
 id: feedback
 label: 'Website feedback'
 recipients:
-  - test@test.com
+  - admin@example.com
 reply: ''
 weight: 0
 message: 'Your message has been sent.'
