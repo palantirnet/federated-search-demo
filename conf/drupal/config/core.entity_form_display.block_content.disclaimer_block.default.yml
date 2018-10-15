@@ -1,4 +1,4 @@
-uuid: 5a0b5de7-a190-43e7-b4e6-19a4a92897c9
+uuid: 8e1227d6-3781-4922-adcc-dfd7f35c8c6a
 langcode: en
 status: true
 dependencies:
@@ -9,7 +9,7 @@ dependencies:
   module:
     - text
 _core:
-  default_config_hash: sMxKA7nfPNtnJR0r5Bs6er7ybQI0JdbfpA8wWCOj_XI
+  default_config_hash: b44ALaZOeiOdo_ndl5xgs8vJ3a1CMV4W2-GpR-46-0Y
 id: block_content.disclaimer_block.default
 targetEntityType: block_content
 bundle: disclaimer_block
@@ -39,4 +39,5 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  moderation_state: true

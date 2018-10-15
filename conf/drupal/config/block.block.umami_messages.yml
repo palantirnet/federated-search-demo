@@ -1,4 +1,4 @@
-uuid: 5daebc14-4683-4d10-9403-4a4ca1a0fabd
+uuid: 1fe99353-8b34-42c1-b761-8925934f8f52
 langcode: en
 status: true
 dependencies:
@@ -11,7 +11,7 @@ _core:
 id: umami_messages
 theme: umami
 region: highlighted
-weight: -6
+weight: -7
 provider: null
 plugin: system_messages_block
 settings:

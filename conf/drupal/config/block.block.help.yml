@@ -1,4 +1,4 @@
-uuid: 3f061cc5-785c-494c-86ce-f6dcb6adb83c
+uuid: 8bf5174a-81d1-47fd-bc12-5abb8e7a630b
 langcode: en
 status: true
 dependencies:
@@ -11,7 +11,7 @@ _core:
 id: help
 theme: umami
 region: highlighted
-weight: -5
+weight: -6
 provider: null
 plugin: help_block
 settings:

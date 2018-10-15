@@ -1,4 +1,4 @@
-uuid: ea4502bf-1c97-4265-bf83-ea6568280f7b
+uuid: ba260f6e-bd0a-403c-8e39-7cda80fb6f10
 langcode: en
 status: true
 dependencies:
@@ -11,11 +11,15 @@ id: taxonomy_term.tags.field_federated_terms
 field_name: field_federated_terms
 entity_type: taxonomy_term
 bundle: tags
-label: 'Federated terms'
+label: 'Federated Terms'
 description: ''
 required: false
-translatable: false
-default_value: {  }
+translatable: true
+default_value:
+  -
+    value: ''
+  -
+    value: ''
 default_value_callback: ''
 settings: {  }
 field_type: mapped_terms

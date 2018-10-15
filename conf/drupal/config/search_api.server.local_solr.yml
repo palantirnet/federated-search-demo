@@ -1,0 +1,32 @@
+uuid: 84626d48-d729-4e11-8960-55a0e233fb5c
+langcode: en
+status: true
+dependencies:
+  module:
+    - search_api_solr
+id: local_solr
+name: 'Local Solr'
+description: ''
+backend: search_api_solr
+backend_config:
+  connector: standard
+  connector_config:
+    scheme: http
+    host: federated-search-demo.local
+    port: '8983'
+    path: /solr
+    core: drupal8
+    timeout: 5
+    index_timeout: 5
+    optimize_timeout: 10
+    commit_within: 1000
+    solr_version: ''
+    http_method: AUTO
+  retrieve_data: false
+  highlight_data: false
+  excerpt: false
+  skip_schema_check: false
+  site_hash: false
+  suggest_suffix: true
+  suggest_corrections: true
+  suggest_words: false

@@ -1,4 +1,4 @@
-uuid: 10106514-1ce9-4f1b-8b06-7847ba3b0e28
+uuid: 63074ba3-8fe9-4664-a73d-4756c738193e
 langcode: en
 status: true
 dependencies:
@@ -11,11 +11,15 @@ id: taxonomy_term.recipe_category.field_federated_terms
 field_name: field_federated_terms
 entity_type: taxonomy_term
 bundle: recipe_category
-label: 'Federated terms'
+label: 'Federated Terms'
 description: ''
 required: false
-translatable: true
-default_value: {  }
+translatable: false
+default_value:
+  -
+    value: ''
+  -
+    value: ''
 default_value_callback: ''
 settings: {  }
 field_type: mapped_terms
