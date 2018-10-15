@@ -12,5 +12,6 @@ permissions:
   - 'access content'
   - 'access site-wide contact form'
   - 'search content'
+  - 'use federated search'
   - 'use text format restricted_html'
   - 'view media'

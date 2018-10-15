@@ -13,5 +13,6 @@ permissions:
   - 'access shortcuts'
   - 'access site-wide contact form'
   - 'search content'
+  - 'use federated search'
   - 'use text format basic_html'
   - 'view media'
