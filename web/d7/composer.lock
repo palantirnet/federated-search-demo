@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "b280481606cd8d1772c24c127f33031b",
+    "content-hash": "fa27d9c493ad4d777d6f0947266305aa",
     "packages": [
         {
             "name": "composer/installers",
@@ -855,12 +855,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:palantirnet/search_api_federated_solr.git",
-                "reference": "d9c07606e93e5a93b5579c6b82c9c0498df96ebd"
+                "reference": "6e68d853047e9e1d864ad58f709b6b65856a05c2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/palantirnet/search_api_federated_solr/zipball/d9c07606e93e5a93b5579c6b82c9c0498df96ebd",
-                "reference": "d9c07606e93e5a93b5579c6b82c9c0498df96ebd",
+                "url": "https://api.github.com/repos/palantirnet/search_api_federated_solr/zipball/6e68d853047e9e1d864ad58f709b6b65856a05c2",
+                "reference": "6e68d853047e9e1d864ad58f709b6b65856a05c2",
                 "shasum": ""
             },
             "require": {
@@ -879,7 +879,7 @@
             "support": {
                 "source": "https://github.com/palantirnet/search_api_federated_solr/tree/7.x"
             },
-            "time": "2018-09-13T16:51:49+00:00"
+            "time": "2018-10-23T21:23:57+00:00"
         }
     ],
     "packages-dev": [],
