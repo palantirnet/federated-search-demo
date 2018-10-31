@@ -33,7 +33,7 @@
     "drupal/drupal": "7.60",
     "drupal/features": "^2.10",
     "drupal/search_api": "^1.24",
-    "drupal/search_api_solr": "^1.12",
+    "drupal/search_api_solr": "^1.14",
     "drupal/strongarm": "^2.0",
     "drupal/token": "^1.7",
     "palantirnet/search_api_federated_solr": "7.x-dev"
