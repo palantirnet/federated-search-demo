@@ -1,9 +1,9 @@
-uuid: 1509c733-4439-4861-bc5b-3d33dce03221
+uuid: cd767868-0377-410d-b985-84fb61578414
 langcode: en
 status: true
 dependencies: {  }
 _core:
-  default_config_hash: u-3SQ1AgWJ8s7VeUY_f9K9AnzHOjejzJyEySTXcmyDk
+  default_config_hash: HHCUC9JJYme7-z5OOhq7kR_6bOLyk5TP0oxYYseYFIQ
 name: square_small
 label: 'Square Small'
 effects:
@@ -12,5 +12,6 @@ effects:
     id: image_scale_and_crop
     weight: 1
     data:
+      anchor: center-center
       width: 300
       height: 300

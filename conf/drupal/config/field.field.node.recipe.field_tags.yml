@@ -1,4 +1,4 @@
-uuid: c9d2419c-5cf8-444d-8f90-0c8a9a2b315b
+uuid: 49898509-4772-4129-a6c5-28155a789c48
 langcode: en
 status: true
 dependencies:
@@ -7,7 +7,7 @@ dependencies:
     - node.type.recipe
     - taxonomy.vocabulary.tags
 _core:
-  default_config_hash: 3KbCy9ju-BhmC3IJBpjWyB9Kt9ly0V6Lbza6Lhzft00
+  default_config_hash: dMigu37wzTr2curpe1B99Yg8VZUYLdX47tso_CK2etM
 id: node.recipe.field_tags
 field_name: field_tags
 entity_type: node
@@ -26,6 +26,5 @@ settings:
     sort:
       field: name
       direction: asc
-    auto_create: false
-    auto_create_bundle: ''
+    auto_create: true
 field_type: entity_reference

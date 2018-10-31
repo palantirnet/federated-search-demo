@@ -1,4 +1,4 @@
-uuid: 21ff724f-5a8c-488c-8c91-76bc3639d0f4
+uuid: 0f50aed8-a07e-4fb6-9177-0d50ab8222b9
 langcode: en
 status: true
 dependencies: {  }
@@ -13,4 +13,6 @@ permissions:
   - 'access shortcuts'
   - 'access site-wide contact form'
   - 'search content'
+  - 'use federated search'
   - 'use text format basic_html'
+  - 'view media'

@@ -1,16 +1,16 @@
-uuid: 17445c18-3ee3-4620-9bed-1bb3353523ac
+uuid: fbe4a337-b631-443b-8de5-be6324b509dc
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.highlighted_small
+    - core.entity_view_mode.node.card
     - node.type.recipe
     - system.menu.main
   module:
     - node
     - user
 _core:
-  default_config_hash: hnN2XTEoNlv2FM-xDxKage4E51HeyWmiSFLhAUw5E8s
+  default_config_hash: SGFgsLPAxJ3N5NlG2Em3fSng51-rmEHOtBhyHMbCbhI
 id: recipes
 label: Recipes
 module: views
@@ -75,7 +75,7 @@ display:
         type: 'entity:node'
         options:
           relationship: none
-          view_mode: highlighted_small
+          view_mode: card
       fields:
         title:
           id: title

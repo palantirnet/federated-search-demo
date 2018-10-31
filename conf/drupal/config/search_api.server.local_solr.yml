@@ -1,12 +1,12 @@
-uuid: eccdb8b5-29e4-48e2-855b-28ea376b0a29
+uuid: 84626d48-d729-4e11-8960-55a0e233fb5c
 langcode: en
 status: true
 dependencies:
   module:
     - search_api_solr
-id: local_server
-name: 'Local server'
-description: 'Local testing server.'
+id: local_solr
+name: 'Local Solr'
+description: ''
 backend: search_api_solr
 backend_config:
   connector: standard

@@ -1,4 +1,4 @@
-uuid: 2b594c75-8b1b-4bee-a0f1-8d3b09432ddf
+uuid: 7ffeb7ca-a637-40c1-8e36-098cfe5af1cc
 langcode: en
 status: true
 dependencies:
@@ -9,7 +9,7 @@ dependencies:
 id: federatedsearchpageformblock
 theme: umami
 region: highlighted
-weight: -7
+weight: -8
 provider: null
 plugin: federated_search_page_form_block
 settings:

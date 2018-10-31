@@ -1,4 +1,4 @@
-uuid: 6fc981e9-3ac5-4810-9c71-2257a184f04d
+uuid: e2f57af1-03b4-4c71-9ea4-4c762733eebf
 langcode: en
 status: true
 dependencies:
@@ -7,11 +7,11 @@ dependencies:
   theme:
     - umami
 _core:
-  default_config_hash: KvJI_Y--78YF9SFpjbnEWhTkRT97dMHIsGYBGT4VOW8
+  default_config_hash: MGsoiuC-_XKgxPpwxVkN6hy6bE1sMd7lnRYv5Tqb08Q
 id: umami_branding
 theme: umami
 region: header
-weight: -7
+weight: -9
 provider: null
 plugin: system_branding_block
 settings:

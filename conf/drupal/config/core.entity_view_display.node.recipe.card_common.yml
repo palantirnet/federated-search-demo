@@ -1,9 +1,9 @@
-uuid: ce7e17a2-9825-44ad-bd45-6d4aecabc82e
+uuid: a9dfa5c4-6a6b-4eb6-9dd0-c7bc43faf28a
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.highlighted_top
+    - core.entity_view_mode.node.card_common
     - field.field.node.recipe.field_author
     - field.field.node.recipe.field_cooking_time
     - field.field.node.recipe.field_difficulty
@@ -21,22 +21,23 @@ dependencies:
     - responsive_image
     - user
 _core:
-  default_config_hash: GPVq-4lsfUITq25OoNX807e35dbKhPXil-i_8kMW_nE
-id: node.recipe.highlighted_top
+  default_config_hash: U97aYyY8eSxz7mR0SohImYtjcswJf52UenJoPuWscEw
+id: node.recipe.card_common
 targetEntityType: node
 bundle: recipe
-mode: highlighted_top
+mode: card_common
 content:
   field_image:
+    type: responsive_image
     weight: 0
+    region: content
     label: hidden
     settings:
       responsive_image_style: 3_2_image
-      image_link: content
+      image_link: ''
     third_party_settings: {  }
-    type: responsive_image
-    region: content
 hidden:
+  content_moderation_control: true
   field_author: true
   field_cooking_time: true
   field_difficulty: true

@@ -1,9 +1,9 @@
-uuid: 766ec57b-dc65-42ae-815a-8d7c279609f2
+uuid: 2d4a8a01-1cd7-481d-ad2b-aa1acf87cb8e
 langcode: en
 status: true
 dependencies: {  }
 _core:
-  default_config_hash: 5Mni3oGQutwu4kmtMt0EN2wOiiqOfTocy3ZdKqydjM4
+  default_config_hash: UbvZawWTEaFlFnHK1fZryK4CH4DZFvfJQw1oZtQnP74
 name: large_21_9
 label: 'Large 21:9 (1440x620)'
 effects:
@@ -12,5 +12,6 @@ effects:
     id: image_scale_and_crop
     weight: 1
     data:
+      anchor: center-center
       width: 1440
       height: 620

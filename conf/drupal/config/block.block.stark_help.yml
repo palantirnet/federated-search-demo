@@ -1,4 +1,4 @@
-uuid: c12338dd-d6ff-410b-895d-3e2fa1c95bc1
+uuid: 518c4a61-ef6b-49c9-a688-af644b6f73ee
 langcode: en
 status: true
 dependencies:
@@ -11,7 +11,7 @@ _core:
 id: stark_help
 theme: stark
 region: highlighted
-weight: 0
+weight: -6
 provider: null
 plugin: help_block
 settings:
