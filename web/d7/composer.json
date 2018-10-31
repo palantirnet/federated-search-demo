@@ -29,7 +29,7 @@
     "composer/installers": "^1.0",
     "derhasi/composer-preserve-paths": "0.1.*",
     "drupal/devel": "^1.6",
-    "drupal/drupal": "7.*",
+    "drupal/drupal": "7.60",
     "drupal/features": "^2.10",
     "drupal/search_api": "^1.24",
     "drupal/search_api_solr": "^1.12",

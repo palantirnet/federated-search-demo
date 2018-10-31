@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "fa27d9c493ad4d777d6f0947266305aa",
+    "content-hash": "cd962e7d8f4ed3f8394e4ae3f0954a74",
     "packages": [
         {
             "name": "composer/installers",
@@ -347,17 +347,17 @@
         },
         {
             "name": "drupal/drupal",
-            "version": "7.59.0",
+            "version": "7.60.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/drupal",
-                "reference": "7.59"
+                "reference": "7.60"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/drupal-7.59.zip",
-                "reference": "7.59",
-                "shasum": "6f9c6ec087c3e76b880d28b59d7f2afb4587e095"
+                "url": "https://ftp.drupal.org/files/projects/drupal-7.60.zip",
+                "reference": "7.60",
+                "shasum": "eda05482554b1a50d48bc6a4779f90abd5dacdcb"
             },
             "type": "drupal-core",
             "extra": {
@@ -365,8 +365,8 @@
                     "dev-7.x": "7.x-dev"
                 },
                 "drupal": {
-                    "version": "7.59",
-                    "datestamp": "1524805044",
+                    "version": "7.60",
+                    "datestamp": "1539816864",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
