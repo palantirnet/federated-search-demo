@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "cd962e7d8f4ed3f8394e4ae3f0954a74",
+    "content-hash": "a070f5e67fd3a5cb2df742db8e7ce559",
     "packages": [
         {
             "name": "composer/installers",
@@ -180,6 +180,77 @@
             ],
             "abandoned": "drupal-composer/preserve-paths",
             "time": "2017-02-03T11:32:31+00:00"
+        },
+        {
+            "name": "drupal/admin_menu",
+            "version": "3.0.0-rc5",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/admin_menu",
+                "reference": "7.x-3.0-rc5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/admin_menu-7.x-3.0-rc5.zip",
+                "reference": "7.x-3.0-rc5",
+                "shasum": "64de77d5b1ed7158549a4fc6f2fd657aaacdaead"
+            },
+            "require": {
+                "drupal/drupal": "^7.11"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-3.x": "3.x-dev"
+                },
+                "drupal": {
+                    "version": "7.x-3.0-rc5",
+                    "datestamp": "1419029280",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/7/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Dave Reid",
+                    "homepage": "https://www.drupal.org/user/53892"
+                },
+                {
+                    "name": "RenatoG",
+                    "homepage": "https://www.drupal.org/user/3326031"
+                },
+                {
+                    "name": "fubhy",
+                    "homepage": "https://www.drupal.org/user/761344"
+                },
+                {
+                    "name": "pwolanin",
+                    "homepage": "https://www.drupal.org/user/49851"
+                },
+                {
+                    "name": "smk-ka",
+                    "homepage": "https://www.drupal.org/user/48898"
+                },
+                {
+                    "name": "sun",
+                    "homepage": "https://www.drupal.org/user/54136"
+                },
+                {
+                    "name": "truls1502",
+                    "homepage": "https://www.drupal.org/user/325866"
+                }
+            ],
+            "description": "Provides a dropdown menu to most administrative tasks and other common destinations (to users with the proper permissions).",
+            "homepage": "https://www.drupal.org/project/admin_menu",
+            "support": {
+                "source": "http://cgit.drupalcode.org/admin_menu"
+            }
         },
         {
             "name": "drupal/ctools",
@@ -886,6 +957,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "drupal/admin_menu": 5,
         "palantirnet/search_api_federated_solr": 20
     },
     "prefer-stable": true,
