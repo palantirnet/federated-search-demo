@@ -52,7 +52,25 @@ function features_search_api_config_default_search_api_index() {
         "federated_field" : {
           "status" : 1,
           "weight" : "-42",
-          "settings" : { "actions" : { "add_field_federated" : "Add new federated field" } }
+          "settings" : {
+            "fields" : {
+              "federated_image" : {
+                "label" : "Federated Image",
+                "machine_name" : "federated_image",
+                "type" : "uri",
+                "bundle" : { "article" : "", "page" : "" },
+                "actions" : { "remove" : "Remove field" }
+              },
+              "federated_type" : {
+                "label" : "Federated Type",
+                "machine_name" : "federated_type",
+                "type" : "string",
+                "bundle" : { "article" : "", "page" : "" },
+                "actions" : { "remove" : "Remove field" }
+              }
+            },
+            "actions" : { "add_field_federated" : "Add new federated field" }
+          }
         },
         "remap" : {
           "status" : 1,
@@ -135,11 +153,14 @@ function features_search_api_config_default_search_api_index() {
       },
       "fields" : {
         "federated_date" : { "type" : "date" },
+        "federated_image" : { "type" : "uri" },
         "federated_terms" : { "type" : "list\\u003Cstring\\u003E" },
         "federated_title" : { "type" : "text" },
-        "search_api_urls" : { "type" : "list\\u003Curi\\u003E" },
-        "search_api_viewed" : { "type" : "text" },
-        "site_name" : { "type" : "list\\u003Cstring\\u003E" }
+        "federated_type" : { "type" : "string" },
+        "rendered_item" : { "type" : "text" },
+        "search_api_language" : { "type" : "string" },
+        "site_name" : { "type" : "list\\u003Cstring\\u003E" },
+        "urls" : { "type" : "list\\u003Curi\\u003E" }
       }
     },
     "enabled" : "1",
@@ -165,7 +186,7 @@ function features_search_api_config_default_search_api_server() {
       "scheme" : "http",
       "host" : "federated-search-demo.local",
       "port" : "8983",
-      "path" : "\\/solr",
+      "path" : "\\/solr\\/drupal8",
       "http_user" : "",
       "http_pass" : "",
       "excerpt" : 0,

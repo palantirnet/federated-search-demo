@@ -14,7 +14,7 @@ function features_search_api_config_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'search_api_federated_solr_has_site_name_property';
-  $strongarm->value = '';
+  $strongarm->value = 'true';
   $export['search_api_federated_solr_has_site_name_property'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -49,7 +49,7 @@ function features_search_api_config_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'search_api_federated_solr_search_index';
-  $strongarm->value = 'default_node_index';
+  $strongarm->value = 'federated_search';
   $export['search_api_federated_solr_search_index'] = $strongarm;
 
   $strongarm = new stdClass();
