@@ -38,6 +38,9 @@
             <param>federated_search</param>
         </drush>
 
+        <!-- Import config to fix rogue blocks changing UUIDs -->
+        <drush command="config-import" assume="yes"/>
+
     </target>
 
 
