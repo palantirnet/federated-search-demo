@@ -1,6 +1,7 @@
 name = Search API config
 core = 7.x
 package = Features
+dependencies[] = admin_menu
 dependencies[] = ctools
 dependencies[] = entity
 dependencies[] = features
