@@ -30,7 +30,7 @@
     "derhasi/composer-preserve-paths": "0.1.*",
     "drupal/admin_menu": "^3.0@RC",
     "drupal/devel": "^1.6",
-    "drupal/drupal": "7.60",
+    "drupal/drupal": "7.61",
     "drupal/features": "^2.10",
     "drupal/search_api": "^1.24",
     "drupal/search_api_solr": "^1.14",
