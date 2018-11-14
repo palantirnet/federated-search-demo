@@ -1,0 +1,22 @@
+---
+- name: MySQL | Install database management tool
+  become: true
+  apt: pkg=python-mysqldb state=installed
+
+- name: MySQL | Create databases
+  mysql_db:
+    name: "{{ item.database }}"
+    login_user: root
+    login_password: root
+  with_items: "{{ sites }}"
+
+- name: MySQL | Add privs for databases
+  mysql_user:
+    append_privs: yes
+    host: '%'
+    login_password: root
+    login_user: root
+    name: drupal
+    priv: '{{ item.database }}.*:ALL'
+    state: present
+  with_items: "{{ sites }}"

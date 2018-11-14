@@ -37,8 +37,9 @@ If you update Vagrant, you may need to update your vagrant plugins with `vagrant
   ```
 3. You will be prompted for the administration password on your host machine
 4. Log in to the virtual machine (the VM): `vagrant ssh`
-5. Build, install, and enable demo content: `phing build install`
-7. Visit your site at [federated-search-demo.local](http://federated-search-demo.local)
+5. Build, install, and enable demo content: `phing build install install-d7`
+6. Visit your D8 site at [federated-search-demo.local](http://federated-search-demo.local)
+7. Visit your D7 site at [federated-search-demo.d7.local](http://federated-search-demo.d7.local)
 
 ## How do I work on this?
 
@@ -49,6 +50,7 @@ To run project-related commands other than `vagrant up` and `vagrant ssh`:
 * SSH into the VM with `vagrant ssh`
 * You'll be in your project root, at the path `/var/www/federated-search-demo.local/`
 * You can run `composer`, `drush`, and `phing` commands from here
+* Go to the path `/var/www/federated-search-demo.local/web/d7` to add new modules to the d7 site.
 
 Avoid committing to git from within your VM, because your commits won't be properly attributed to you. If you must, make sure you [create a global .gitignore [internal]](https://github.com/palantirnet/documentation/wiki/Using-the-gitignore-File) within your VM at `/home/vagrant/.gitignore`, and configure your name and email for proper attribution:
 
@@ -61,10 +63,12 @@ git config --global user.name 'My Name'
 
 You can refresh/reset your local Drupal site at any time. SSH into your VM and then:
 
-1. Download the most current dependencies: `composer install`
-2. Rebuild your local CSS and Drupal settings file: `phing build`
-3. Reinstall Drupal: `phing install`
-5. ... OR run all phing targets at once: `phing build install`
+1. Download the most current dependencies for D8: `composer install`
+2. Download the most current dependencies for D7: `cd web/d7` then `composer install`. Don't forget to return to the project root to run the phing commands.
+3. Rebuild your local CSS and Drupal settings file: `phing build`
+4. Reinstall Drupal 8: `phing install`
+5. Reinstall Drupal 7: `phing install-d7`
+6. ... OR run all phing targets at once: `phing build install install-d7`
 
 Additional information on developing for Drupal within this environment is in [docs/general/drupal_development.md](docs/general/drupal_development.md).
 

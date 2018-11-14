@@ -1,0 +1,64 @@
+{
+  "name": "palantirnet/federated-search-d7",
+  "description": "A Drupal 7 project template.",
+  "type": "project",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Palantir.net",
+      "email": "info@palantir.net"
+    }
+  ],
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "preferred-install": "dist",
+  "config": {
+    "sort-packages": true
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://packages.drupal.org/7"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/palantirnet/search_api_federated_solr.git"
+    }
+  ],
+  "require": {
+    "composer/installers": "^1.0",
+    "derhasi/composer-preserve-paths": "0.1.*",
+    "drupal/admin_menu": "^3.0@RC",
+    "drupal/devel": "^1.6",
+    "drupal/drupal": "7.61",
+    "drupal/features": "^2.10",
+    "drupal/features_extra": "^1.0",
+    "drupal/search_api": "^1.24",
+    "drupal/search_api_solr": "^1.14",
+    "drupal/strongarm": "^2.0",
+    "drupal/token": "^1.7",
+    "palantirnet/search_api_federated_solr": "7.x-dev"
+  },
+  "suggest": {
+    "cweagans/composer-patches": "Try ^1.0. Apply patches to packages, especially Drupal.org contrib."
+  },
+  "conflict": {
+    "drupal/core": "8.*"
+  },
+  "extra": {
+    "installer-paths": {
+      "web/": ["type:drupal-core"],
+      "web/sites/all/libraries/{$name}/": ["type:drupal-library"],
+      "web/sites/all/modules/contrib/{$name}/": ["type:drupal-module"],
+      "web/profiles/contrib/{$name}/": ["type:drupal-profile"],
+      "web/sites/all/themes/contrib/{$name}/": ["type:drupal-theme"]
+    },
+    "preserve-paths": [
+      "web/sites/all/modules",
+      "web/sites/all/themes",
+      "web/sites/all/libraries",
+      "web/sites/default/settings.php",
+      "web/sites/default/files"
+    ]
+  }
+}
