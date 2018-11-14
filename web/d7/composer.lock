@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "48b20eb61cd063cd8d78960f6e82b666",
+    "content-hash": "81cbacca06e431f34e2f69a304cbbaba",
     "packages": [
         {
             "name": "composer/installers",
@@ -659,6 +659,83 @@
             "homepage": "https://www.drupal.org/project/features",
             "support": {
                 "source": "http://cgit.drupalcode.org/features"
+            }
+        },
+        {
+            "name": "drupal/features_extra",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/features_extra",
+                "reference": "7.x-1.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/features_extra-7.x-1.0.zip",
+                "reference": "7.x-1.0",
+                "shasum": "89eeee2e7ad6fd27505689c07a3a1eb218690a3a"
+            },
+            "require": {
+                "drupal/drupal": "~7.0"
+            },
+            "require-dev": {
+                "drupal/block_class": "*",
+                "drupal/blockcache_alter": "*",
+                "drupal/ctools": "*",
+                "drupal/features": "*",
+                "drupal/nodequeue": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "7.x-1.0",
+                    "datestamp": "1439376839",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/7/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "RenatoG",
+                    "homepage": "https://www.drupal.org/user/3326031"
+                },
+                {
+                    "name": "brynbellomy",
+                    "homepage": "https://www.drupal.org/user/537416"
+                },
+                {
+                    "name": "makara",
+                    "homepage": "https://www.drupal.org/user/132402"
+                },
+                {
+                    "name": "pearcec",
+                    "homepage": "https://www.drupal.org/user/101931"
+                },
+                {
+                    "name": "pirog",
+                    "homepage": "https://www.drupal.org/user/1258944"
+                },
+                {
+                    "name": "toleillo",
+                    "homepage": "https://www.drupal.org/user/237344"
+                },
+                {
+                    "name": "wizonesolutions",
+                    "homepage": "https://www.drupal.org/user/739994"
+                }
+            ],
+            "homepage": "https://www.drupal.org/project/features_extra",
+            "support": {
+                "source": "http://cgit.drupalcode.org/features_extra"
             }
         },
         {
