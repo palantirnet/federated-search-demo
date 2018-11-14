@@ -55,6 +55,7 @@
         </drush>
         <drush command="pm-disable" assume="yes" root="/var/www/federated-search-demo.local/web/d7/web">
             <param>overlay</param>
+            <param>toolbar</param>
         </drush>
         <drush command="generate-content" assume="yes" root="/var/www/federated-search-demo.local/web/d7/web">
             <param>10</param>
