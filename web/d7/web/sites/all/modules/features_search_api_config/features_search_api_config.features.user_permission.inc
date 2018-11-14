@@ -33,6 +33,8 @@ function features_search_api_config_user_default_permissions() {
     'name' => 'use federated search',
     'roles' => array(
       'administrator' => 'administrator',
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'search_api_federated_solr',
   );
