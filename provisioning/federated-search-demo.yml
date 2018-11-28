@@ -15,6 +15,11 @@
         hostname: federated-search-demo.d7.local
         database: federated-search-d7
         docroot: "{{ web_root }}/d7/web"
+      -
+        name: federated-search-demo-domain-site-one
+        hostname: federated-search-demo.d8-1.local
+        database: drupal
+        docroot: "{{ web_root }}"
 
   roles:
     - { role: mysql }

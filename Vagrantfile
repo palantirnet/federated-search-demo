@@ -14,6 +14,9 @@ project     = 'federated-search-demo'
 hostname    = "#{project}.local"
 extra_hostnames = [
   'federated-search-demo.d7.local',
+  'federated-search-demo.d8-1.local',
+  'federated-search-demo.d8-2.local',
+  'federated-search-demo.d8-3.local',
 ]
 
 ansible_solr_enabled = true
