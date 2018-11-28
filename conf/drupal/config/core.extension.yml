@@ -16,6 +16,7 @@ module:
   datetime: 0
   dblog: 0
   demo_umami_content: 0
+  domain: 0
   dynamic_page_cache: 0
   editor: 0
   federated_styles: 0

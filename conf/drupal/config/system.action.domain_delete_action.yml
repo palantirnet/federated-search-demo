@@ -1,0 +1,13 @@
+uuid: 28a0fcdb-c3db-460f-ade1-f169d89d2a3c
+langcode: en
+status: true
+dependencies:
+  module:
+    - domain
+_core:
+  default_config_hash: '-lXBfSljb21UO_YyDLm2I4Lg8Wo0o2nc70TGC1fMiMk'
+id: domain_delete_action
+label: 'Delete domain record'
+type: domain
+plugin: domain_delete_action
+configuration: {  }
