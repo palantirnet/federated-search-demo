@@ -1,0 +1,11 @@
+uuid: 64a278a4-b565-4cf5-83c2-9d64899719a1
+langcode: en
+status: true
+dependencies: {  }
+id: federated_search_demo_d8_2_local
+domain_id: 7995650
+hostname: federated-search-demo.d8-2.local
+name: 'Federated Search Demo Domain Site Two'
+scheme: http
+weight: 2
+is_default: false

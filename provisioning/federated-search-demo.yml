@@ -20,6 +20,16 @@
         hostname: federated-search-demo.d8-1.local
         database: drupal
         docroot: "{{ web_root }}"
+      -
+        name: federated-search-demo-domain-site-two
+        hostname: federated-search-demo.d8-2.local
+        database: drupal
+        docroot: "{{ web_root }}"
+      -
+        name: federated-search-demo-domain-site-three
+        hostname: federated-search-demo.d8-3.local
+        database: drupal
+        docroot: "{{ web_root }}"
 
   roles:
     - { role: mysql }
