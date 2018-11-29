@@ -1,0 +1,14 @@
+uuid: f12a99ca-4236-4bde-978b-c30fdd76c008
+langcode: en
+status: true
+dependencies:
+  config:
+    - domain.record.federated_search_demo_d8_3_local
+  module:
+    - domain_access
+id: domain_access_add_action.federated_search_demo_d8_3_local
+label: 'Add selected content to the Federated Search Demo Domain Site Three domain'
+type: node
+plugin: domain_access_add_action
+configuration:
+  domain_id: federated_search_demo_d8_3_local

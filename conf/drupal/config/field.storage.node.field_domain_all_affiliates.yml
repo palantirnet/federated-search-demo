@@ -1,0 +1,23 @@
+uuid: 221c12c0-d5d1-437c-97cd-117ae2d54398
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - domain_access
+  module:
+    - node
+_core:
+  default_config_hash: r9WVqyCC-OcWIvrMHvSqNavFjzjAVyVQCqTL7cXvwQo
+id: node.field_domain_all_affiliates
+field_name: field_domain_all_affiliates
+entity_type: node
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -17,6 +17,8 @@ module:
   dblog: 0
   demo_umami_content: 0
   domain: 0
+  domain_access: 0
+  domain_content: 0
   dynamic_page_cache: 0
   editor: 0
   federated_styles: 0

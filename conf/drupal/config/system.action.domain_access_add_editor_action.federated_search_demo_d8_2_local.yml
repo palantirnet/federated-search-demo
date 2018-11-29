@@ -1,0 +1,14 @@
+uuid: 4f742739-ace2-41df-b897-9973b62cc925
+langcode: en
+status: true
+dependencies:
+  config:
+    - domain.record.federated_search_demo_d8_2_local
+  module:
+    - domain_access
+id: domain_access_add_editor_action.federated_search_demo_d8_2_local
+label: 'Add editors to the Federated Search Demo Domain Site Two domain'
+type: user
+plugin: domain_access_add_editor_action
+configuration:
+  domain_id: federated_search_demo_d8_2_local
