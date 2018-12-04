@@ -205,7 +205,7 @@
                 },
                 "drupal": {
                     "version": "7.x-3.0-rc5",
-                    "datestamp": "1419029280",
+                    "datestamp": "1543859280",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
@@ -614,7 +614,7 @@
                 },
                 "drupal": {
                     "version": "7.x-2.10",
-                    "datestamp": "1461011639",
+                    "datestamp": "1541050680",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -641,6 +641,10 @@
                 {
                     "name": "jmiccolis",
                     "homepage": "https://www.drupal.org/user/31731"
+                },
+                {
+                    "name": "joseph.olstad",
+                    "homepage": "https://www.drupal.org/user/1321830"
                 },
                 {
                     "name": "mpotter",
@@ -767,7 +771,7 @@
                 },
                 "drupal": {
                     "version": "7.x-1.24",
-                    "datestamp": "1522915549",
+                    "datestamp": "1537171084",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
