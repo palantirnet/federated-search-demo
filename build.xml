@@ -65,6 +65,30 @@
         </drush>
     </target>
 
+    <!-- Target: init -->
+    <target name="init" description="Initialize the repo for development.">
+        <!-- Link search_api_federated_solr:master (D8) into the src/ directory so the code is easy to find. -->
+        <mkdir dir="${build.dir}/src" />
+        <delete file="${build.dir}/src/search_api_federated_solr" />
+        <symlink target="../web/modules/contrib/search_api_federated_solr" link="src/search_api_federated_solr" />
+
+        <!-- Link search_api_field_map:master (D8) into the src/ directory so the code is easy to find. -->
+        <mkdir dir="${build.dir}/src" />
+        <delete file="${build.dir}/src/search_api_field_map" />
+        <symlink target="../web/modules/contrib/search_api_field_map" link="src/search_api_field_map" />
+
+        <!-- Link search_api_federated_solr:7.x into the src/ directory so the code is easy to find. -->
+        <mkdir dir="${build.dir}/src" />
+        <delete file="${build.dir}/src/search_api_federated_solr-7.x" />
+        <symlink target="../web/d7/web/sites/all/modules/contrib/search_api_federated_solr" link="src/search_api_federated_solr-7.x" />
+
+        <!-- Link search_api_field_map:7.x into the src/ directory so the code is easy to find. -->
+        <mkdir dir="${build.dir}/src" />
+        <delete file="${build.dir}/src/search_api_field_map-7.x" />
+        <symlink target="../web/d7/web/sites/all/modules/contrib/search_api_field_map" link="src/search_api_field_map-7.x" />
+
+    </target>
+
 
     <!-- Target: migrate -->
     <target name="migrate" description="Run the migrations.">

@@ -39,3 +39,9 @@ styleguide/output_prod/
 
 # Ignore PhpStorm
 .idea
+
+# Ignore Federated Field module symlinks
+/src/search_api_federated_solr
+/src/search_api_federated_solr-7.x
+/src/search_api_field_map
+/src/search_api_field_map-7.x
