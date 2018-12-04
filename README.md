@@ -38,8 +38,9 @@ If you update Vagrant, you may need to update your vagrant plugins with `vagrant
 3. You will be prompted for the administration password on your host machine
 4. Log in to the virtual machine (the VM): `vagrant ssh`
 5. Build, install, and enable demo content: `phing build install install-d7`
-6. Visit your D8 site at [federated-search-demo.local](http://federated-search-demo.local)
-7. Visit your D7 site at [federated-search-demo.d7.local](http://federated-search-demo.d7.local)
+6. Build the `/src` directory and symlink modules there to make development easier: `phing init`
+7. Visit your D8 site at [federated-search-demo.local](http://federated-search-demo.local)
+8. Visit your D7 site at [federated-search-demo.d7.local](http://federated-search-demo.d7.local)
 
 ## How do I work on this?
 
@@ -68,7 +69,8 @@ You can refresh/reset your local Drupal site at any time. SSH into your VM and t
 3. Rebuild your local CSS and Drupal settings file: `phing build`
 4. Reinstall Drupal 8: `phing install`
 5. Reinstall Drupal 7: `phing install-d7`
-6. ... OR run all phing targets at once: `phing build install install-d7`
+6. Build the `/src` directory and symlink modules there to make development easier: `phing init`
+7. ... OR run all phing targets at once: `phing build install install-d7 init`
 
 Additional information on developing for Drupal within this environment is in [docs/general/drupal_development.md](docs/general/drupal_development.md).
 
