@@ -1218,7 +1218,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.10",
-                    "datestamp": "1537175280",
+                    "datestamp": "1542564480",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -1771,12 +1771,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:palantirnet/search_api_federated_solr.git",
-                "reference": "6e242988eb0d9a8eed515dfbfb014a18a767cf08"
+                "reference": "7cf3343b3532ced2c4a556f768e2ffe469d3396f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/palantirnet/search_api_federated_solr/zipball/6e242988eb0d9a8eed515dfbfb014a18a767cf08",
-                "reference": "6e242988eb0d9a8eed515dfbfb014a18a767cf08",
+                "url": "https://api.github.com/repos/palantirnet/search_api_federated_solr/zipball/7cf3343b3532ced2c4a556f768e2ffe469d3396f",
+                "reference": "7cf3343b3532ced2c4a556f768e2ffe469d3396f",
                 "shasum": ""
             },
             "require": {
@@ -1796,7 +1796,7 @@
             "support": {
                 "source": "https://github.com/palantirnet/search_api_federated_solr/tree/master"
             },
-            "time": "2018-10-12T21:34:06+00:00"
+            "time": "2018-12-03T21:33:40+00:00"
         },
         {
             "name": "palantirnet/search_api_field_map",
@@ -1804,12 +1804,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:palantirnet/search_api_field_map.git",
-                "reference": "c6005baae305b68ecb61d67ec376c2d7917846e6"
+                "reference": "6cb8df3b93332738a29dfa3a71ab9b002730100e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/palantirnet/search_api_field_map/zipball/c6005baae305b68ecb61d67ec376c2d7917846e6",
-                "reference": "c6005baae305b68ecb61d67ec376c2d7917846e6",
+                "url": "https://api.github.com/repos/palantirnet/search_api_field_map/zipball/6cb8df3b93332738a29dfa3a71ab9b002730100e",
+                "reference": "6cb8df3b93332738a29dfa3a71ab9b002730100e",
                 "shasum": ""
             },
             "require": {
@@ -1829,7 +1829,7 @@
                 "source": "https://github.com/palantirnet/search_api_field_map/tree/master",
                 "issues": "https://github.com/palantirnet/search_api_field_map/issues"
             },
-            "time": "2018-10-02T20:20:38+00:00"
+            "time": "2018-12-04T14:39:03+00:00"
         },
         {
             "name": "paragonie/random_compat",
@@ -5396,16 +5396,16 @@
         },
         {
             "name": "palantirnet/the-build",
-            "version": "1.7.0",
+            "version": "1.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/palantirnet/the-build.git",
-                "reference": "7a99d4b22b0c563fffe0cdb7f19c03894bfbfefa"
+                "reference": "2582ec36ac1777a9ade77bf17ae9f43b4ce5df03"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/palantirnet/the-build/zipball/7a99d4b22b0c563fffe0cdb7f19c03894bfbfefa",
-                "reference": "7a99d4b22b0c563fffe0cdb7f19c03894bfbfefa",
+                "url": "https://api.github.com/repos/palantirnet/the-build/zipball/2582ec36ac1777a9ade77bf17ae9f43b4ce5df03",
+                "reference": "2582ec36ac1777a9ade77bf17ae9f43b4ce5df03",
                 "shasum": ""
             },
             "require": {
@@ -5436,20 +5436,20 @@
                 }
             ],
             "description": "Phing build tasks for Drupal projects.",
-            "time": "2018-04-16T20:01:54+00:00"
+            "time": "2018-10-11T15:42:14+00:00"
         },
         {
             "name": "palantirnet/the-vagrant",
-            "version": "2.2.1",
+            "version": "2.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/palantirnet/the-vagrant.git",
-                "reference": "65ea444103f57b7428b788945cf73b4b19743c6d"
+                "reference": "4af7af2c9f9fd1f1d87ae3846154bf075a2c0481"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/palantirnet/the-vagrant/zipball/65ea444103f57b7428b788945cf73b4b19743c6d",
-                "reference": "65ea444103f57b7428b788945cf73b4b19743c6d",
+                "url": "https://api.github.com/repos/palantirnet/the-vagrant/zipball/4af7af2c9f9fd1f1d87ae3846154bf075a2c0481",
+                "reference": "4af7af2c9f9fd1f1d87ae3846154bf075a2c0481",
                 "shasum": ""
             },
             "require": {
@@ -5470,7 +5470,7 @@
                 }
             ],
             "description": "Install a Vagrant environment into a Drupal project.",
-            "time": "2018-08-14T19:44:45+00:00"
+            "time": "2018-11-28T23:22:00+00:00"
         },
         {
             "name": "pdepend/pdepend",
