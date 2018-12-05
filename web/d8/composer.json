@@ -37,9 +37,6 @@
         }
     ],
     "require": {
-        "composer/installers": "^1.0",
-        "cweagans/composer-patches": "^1.6",
-        "drupal-composer/drupal-scaffold": "^2.3",
         "drupal/admin_toolbar": "^1.24",
         "drupal/coder": "^8.0",
         "drupal/config_inspector": "^1.0@beta",
@@ -48,14 +45,6 @@
         "palantirnet/search_api_federated_solr": "dev-master"
     },
     "require-dev": {
-        "behat/behat": "^3.1",
-        "behat/mink": "^1.7",
-        "behat/mink-extension": "^2.2",
-        "behat/mink-goutte-driver": "^1.2",
-        "drupal/console": "^1.8",
-        "drupal/drupal-extension": "^3.1",
-        "palantirnet/the-build": "^1.7",
-        "palantirnet/the-vagrant": "^2.2"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -66,10 +55,10 @@
     },
     "extra": {
         "installer-paths": {
-            "web/core": ["type:drupal-core"],
-            "web/modules/contrib/{$name}": ["type:drupal-module"],
-            "web/profiles/contrib/{$name}": ["type:drupal-profile"],
-            "web/themes/contrib/{$name}": ["type:drupal-theme"],
+            "docroot/core": ["type:drupal-core"],
+            "docroot/modules/contrib/{$name}": ["type:drupal-module"],
+            "docroot/profiles/contrib/{$name}": ["type:drupal-profile"],
+            "docroot/themes/contrib/{$name}": ["type:drupal-theme"],
             "drush/contrib/{$name}": ["type:drupal-drush"]
         },
         "patches": {

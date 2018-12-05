@@ -1,0 +1,45 @@
+{
+  "name": "palantirnet/federated-search-demo",
+  "description": "A multi-headed environment for demo, testing, and development of Palantir's Federated Solr application.",
+  "type": "project",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Palantir.net",
+      "email": "info@palantir.net"
+    }
+  ],
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "config": {
+    "preferred-install": {
+      "*": "dist"
+    },
+    "sort-packages": true,
+    "platform": {
+      "php": "7.1.16"
+    }
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://packages.drupal.org/8"
+    }
+  ],
+  "require": {
+    "composer/installers": "^1.0",
+    "cweagans/composer-patches": "^1.6",
+    "drupal-composer/drupal-scaffold": "^2.3",
+    "drush/drush": "^8.1.15"
+  },
+  "require-dev": {
+    "behat/behat": "^3.1",
+    "behat/mink": "^1.7",
+    "behat/mink-extension": "^2.2",
+    "behat/mink-goutte-driver": "^1.2",
+    "drupal/console": "^1.8",
+    "drupal/drupal-extension": "^3.1",
+    "palantirnet/the-build": "^1.7",
+    "palantirnet/the-vagrant": "^2.2"
+  }
+}
