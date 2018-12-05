@@ -8,7 +8,7 @@ settings.php
 services.yml
 !conf/drupal/settings.php
 !conf/drupal/services.yml
-web/sites/*/files
+web/*/docroot/sites/*/files
 
 # Ignore virtual environment and artifacts
 .vagrant/
@@ -16,13 +16,14 @@ web/sites/*/files
 
 # Ignore Drupal contrib downloaded by Composer
 drush/contrib
-web/core
-web/modules/contrib
-web/themes/contrib/
-web/profiles/contrib/
+web/d8*/docroot/core
+web/d8*/docroot/modules/contrib
+web/d8*/docroot/themes/contrib/
+web/d8*/docroot/profiles/contrib/
 
 # Ignore regular Composer dependencies
 /vendor/
+/web/*/vendor
 
 # Ignore npm dependencies
 node_modules/
