@@ -6,15 +6,25 @@
 
     sites:
       -
-        name: federated-search-demo
-        hostname: federated-search-demo.local
-        database: drupal
-        docroot: "{{ web_root }}"
+        name: fs-demo-d8
+        hostname: fs-demo.d8.local
+        database: fs-demo-d8
+        docroot: "{{ web_root }}/d8/docroot"
       -
-        name: federated-search-d7
-        hostname: federated-search-demo.d7.local
-        database: federated-search-d7
-        docroot: "{{ web_root }}/d7/web"
+        name: fs-demo-d7
+        hostname: fs-demo.d7.local
+        database: fs-demo-d7
+        docroot: "{{ web_root }}/d7/docroot"
+      -
+        name: fs-demo-d7-domain
+        hostname: fs-demo.d7-domain.local
+        database: fs-demo-d7-domain
+        docroot: "{{ web_root }}/d8-domain/docroot"
+      -
+        name: fs-demo-d8-domain
+        hostname: fs-demo.d8-domain.local
+        database: fs-demo-d7-domain
+        docroot: "{{ web_root }}/d7-domain/docroot"
 
   roles:
     - { role: mysql }
