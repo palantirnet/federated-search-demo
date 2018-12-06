@@ -21,6 +21,7 @@ extra_hostnames = [
 
 ansible_solr_enabled = true
 ansible_https_enabled = true
+ansible_node_version = 8
 ansible_project_web_root = "web"
 ansible_timezone = "America/Chicago"
 ansible_system_packages = []
@@ -68,7 +69,13 @@ Vagrant.configure(2) do |config|
             "project_web_root" => ansible_project_web_root,
             "timezone" => ansible_timezone,
             "system_packages" => ansible_system_packages,
+            "nvm_version" => "v0.33.11",
+            "nvm_default_node_version" => ansible_node_version,
+            "nvm_node_versions" => [ ansible_node_version ],
         }
+
+        ansible.galaxy_role_file = "vendor/palantirnet/the-vagrant/conf/vagrant/provisioning/requirements.yml"
+        ansible.galaxy_roles_path = "vendor/palantirnet/the-vagrant/conf/vagrant/provisioning/roles/"
     end
 
     if (defined?(ansible_custom_playbook) && !ansible_custom_playbook.empty?)
