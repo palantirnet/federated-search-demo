@@ -51,18 +51,18 @@
   },
   "extra": {
     "installer-paths": {
-      "web/": ["type:drupal-core"],
-      "web/sites/all/libraries/{$name}/": ["type:drupal-library"],
-      "web/sites/all/modules/contrib/{$name}/": ["type:drupal-module"],
-      "web/profiles/contrib/{$name}/": ["type:drupal-profile"],
-      "web/sites/all/themes/contrib/{$name}/": ["type:drupal-theme"]
+      "docroot/": ["type:drupal-core"],
+      "docroot/sites/all/libraries/{$name}/": ["type:drupal-library"],
+      "docroot/sites/all/modules/contrib/{$name}/": ["type:drupal-module"],
+      "docroot/profiles/contrib/{$name}/": ["type:drupal-profile"],
+      "docroot/sites/all/themes/contrib/{$name}/": ["type:drupal-theme"]
     },
     "preserve-paths": [
-      "web/sites/all/modules",
-      "web/sites/all/themes",
-      "web/sites/all/libraries",
-      "web/sites/default/settings.php",
-      "web/sites/default/files"
+      "docroot/sites/all/modules",
+      "docroot/sites/all/themes",
+      "docroot/sites/all/libraries",
+      "docroot/sites/default/settings.php",
+      "docroot/sites/default/files"
     ]
   }
 }
