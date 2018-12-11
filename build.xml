@@ -87,6 +87,8 @@
         <property name="build.env" value="d8" override="true" />
         <property file="${build.dir}/conf/build.${build.env}.properties" override="true" />
 
+        <exec command="composer install" dir="${build.dir}/${drupal.root}/../" passthru="true" />
+
         <phingcall target="install-drupal-at-root" />
 
         <!-- Uninstall the module -->
@@ -121,6 +123,8 @@
     <target name="install-d7" description="Install the D7 site.">
         <property name="build.env" value="d7" override="true" />
         <property file="${build.dir}/conf/build.${build.env}.properties" override="true" />
+
+        <exec command="composer install" dir="${build.dir}/${drupal.root}/../" passthru="true" />
 
         <drush command="site-install" assume="yes" root="${build.dir}/${drupal.root}" uri="${drupal.uri}">
             <option name="site-name">Federated SOLR D7</option>
