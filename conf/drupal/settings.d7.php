@@ -8,7 +8,6 @@ $databases['default']['default'] = array(
   'password' => '${drupal.database.password}',
   'host' => '${drupal.database.host}',
   'prefix' => '',
-  'collation' => 'utf8mb4_general_ci',
 );
 
 $conf['file_public_path'] = '${drupal.settings.file_public_path}';
