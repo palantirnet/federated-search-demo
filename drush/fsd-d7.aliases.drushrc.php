@@ -6,6 +6,6 @@ if (!isset($drush_major_version)) {
 }
 
 $aliases['local'] = array(
-  'root' => '/var/www/federated-search-demo.local/web/d7/web',
-  'uri' => 'www.federated-search-demo.d7.local',
+  'root' => '/var/www/federated-search-demo.local/web/d7/docroot',
+  'uri' => 'fs-demo.d7.local',
 );
