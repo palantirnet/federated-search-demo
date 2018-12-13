@@ -20,7 +20,7 @@ extra_hostnames = [
 ]
 
 ansible_solr_enabled = true
-ansible_https_enabled = true
+ansible_https_enabled = false
 ansible_node_version = 8
 ansible_project_web_root = "web"
 ansible_timezone = "America/Chicago"
