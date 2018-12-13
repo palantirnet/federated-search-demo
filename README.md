@@ -78,6 +78,55 @@ Additional information on developing for Drupal within this environment is in [d
 
 This project is for demo purposes only and is not to be deployed.
 
+## Directory structure
+
+This repo is structured a little differently than usual, since it contains 4 independent Drupal docroots. Here're some important pieces:
+
+```
+
+├── conf  # Build properties go in here
+│   ├── apache.circle.conf
+│   ├── build.circle.properties
+│   ├── build.d7.properties
+│   ├── build.d8.properties
+│   ├── build.default.properties
+│   ├── drupal  # Settings.php templates go here
+│   │   ├── config
+│   │   ├── services.yml
+│   │   ├── settings.acquia.php
+│   │   ├── settings.d7.php
+│   │   └── settings.php
+│   └── drushrc.php
+├── config
+│   ├── config_split  # Not using this at the moment
+│   └── sites  # D8 site config goes here
+│       └── d8
+├── drush  # Drush aliases go here.
+│   ├── fsd-d7.aliases.drushrc.php
+│   └── fsd-d8.aliases.drushrc.php
+├── features  # Tests could eventually go here.
+│   ├── bootstrap
+│   │   └── FeatureContext.php
+│   └── installation.feature
+├── src   # These are the working directories for module development.
+│   ├── search_api_federated_solr -> ../web/d8/docroot/modules/contrib/search_api_federated_solr
+│   ├── search_api_federated_solr-7.x -> ../web/d7/docroot/sites/all/modules/contrib/search_api_federated_solr
+│   ├── search_api_field_map -> ../web/d8/docroot/modules/contrib/search_api_field_map
+│   └── search_api_field_map-7.x -> ../web/d7/docroot/sites/all/modules/contrib/search_api_field_map
+└── web
+    ├── d7
+    │   ├── composer.json
+    │   ├── composer.lock
+    │   ├── docroot
+    │   └── vendor
+    ├── d8
+    │   ├── composer.json
+    │   ├── composer.lock
+    │   ├── docroot
+    │   └── vendor
+    │   # Directories for the domain-enabled docroots go here
+```
+
 ## Additional Documentation
 
 Project-specific:
