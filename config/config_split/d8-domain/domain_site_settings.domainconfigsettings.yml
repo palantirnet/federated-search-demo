@@ -1,0 +1,24 @@
+domain_site_settings: null
+_core:
+  default_config_hash: tkmglv8nLQzpf1cBcgSWFvPzgDJEfiz6bifpEQYXq84
+federated_search_demo_d8_1_local:
+  site_name: 'FS Demo (D8, Domain, Site 1)'
+  site_slogan: ''
+  site_mail: admin@example.com
+  site_frontpage: /node
+  site_403: ''
+  site_404: ''
+federated_search_demo_d8_2_local:
+  site_name: 'FS Demo (D8, Domain, Site 2)'
+  site_slogan: ''
+  site_mail: admin@example.com
+  site_frontpage: /node
+  site_403: ''
+  site_404: ''
+federated_search_demo_d8_3_local:
+  site_name: 'FS Demo (D8, Domain, Site 3)'
+  site_slogan: ''
+  site_mail: admin@example.com
+  site_frontpage: /node
+  site_403: ''
+  site_404: ''

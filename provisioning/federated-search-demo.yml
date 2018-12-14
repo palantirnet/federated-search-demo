@@ -19,12 +19,22 @@
         name: fs-demo-d7-domain
         hostname: fs-demo.d7-domain.local
         database: fs-demo-d7-domain
+        docroot: "{{ web_root }}/d7-domain/docroot"
+      -
+        name: fs-demo-domain-site-one
+        hostname: fs-demo.d8-1.local
+        database: fs-demo-d8-domain
         docroot: "{{ web_root }}/d8-domain/docroot"
       -
-        name: fs-demo-d8-domain
-        hostname: fs-demo.d8-domain.local
-        database: fs-demo-d7-domain
-        docroot: "{{ web_root }}/d7-domain/docroot"
+        name: fs-demo-domain-site-two
+        hostname: fs-demo.d8-2.local
+        database: fs-demo-d8-domain
+        docroot: "{{ web_root }}/d8-domain/docroot"
+      -
+        name: fs-demo-domain-site-three
+        hostname: fs-demo.d8-3.local
+        database: fs-demo-d8-domain
+        docroot: "{{ web_root }}/d8-domain/docroot"
 
   roles:
     - { role: mysql }
