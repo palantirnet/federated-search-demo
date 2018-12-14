@@ -51,7 +51,7 @@ To run project-related commands other than `vagrant up` and `vagrant ssh`:
 * SSH into the VM with `vagrant ssh`
 * You'll be in your project root, at the path `/var/www/federated-search-demo.local/`
 * You can run `composer`, `drush`, and `phing` commands from here
-* Go to the path `/var/www/federated-search-demo.local/web/d7` to add new modules to the d7 site.
+* Go to the path `/var/www/federated-search-demo.local/web/*` to add new modules to each site.
 
 Avoid committing to git from within your VM, because your commits won't be properly attributed to you. If you must, make sure you [create a global .gitignore [internal]](https://github.com/palantirnet/documentation/wiki/Using-the-gitignore-File) within your VM at `/home/vagrant/.gitignore`, and configure your name and email for proper attribution:
 
@@ -71,7 +71,9 @@ You can refresh/reset your local Drupal site at any time. SSH into your VM and t
    - Single-site `phing install-d8 -Dbuild.env=d8`
    - Domain site `phing install-d8 -Dbuild.env=d8-domain`
 5. Reinstall Drupal 7: `phing install-d7`
-6. Build the `/src` directory and symlink modules there to make development easier: `phing init`
+6. Build the `/src` directory and symlink modules there: `phing init`
+   - This links each of the two modules: `search_api_federated_solr` and `search_api_field_map` from the D8/D7 single site docroot to the `/src` directory and also into the D8/D7 Domain Access-enabled docroot. This means all changes made in `/src/search_api_...` will propagate to both sites simultaneously.
+   - If you re-run composer in any of the docroots you may need to re-run `phing init`.
 7. ... OR run all phing targets at once: `phing build install-all init`
 
 Additional information on developing for Drupal within this environment is in [docs/general/drupal_development.md](docs/general/drupal_development.md).

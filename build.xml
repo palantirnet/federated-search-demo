@@ -184,6 +184,16 @@
         <delete file="${build.dir}/src/search_api_field_map" />
         <symlink target="../web/d8/docroot/modules/contrib/search_api_field_map" link="src/search_api_field_map" />
 
+        <!-- Link d8/.../search_api_federated_solr to d8-domain/.../search_api_federated_solr
+             so that changes in the module are reflected in both sites. -->
+        <delete dir="${build.dir}/web/d8-domain/docroot/modules/contrib/search_api_federated_solr" />
+        <symlink target="../../../../../web/d8/docroot/modules/contrib/search_api_federated_solr" link="web/d8-domain/docroot/modules/contrib/search_api_federated_solr" />
+
+        <!-- Link d8/.../search_api_field_map to d8-domain/.../search_api_field_map
+            so that changes in the module are reflected in both sites. -->
+        <delete dir="${build.dir}/web/d8-domain/docroot/modules/contrib/search_api_field_map" />
+        <symlink target="../../../../../web/d8/docroot/modules/contrib/search_api_field_map" link="web/d8-domain/docroot/modules/contrib/search_api_field_map" />
+
         <!-- Link search_api_federated_solr:7.x into the src/ directory so the code is easy to find. -->
         <mkdir dir="${build.dir}/src" />
         <delete file="${build.dir}/src/search_api_federated_solr-7.x" />
