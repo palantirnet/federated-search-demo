@@ -1,6 +1,6 @@
 # Federated Search Demo
 
-This is the development repository for Federated Search Demo's Drupal 8 website. It contains the codebase and an environment to run the site for development.
+This is the development repository for Federated Search Demo environment. It contains the codebase and an environment to run the site for development and demo purposes.
 
 ## Table of Contents
 
