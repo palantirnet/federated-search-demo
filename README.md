@@ -67,7 +67,9 @@ You can refresh/reset your local Drupal site at any time. SSH into your VM and t
 1. Download the most current dependencies for D8: `cd web/d8` then `composer install`. Don't forget to return to the project root to run the phing commands.
 2. Download the most current dependencies for D7: `cd web/d7` then `composer install`. Don't forget to return to the project root to run the phing commands.
 3. Rebuild your local CSS and Drupal settings file: `phing build`
-4. Reinstall Drupal 8: `phing install-d8`
+4. Reinstall Drupal 8: 
+   - Single-site `phing install-d8 -Dbuild.env=d8`
+   - Domain site `phing install-d8 -Dbuild.env=d8-domain`
 5. Reinstall Drupal 7: `phing install-d7`
 6. Build the `/src` directory and symlink modules there to make development easier: `phing init`
 7. ... OR run all phing targets at once: `phing build install-all init`
