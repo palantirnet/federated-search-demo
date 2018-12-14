@@ -44,6 +44,7 @@
         "drupal/coder": "^8.0",
         "drupal/config_inspector": "^1.0@beta",
         "drupal/config_installer": "^1.8",
+        "drupal/config_split": "^1.4",
         "drupal/core": "^8.5",
         "palantirnet/search_api_federated_solr": "dev-master"
     },
