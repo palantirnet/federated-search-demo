@@ -57,15 +57,18 @@ function features_search_api_config_default_search_api_index() {
               "federated_image" : {
                 "label" : "Federated Image",
                 "machine_name" : "federated_image",
-                "type" : "uri",
-                "bundle" : { "article" : "", "page" : "" },
+                "type" : "string",
+                "bundle" : {
+                  "article" : "[node:field_image:search_api_federated_solr_image]",
+                  "page" : ""
+                },
                 "actions" : { "remove" : "Remove field" }
               },
               "federated_type" : {
                 "label" : "Federated Type",
                 "machine_name" : "federated_type",
                 "type" : "string",
-                "bundle" : { "article" : "", "page" : "" },
+                "bundle" : { "article" : "Article", "page" : "Page" },
                 "actions" : { "remove" : "Remove field" }
               }
             },
@@ -153,9 +156,9 @@ function features_search_api_config_default_search_api_index() {
       },
       "fields" : {
         "federated_date" : { "type" : "date" },
-        "federated_image" : { "type" : "uri" },
+        "federated_image" : { "type" : "string" },
         "federated_terms" : { "type" : "list\\u003Cstring\\u003E" },
-        "federated_title" : { "type" : "text" },
+        "federated_title" : { "type" : "string" },
         "federated_type" : { "type" : "string" },
         "rendered_item" : { "type" : "text" },
         "search_api_language" : { "type" : "string" },
