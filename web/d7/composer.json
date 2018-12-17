@@ -37,6 +37,7 @@
     "drupal/drupal": "7.61",
     "drupal/features": "^2.10",
     "drupal/features_extra": "^1.0",
+    "drupal/imagecache_token": "^1.0@RC",
     "drupal/search_api": "^1.24",
     "drupal/search_api_solr": "^1.14",
     "drupal/strongarm": "^2.0",
