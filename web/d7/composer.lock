@@ -1066,12 +1066,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/palantirnet/search_api_federated_solr.git",
-                "reference": "d433d9c51a77db5772531e40eb7508124b346546"
+                "reference": "b5402eef46c1d7eb0e054994362c6cdf3962b530"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/palantirnet/search_api_federated_solr/zipball/d433d9c51a77db5772531e40eb7508124b346546",
-                "reference": "d433d9c51a77db5772531e40eb7508124b346546",
+                "url": "https://api.github.com/repos/palantirnet/search_api_federated_solr/zipball/b5402eef46c1d7eb0e054994362c6cdf3962b530",
+                "reference": "b5402eef46c1d7eb0e054994362c6cdf3962b530",
                 "shasum": ""
             },
             "require": {
@@ -1090,7 +1090,7 @@
             "support": {
                 "source": "https://github.com/palantirnet/search_api_federated_solr/tree/7.x"
             },
-            "time": "2018-11-14T20:50:32+00:00"
+            "time": "2018-12-17T23:39:43+00:00"
         }
     ],
     "packages-dev": [],
