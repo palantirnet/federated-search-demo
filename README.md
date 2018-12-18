@@ -89,6 +89,11 @@ If you just want to get up and running, from the project root run `phing build i
 
 Additional information on developing for Drupal within this environment is in [docs/general/drupal_development.md](docs/general/drupal_development.md).
 
+### Clear the search index
+
+If you rebuild the Drupal sites you might end up with orphaned content in Solr. To clear:
+`phing solr-clear`
+
 ## Deployment
 
 This project is for demo purposes only and is not to be deployed.

@@ -206,6 +206,21 @@
 
     </target>
 
+    <!-- Target: solr-clear -->
+    <target name="solr-clear" description="Delete all entries in the local Solr 'drupal8' core.">
+        <input message="Are you sure? There is no undo." propertyName="dump.confirm" defaultValue="y" validArgs="y,n" />
+        <if>
+            <equals arg1="${dump.confirm}" arg2="y" />
+            <then>
+                <!-- Send an update command to the solr core telling it to delete everything.
+                     The query needs to be escaped to pass through phing, but here it is unescaped:
+                     http://federated-search-demo.local:8984/solr/drupal8/update?commit=true&stream.body=<delete><query>*:*</query></delete>
+                -->
+                <exec command="curl &apos;http://federated-search-demo.local:8983/solr/drupal8/update?commit=true&amp;stream.body&#61;&lt;delete&gt;&lt;query&gt;*:*&lt;/query&gt;&lt;/delete&gt;&apos;" passthru="true" dir="${build.dir}" escape="false" checkreturn="true" />
+                <echo message="Your Solr is now clean."/>
+            </then>
+        </if>
+    </target>
 
     <!-- Target: migrate -->
     <target name="migrate" description="Run the migrations.">
