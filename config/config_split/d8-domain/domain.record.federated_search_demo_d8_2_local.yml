@@ -4,7 +4,7 @@ status: true
 dependencies: {  }
 id: federated_search_demo_d8_2_local
 domain_id: 7995650
-hostname: fs-demo.d8-2.local
+hostname: d8-2.fs-demo.local
 name: 'Federated Search Demo Domain Site Two'
 scheme: http
 weight: 2

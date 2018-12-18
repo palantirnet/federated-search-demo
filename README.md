@@ -39,13 +39,13 @@ If you update Vagrant, you may need to update your vagrant plugins with `vagrant
 4. Log in to the virtual machine (the VM): `vagrant ssh`
 5. Build, install, and enable demo content: `phing build install-all`
 6. Build the `/src` directory and symlink modules there to make development easier: `phing init`
-7. Visit your D8 (standalone) site at [http://fs-demo.d8.local](http://fs-demo.d8.local)
+7. Visit your D8 (standalone) site at [http://d8.fs-demo.local](http://d8.fs-demo.local)
 8. Visit your D8 (domain access) site at:
-   - [http://fs-demo.d8-1.local](http://fs-demo.d8-1.local)
-   - [http://fs-demo.d8-2.local](http://fs-demo.d8-2.local)
-   - [http://fs-demo.d8-3.local](http://fs-demo.d8-3.local)
+   - [http://fs-demo.d8-1.local](http://d8-1.fs-demo.local)
+   - [http://d8-2.fs-demo.local](http://d8-2.fs-demo.local)
+   - [http://d8-3.fs-demo.local](http://d8-3.fs-demo.local)
    - These sites are for future use, as Domain support has not yet been ported to D8.
-9. Visit your D7 site at [http://fs-demo.d7.local](http://fs-demo.d7.local)
+9. Visit your D7 site at [http://d7.fs-demo.local](http://d7.fs-demo.local)
 
 ## How do I work on this?
 
