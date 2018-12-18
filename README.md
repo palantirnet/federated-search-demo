@@ -39,8 +39,13 @@ If you update Vagrant, you may need to update your vagrant plugins with `vagrant
 4. Log in to the virtual machine (the VM): `vagrant ssh`
 5. Build, install, and enable demo content: `phing build install-all`
 6. Build the `/src` directory and symlink modules there to make development easier: `phing init`
-7. Visit your D8 site at [http://fs-demo.d8.local](http://fs-demo.d8.local)
-8. Visit your D7 site at [http://fs-demo.d7.local](http://fs-demo.d7.local)
+7. Visit your D8 (standalone) site at [http://fs-demo.d8.local](http://fs-demo.d8.local)
+8. Visit your D8 (domain access) site at:
+   - [http://fs-demo.d8-1.local](http://fs-demo.d8-1.local)
+   - [http://fs-demo.d8-2.local](http://fs-demo.d8-2.local)
+   - [http://fs-demo.d8-3.local](http://fs-demo.d8-3.local)
+   - These sites are for future use, as Domain support has not yet been ported to D8.
+9. Visit your D7 site at [http://fs-demo.d7.local](http://fs-demo.d7.local)
 
 ## How do I work on this?
 
@@ -64,17 +69,23 @@ git config --global user.name 'My Name'
 
 You can refresh/reset your local Drupal site at any time. SSH into your VM and then:
 
-1. Download the most current dependencies for D8: `cd web/d8` then `composer install`. Don't forget to return to the project root to run the phing commands.
-2. Download the most current dependencies for D7: `cd web/d7` then `composer install`. Don't forget to return to the project root to run the phing commands.
-3. Rebuild your local CSS and Drupal settings file: `phing build`
-4. Reinstall Drupal 8: 
-   - Single-site `phing install-d8 -Dbuild.env=d8`
-   - Domain site `phing install-d8 -Dbuild.env=d8-domain`
-5. Reinstall Drupal 7: `phing install-d7`
-6. Build the `/src` directory and symlink modules there: `phing init`
+### Rebuild all the things
+
+If you just want to get up and running, from the project root run `phing build install-all init`. If this fails for any reason, proceed to run it step by step.
+
+### Run each step individually
+
+1. Download the most current dependencies for D8 (standalone): `cd web/d8` then `composer install`. Don't forget to return to the project root to run the phing commands.
+2. Download the most current dependencies for D8 (domain access): `cd web/d8-domain` then `composer install`. Don't forget to return to the project root to run the phing commands.
+3. Download the most current dependencies for D7: `cd web/d7` then `composer install`. Don't forget to return to the project root to run the phing commands.
+4. Rebuild your local CSS and Drupal settings file: `phing build`
+5. Reinstall Drupal 8: 
+   - Standalone: `phing install-d8 -Dbuild.env=d8`
+   - Domain site: `phing install-d8 -Dbuild.env=d8-domain`
+6. Reinstall Drupal 7: `phing install-d7`
+7. Build the `/src` directory and symlink modules there: `phing init`
    - This links each of the two modules: `search_api_federated_solr` and `search_api_field_map` from the D8/D7 single site docroot to the `/src` directory and also into the D8/D7 Domain Access-enabled docroot. This means all changes made in `/src/search_api_...` will propagate to both sites simultaneously.
    - If you re-run composer in any of the docroots you may need to re-run `phing init`.
-7. ... OR run all phing targets at once: `phing build install-all init`
 
 Additional information on developing for Drupal within this environment is in [docs/general/drupal_development.md](docs/general/drupal_development.md).
 
