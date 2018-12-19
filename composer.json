@@ -1,79 +1,45 @@
 {
-    "name": "palantirnet/drupal-skeleton",
-    "description": "A Drupal 8 project template.",
-    "type": "project",
-    "license": "proprietary",
-    "authors": [
-        {
-            "name": "Palantir.net",
-            "email": "info@palantir.net"
-        }
-    ],
-    "minimum-stability": "dev",
-    "prefer-stable": true,
-    "config": {
-        "platform": {
-            "php": "7.0.8"
-        },
-        "preferred-install": {
-            "*": "dist"
-        },
-        "sort-packages": true
+  "name": "palantirnet/federated-search-demo",
+  "description": "A multi-headed environment for demo, testing, and development of Palantir's Federated Solr application.",
+  "type": "project",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Palantir.net",
+      "email": "info@palantir.net"
+    }
+  ],
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "config": {
+    "preferred-install": {
+      "*": "dist"
     },
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "https://packages.drupal.org/8"
-        },
-        {
-            "type": "vcs",
-            "url": "git@github.com:palantirnet/search_api_federated_solr.git"
-        },
-        {
-            "type": "vcs",
-            "url": "git@github.com:palantirnet/search_api_field_map.git"
-        }
-    ],
-    "require": {
-        "composer/installers": "^1.0",
-        "cweagans/composer-patches": "^1.6",
-        "drupal-composer/drupal-scaffold": "^2.3",
-        "drupal/admin_toolbar": "^1.24",
-        "drupal/coder": "^8.0",
-        "drupal/config_inspector": "^1.0@beta",
-        "drupal/config_installer": "^1.7",
-        "drupal/core": "^8.5",
-        "palantirnet/search_api_federated_solr": "dev-master"
-    },
-    "require-dev": {
-        "behat/behat": "^3.1",
-        "behat/mink": "^1.7",
-        "behat/mink-extension": "^2.2",
-        "behat/mink-goutte-driver": "^1.2",
-        "drupal/console": "^1.8",
-        "drupal/drupal-extension": "^3.1",
-        "palantirnet/the-build": "^1.7",
-        "palantirnet/the-vagrant": "^2.2"
-    },
-    "conflict": {
-        "drupal/drupal": "*"
-    },
-    "scripts": {
-        "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
-        "post-create-project-cmd": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold"
-    },
-    "extra": {
-        "installer-paths": {
-            "web/core": ["type:drupal-core"],
-            "web/modules/contrib/{$name}": ["type:drupal-module"],
-            "web/profiles/contrib/{$name}": ["type:drupal-profile"],
-            "web/themes/contrib/{$name}": ["type:drupal-theme"],
-            "drush/contrib/{$name}": ["type:drupal-drush"]
-        },
-        "patches": {
-            "drupal/config_installer": {
-                "Allow config installer to find themes.": "https://www.drupal.org/files/issues/2018-05-28/2975675-2.patch"
-            }
-        }
-    }    
+    "sort-packages": true,
+    "platform": {
+      "php": "7.1.16"
+    }
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://packages.drupal.org/8"
+    }
+  ],
+  "require": {
+    "composer/installers": "^1.0",
+    "cweagans/composer-patches": "^1.6",
+    "drupal-composer/drupal-scaffold": "^2.3",
+    "drush/drush": "^8.1.15"
+  },
+  "require-dev": {
+    "behat/behat": "^3.1",
+    "behat/mink": "^1.7",
+    "behat/mink-extension": "^2.2",
+    "behat/mink-goutte-driver": "^1.2",
+    "drupal/console": "^1.8",
+    "drupal/drupal-extension": "^3.1",
+    "palantirnet/the-build": "^1.7",
+    "palantirnet/the-vagrant": "^2.2"
+  }
 }

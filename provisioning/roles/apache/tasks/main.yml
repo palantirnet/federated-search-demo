@@ -1,7 +1,7 @@
 ---
 - name: Apache | Disable the default vhost.
   become: true
-  shell: "/usr/sbin/a2dissite federated-search-demo.local.conf federated-search-demo.local-https.conf"
+  shell: "/usr/sbin/a2dissite federated-search-demo.local.conf"
 
 - name: Apache | Remove the default vhost .conf files.
   become: true
@@ -10,7 +10,6 @@
     state: absent
   with_items:
     - "federated-search-demo.local.conf"
-    - "federated-search-demo.local-https.conf"
 
 - name: Apache | Install vhost
   become: true
@@ -19,16 +18,9 @@
     dest: "/etc/apache2/sites-available/{{ item.name }}.conf"
   with_items: "{{ sites }}"
 
-- name: Apache | Install HTTPS vhost
-  become: true
-  template:
-    src: "vhost-https.conf"
-    dest: "/etc/apache2/sites-available/{{ item.name }}-https.conf"
-  with_items: "{{ sites }}"
-
 - name: Apache | Enable vhosts
   become: true
-  shell: "/usr/sbin/a2ensite {{ item.name }}.conf {{ item.name }}-https.conf"
+  shell: "/usr/sbin/a2ensite {{ item.name }}.conf"
   with_items: "{{ sites }}"
 
 - name: Cleanup | Restart Apache

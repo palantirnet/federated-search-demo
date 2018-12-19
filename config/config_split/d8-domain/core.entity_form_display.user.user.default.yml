@@ -1,0 +1,60 @@
+uuid: 2efcd36a-dcbe-4639-88bf-f9f470b16e51
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.user.user.field_domain_access
+    - field.field.user.user.field_domain_admin
+    - field.field.user.user.field_domain_all_affiliates
+    - field.field.user.user.user_picture
+    - image.style.thumbnail
+  module:
+    - image
+    - user
+_core:
+  default_config_hash: K-1rBM8mTIkFp9RqOC2tMRUukOQ1xbRCfSKK8dEddnA
+id: user.user.default
+targetEntityType: user
+bundle: user
+mode: default
+content:
+  account:
+    weight: -10
+    region: content
+  contact:
+    weight: 5
+    region: content
+  field_domain_access:
+    type: options_buttons
+    weight: 40
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_domain_admin:
+    type: options_buttons
+    weight: 50
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_domain_all_affiliates:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 41
+    third_party_settings: {  }
+    region: content
+  language:
+    weight: 0
+    region: content
+  timezone:
+    weight: 6
+    region: content
+  user_picture:
+    type: image_image
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    weight: -1
+    region: content
+hidden: {  }

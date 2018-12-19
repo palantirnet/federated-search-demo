@@ -1,6 +1,6 @@
 # Federated Search Demo
 
-This is the development repository for Federated Search Demo's Drupal 8 website. It contains the codebase and an environment to run the site for development.
+This is the development repository for Federated Search Demo environment. It contains the codebase and an environment to run the site for development and demo purposes.
 
 ## Table of Contents
 
@@ -37,9 +37,15 @@ If you update Vagrant, you may need to update your vagrant plugins with `vagrant
   ```
 3. You will be prompted for the administration password on your host machine
 4. Log in to the virtual machine (the VM): `vagrant ssh`
-5. Build, install, and enable demo content: `phing build install install-d7`
-6. Visit your D8 site at [federated-search-demo.local](http://federated-search-demo.local)
-7. Visit your D7 site at [federated-search-demo.d7.local](http://federated-search-demo.d7.local)
+5. Build, install, and enable demo content: `phing build install-all`
+6. Build the `/src` directory and symlink modules there to make development easier: `phing init`
+7. Visit your D8 (standalone) site at [http://d8.fs-demo.local](http://d8.fs-demo.local)
+8. Visit your D8 (domain access) site at:
+   - [http://fs-demo.d8-1.local](http://d8-1.fs-demo.local)
+   - [http://d8-2.fs-demo.local](http://d8-2.fs-demo.local)
+   - [http://d8-3.fs-demo.local](http://d8-3.fs-demo.local)
+   - These sites are for future use, as Domain support has not yet been ported to D8.
+9. Visit your D7 site at [http://d7.fs-demo.local](http://d7.fs-demo.local)
 
 ## How do I work on this?
 
@@ -50,7 +56,7 @@ To run project-related commands other than `vagrant up` and `vagrant ssh`:
 * SSH into the VM with `vagrant ssh`
 * You'll be in your project root, at the path `/var/www/federated-search-demo.local/`
 * You can run `composer`, `drush`, and `phing` commands from here
-* Go to the path `/var/www/federated-search-demo.local/web/d7` to add new modules to the d7 site.
+* Go to the path `/var/www/federated-search-demo.local/web/*` to add new modules to each site.
 
 Avoid committing to git from within your VM, because your commits won't be properly attributed to you. If you must, make sure you [create a global .gitignore [internal]](https://github.com/palantirnet/documentation/wiki/Using-the-gitignore-File) within your VM at `/home/vagrant/.gitignore`, and configure your name and email for proper attribution:
 
@@ -63,18 +69,83 @@ git config --global user.name 'My Name'
 
 You can refresh/reset your local Drupal site at any time. SSH into your VM and then:
 
-1. Download the most current dependencies for D8: `composer install`
-2. Download the most current dependencies for D7: `cd web/d7` then `composer install`. Don't forget to return to the project root to run the phing commands.
-3. Rebuild your local CSS and Drupal settings file: `phing build`
-4. Reinstall Drupal 8: `phing install`
-5. Reinstall Drupal 7: `phing install-d7`
-6. ... OR run all phing targets at once: `phing build install install-d7`
+### Rebuild all the things
+
+If you just want to get up and running, from the project root run `phing build install-all init`. If this fails for any reason, proceed to run it step by step.
+
+### Run each step individually
+
+1. Download the most current dependencies for D8 (standalone): `cd web/d8` then `composer install`. Don't forget to return to the project root to run the phing commands.
+2. Download the most current dependencies for D8 (domain access): `cd web/d8-domain` then `composer install`. Don't forget to return to the project root to run the phing commands.
+3. Download the most current dependencies for D7: `cd web/d7` then `composer install`. Don't forget to return to the project root to run the phing commands.
+4. Rebuild your local CSS and Drupal settings file: `phing build`
+5. Reinstall Drupal 8: 
+   - Standalone: `phing install-d8 -Dbuild.env=d8`
+   - Domain site: `phing install-d8 -Dbuild.env=d8-domain`
+6. Reinstall Drupal 7: `phing install-d7`
+7. Build the `/src` directory and symlink modules there: `phing init`
+   - This links each of the two modules: `search_api_federated_solr` and `search_api_field_map` from the D8/D7 single site docroot to the `/src` directory and also into the D8/D7 Domain Access-enabled docroot. This means all changes made in `/src/search_api_...` will propagate to both sites simultaneously.
+   - If you re-run composer in any of the docroots you may need to re-run `phing init`.
 
 Additional information on developing for Drupal within this environment is in [docs/general/drupal_development.md](docs/general/drupal_development.md).
+
+### Clear the search index
+
+If you rebuild the Drupal sites you might end up with orphaned content in Solr. To clear:
+`phing solr-clear`
 
 ## Deployment
 
 This project is for demo purposes only and is not to be deployed.
+
+## Directory structure
+
+This repo is structured a little differently than usual, since it contains 4 independent Drupal docroots. Here're some important pieces:
+
+```
+
+├── conf  # Build properties go in here
+│   ├── apache.circle.conf
+│   ├── build.circle.properties
+│   ├── build.d7.properties
+│   ├── build.d8.properties
+│   ├── build.default.properties
+│   ├── drupal  # Settings.php templates go here
+│   │   ├── config
+│   │   ├── services.yml
+│   │   ├── settings.acquia.php
+│   │   ├── settings.d7.php
+│   │   └── settings.php
+│   └── drushrc.php
+├── config
+│   ├── config_split  # Not using this at the moment
+│   └── sites  # D8 site config goes here
+│       └── d8
+├── drush  # Drush aliases go here.
+│   ├── fsd-d7.aliases.drushrc.php
+│   └── fsd-d8.aliases.drushrc.php
+├── features  # Tests could eventually go here.
+│   ├── bootstrap
+│   │   └── FeatureContext.php
+│   └── installation.feature
+├── src   # These are the working directories for module development.
+│   ├── search_api_federated_solr -> ../web/d8/docroot/modules/contrib/search_api_federated_solr
+│   ├── search_api_federated_solr-7.x -> ../web/d7/docroot/sites/all/modules/contrib/search_api_federated_solr
+│   ├── search_api_field_map -> ../web/d8/docroot/modules/contrib/search_api_field_map
+│   └── search_api_field_map-7.x -> ../web/d7/docroot/sites/all/modules/contrib/search_api_field_map
+└── web
+    ├── d7
+    │   ├── composer.json
+    │   ├── composer.lock
+    │   ├── docroot
+    │   └── vendor
+    ├── d8
+    │   ├── composer.json
+    │   ├── composer.lock
+    │   ├── docroot
+    │   └── vendor
+    │   # Directories for the domain-enabled docroots go here
+```
 
 ## Additional Documentation
 

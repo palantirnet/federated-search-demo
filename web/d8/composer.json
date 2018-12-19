@@ -1,0 +1,74 @@
+{
+    "name": "palantirnet/drupal-skeleton",
+    "description": "A Drupal 8 project template.",
+    "type": "project",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Palantir.net",
+            "email": "info@palantir.net"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "platform": {
+            "php": "7.0.8"
+        },
+        "preferred-install": {
+            "palantirnet/search_api_federated_solr": "source",
+            "palantirnet/search_api_field_map": "source",
+            "*": "dist"
+        },
+        "sort-packages": true
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:palantirnet/search_api_federated_solr.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:palantirnet/search_api_field_map.git"
+        }
+    ],
+    "require": {
+        "composer/installers": "^1.6",
+        "cweagans/composer-patches": "^1.6",
+        "drupal-composer/drupal-scaffold": "^2.5",
+        "drupal/admin_toolbar": "^1.24",
+        "drupal/coder": "^8.0",
+        "drupal/config_inspector": "^1.0@beta",
+        "drupal/config_installer": "^1.8",
+        "drupal/config_split": "^1.4",
+        "drupal/core": "^8.5",
+        "palantirnet/search_api_federated_solr": "dev-master"
+    },
+    "require-dev": {
+    },
+    "conflict": {
+        "drupal/drupal": "*"
+    },
+    "scripts": {
+        "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
+        "post-create-project-cmd": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold"
+    },
+    "extra": {
+        "installer-paths": {
+            "docroot/core": ["type:drupal-core"],
+            "docroot/modules/contrib/{$name}": ["type:drupal-module"],
+            "docroot/profiles/contrib/{$name}": ["type:drupal-profile"],
+            "docroot/themes/contrib/{$name}": ["type:drupal-theme"],
+            "drush/contrib/{$name}": ["type:drupal-drush"]
+        },
+        "patches": {
+            "drupal/config_installer": {
+                "Allow config installer to find themes.": "https://www.drupal.org/files/issues/2018-05-28/2975675-2.patch"
+            }
+        }
+    }    
+}

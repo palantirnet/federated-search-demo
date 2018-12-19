@@ -1,0 +1,14 @@
+uuid: b1230331-9df4-44d7-8679-72d0e61655a4
+langcode: en
+status: true
+dependencies:
+  config:
+    - domain.record.federated_search_demo_d8_3_local
+  module:
+    - domain_access
+id: domain_access_remove_editor_action.federated_search_demo_d8_3_local
+label: 'Remove editors from the Federated Search Demo Domain Site Three domain'
+type: user
+plugin: domain_access_remove_editor_action
+configuration:
+  domain_id: federated_search_demo_d8_3_local

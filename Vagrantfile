@@ -13,11 +13,19 @@ end
 project     = 'federated-search-demo'
 hostname    = "#{project}.local"
 extra_hostnames = [
-  'federated-search-demo.d7.local',
+  'd8.fs-demo.local',
+  'd7.fs-demo.local',
+  'd7-1.fs-demo.local',
+  'd7-2.fs-demo.local',
+  'd7-3.fs-demo.local',
+  'd8-1.fs-demo.local',
+  'd8-2.fs-demo.local',
+  'd8-3.fs-demo.local',
 ]
 
 ansible_solr_enabled = true
-ansible_https_enabled = true
+ansible_https_enabled = false
+ansible_node_version = 8
 ansible_project_web_root = "web"
 ansible_timezone = "America/Chicago"
 ansible_system_packages = []
@@ -35,7 +43,7 @@ Vagrant.configure(2) do |config|
         box.vm.box_version = ">= 1.2.0, < 2.0"
 
         box.vm.provider "virtualbox" do |vb|
-            vb.customize ["modifyvm", :id, "--memory", "2048"]
+            vb.customize ["modifyvm", :id, "--memory", "2048", "--audio", "none"]
         end
 
         box.vm.hostname = "#{hostname}"
@@ -65,7 +73,13 @@ Vagrant.configure(2) do |config|
             "project_web_root" => ansible_project_web_root,
             "timezone" => ansible_timezone,
             "system_packages" => ansible_system_packages,
+            "nvm_version" => "v0.33.11",
+            "nvm_default_node_version" => ansible_node_version,
+            "nvm_node_versions" => [ ansible_node_version ],
         }
+
+        ansible.galaxy_role_file = "vendor/palantirnet/the-vagrant/conf/vagrant/provisioning/requirements.yml"
+        ansible.galaxy_roles_path = "vendor/palantirnet/the-vagrant/conf/vagrant/provisioning/roles/"
     end
 
     if (defined?(ansible_custom_playbook) && !ansible_custom_playbook.empty?)

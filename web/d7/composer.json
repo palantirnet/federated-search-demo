@@ -11,9 +11,13 @@
   ],
   "minimum-stability": "dev",
   "prefer-stable": true,
-  "preferred-install": "dist",
   "config": {
-    "sort-packages": true
+      "preferred-install": {
+          "palantirnet/search_api_federated_solr": "source",
+          "palantirnet/search_api_field_map": "source",
+          "*": "dist"
+      },
+      "sort-packages": true
   },
   "repositories": [
     {
@@ -27,12 +31,13 @@
   ],
   "require": {
     "composer/installers": "^1.0",
-    "derhasi/composer-preserve-paths": "0.1.*",
+    "drupal-composer/preserve-paths": "^0.1.4",
     "drupal/admin_menu": "^3.0@RC",
     "drupal/devel": "^1.6",
     "drupal/drupal": "7.61",
     "drupal/features": "^2.10",
     "drupal/features_extra": "^1.0",
+    "drupal/imagecache_token": "^1.0@RC",
     "drupal/search_api": "^1.24",
     "drupal/search_api_solr": "^1.14",
     "drupal/strongarm": "^2.0",
@@ -47,18 +52,18 @@
   },
   "extra": {
     "installer-paths": {
-      "web/": ["type:drupal-core"],
-      "web/sites/all/libraries/{$name}/": ["type:drupal-library"],
-      "web/sites/all/modules/contrib/{$name}/": ["type:drupal-module"],
-      "web/profiles/contrib/{$name}/": ["type:drupal-profile"],
-      "web/sites/all/themes/contrib/{$name}/": ["type:drupal-theme"]
+      "docroot/": ["type:drupal-core"],
+      "docroot/sites/all/libraries/{$name}/": ["type:drupal-library"],
+      "docroot/sites/all/modules/contrib/{$name}/": ["type:drupal-module"],
+      "docroot/profiles/contrib/{$name}/": ["type:drupal-profile"],
+      "docroot/sites/all/themes/contrib/{$name}/": ["type:drupal-theme"]
     },
     "preserve-paths": [
-      "web/sites/all/modules",
-      "web/sites/all/themes",
-      "web/sites/all/libraries",
-      "web/sites/default/settings.php",
-      "web/sites/default/files"
+      "docroot/sites/all/modules",
+      "docroot/sites/all/themes",
+      "docroot/sites/all/libraries",
+      "docroot/sites/default/settings.php",
+      "docroot/sites/default/files"
     ]
   }
 }

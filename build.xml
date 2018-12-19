@@ -13,58 +13,214 @@
 
     <!-- Default target: build -->
     <target name="build" description="Build the application.">
-        <phingcall target="drupal-build" />
+
+        <phingcall target="drupal-build" inheritAll="false">
+            <property name="build.env" value="d8" />
+        </phingcall>
+
+        <phingcall target="drupal-build" inheritAll="false">
+            <property name="build.env" value="d7" />
+        </phingcall>
+
+        <phingcall target="drupal-build" inheritAll="false">
+            <property name="build.env" value="d8-domain" />
+        </phingcall>
+    </target>
+
+    <target name="install-drupal-at-root" description="Install Drupal at a specific docroot.">
+        <!-- Cloned from drupal.xml with the addition of root on drush site-install. -->
+        <fail unless="drupal.settings.file_public_path" />
+        <fail unless="drupal.root" />
+        <fail unless="drupal.site_name" />
+        <fail unless="drupal.sites_subdir" />
+        <fail unless="drupal.profile" />
+
+        <phingcall target="validate-clean-conf" />
+
+        <resolvepath propertyName="drupal.settings.file_public_path.resolved" file="${drupal.root}/${drupal.settings.file_public_path}" />
+
+        <!-- The sites subdirectory should be writable; Drupal will change the
+             permissions on this directory after install. -->
+        <chmod file="${build.dir}/${drupal.root}/sites/${drupal.sites_subdir}" mode="777" />
+
+        <!-- Make settings.php writable -->
+        <chmod file="${build.dir}/${drupal.root}/sites/${drupal.sites_subdir}/settings.php" mode="777" />
+
+        <!-- Delete and re-create the public files directory -->
+        <delete file="${drupal.settings.file_public_path.resolved}" />
+        <delete dir="${drupal.settings.file_public_path.resolved}" />
+        <mkdir dir="${drupal.settings.file_public_path.resolved}" mode="775" />
+
+        <if>
+            <and>
+                <isset property="drupal.settings.file_private_path"/>
+                <not>
+                    <equals arg1="${drupal.settings.file_private_path}" arg2="" trim="true" />
+                </not>
+            </and>
+            <then>
+                <resolvepath propertyName="drupal.settings.file_private_path.resolved" file="${drupal.root}/${drupal.settings.file_private_path}" />
+                <delete file="${drupal.settings.file_private_path.resolved}" />
+                <delete dir="${drupal.settings.file_private_path.resolved}" />
+                <mkdir dir="${drupal.settings.file_private_path.resolved}" mode="777" />
+            </then>
+        </if>
+
+        <drush command="site-install" assume="yes" root="${build.dir}/${drupal.root}" uri="${drupal.uri}">
+            <option name="site-name">${drupal.site_name}</option>
+            <option name="account-name">${drupal.admin_user}</option>
+            <option name="account-pass">admin</option>
+            <param>${drupal.profile}</param>
+        </drush>
+
+        <!-- @todo Remove this conditional in release 2.0 -->
+        <if>
+            <not><equals arg1="${drupal.modules_enable}" arg2="" /></not>
+            <then>
+                <echo level="warning" msg="The 'drupal.modules_enable' property has been deprecated; please update your build to manage per-environment configuration with the Config Split module instead (https://www.drupal.org/project/config_split)" />
+            </then>
+        </if>
+
+        <!-- The public files directory, and everything in it, needs to be world writable. -->
+        <exec command="chmod -R 777 ${drupal.settings.file_public_path.resolved}" checkreturn="true" />
     </target>
 
 
     <!-- Target: install -->
-    <target name="install" description="Install the application.">
-        <phingcall target="drupal-install" />
+    <target name="install-d8" description="Install the application.">
+        <fail message="Please run 'phing install-d8' with either '-Dbuild.env=d8' or '-Dbuild.env=d8-domain'.">
+            <condition>
+                <equals arg1="${build.env}" arg2="vagrant" casesensitive="true" />
+            </condition>
+        </fail>
+        
+        <property file="${build.dir}/conf/build.${build.env}.properties" override="true" />
 
-        <phingcall target="drupal-reinstall-module">
-            <property name="module" value="demo_umami_content" />
-        </phingcall>
+        <exec command="composer install" dir="${build.dir}/${drupal.root}/../" passthru="true" />
 
-        <drush command="pm-enable" assume="yes">
+        <phingcall target="install-drupal-at-root" />
+
+        <!-- Uninstall the module -->
+        <drush command="pm-uninstall" assume="yes" root="${build.dir}/${drupal.root}" uri="${drupal.uri}">
+            <param>demo_umami_content</param>
+        </drush>
+
+        <!-- Enable the module -->
+        <drush command="pm-enable" assume="yes" root="${build.dir}/${drupal.root}" uri="${drupal.uri}">
+            <param>demo_umami_content</param>
+        </drush>
+
+        <drush command="pm-enable" assume="yes" root="${build.dir}/${drupal.root}" uri="${drupal.uri}">
             <param>federated_terms</param>
         </drush>
-        <drush command="pm-uninstall" assume="yes">
+        <drush command="pm-uninstall" assume="yes" root="${build.dir}/${drupal.root}" uri="${drupal.uri}">
             <param>federated_terms</param>
         </drush>
-        <drush command="sapi-c" assume="yes">
+        <drush command="sapi-c" assume="yes" root="${build.dir}/${drupal.root}" uri="${drupal.uri}">
             <param>federated_search</param>
         </drush>
-        <drush command="sapi-i" assume="yes">
+        <drush command="sapi-i" assume="yes" root="${build.dir}/${drupal.root}" uri="${drupal.uri}">
             <param>federated_search</param>
         </drush>
 
         <!-- Import config to fix rogue blocks changing UUIDs -->
-        <drush command="config-import" assume="yes"/>
+        <drush command="config-import" assume="yes" root="${build.dir}/${drupal.root}" uri="${drupal.uri}"/>
+
+        <!-- Rebuild node acces permissions. No direct drush command for this
+             as per https://www.drupal.org/project/devel/issues/2677218#comment-10907984 -->
+        <drush command="php-eval" root="${build.dir}/${drupal.root}" uri="${drupal.uri}">
+           <param>'node_access_rebuild();'</param>
+        </drush>
 
     </target>
 
     <!-- Target: install -->
     <target name="install-d7" description="Install the D7 site.">
-        <drush command="site-install" assume="yes" root="/var/www/federated-search-demo.local/web/d7/web">
+        <property name="build.env" value="d7" override="true" />
+        <property file="${build.dir}/conf/build.${build.env}.properties" override="true" />
+
+        <exec command="composer install" dir="${build.dir}/${drupal.root}/../" passthru="true" />
+
+        <drush command="site-install" assume="yes" root="${build.dir}/${drupal.root}" uri="${drupal.uri}">
             <option name="site-name">Federated SOLR D7</option>
             <option name="account-pass">admin</option>
             <param>standard</param>
         </drush>
-        <drush command="pm-enable" assume="yes" root="/var/www/federated-search-demo.local/web/d7/web">
+        <drush command="pm-enable" assume="yes" root="${build.dir}/${drupal.root}" uri="${drupal.uri}">
             <param>features_search_api_config</param>
         </drush>
-        <drush command="pm-enable" assume="yes" root="/var/www/federated-search-demo.local/web/d7/web">
+        <drush command="pm-enable" assume="yes" root="${build.dir}/${drupal.root}" uri="${drupal.uri}">
             <param>devel_generate</param>
         </drush>
-        <drush command="pm-disable" assume="yes" root="/var/www/federated-search-demo.local/web/d7/web">
+        <drush command="pm-disable" assume="yes" root="${build.dir}/${drupal.root}" uri="${drupal.uri}">
             <param>overlay</param>
             <param>toolbar</param>
         </drush>
-        <drush command="generate-content" assume="yes" root="/var/www/federated-search-demo.local/web/d7/web">
+        <drush command="generate-content" assume="yes" root="${build.dir}/${drupal.root}" uri="${drupal.uri}">
             <param>10</param>
         </drush>
     </target>
 
+    <target name="install-all" description="Install all the sites.">
+        <phingcall target="install-d8">
+            <property name="build.env" value="d8" override="true" />
+        </phingcall>
+        <phingcall target="install-d7" />
+
+        <phingcall target="install-d8">
+            <property name="build.env" value="d8-domain" override="true" />
+        </phingcall>
+    </target>
+
+    <!-- Target: init -->
+    <target name="init" description="Initialize the repo for development.">
+        <!-- Link search_api_federated_solr:master (D8) into the src/ directory so the code is easy to find. -->
+        <mkdir dir="${build.dir}/src" />
+        <delete file="${build.dir}/src/search_api_federated_solr" />
+        <symlink target="../web/d8/docroot/modules/contrib/search_api_federated_solr" link="src/search_api_federated_solr" />
+
+        <!-- Link search_api_field_map:master (D8) into the src/ directory so the code is easy to find. -->
+        <mkdir dir="${build.dir}/src" />
+        <delete file="${build.dir}/src/search_api_field_map" />
+        <symlink target="../web/d8/docroot/modules/contrib/search_api_field_map" link="src/search_api_field_map" />
+
+        <!-- Link d8/.../search_api_federated_solr to d8-domain/.../search_api_federated_solr
+             so that changes in the module are reflected in both sites. -->
+        <delete dir="${build.dir}/web/d8-domain/docroot/modules/contrib/search_api_federated_solr" />
+        <symlink target="../../../../../web/d8/docroot/modules/contrib/search_api_federated_solr" link="web/d8-domain/docroot/modules/contrib/search_api_federated_solr" />
+
+        <!-- Link d8/.../search_api_field_map to d8-domain/.../search_api_field_map
+            so that changes in the module are reflected in both sites. -->
+        <delete dir="${build.dir}/web/d8-domain/docroot/modules/contrib/search_api_field_map" />
+        <symlink target="../../../../../web/d8/docroot/modules/contrib/search_api_field_map" link="web/d8-domain/docroot/modules/contrib/search_api_field_map" />
+
+        <!-- Link search_api_federated_solr:7.x into the src/ directory so the code is easy to find. -->
+        <mkdir dir="${build.dir}/src" />
+        <delete file="${build.dir}/src/search_api_federated_solr-7.x" />
+        <symlink target="../web/d7/docroot/sites/all/modules/contrib/search_api_federated_solr" link="src/search_api_federated_solr-7.x" />
+
+        <!-- Link search_api_field_map:7.x into the src/ directory so the code is easy to find. -->
+        <mkdir dir="${build.dir}/src" />
+        <delete file="${build.dir}/src/search_api_field_map-7.x" />
+        <symlink target="../web/d7/docroot/sites/all/modules/contrib/search_api_field_map" link="src/search_api_field_map-7.x" />
+
+    </target>
+
+    <!-- Target: solr-clear -->
+    <target name="solr-clear" description="Delete all entries in the local Solr 'drupal8' core.">
+        <input message="Are you sure? There is no undo." propertyName="dump.confirm" defaultValue="y" validArgs="y,n" />
+        <if>
+            <equals arg1="${dump.confirm}" arg2="y" />
+            <then>
+                <!-- Send an update command to the solr core telling it to delete everything.
+                     The query needs to be escaped to pass through phing, but here it is unescaped:
+                     http://federated-search-demo.local:8984/solr/drupal8/update?commit=true&stream.body=<delete><query>*:*</query></delete>
+                -->
+                <exec command="curl &apos;http://federated-search-demo.local:8983/solr/drupal8/update?commit=true&amp;stream.body&#61;&lt;delete&gt;&lt;query&gt;*:*&lt;/query&gt;&lt;/delete&gt;&apos;" passthru="true" dir="${build.dir}" escape="false" checkreturn="true" />
+                <echo message="Your Solr is now clean."/>
+            </then>
+        </if>
+    </target>
 
     <!-- Target: migrate -->
     <target name="migrate" description="Run the migrations.">
