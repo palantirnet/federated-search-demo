@@ -47,6 +47,8 @@ If you update Vagrant, you may need to update your vagrant plugins with `vagrant
    - These sites are for future use, as Domain support has not yet been ported to D8.
 9. Visit your D7 site at [http://d7.fs-demo.local](http://d7.fs-demo.local)
 
+You can log in to any of the Drupal sites at `/user` with `admin/admin`.
+
 ## How do I work on this?
 
 You can edit code, update documentation, and run git commands by opening files directly from your host machine.
