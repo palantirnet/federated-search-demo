@@ -25,6 +25,10 @@
         <phingcall target="drupal-build" inheritAll="false">
             <property name="build.env" value="d8-domain" />
         </phingcall>
+
+        <phingcall target="drupal-build" inheritAll="false">
+            <property name="build.env" value="d7-domain" />
+        </phingcall>
     </target>
 
     <target name="install-drupal-at-root" description="Install Drupal at a specific docroot.">
@@ -136,7 +140,12 @@
 
     <!-- Target: install -->
     <target name="install-d7" description="Install the D7 site.">
-        <property name="build.env" value="d7" override="true" />
+        <fail message="Please run 'phing install-d7' with either '-Dbuild.env=d7' or '-Dbuild.env=d7-domain'.">
+            <condition>
+                <equals arg1="${build.env}" arg2="vagrant" casesensitive="true" />
+            </condition>
+        </fail>
+
         <property file="${build.dir}/conf/build.${build.env}.properties" override="true" />
 
         <exec command="composer install" dir="${build.dir}/${drupal.root}/../" passthru="true" />
@@ -168,10 +177,17 @@
         <phingcall target="install-d8">
             <property name="build.env" value="d8" override="true" />
         </phingcall>
-        <phingcall target="install-d7" />
 
         <phingcall target="install-d8">
             <property name="build.env" value="d8-domain" override="true" />
+        </phingcall>
+
+        <phingcall target="install-d7">
+            <property name="build.env" value="d7" override="true" />
+        </phingcall>
+
+        <phingcall target="install-d7">
+            <property name="build.env" value="d7-domain" override="true" />
         </phingcall>
     </target>
 
