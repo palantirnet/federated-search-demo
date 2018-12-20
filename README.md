@@ -46,6 +46,7 @@ If you update Vagrant, you may need to update your vagrant plugins with `vagrant
    - [http://d8-3.fs-demo.local](http://d8-3.fs-demo.local)
    - These sites are for future use, as Domain support has not yet been ported to D8.
 9. Visit your D7 site at [http://d7.fs-demo.local](http://d7.fs-demo.local)
+10. View the Solr index at [http://federated-search-demo.local:8983/solr/#/drupal8/query](http://federated-search-demo.local:8983/solr/#/drupal8/query). 
 
 You can log in to any of the Drupal sites at `/user` with `admin/admin`.
 
