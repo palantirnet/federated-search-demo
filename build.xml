@@ -162,6 +162,9 @@
     </target>
 
     <target name="install-all" description="Install all the sites.">
+        <echo message="It's best to clear your Solr index before you rebuild all the things." />
+        <phingcall target="solr-clear" />
+
         <phingcall target="install-d8">
             <property name="build.env" value="d8" override="true" />
         </phingcall>
