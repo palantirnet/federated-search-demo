@@ -1,0 +1,16 @@
+# Ignore Drupal files
+docroot/sites/*/files
+
+# Ignore Drupal contrib downloaded by Composer
+docroot/misc
+docroot/includes
+docroot/themes
+docroot/profiles
+docroot/modules
+docroot/scripts
+docroot/sites/all/modules/contrib
+docroot/sites/all/themes/contrib
+
+
+# Ignore regular Composer dependencies
+vendor/*
