@@ -16,6 +16,13 @@ $conf['file_temporary_path'] = '/tmp';
 
 $config['acquia_connector.settings']['hide_signup_messages'] = TRUE;
 
+/**
+ * Add the domain module setup routine.
+ */
+include DRUPAL_ROOT . '/sites/all/modules/contrib/domain/settings.inc';
+
+$cookie_domain = '.fs-demo.local';
+
 if (file_exists(__DIR__ . '/settings.local.php')) {
   include __DIR__ . '/settings.local.php';
 }
