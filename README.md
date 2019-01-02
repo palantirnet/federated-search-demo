@@ -41,7 +41,7 @@ If you update Vagrant, you may need to update your vagrant plugins with `vagrant
 6. Build the `/src` directory and symlink modules there to make development easier: `phing init`
 7. Visit your D8 (standalone) site at [http://d8.fs-demo.local](http://d8.fs-demo.local)
 8. Visit your D8 (domain access) site at:
-   - [http://fs-demo.d8-1.local](http://d8-1.fs-demo.local)
+   - [http://d8-1.fs-demo.local](http://d8-1.fs-demo.local)
    - [http://d8-2.fs-demo.local](http://d8-2.fs-demo.local)
    - [http://d8-3.fs-demo.local](http://d8-3.fs-demo.local)
    - These sites are for future use, as Domain support has not yet been ported to D8.

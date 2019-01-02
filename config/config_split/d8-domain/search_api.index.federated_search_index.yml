@@ -1,0 +1,128 @@
+uuid: 334fdced-7b87-420b-9226-14b7d787d61b
+langcode: en
+status: true
+dependencies:
+  config:
+    - search_api.server.local_solr
+  module:
+    - search_api
+    - search_api_federated_solr
+    - search_api_field_map
+    - node
+id: federated_search_index
+name: 'Federated Search Index'
+description: ''
+read_only: false
+field_settings:
+  federated_date:
+    label: 'Federated Date'
+    property_path: mapped_field
+    type: date
+    configuration:
+      field_data:
+        node:
+          article: '[node:created:custom:Y-m-d\TH:i:s\Z]'
+          page: '[node:created:custom:Y-m-d\TH:i:s\Z]'
+          recipe: '[node:created:custom:Y-m-d\TH:i:s\Z]'
+  federated_image:
+    label: 'Federated Image'
+    property_path: mapped_field
+    type: string
+    configuration:
+      field_data:
+        node:
+          article: '[node:field_image:search_api_federated_solr_image:url]'
+          page: '[node:field_image:search_api_federated_solr_image:url]'
+          recipe: '[node:field_image:search_api_federated_solr_image:url]'
+  federated_terms:
+    label: 'Federated Terms'
+    property_path: mapped_terms
+    type: string
+  federated_title:
+    label: 'Federated Title'
+    property_path: mapped_field
+    type: string
+    configuration:
+      field_data:
+        node:
+          article: '[node:title]'
+          page: '[node:title]'
+          recipe: '[node:title]'
+  federated_type:
+    label: 'Federated Type'
+    property_path: mapped_field
+    type: string
+    configuration:
+      field_data:
+        node:
+          article: Article
+          page: Page
+          recipe: Recipe
+  rendered_item:
+    label: 'Rendered HTML output'
+    property_path: rendered_item
+    type: text
+    configuration:
+      roles:
+        anonymous: anonymous
+      view_mode:
+        'entity:node':
+          article: default
+          page: default
+          recipe: default
+  site_name:
+    label: 'Site Name'
+    property_path: site_name
+    type: string
+    configuration:
+      site_name: 'Federated Search Demo (D8, domain access)'
+  url:
+    label: URI
+    property_path: search_api_url
+    type: string
+  urls:
+    label: Urls
+    property_path: search_api_urls
+    type: string
+datasource_settings:
+  'entity:node':
+    bundles:
+      default: true
+      selected: {  }
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  entity_status: {  }
+  federated_terms: {  }
+  html_filter:
+    all_fields: false
+    fields:
+      - rendered_item
+    title: false
+    alt: false
+    tags:
+      b: 2
+      em: 1
+      h1: 5
+      h2: 3
+      h3: 2
+      strong: 2
+      u: 1
+    weights:
+      preprocess_index: -15
+      preprocess_query: -15
+  mapped_field: {  }
+  mapped_terms: {  }
+  rendered_item: {  }
+  search_api_urls: {  }
+  site_name: {  }
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  index_directly: true
+  cron_limit: 50
+server: local_solr
