@@ -100,6 +100,15 @@
 
         <phingcall target="install-drupal-at-root" />
 
+        <!-- Import config to fix rogue blocks changing UUIDs -->
+        <drush command="config-import" assume="yes" root="${build.dir}/${drupal.root}" uri="${drupal.uri}"/>
+
+        <!-- Rebuild node acces permissions. No direct drush command for this
+             as per https://www.drupal.org/project/devel/issues/2677218#comment-10907984 -->
+        <drush command="php-eval" root="${build.dir}/${drupal.root}" uri="${drupal.uri}">
+           <param>'node_access_rebuild();'</param>
+        </drush>
+
         <!-- Uninstall the module -->
         <drush command="pm-uninstall" assume="yes" root="${build.dir}/${drupal.root}" uri="${drupal.uri}">
             <param>demo_umami_content</param>
@@ -116,22 +125,13 @@
         <drush command="pm-uninstall" assume="yes" root="${build.dir}/${drupal.root}" uri="${drupal.uri}">
             <param>federated_terms</param>
         </drush>
+        <!-- Index content in Solr -->
         <drush command="sapi-c" assume="yes" root="${build.dir}/${drupal.root}" uri="${drupal.uri}">
             <param>federated_search</param>
         </drush>
         <drush command="sapi-i" assume="yes" root="${build.dir}/${drupal.root}" uri="${drupal.uri}">
             <param>federated_search</param>
         </drush>
-
-        <!-- Import config to fix rogue blocks changing UUIDs -->
-        <drush command="config-import" assume="yes" root="${build.dir}/${drupal.root}" uri="${drupal.uri}"/>
-
-        <!-- Rebuild node acces permissions. No direct drush command for this
-             as per https://www.drupal.org/project/devel/issues/2677218#comment-10907984 -->
-        <drush command="php-eval" root="${build.dir}/${drupal.root}" uri="${drupal.uri}">
-           <param>'node_access_rebuild();'</param>
-        </drush>
-
     </target>
 
     <!-- Target: install -->
