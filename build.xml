@@ -159,7 +159,10 @@
                 <!-- Make the sites directory writable. -->
                 <chmod file="${build.dir}/${drupal.root}/sites/${drupal.sites_subdir}" mode="777" />
                 <!-- Copy over the pre-install file. -->
-                <phingcall target="drupal-prepare-settings" />
+                <phingcall target="drupal-prepare-settings">
+                    <!-- Rebuild the settings file property value. -->
+                    <property name="build.drupal.settings_dest" value="${drupal.root}/sites/${drupal.sites_subdir}/settings.php" override="true" />
+                </phingcall>
             </then>
         </if>
         <!-- End of domain access pre-install settings.php copy. -->
@@ -179,6 +182,8 @@
                 <!-- Copy over the post-install file. -->
                 <phingcall target="drupal-prepare-settings">
                     <property name="build.drupal.settings" value="${build.drupal.settings_post_install}" override="true" />
+                    <!-- Rebuild the settings file property value. -->
+                    <property name="build.drupal.settings_dest" value="${drupal.root}/sites/${drupal.sites_subdir}/settings.php" override="true" />
                 </phingcall>
                 <!-- Restore post install folder / file permissions. -->
                 <chmod file="${build.dir}/${drupal.root}/sites/${drupal.sites_subdir}" mode="555" />
