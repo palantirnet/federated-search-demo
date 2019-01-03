@@ -150,11 +150,43 @@
 
         <exec command="composer install" dir="${build.dir}/${drupal.root}/../" passthru="true" />
 
+        <!-- Pre install Domain Access settings.php install
+            Because Domain Access prevents Drush install with it's settings.php include, we will overwrite the settings.php file with the default one and then after install enable domain access.
+         -->
+        <if>
+            <isset property="build.drupal.settings_post_install" />
+            <then>
+                <!-- Make the sites directory writable. -->
+                <chmod file="${build.dir}/${drupal.root}/sites/${drupal.sites_subdir}" mode="777" />
+                <!-- Copy over the pre-install file. -->
+                <phingcall target="drupal-prepare-settings" />
+            </then>
+        </if>
+        <!-- End of domain access pre-install settings.php copy. -->
+
         <drush command="site-install" assume="yes" root="${build.dir}/${drupal.root}" uri="${drupal.uri}">
             <option name="site-name">Federated SOLR D7</option>
             <option name="account-pass">admin</option>
             <param>standard</param>
         </drush>
+
+        <!-- Post install Domain Access settings.php overwrites. -->
+        <if>
+            <isset property="build.drupal.settings_post_install" />
+            <then>
+                <!-- Make the sites directory writable. -->
+                <chmod file="${build.dir}/${drupal.root}/sites/${drupal.sites_subdir}" mode="777" />
+                <!-- Copy over the post-install file. -->
+                <phingcall target="drupal-prepare-settings">
+                    <property name="build.drupal.settings" value="${build.drupal.settings_post_install}" override="true" />
+                </phingcall>
+                <!-- Restore post install folder / file permissions. -->
+                <chmod file="${build.dir}/${drupal.root}/sites/${drupal.sites_subdir}" mode="555" />
+                <chmod file="${build.dir}/${drupal.root}/sites/${drupal.sites_subdir}/settings.php" mode="444" />
+            </then>
+        </if>
+        <!-- End of domain access pre-install settings.php copy. -->
+
         <drush command="pm-enable" assume="yes" root="${build.dir}/${drupal.root}" uri="${drupal.uri}">
             <param>features_search_api_config</param>
         </drush>
