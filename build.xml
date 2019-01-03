@@ -165,7 +165,7 @@
         <!-- End of domain access pre-install settings.php copy. -->
 
         <drush command="site-install" assume="yes" root="${build.dir}/${drupal.root}" uri="${drupal.uri}">
-            <option name="site-name">Federated SOLR D7</option>
+            <option name="site-name">Federated Search Demo D7</option>
             <option name="account-pass">admin</option>
             <param>standard</param>
         </drush>

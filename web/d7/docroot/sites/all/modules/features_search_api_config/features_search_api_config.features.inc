@@ -47,7 +47,7 @@ function features_search_api_config_default_search_api_index() {
         "site_name" : {
           "status" : 1,
           "weight" : "-43",
-          "settings" : { "site_name" : "Federated SOLR D7" }
+          "settings" : { "site_name" : "Federated Search Demo (D7, single)" }
         },
         "federated_field" : {
           "status" : 1,
