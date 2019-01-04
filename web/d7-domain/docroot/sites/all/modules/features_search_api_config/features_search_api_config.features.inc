@@ -48,9 +48,9 @@ function features_search_api_config_default_search_api_index() {
           "status" : 1,
           "weight" : "-43",
           "settings" : { "domain" : {
-              "d7_1_fs_demo_local" : "Federated Search Demo (D7, domain access 1)",
-              "d7_2_fs_demo_local" : "Federated Search Demo (D7, domain access 2)",
-              "d7_3_fs_demo_local" : "Federated Search Demo (D7, domain access 3)"
+              "d7_1_fs_demo_local" : "Federated Search Demo (D7, domain one)",
+              "d7_2_fs_demo_local" : "Federated Search Demo (D7, domain two)",
+              "d7_3_fs_demo_local" : "Federated Search Demo (D7, domain three)"
             }
           }
         },
