@@ -8,6 +8,7 @@ dependencies:
     - search_api
     - search_api_federated_solr
     - search_api_field_map
+    - search_api_field_map_domain
     - node
 id: federated_search_index
 name: 'Federated Search Index'
@@ -72,10 +73,13 @@ field_settings:
           recipe: default
   site_name:
     label: 'Site Name'
-    property_path: site_name
+    property_path: mapped_domain
     type: string
     configuration:
-      site_name: 'Federated Search Demo (D8, domain access)'
+      field_data:
+        federated_search_demo_d8_1_local: 'Federated Search Demo (D7, domain one) '
+        federated_search_demo_d8_2_local: 'Federated Search Demo (D7, domain two) '
+        federated_search_demo_d8_3_local: 'Federated Search Demo (D7, domain three) '
   url:
     label: URI
     property_path: search_api_url
@@ -114,6 +118,7 @@ processor_settings:
     weights:
       preprocess_index: -15
       preprocess_query: -15
+  mapped_domain: {  }
   mapped_field: {  }
   mapped_terms: {  }
   rendered_item: {  }

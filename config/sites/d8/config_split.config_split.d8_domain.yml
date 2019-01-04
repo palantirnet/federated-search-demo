@@ -12,6 +12,7 @@ module:
   domain_config: 0
   domain_content: 0
   domain_site_settings: 0
+  search_api_field_map_domain: 0
 theme: {  }
 blacklist: {  }
 graylist:
