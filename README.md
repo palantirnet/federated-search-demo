@@ -5,6 +5,7 @@ This is the development repository for Federated Search Demo environment. It con
 ## Table of Contents
 
 * [Development Environment](#development-environment)
+* [Development Environment Componentes](#development-environment-components)
 * [Getting Started](#getting-started)
 * [How do I work on this?](#how-do-i-work-on-this)
 * [Drupal Development](#drupal-development)
