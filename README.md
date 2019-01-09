@@ -27,6 +27,18 @@ The development environment is based on [palantirnet/the-vagrant](https://github
 
 If you update Vagrant, you may need to update your vagrant plugins with `vagrant plugin update`.
 
+## Development Environment Components
+
+The development environment inside the virtual machine will be automatically configured by Vagrant.
+
+You may be interested in creating your own development environment and comparing it against the tested version.
+
+* Operating System: Ubuntu 64bit version 16.04.4 LTS
+* Web Host: Apache HTTP version 2.x
+* Database: MySQL version 5.7.21
+* PHP version 7.1.16
+* Search Server: Apache Solr version 4.5.1
+
 ## Getting Started
 
 1. Clone the project from github: `git clone git@github.com:palantirnet/federated-search-demo.git`
