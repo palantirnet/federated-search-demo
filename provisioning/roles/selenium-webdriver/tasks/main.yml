@@ -9,7 +9,7 @@
   become: yes
   get_url:
     url: https://selenium-release.storage.googleapis.com/3.141/selenium-server-standalone-3.141.59.jar
-    dest: /usr/local/share/selenium/selenium-server-standalone-3.141.59.jar
+    dest: /usr/local/share/selenium/selenium-server-standalone.jar
 
 - name: Create directory for Chromedriver
   become: yes
@@ -42,6 +42,3 @@
   become: yes
   apt:
     name: google-chrome-stable
-
-- name: Turn on Selenium
-  command: java -jar -Dwebdriver.chrome.driver="/usr/local/share/chromedriver/chromedriver" /usr/local/share/selenium/selenium-server-standalone-3.141.59.jar
