@@ -1,7 +1,7 @@
 @javascript
 Feature: Drupal 8 search
   As a site visitor
-  I want to see search the Drupal 8 sites
+  I want to search the Drupal 8 sites
   So that I can read recipes
 
   Scenario: Search for "pasta"

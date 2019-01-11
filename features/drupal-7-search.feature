@@ -1,7 +1,7 @@
 @javascript
 Feature: Drupal 7 search
   As a site visitor
-  I want to see search the Drupal 7 sites
+  I want to search the Drupal 7 sites
   So that I can content from other sites
 
   Scenario: Search for "ex"
