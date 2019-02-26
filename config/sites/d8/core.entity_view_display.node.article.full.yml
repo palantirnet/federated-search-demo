@@ -51,4 +51,3 @@ content:
     third_party_settings: {  }
 hidden:
   content_moderation_control: true
-  field_search_terms: true
