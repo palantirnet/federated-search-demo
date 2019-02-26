@@ -1,0 +1,77 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/d8.fs-demo.local\/search-terms\/pastry?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/search_terms"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/search_terms\/parent": [
+            null
+        ]
+    },
+    "tid": [
+        {
+            "value": 35
+        }
+    ],
+    "uuid": [
+        {
+            "value": "0f2d34c4-71b0-4c09-b64f-da0882df1bf0"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "vid": [
+        {
+            "target_id": "search_terms"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "name": [
+        {
+            "value": "pastry",
+            "lang": "en"
+        }
+    ],
+    "weight": [
+        {
+            "value": 0
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/search_terms\/parent": [
+            null
+        ]
+    },
+    "changed": [
+        {
+            "value": "2019-02-26T20:16:54+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "path": [
+        {
+            "alias": "\/search-terms\/pastry",
+            "pid": 56,
+            "langcode": "en",
+            "lang": "en"
+        }
+    ]
+}
