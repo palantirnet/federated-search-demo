@@ -8,7 +8,9 @@ dependencies:
     - search_api
     - search_api_federated_solr
     - search_api_field_map
+    - media
     - node
+    - core.entity_view_mode.media.full
 id: federated_search_index
 name: 'Federated Search Index'
 description: ''
@@ -20,6 +22,8 @@ field_settings:
     type: date
     configuration:
       field_data:
+        media:
+          file: '[media:created:value]'
         node:
           article: '[node:created:custom:Y-m-d\TH:i:s\Z]'
           page: '[node:created:custom:Y-m-d\TH:i:s\Z]'
@@ -54,6 +58,8 @@ field_settings:
     type: string
     configuration:
       field_data:
+        media:
+          file: Document
         node:
           article: Article
           page: Page
@@ -66,6 +72,8 @@ field_settings:
       roles:
         anonymous: anonymous
       view_mode:
+        'entity:media':
+          file: full
         'entity:node':
           article: default
           page: default
@@ -85,6 +93,14 @@ field_settings:
     property_path: search_api_urls
     type: string
 datasource_settings:
+  'entity:media':
+    bundles:
+      default: false
+      selected:
+        - file
+    languages:
+      default: true
+      selected: {  }
   'entity:node':
     bundles:
       default: true
