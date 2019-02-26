@@ -865,7 +865,7 @@
       <!-- Don't abort searches for the pinkPony request handler (set in solrcore.properties) -->
       <int name="timeAllowed">${solr.pinkPony.timeAllowed:-1}</int>
       <str name="q.alt">*:*</str>
-      <str name="qf">tm_rendered_item tem_full_text_title</str>
+      <str name="qf">tm_rendered_item tem_full_text_title tem_search_terms</str>
 
       <!-- By default, don't spell check -->
       <str name="spellcheck">false</str>
