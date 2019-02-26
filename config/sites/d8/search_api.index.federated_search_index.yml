@@ -34,6 +34,8 @@ field_settings:
     type: string
     configuration:
       field_data:
+        media:
+          file: '[media:field_media_image:search_api_federated_solr_image:url]'
         node:
           article: '[node:field_image:search_api_federated_solr_image:url]'
           page: '[node:field_image:search_api_federated_solr_image:url]'
@@ -48,6 +50,8 @@ field_settings:
     type: string
     configuration:
       field_data:
+        media:
+          file: '[media:name]'
         node:
           article: '[node:title]'
           page: '[node:title]'
