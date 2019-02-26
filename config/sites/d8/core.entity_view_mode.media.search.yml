@@ -1,0 +1,10 @@
+uuid: bc3597ea-0c48-4426-b125-1161be3d8186
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.search
+label: 'Search result highlighting input'
+targetEntityType: media
+cache: true
