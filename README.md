@@ -97,6 +97,22 @@ Additional information on developing for Drupal within this environment is in [d
 If you rebuild the Drupal sites you might end up with orphaned content in Solr. To clear:
 `phing solr-clear`
 
+### Updating Solr config
+
+This project is currently using [Solr v4.5.1](http://archive.apache.org/dist/lucene/solr/ref-guide/apache-solr-ref-guide-4.5.pdf).
+
+The source for Solr config can be found at `conf/solr/drupal[7/8]/custom/`, based on your site's core (`drupal7` or `drupal8`).
+
+These files were copied from the `search_api_solr` module and updated to meet testing needs for this project.
+
+As part of provisioning this box, the custom Solr config from `conf/solr/drupal[7/8]/custom/` will be copied to the directory where Solr expects its config to live (`/var/solr/drupal[7/8]/conf/`).
+
+Once you've made an update to a config file in `conf/solr/drupal[7/8]/custom/`, you'll need to reprovision your vm using `vagrant up --provision` if your vm is not already up or `vagrant provision` if your vm is already up.
+
+### Restarting Solr
+
+You can restart the Solr service from the project within the vm with `sudo service solr restart`. 
+
 ## Deployment
 
 This project is for demo purposes only and is not to be deployed.

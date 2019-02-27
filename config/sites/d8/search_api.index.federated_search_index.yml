@@ -2,13 +2,18 @@ uuid: 334fdced-7b87-420b-9226-14b7d787d61b
 langcode: en
 status: true
 dependencies:
-  config:
-    - search_api.server.local_solr
   module:
+    - search_api_solr
+    - taxonomy
     - search_api
     - search_api_federated_solr
     - search_api_field_map
+    - media
     - node
+  config:
+    - field.storage.node.field_search_terms
+    - search_api.server.local_solr
+    - core.entity_view_mode.media.full
 id: federated_search_index
 name: 'Federated Search Index'
 description: ''
@@ -20,6 +25,8 @@ field_settings:
     type: date
     configuration:
       field_data:
+        media:
+          file: '[media:created:value]'
         node:
           article: '[node:created:custom:Y-m-d\TH:i:s\Z]'
           page: '[node:created:custom:Y-m-d\TH:i:s\Z]'
@@ -30,6 +37,8 @@ field_settings:
     type: string
     configuration:
       field_data:
+        media:
+          file: '[media:field_media_image:search_api_federated_solr_image:url]'
         node:
           article: '[node:field_image:search_api_federated_solr_image:url]'
           page: '[node:field_image:search_api_federated_solr_image:url]'
@@ -44,6 +53,8 @@ field_settings:
     type: string
     configuration:
       field_data:
+        media:
+          file: '[media:name]'
         node:
           article: '[node:title]'
           page: '[node:title]'
@@ -54,10 +65,25 @@ field_settings:
     type: string
     configuration:
       field_data:
+        media:
+          file: Document
         node:
           article: Article
           page: Page
           recipe: Recipe
+  full_text_title:
+    label: 'Full Text Title'
+    property_path: mapped_field
+    type: solr_text_ngram
+    boost: !!float 3
+    configuration:
+      field_data:
+        media:
+          file: '[media:name]'
+        node:
+          article: '[node:title]'
+          page: '[node:title]'
+          recipe: '[node:title]'
   rendered_item:
     label: 'Rendered HTML output'
     property_path: rendered_item
@@ -66,10 +92,24 @@ field_settings:
       roles:
         anonymous: anonymous
       view_mode:
+        'entity:media':
+          file: full
         'entity:node':
           article: default
           page: default
           recipe: default
+  search_terms:
+    label: 'Search terms'
+    datasource_id: 'entity:node'
+    property_path: 'field_search_terms:entity:name'
+    type: solr_text_ngram
+    boost: !!float 13
+    dependencies:
+      config:
+        - field.storage.node.field_search_terms
+      module:
+        - taxonomy
+        - taxonomy
   site_name:
     label: 'Site Name'
     property_path: site_name
@@ -85,6 +125,14 @@ field_settings:
     property_path: search_api_urls
     type: string
 datasource_settings:
+  'entity:media':
+    bundles:
+      default: false
+      selected:
+        - file
+    languages:
+      default: true
+      selected: {  }
   'entity:node':
     bundles:
       default: true

@@ -93,7 +93,7 @@
                 <equals arg1="${build.env}" arg2="vagrant" casesensitive="true" />
             </condition>
         </fail>
-        
+
         <property file="${build.dir}/conf/build.${build.env}.properties" override="true" />
 
         <exec command="composer install" dir="${build.dir}/${drupal.root}/../" passthru="true" />
@@ -116,6 +116,14 @@
         <drush command="pm-uninstall" assume="yes" root="${build.dir}/${drupal.root}" uri="${drupal.uri}">
             <param>federated_terms</param>
         </drush>
+
+        <drush command="pm-enable" assume="yes" root="${build.dir}/${drupal.root}" uri="${drupal.uri}">
+            <param>federated_default_content</param>
+        </drush>
+        <drush command="pm-uninstall" assume="yes" root="${build.dir}/${drupal.root}" uri="${drupal.uri}">
+            <param>federated_default_content</param>
+        </drush>
+
         <drush command="sapi-c" assume="yes" root="${build.dir}/${drupal.root}" uri="${drupal.uri}">
             <param>federated_search</param>
         </drush>

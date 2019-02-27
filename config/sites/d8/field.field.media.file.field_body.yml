@@ -1,0 +1,21 @@
+uuid: dc7ae870-1af8-40e8-a36d-a00b4b5605a9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_body
+    - media.type.file
+  module:
+    - text
+id: media.file.field_body
+field_name: field_body
+entity_type: media
+bundle: file
+label: Body
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

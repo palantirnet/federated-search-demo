@@ -1,0 +1,15 @@
+name: 'Federated Search Demo default content'
+type: module
+description: 'Imports additional default content for testing search'
+package: 'Federated Search Demo'
+core: 8.x
+dependencies:
+  - drupal:default_content
+default_content:
+  taxonomy_term:
+    - 0f2d34c4-71b0-4c09-b64f-da0882df1bf0
+    - 9ed9c3a2-956d-44e1-871d-8fe3e25c679d
+    - 13bdf0b2-d71e-4f6d-a7fb-8fbc92a71a79
+    - 98d41799-8e0c-4ca7-9e22-c6d0c41e722e
+    - caf08457-c952-44c5-831a-b1da1d49ce00
+    - fead186e-24ea-4c03-9983-c36df90f096c

@@ -24,4 +24,5 @@ hidden:
   body: true
   content_moderation_control: true
   field_image: true
+  field_search_terms: true
   field_tags: true

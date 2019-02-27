@@ -1,0 +1,77 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/d8.fs-demo.local\/search-terms\/herbs?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/search_terms"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/search_terms\/parent": [
+            null
+        ]
+    },
+    "tid": [
+        {
+            "value": 30
+        }
+    ],
+    "uuid": [
+        {
+            "value": "9ed9c3a2-956d-44e1-871d-8fe3e25c679d"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "vid": [
+        {
+            "target_id": "search_terms"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "name": [
+        {
+            "value": "herbs",
+            "lang": "en"
+        }
+    ],
+    "weight": [
+        {
+            "value": 0
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/search_terms\/parent": [
+            null
+        ]
+    },
+    "changed": [
+        {
+            "value": "2019-02-26T20:16:33+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "path": [
+        {
+            "alias": "\/search-terms\/herbs",
+            "pid": 54,
+            "langcode": "en",
+            "lang": "en"
+        }
+    ]
+}

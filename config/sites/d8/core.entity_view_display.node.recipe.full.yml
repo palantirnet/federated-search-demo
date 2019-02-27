@@ -113,4 +113,5 @@ content:
 hidden:
   content_moderation_control: true
   field_author: true
+  field_search_terms: true
   links: true

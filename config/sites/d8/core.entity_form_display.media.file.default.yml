@@ -3,11 +3,16 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.media.file.field_body
     - field.field.media.file.field_media_file
+    - field.field.media.file.field_media_image
+    - image.style.thumbnail
     - media.type.file
   module:
     - file
+    - image
     - path
+    - text
 _core:
   default_config_hash: M1xqPwQzplos5gyWY5ZoW7zhlSL_elZuGMEFYtR60mE
 id: media.file.default
@@ -21,12 +26,28 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_body:
+    weight: 102
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
   field_media_file:
     settings:
       progress_indicator: throbber
     third_party_settings: {  }
     type: file_generic
     weight: 0
+    region: content
+  field_media_image:
+    weight: 101
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
     region: content
   name:
     type: string_textfield
