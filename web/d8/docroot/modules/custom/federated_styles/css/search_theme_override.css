@@ -70,7 +70,7 @@ aside.l-25-75--1 {
     outline: 0; }
 
 .search-form__submit {
-  // background-color: #ffcb05 !important;
+  /* background-color: #ffcb05 !important; */
   border-radius: 0 3px 3px 0 !important;
   border: 1px solid #e5e5e5 !important;
   border-left: 0 !important;
@@ -85,8 +85,29 @@ aside.l-25-75--1 {
       fill: #222 !important; }
 
 /**
- * Applied Filters
+ * Autocomplete styles
  */
+.search-form__autocomplete-container .react-autosuggest__input {
+  padding: .35em !important;
+  min-width: auto !important;
+  margin: 0 !important;
+}
+
+.search-form__autocomplete-container .react-autosuggest__input:focus {
+  border-width: 1px;
+}
+
+.search-form__autocomplete-container  .react-autosuggest__suggestions-container.react-autosuggest__suggestions-container--open {
+  top: 45px;
+}
+
+.search-form__autocomplete-container .search-form__submit {
+  padding: .35em .6em;
+}
+
+  /**
+   * Applied Filters
+   */
 .applied-filters__filter {
   border-bottom: solid 2px #ffcb05;
   font-size: .8em;
