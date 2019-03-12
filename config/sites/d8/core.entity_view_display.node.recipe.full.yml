@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.recipe.field_preparation_time
     - field.field.node.recipe.field_recipe_category
     - field.field.node.recipe.field_recipe_instruction
+    - field.field.node.recipe.field_search_terms
     - field.field.node.recipe.field_summary
     - field.field.node.recipe.field_tags
     - node.type.recipe
@@ -30,7 +31,7 @@ bundle: recipe
 mode: full
 content:
   field_cooking_time:
-    weight: 5
+    weight: 6
     label: inline
     settings:
       thousand_separator: ''
@@ -39,14 +40,14 @@ content:
     type: number_integer
     region: content
   field_difficulty:
-    weight: 7
+    weight: 8
     label: inline
     settings: {  }
     third_party_settings: {  }
     type: list_default
     region: content
   field_image:
-    weight: 3
+    weight: 4
     label: hidden
     settings:
       responsive_image_style: 3_2_image
@@ -55,7 +56,7 @@ content:
     type: responsive_image
     region: content
   field_ingredients:
-    weight: 8
+    weight: 9
     label: above
     settings:
       link_to_entity: false
@@ -63,7 +64,7 @@ content:
     type: string
     region: content
   field_number_of_servings:
-    weight: 6
+    weight: 7
     label: inline
     settings:
       thousand_separator: ''
@@ -72,7 +73,7 @@ content:
     type: number_integer
     region: content
   field_preparation_time:
-    weight: 4
+    weight: 5
     label: inline
     settings:
       thousand_separator: ''
@@ -89,12 +90,20 @@ content:
     type: entity_reference_label
     region: content
   field_recipe_instruction:
-    weight: 9
+    weight: 10
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
+  field_search_terms:
+    type: entity_reference_label
+    weight: 3
+    region: content
+    label: inline
+    settings:
+      link: false
+    third_party_settings: {  }
   field_summary:
     weight: 0
     label: hidden
