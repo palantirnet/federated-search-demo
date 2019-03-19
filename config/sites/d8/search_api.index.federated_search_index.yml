@@ -4,12 +4,14 @@ status: true
 dependencies:
   module:
     - search_api_solr
+    - taxonomy
     - search_api
     - search_api_federated_solr
     - search_api_field_map
     - media
     - node
   config:
+    - field.storage.node.field_search_terms
     - search_api.server.local_solr
     - core.entity_view_mode.media.full
 id: federated_search_index
@@ -69,6 +71,18 @@ field_settings:
           article: Article
           page: Page
           recipe: Recipe
+  full_text_search_terms:
+    label: 'Search terms'
+    datasource_id: 'entity:node'
+    property_path: 'field_search_terms:entity:name'
+    type: solr_text_ngram
+    boost: !!float 5
+    dependencies:
+      config:
+        - field.storage.node.field_search_terms
+      module:
+        - taxonomy
+        - taxonomy
   full_text_title:
     label: 'Full Text Title'
     property_path: mapped_field

@@ -462,11 +462,6 @@
     <!-- This field is used to build the spellchecker index -->
     <field name="spell" type="textSpell" indexed="true" stored="true" multiValued="true"/>
 
-    <!-- Federated Search fields -->
-    <!-- See schema: https://www.drupal.org/docs/8/modules/search-api-federated-solr/federated-search-schema -->
-    <!-- Define any field used explicitly as a default or boost -->
-    <field name="tm_rendered_item" type="text" indexed="true" stored="true" multiValued="true" termVectors="true"/>
-
     <!-- copyField commands copy one field to another at the time a document
          is added to the index.  It's used either to index the same field differently,
          or to add multiple fields to the same field for easier/faster searching.  -->
@@ -600,7 +595,7 @@
   <uniqueKey>id</uniqueKey>
 
   <!-- field for the QueryParser to use when an explicit fieldname is absent -->
-  <defaultSearchField>tm_rendered_item</defaultSearchField>
+  <defaultSearchField>content</defaultSearchField>
 
   <!-- SolrQueryParser configuration: defaultOperator="AND|OR" -->
   <solrQueryParser defaultOperator="OR"/>

@@ -38,10 +38,12 @@ module:
   quickedit: 0
   rdf: 0
   responsive_image: 0
+  rest: 0
   search_api: 0
   search_api_federated_solr: 0
   search_api_field_map: 0
   search_api_solr: 0
+  serialization: 0
   shortcut: 0
   system: 0
   taxonomy: 0
