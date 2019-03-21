@@ -17,4 +17,12 @@ settings:
   label: 'Federated Search Page Form block'
   provider: search_api_federated_solr
   label_display: '0'
+  autocomplete:
+    isEnabled: 1
+    directUrl: 'http://federated-search-demo.local:8983/solr/drupal8/select?q=[val]&wt=json'
+    proxyUrl: 'http://d8.fs-demo.local/search-api-federated-solr/search'
+    proxyIsDisabled: 0
+    url: 'http://d8.fs-demo.local/search-api-federated-solr/search'
+    use_search_app_creds: 0
+    mode: result
 visibility: {  }
