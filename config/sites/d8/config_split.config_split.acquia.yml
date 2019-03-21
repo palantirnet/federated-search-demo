@@ -1,0 +1,16 @@
+uuid: 38f5b0be-08a1-4c53-801d-31d15728a0cc
+langcode: en
+status: false
+dependencies: {  }
+id: acquia
+label: Acquia
+description: 'Configuration specific to Acquia environments (i.e. Acquia Search module)'
+folder: ../../../config/config_split/acquia
+module:
+  acquia_search: 0
+theme: {  }
+blacklist: {  }
+graylist: {  }
+graylist_dependents: true
+graylist_skip_equal: true
+weight: 0
