@@ -1,0 +1,157 @@
+uuid: f2e53174-9ca5-482c-b148-d5ed2b71c825
+langcode: en
+status: true
+dependencies:
+  module:
+    - search_api_solr
+    - taxonomy
+    - search_api
+    - search_api_federated_solr
+    - search_api_field_map
+    - node
+  config:
+    - field.storage.node.field_search_terms
+    - search_api.server.acquia_search_server
+_core:
+  default_config_hash: '-ggwZpvT2-Ey1fqPkREitA6TGI_m5dTHD9vZm9FrlSQ'
+id: acquia_search_index
+name: 'Acquia Search Solr Index'
+description: ''
+read_only: true
+field_settings:
+  federated_date:
+    label: 'Federated Date'
+    property_path: mapped_field
+    type: date
+    configuration:
+      field_data:
+        node:
+          article: '[node:created:custom:Y-m-d\TH:i:s\Z]'
+          page: '[node:created:custom:Y-m-d\TH:i:s\Z]'
+          recipe: '[node:created:custom:Y-m-d\TH:i:s\Z]'
+  federated_image:
+    label: 'Federated Image'
+    property_path: mapped_field
+    type: string
+    configuration:
+      field_data:
+        node:
+          article: '[node:field_image:search_api_federated_solr_image:url]'
+          page: '[node:field_image:search_api_federated_solr_image:url]'
+          recipe: '[node:field_image:search_api_federated_solr_image:url]'
+  federated_terms:
+    label: 'Federated Terms'
+    property_path: mapped_terms
+    type: string
+  federated_title:
+    label: 'Federated Title'
+    property_path: mapped_field
+    type: string
+    configuration:
+      field_data:
+        node:
+          article: '[node:title]'
+          page: '[node:title]'
+          recipe: '[node:title]'
+  federated_type:
+    label: 'Federated Type'
+    property_path: mapped_field
+    type: string
+    configuration:
+      field_data:
+        node:
+          article: Article
+          page: Page
+          recipe: Recipe
+  full_text_search_terms:
+    label: 'Search terms'
+    datasource_id: 'entity:node'
+    property_path: 'field_search_terms:entity:name'
+    type: solr_text_ngram
+    boost: !!float 5
+    dependencies:
+      config:
+        - field.storage.node.field_search_terms
+      module:
+        - taxonomy
+        - taxonomy
+  full_text_title:
+    label: 'Full Text Title'
+    property_path: mapped_field
+    type: solr_text_ngram
+    boost: !!float 3
+    configuration:
+      field_data:
+        node:
+          article: '[node:title]'
+          page: '[node:title]'
+          recipe: '[node:title]'
+  rendered_item:
+    label: 'Rendered HTML output'
+    property_path: rendered_item
+    type: text
+    configuration:
+      roles:
+        anonymous: anonymous
+      view_mode:
+        'entity:node':
+          article: default
+          page: default
+          recipe: default
+  site_name:
+    label: 'Site Name'
+    property_path: site_name
+    type: string
+    configuration:
+      site_name: 'Federated Search Demo (D8, single)'
+  url:
+    label: URI
+    property_path: search_api_url
+    type: string
+  urls:
+    label: Urls
+    property_path: search_api_urls
+    type: string
+datasource_settings:
+  'entity:node':
+    plugin_id: 'entity:node'
+    settings:
+      bundles:
+        default: true
+        selected: {  }
+      languages:
+        default: true
+        selected: {  }
+    bundles:
+      default: true
+      selected: {  }
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url:
+    plugin_id: add_url
+    settings: {  }
+  aggregated_field: {  }
+  federated_terms: {  }
+  mapped_field: {  }
+  mapped_terms: {  }
+  rendered_item: {  }
+  search_api_urls: {  }
+  site_name: {  }
+tracker_settings:
+  default:
+    plugin_id: default
+    settings: {  }
+    indexing_order: fifo
+options:
+  index_directly: false
+  cron_limit: 50
+  processors:
+    language:
+      status: '1'
+      weight: -50
+      settings: {  }
+      processorPluginId: language
+  overridden_by_acquia_search: 2
+server: acquia_search_server
