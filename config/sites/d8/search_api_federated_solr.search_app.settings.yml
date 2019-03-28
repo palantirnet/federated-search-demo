@@ -9,12 +9,12 @@ facet:
 index:
   id: federated_search_index
   has_site_name_property: true
-  server_url: 'http://federated-search-demo.local:8983/solr/drupal8/select'
   username: ''
   password: ''
   has_federated_type_property: true
   has_federated_date_property: true
   has_federated_terms_property: true
+  server_url: 'http://federated-search-demo.local:8983/solr/drupal8/select'
 content:
   no_results: ''
   search_prompt: ''
@@ -32,7 +32,6 @@ filter:
     is_hidden: false
 autocomplete:
   isEnabled: 1
-  url: 'http://d8.fs-demo.local/search-api-federated-solr/search'
   appendWildcard: 0
   suggestionRows: ''
   numChars: ''
@@ -41,12 +40,12 @@ autocomplete:
     titleText: ''
     hideDirectionsText: 0
   proxy:
-    isDisabled: 0
-    url: 'http://d8.fs-demo.local/search-api-federated-solr/search'
+    isDisabled: 1
   direct:
-    url: 'http://federated-search-demo.local:8983/solr/drupal8/select'
+    url: 'http://d8.fs-demo.local/search-api-federated-solr/search'
   username: ''
   password: ''
+  use_search_app_creds: 0
+  url: 'http://federated-search-demo.local:8983/solr/drupal8/select'
 proxy:
-  url: 'http://d8.fs-demo.local/search-api-federated-solr/search'
   isDisabled: 0
