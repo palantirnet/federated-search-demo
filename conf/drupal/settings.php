@@ -23,6 +23,9 @@ $settings['file_private_path'] = '${drupal.settings.file_private_path}';
 
 $config['acquia_connector.settings']['hide_signup_messages'] = TRUE;
 
+// Uncomment this line to set default query fields that override solr config.
+//$config['search_api_federated_solr.search_app.settings']['index']['query_fields'] = ['rendered_item', 'full_text_title'];
+
 if (file_exists(__DIR__ . '/settings.local.php')) {
   include __DIR__ . '/settings.local.php';
 }
