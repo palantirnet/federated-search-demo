@@ -19,7 +19,8 @@ settings:
   label_display: '0'
   autocomplete:
     isEnabled: 1
-    url: 'http://federated-search-demo.local:8983/solr/drupal8/select?q=[val]&wt=json'
+    proxyIsDisabled: 0
+    directUrl: ''
     use_search_app_creds: 0
     mode: result
 visibility: {  }

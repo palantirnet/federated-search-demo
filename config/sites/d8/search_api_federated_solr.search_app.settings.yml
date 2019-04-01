@@ -40,9 +40,9 @@ autocomplete:
     titleText: ''
     hideDirectionsText: 0
   proxy:
-    isDisabled: 1
+    isDisabled: 0
   direct:
-    url: 'http://d8.fs-demo.local/search-api-federated-solr/search'
+    url: ''
   username: ''
   password: ''
   use_search_app_creds: 0
