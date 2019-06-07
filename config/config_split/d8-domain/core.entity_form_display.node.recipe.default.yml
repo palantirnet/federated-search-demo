@@ -14,10 +14,12 @@ dependencies:
     - field.field.node.recipe.field_preparation_time
     - field.field.node.recipe.field_recipe_category
     - field.field.node.recipe.field_recipe_instruction
+    - field.field.node.recipe.field_search_terms
     - field.field.node.recipe.field_summary
     - field.field.node.recipe.field_tags
     - image.style.thumbnail
     - node.type.recipe
+    - workflows.workflow.editorial
   module:
     - content_moderation
     - image
@@ -185,4 +187,5 @@ content:
       placeholder: ''
     region: content
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_search_terms: true
