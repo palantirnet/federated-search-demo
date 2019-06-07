@@ -38,11 +38,11 @@ field_settings:
     configuration:
       field_data:
         media:
-          file: '[media:field_media_image:search_api_federated_solr_image:url]'
+          file: '[media:field_media_image]'
         node:
-          article: '[node:field_image:search_api_federated_solr_image:url]'
-          page: '[node:field_image:search_api_federated_solr_image:url]'
-          recipe: '[node:field_image:search_api_federated_solr_image:url]'
+          article: '[node:field_image:search_api_federated_solr_image:uri]'
+          page: '[node:field_image:search_api_federated_solr_image:uri]'
+          recipe: '[node:field_image:search_api_federated_solr_image:uri]'
   federated_terms:
     label: 'Federated Terms'
     property_path: mapped_terms
@@ -116,6 +116,7 @@ field_settings:
     type: string
     configuration:
       site_name: 'Federated Search Demo (D8, single)'
+      use_system_site_name: 0
   url:
     label: URI
     property_path: search_api_url
@@ -165,6 +166,7 @@ processor_settings:
   mapped_field: {  }
   mapped_terms: {  }
   rendered_item: {  }
+  search_api_canonical_url: {  }
   search_api_urls: {  }
   site_name: {  }
 tracker_settings:

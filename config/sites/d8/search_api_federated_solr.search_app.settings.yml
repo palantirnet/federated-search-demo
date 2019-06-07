@@ -1,15 +1,26 @@
 facet:
   site_name:
-    set_default: false
+    set_default: true
+    is_hidden: true
+  federated_terms:
+    is_hidden: false
+  federated_type:
+    is_hidden: false
 index:
   id: federated_search_index
   has_site_name_property: true
-  server_url: 'http://federated-search-demo.local:8983/solr/drupal8/select'
   username: ''
   password: ''
+  has_federated_date_property: true
+  has_federated_term_property: false
+  has_federated_type_property: true
+  query_fields: {  }
+  has_federated_terms_property: true
+  validate_query_fields: true
 content:
   no_results: ''
   search_prompt: ''
+  show_empty_search_results: 0
 results:
   rows: null
 pagination:
@@ -18,3 +29,25 @@ path: /search-app
 _core:
   default_config_hash: fC8XjuC9oku1arb2vI5MrVe_wfKdAKGOQFFowpVc6t0
 page_title: ''
+autocomplete:
+  isEnabled: 1
+  appendWildcard: 1
+  suggestionRows: ''
+  mode: result
+  result:
+    titleText: ''
+    hideDirectionsText: 0
+  proxy:
+    isDisabled: 0
+  username: ''
+  password: ''
+  use_search_app_creds: 0
+  direct:
+    url: ''
+  numChars: ''
+filter:
+  federated_date:
+    is_hidden: false
+proxy:
+  isDisabled: 0
+  debug: false

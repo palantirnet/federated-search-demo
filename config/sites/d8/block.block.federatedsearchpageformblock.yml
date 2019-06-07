@@ -17,4 +17,11 @@ settings:
   label: 'Federated Search Page Form block'
   provider: search_api_federated_solr
   label_display: '0'
+  autocomplete:
+    isEnabled: 1
+    proxyIsDisabled: 0
+    directUrl: ''
+    use_search_app_creds: 0
+    appendWildcard: 1
+    mode: result
 visibility: {  }
