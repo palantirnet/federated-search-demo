@@ -29,8 +29,7 @@
   "require": {
     "composer/installers": "^1.0",
     "cweagans/composer-patches": "^1.6",
-    "drupal-composer/drupal-scaffold": "^2.3",
-    "drush/drush": "^8.1.15"
+    "drupal-composer/drupal-scaffold": "^2.3"
   },
   "require-dev": {
     "behat/behat": "^3.1",
