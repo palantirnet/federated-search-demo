@@ -1,7 +1,7 @@
 ---
 - name: MySQL | Install database management tool
   become: true
-  apt: pkg=python-mysqldb state=installed
+  apt: pkg=python-mysqldb state=present
 
 - name: MySQL | Create databases
   mysql_db:
