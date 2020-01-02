@@ -3,12 +3,13 @@
     <!-- For a list of commands, try: vendor/bin/phing -Dbuild.env=vagrant -l -->
 
 
-    <import file="vendor/palantirnet/the-build/tasks/boilerplate.xml" />
+    <import file="vendor/palantirnet/the-build/targets/the-build.xml" />
+    <import file="vendor/palantirnet/the-build/targets/drupal.xml" />
 
 
     <!-- Make these commands available by default. -->
-    <import file="vendor/palantirnet/the-build/tasks/drupal.xml" />
-    <import file="vendor/palantirnet/the-build/tasks/acquia.xml" />
+    <import file="vendor/palantirnet/the-build/targets/drupal.xml" />
+    <import file="vendor/palantirnet/the-build/targets/acquia.xml" />
 
 
     <!-- Default target: build -->
