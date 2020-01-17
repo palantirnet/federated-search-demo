@@ -1,5 +1,5 @@
 <project name="federated-search-demo" default="build">
-    <!-- Run with: vendor/bin/phing -Dbuild.env=vagrant -->
+    <!-- Run with: vendor/bin/phing -->
     <!-- For a list of commands, try: vendor/bin/phing -Dbuild.env=vagrant -l -->
 
     <!-- Provide the <drush /> task. -->
@@ -8,118 +8,92 @@
 
     <!-- Target: install-drupal-at-root -->
     <target name="install-drupal-at-root" description="Install Drupal at a specific docroot.">
-        <!-- Cloned from drupal.xml with the addition of root on drush site-install. -->
-        <fail unless="drupal.settings.file_public_path" />
-        <fail unless="drupal.root" />
-        <fail unless="drupal.site_name" />
-        <fail unless="drupal.sites_subdir" />
-        <fail unless="drupal.profile" />
-
-        <phingcall target="validate-clean-conf" />
-
-        <resolvepath propertyName="drupal.settings.file_public_path.resolved" file="${drupal.root}/${drupal.settings.file_public_path}" />
+        <drush command="status" returnProperty="drupal.site"><option name="field" value="site" /></drush>
+        <property name="drupal.files" value="${drupal.site}/files" />
+        <property name="drupal.private" value="${drupal.site}/private" />
 
         <!-- The sites subdirectory should be writable; Drupal will change the
              permissions on this directory after install. -->
-        <chmod file="${build.dir}/${drupal.root}/sites/${drupal.sites_subdir}" mode="777" />
+        <chmod file="${drush.root}/${drupal.site}" mode="777" />
 
         <!-- Make settings.php writable -->
-        <chmod file="${build.dir}/${drupal.root}/sites/${drupal.sites_subdir}/settings.php" mode="777" />
+        <chmod file="${drush.root}/${drupal.site}/settings.php" mode="777" />
 
         <!-- Delete and re-create the public files directory -->
-        <delete file="${drupal.settings.file_public_path.resolved}" />
-        <delete dir="${drupal.settings.file_public_path.resolved}" />
-        <mkdir dir="${drupal.settings.file_public_path.resolved}" mode="775" />
+        <delete file="${drush.root}/${drupal.files}" />
+        <delete dir="${drush.root}/${drupal.files}" />
+        <mkdir dir="${drush.root}/${drupal.files}" mode="775" />
 
+        <!-- Delete and re-create the private files directory -->
         <if>
             <and>
-                <isset property="drupal.settings.file_private_path"/>
+                <isset property="drupal.private"/>
                 <not>
-                    <equals arg1="${drupal.settings.file_private_path}" arg2="" trim="true" />
+                    <equals arg1="${drupal.private}" arg2="" trim="true" />
                 </not>
             </and>
             <then>
                 <resolvepath propertyName="drupal.settings.file_private_path.resolved" file="${drupal.root}/${drupal.settings.file_private_path}" />
-                <delete file="${drupal.settings.file_private_path.resolved}" />
-                <delete dir="${drupal.settings.file_private_path.resolved}" />
-                <mkdir dir="${drupal.settings.file_private_path.resolved}" mode="777" />
+                <delete file="${drush.root}/${drupal.private}" />
+                <delete dir="${drush.root}/${drupal.private}" />
+                <mkdir dir="${drush.root}/${drupal.private}" mode="777" />
             </then>
         </if>
 
-        <drush command="site-install" assume="yes" root="${build.dir}/${drupal.root}" uri="${drupal.uri}">
-            <option name="site-name">${drupal.site_name}</option>
-            <option name="account-name">${drupal.admin_user}</option>
+        <drush command="site-install" assume="yes">
+            <option name="site-name">${drush.alias}</option>
+            <option name="account-name">admin</option>
             <option name="account-pass">admin</option>
-            <param>${drupal.profile}</param>
+            <option name="existing-config" />
         </drush>
 
-        <!-- @todo Remove this conditional in release 2.0 -->
-        <if>
-            <not><equals arg1="${drupal.modules_enable}" arg2="" /></not>
-            <then>
-                <echo level="warning" msg="The 'drupal.modules_enable' property has been deprecated; please update your build to manage per-environment configuration with the Config Split module instead (https://www.drupal.org/project/config_split)" />
-            </then>
-        </if>
-
         <!-- The public files directory, and everything in it, needs to be world writable. -->
-        <exec command="chmod -R 777 ${drupal.settings.file_public_path.resolved}" checkreturn="true" />
+        <exec command="chmod -R 777 ${drush.root}/${drupal.files}" checkreturn="true" />
     </target>
 
 
     <!-- Target: install-d8 -->
     <target name="install-d8" description="Install the application.">
-        <fail message="Please run 'phing install-d8' with either '-Dbuild.env=d8' or '-Dbuild.env=d8-domain'.">
-            <condition>
-                <equals arg1="${build.env}" arg2="vagrant" casesensitive="true" />
-            </condition>
-        </fail>
+        <property name="drush.alias" value="@d8" />
 
-        <property file="${build.dir}/conf/build.${build.env}.properties" override="true" />
 
-        <exec command="composer install" dir="${build.dir}/${drupal.root}/../" passthru="true" />
+        <drush command="status" returnProperty="drush.root">
+          <option name="field" value="root" />
+        </drush>
+
+        <exec command="composer install" dir="${drush.root}/.." passthru="true" />
 
         <phingcall target="install-drupal-at-root" />
 
-        <!-- Uninstall the module -->
-        <drush command="pm-uninstall" assume="yes" root="${build.dir}/${drupal.root}" uri="${drupal.uri}">
+        <!-- Create demo content -->
+        <drush command="pm-enable" assume="yes">
             <param>demo_umami_content</param>
-        </drush>
-
-        <!-- Enable the module -->
-        <drush command="pm-enable" assume="yes" root="${build.dir}/${drupal.root}" uri="${drupal.uri}">
-            <param>demo_umami_content</param>
-        </drush>
-
-        <drush command="pm-enable" assume="yes" root="${build.dir}/${drupal.root}" uri="${drupal.uri}">
             <param>federated_terms</param>
-        </drush>
-        <drush command="pm-uninstall" assume="yes" root="${build.dir}/${drupal.root}" uri="${drupal.uri}">
-            <param>federated_terms</param>
-        </drush>
-
-        <drush command="pm-enable" assume="yes" root="${build.dir}/${drupal.root}" uri="${drupal.uri}">
-            <param>federated_default_content</param>
-        </drush>
-        <drush command="pm-uninstall" assume="yes" root="${build.dir}/${drupal.root}" uri="${drupal.uri}">
             <param>federated_default_content</param>
         </drush>
 
-        <drush command="sapi-c" assume="yes" root="${build.dir}/${drupal.root}" uri="${drupal.uri}">
+        <!-- Uninstall the demo content modules -->
+        <drush command="pm-uninstall" assume="yes">
+            <param>demo_umami_content</param>
+            <param>federated_terms</param>
+            <param>federated_default_content</param>
+        </drush>
+
+        <drush command="seach-api:clear" assume="yes">
             <param>federated_search</param>
         </drush>
-        <drush command="sapi-i" assume="yes" root="${build.dir}/${drupal.root}" uri="${drupal.uri}">
+        <drush command="search-api:index" assume="yes">
             <param>federated_search</param>
         </drush>
 
         <!-- Import config to fix rogue blocks changing UUIDs -->
-        <drush command="config-import" assume="yes" root="${build.dir}/${drupal.root}" uri="${drupal.uri}"/>
+        <drush command="config-import" assume="yes" />
 
         <!-- Rebuild node acces permissions. No direct drush command for this
              as per https://www.drupal.org/project/devel/issues/2677218#comment-10907984 -->
-        <drush command="php-eval" root="${build.dir}/${drupal.root}" uri="${drupal.uri}">
+        <drush command="php-eval">
            <param>'node_access_rebuild();'</param>
         </drush>
-
     </target>
 
 
@@ -151,13 +125,14 @@
 
     <!-- Target: install-all -->
     <target name="install-all" description="Install all the sites.">
-        <phingcall target="install-d8">
-            <property name="build.env" value="d8" override="true" />
-        </phingcall>
         <phingcall target="install-d7" />
 
         <phingcall target="install-d8">
-            <property name="build.env" value="d8-domain" override="true" />
+            <property name="drush.alias" value="d8" override="true" />
+        </phingcall>
+
+        <phingcall target="install-d8">
+            <property name="drush.alias" value="d8-domain" override="true" />
         </phingcall>
     </target>
 
