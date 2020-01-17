@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "241c16a1301c0c560b05f3183c5950ca",
+    "content-hash": "8dfe0c25616515972bbeb5ab0ffd468c",
     "packages": [
         {
             "name": "composer/installers",
@@ -3220,6 +3220,55 @@
             "time": "2019-11-08T13:50:10+00:00"
         },
         {
+            "name": "palantirnet/phing-drush-task",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/palantirnet/phing-drush-task.git",
+                "reference": "79afdbb487ac2eccab96a66e88d7583307441a3e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/palantirnet/phing-drush-task/zipball/79afdbb487ac2eccab96a66e88d7583307441a3e",
+                "reference": "79afdbb487ac2eccab96a66e88d7583307441a3e",
+                "shasum": ""
+            },
+            "require": {
+                "drush/drush": "^8.1.15 || ^9.0 || ^10.0",
+                "phing/phing": "~2.9"
+            },
+            "replace": {
+                "continuousphp/phing-drush-task": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Drush\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Frederic Dewinne",
+                    "email": "frederic@continuousphp.com"
+                },
+                {
+                    "name": "Pierre Buyle",
+                    "email": "pierre@buyle.org"
+                },
+                {
+                    "name": "Bec White",
+                    "email": "white@palantir.net"
+                }
+            ],
+            "description": "Drush task for Phing",
+            "homepage": "https://github.com/palantirnet/phing-drush-task",
+            "time": "2020-01-17T22:10:16+00:00"
+        },
+        {
             "name": "palantirnet/the-vagrant",
             "version": "2.5.0",
             "source": {
@@ -5088,7 +5137,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "palantirnet/phing-drush-task": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": [],

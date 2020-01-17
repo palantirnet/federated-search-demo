@@ -39,6 +39,8 @@
     "drupal/console": "^1.8",
     "drupal/drupal-extension": "^3.1",
     "drush/drush": "^10.1",
-    "palantirnet/the-vagrant": "^2.5"
+    "palantirnet/phing-drush-task": "dev-master",
+    "palantirnet/the-vagrant": "^2.5",
+    "phing/phing": "^2.16"
   }
 }

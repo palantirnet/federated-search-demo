@@ -2,29 +2,8 @@
     <!-- Run with: vendor/bin/phing -Dbuild.env=vagrant -->
     <!-- For a list of commands, try: vendor/bin/phing -Dbuild.env=vagrant -l -->
 
-
-    <import file="vendor/palantirnet/the-build/tasks/boilerplate.xml" />
-
-
-    <!-- Make these commands available by default. -->
-    <import file="vendor/palantirnet/the-build/tasks/drupal.xml" />
-    <import file="vendor/palantirnet/the-build/tasks/acquia.xml" />
-
-
-    <!-- Default target: build -->
-    <target name="build" description="Build the application.">
-        <phingcall target="drupal-build" inheritAll="false">
-            <property name="build.env" value="d8" />
-        </phingcall>
-
-        <phingcall target="drupal-build" inheritAll="false">
-            <property name="build.env" value="d7" />
-        </phingcall>
-
-        <phingcall target="drupal-build" inheritAll="false">
-            <property name="build.env" value="d8-domain" />
-        </phingcall>
-    </target>
+    <!-- Provide the <drush /> task. -->
+    <taskdef name="drush" classname="Drush\Task" />
 
 
     <!-- Target: install-drupal-at-root -->
@@ -146,27 +125,25 @@
 
     <!-- Target: install-d7 -->
     <target name="install-d7" description="Install the D7 site.">
-        <property name="build.env" value="d7" override="true" />
-        <property file="${build.dir}/conf/build.${build.env}.properties" override="true" />
+        <property name="drush.root" value="web/d7/docroot" />
+        <property name="drush.uri" value="http://d7.fs-demo.local" />
 
-        <exec command="composer install" dir="${build.dir}/${drupal.root}/../" passthru="true" />
+        <exec command="composer install" dir="${drupal.root}/.." passthru="true" />
 
-        <drush command="site-install" assume="yes" root="${build.dir}/${drupal.root}" uri="${drupal.uri}">
+        <drush command="site-install" assume="yes">
             <option name="site-name">Federated SOLR D7</option>
             <option name="account-pass">admin</option>
             <param>standard</param>
         </drush>
-        <drush command="pm-enable" assume="yes" root="${build.dir}/${drupal.root}" uri="${drupal.uri}">
+        <drush command="pm-enable" assume="yes">
             <param>features_search_api_config</param>
-        </drush>
-        <drush command="pm-enable" assume="yes" root="${build.dir}/${drupal.root}" uri="${drupal.uri}">
             <param>devel_generate</param>
         </drush>
-        <drush command="pm-disable" assume="yes" root="${build.dir}/${drupal.root}" uri="${drupal.uri}">
+        <drush command="pm-disable" assume="yes">
             <param>overlay</param>
             <param>toolbar</param>
         </drush>
-        <drush command="generate-content" assume="yes" root="${build.dir}/${drupal.root}" uri="${drupal.uri}">
+        <drush command="generate-content" assume="yes">
             <param>10</param>
         </drush>
     </target>
