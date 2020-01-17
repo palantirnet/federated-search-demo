@@ -1,0 +1,5 @@
+---
+- name: Install drush config
+  template:
+    src: drush.yml
+    dest: /home/vagrant/.drush/drush.yml

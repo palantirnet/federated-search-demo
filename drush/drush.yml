@@ -1,0 +1,18 @@
+command:
+  sql:
+    dump:
+      options:
+        # Omit cache and similar tables from sql:dump and sql:sync operations.
+        structure-tables-key: common
+
+sql:
+  # List of tables whose *data* is skipped by the 'sql-dump' and 'sql-sync'
+  # commands when the "--structure-tables-key=common" option is provided.
+  structure-tables:
+    common:
+      - 'cache'
+      - 'cache_*'
+      - 'history'
+      - 'search_*'
+      - 'sessions'
+      - 'watchdog'
