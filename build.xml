@@ -14,7 +14,6 @@
 
     <!-- Default target: build -->
     <target name="build" description="Build the application.">
-
         <phingcall target="drupal-build" inheritAll="false">
             <property name="build.env" value="d8" />
         </phingcall>
@@ -28,6 +27,8 @@
         </phingcall>
     </target>
 
+
+    <!-- Target: install-drupal-at-root -->
     <target name="install-drupal-at-root" description="Install Drupal at a specific docroot.">
         <!-- Cloned from drupal.xml with the addition of root on drush site-install. -->
         <fail unless="drupal.settings.file_public_path" />
@@ -87,7 +88,7 @@
     </target>
 
 
-    <!-- Target: install -->
+    <!-- Target: install-d8 -->
     <target name="install-d8" description="Install the application.">
         <fail message="Please run 'phing install-d8' with either '-Dbuild.env=d8' or '-Dbuild.env=d8-domain'.">
             <condition>
@@ -143,7 +144,8 @@
 
     </target>
 
-    <!-- Target: install -->
+
+    <!-- Target: install-d7 -->
     <target name="install-d7" description="Install the D7 site.">
         <property name="build.env" value="d7" override="true" />
         <property file="${build.dir}/conf/build.${build.env}.properties" override="true" />
@@ -170,6 +172,8 @@
         </drush>
     </target>
 
+
+    <!-- Target: install-all -->
     <target name="install-all" description="Install all the sites.">
         <phingcall target="install-d8">
             <property name="build.env" value="d8" override="true" />
@@ -180,6 +184,7 @@
             <property name="build.env" value="d8-domain" override="true" />
         </phingcall>
     </target>
+
 
     <!-- Target: init -->
     <target name="init" description="Initialize the repo for development.">
@@ -212,8 +217,8 @@
         <mkdir dir="${build.dir}/src" />
         <delete file="${build.dir}/src/search_api_field_map-7.x" />
         <symlink target="../web/d7/docroot/sites/all/modules/contrib/search_api_field_map" link="src/search_api_field_map-7.x" />
-
     </target>
+
 
     <!-- Target: solr-clear -->
     <target name="solr-clear" description="Delete all entries in the local Solr 'drupal8' core.">
@@ -230,6 +235,7 @@
             </then>
         </if>
     </target>
+
 
     <!-- Target: migrate -->
     <target name="migrate" description="Run the migrations.">
