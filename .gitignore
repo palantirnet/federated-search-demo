@@ -3,11 +3,7 @@
 # in your development environment:
 # https://github.com/palantirnet/development_documentation/blob/master/guidelines/git/gitignore.md
 
-# Ignore Drupal settings and files
-settings.php
-services.yml
-!conf/drupal/settings.php
-!conf/drupal/services.yml
+# Ignore Drupal site files
 web/*/docroot/sites/*/files
 
 # Ignore virtual environment and artifacts

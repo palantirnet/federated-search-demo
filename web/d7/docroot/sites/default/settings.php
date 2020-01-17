@@ -3,15 +3,15 @@
 $databases = array();
 $databases['default']['default'] = array(
   'driver' => 'mysql',
-  'database' => '${drupal.database.database}',
-  'username' => '${drupal.database.username}',
-  'password' => '${drupal.database.password}',
-  'host' => '${drupal.database.host}',
+  'database' => 'fs-demo-d7',
+  'username' => 'root',
+  'password' => 'root',
+  'host' => '127.0.0.1',
   'prefix' => '',
 );
 
-$conf['file_public_path'] = '${drupal.settings.file_public_path}';
-$conf['file_private_path'] = '${drupal.settings.file_private_path}';
+$conf['file_public_path'] = 'sites/default/files';
+$conf['file_private_path'] = '';
 $conf['file_temporary_path'] = '/tmp';
 
 $config['acquia_connector.settings']['hide_signup_messages'] = TRUE;

@@ -6,7 +6,7 @@ parameters:
     gc_maxlifetime: 200000
     cookie_lifetime: 2000000
   twig.config:
-    debug: ${drupal.twig.debug}
+    debug: 
     auto_reload: null
     cache: true
   renderer.config:
