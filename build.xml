@@ -14,15 +14,15 @@
 
         <!-- The sites subdirectory should be writable; Drupal will change the
              permissions on this directory after install. -->
-        <chmod file="${drush.root}/${drupal.site}" mode="777" />
+        <chmod file="${drupal.root}/${drupal.site}" mode="777" />
 
         <!-- Make settings.php writable -->
-        <chmod file="${drush.root}/${drupal.site}/settings.php" mode="777" />
+        <chmod file="${drupal.root}/${drupal.site}/settings.php" mode="777" />
 
         <!-- Delete and re-create the public files directory -->
-        <delete file="${drush.root}/${drupal.files}" />
-        <delete dir="${drush.root}/${drupal.files}" />
-        <mkdir dir="${drush.root}/${drupal.files}" mode="775" />
+        <delete file="${drupal.root}/${drupal.files}" />
+        <delete dir="${drupal.root}/${drupal.files}" />
+        <mkdir dir="${drupal.root}/${drupal.files}" mode="775" />
 
         <!-- Delete and re-create the private files directory -->
         <if>
@@ -34,9 +34,9 @@
             </and>
             <then>
                 <resolvepath propertyName="drupal.settings.file_private_path.resolved" file="${drupal.root}/${drupal.settings.file_private_path}" />
-                <delete file="${drush.root}/${drupal.private}" />
-                <delete dir="${drush.root}/${drupal.private}" />
-                <mkdir dir="${drush.root}/${drupal.private}" mode="777" />
+                <delete file="${drupal.root}/${drupal.private}" />
+                <delete dir="${drupal.root}/${drupal.private}" />
+                <mkdir dir="${drupal.root}/${drupal.private}" mode="777" />
             </then>
         </if>
 
@@ -48,20 +48,16 @@
         </drush>
 
         <!-- The public files directory, and everything in it, needs to be world writable. -->
-        <exec command="chmod -R 777 ${drush.root}/${drupal.files}" checkreturn="true" />
+        <exec command="chmod -R 777 ${drupal.root}/${drupal.files}" checkreturn="true" />
     </target>
 
 
     <!-- Target: install-d8 -->
     <target name="install-d8" description="Install the application.">
         <property name="drush.alias" value="@d8" />
+        <drush command="status" returnProperty="drupal.root"><option name="field" value="root" /></drush>
 
-
-        <drush command="status" returnProperty="drush.root">
-          <option name="field" value="root" />
-        </drush>
-
-        <exec command="composer install" dir="${drush.root}/.." passthru="true" />
+        <exec command="composer install" dir="${drupal.root}/.." passthru="true" />
 
         <phingcall target="install-drupal-at-root" />
 
@@ -99,10 +95,13 @@
 
     <!-- Target: install-d7 -->
     <target name="install-d7" description="Install the D7 site.">
+        <!-- Drush 9/10 are not compatible with Drupal 7, so we can't use a regular drush
+             alias. Hence, we provide drush.root and drush.uri, which the <drush> task
+             uses in its commands. -->
         <property name="drush.root" value="web/d7/docroot" />
         <property name="drush.uri" value="http://d7.fs-demo.local" />
 
-        <exec command="composer install" dir="${drupal.root}/.." passthru="true" />
+        <exec command="composer install" dir="${drush.root}/.." passthru="true" />
 
         <drush command="site-install" assume="yes">
             <option name="site-name">Federated SOLR D7</option>
