@@ -8,7 +8,9 @@
 
     <!-- Target: install-drupal-at-root -->
     <target name="install-drupal-at-root" description="Install Drupal at a specific docroot.">
-        <drush command="status" returnProperty="drupal.site"><option name="field" value="site" /></drush>
+        <drush command="status" returnProperty="drupal.site_padded"><option name="field" value="site" /></drush>
+        <php function="trim" returnProperty="drupal.site"><param value="${drupal.site_padded}" /></php>
+
         <property name="drupal.files" value="${drupal.site}/files" />
         <property name="drupal.private" value="${drupal.site}/private" />
 
@@ -53,10 +55,11 @@
     <!-- Target: install-d8 -->
     <target name="install-d8" description="Install the application.">
         <property name="drush.alias" value="@d8" />
-        <drush command="status" returnProperty="drupal.root"><option name="field" value="root" /></drush>
+
+        <drush command="status" returnProperty="drupal.root_padded"><option name="field" value="root" /></drush>
+        <php function="trim" returnProperty="drupal.root"><param value="${drupal.root_padded}" /></php>
 
         <exec command="composer install" dir="${drupal.root}/.." passthru="true" />
-
         <phingcall target="install-drupal-at-root" />
 
         <!-- Create demo content -->
