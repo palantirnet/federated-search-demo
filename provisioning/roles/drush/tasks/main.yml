@@ -1,4 +1,11 @@
 ---
+- name: Ensure ~/.drush exists
+  file:
+    path: /home/vagrant/.drush
+    state: directory
+    owner: vagrant
+    mode: '755'
+
 - name: Install drush config
   template:
     src: drush.yml
