@@ -12,11 +12,9 @@
         <property name="drupal.files" value="${drupal.site}/files" />
         <property name="drupal.private" value="${drupal.site}/private" />
 
-        <!-- The sites subdirectory should be writable; Drupal will change the
-             permissions on this directory after install. -->
+        <!-- The sites subdirectory and settings.php should be writable; Drupal will
+             change the permissions on this directory after install. -->
         <chmod file="${drupal.root}/${drupal.site}" mode="777" />
-
-        <!-- Make settings.php writable -->
         <chmod file="${drupal.root}/${drupal.site}/settings.php" mode="777" />
 
         <!-- Delete and re-create the public files directory -->
