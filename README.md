@@ -20,8 +20,8 @@ The development environment is based on [palantirnet/the-vagrant](https://github
 * Mac OS X >= 10.10. _This stack may run under other host operating systems, but is not regularly tested. For details on installing these dependencies on your Mac, see our [Mac setup doc [internal]](https://github.com/palantirnet/documentation/wiki/Mac-Setup)._
 * [Composer](https://getcomposer.org)
 * [virtualBox](https://www.virtualbox.org/wiki/Downloads) >= 5.0
-* [ansible](https://github.com/ansible/ansible) >= 2.2 `brew install ansible`
-* [vagrant](https://www.vagrantup.com/) >= 2.1
+* [ansible](https://github.com/ansible/ansible) >= 2.8 `brew install ansible`
+* [vagrant](https://www.vagrantup.com/) >= 2.2
 * Vagrant plugins:
   * [vagrant-hostmanager](https://github.com/smdahlen/vagrant-hostmanager) `vagrant plugin install vagrant-hostmanager`
   * [vagrant-auto_network](https://github.com/oscar-stack/vagrant-auto_network) `vagrant plugin install vagrant-auto_network`
@@ -51,7 +51,7 @@ You may be interested in creating your own development environment and comparing
   ```
 3. You will be prompted for the administration password on your host machine
 4. Log in to the virtual machine (the VM): `vagrant ssh`
-5. Build, install, and enable demo content: `phing build install-all`
+5. Build, install, and enable demo content: `phing install-all`
 6. Build the `/src` directory and symlink modules there to make development easier: `phing init`
 7. Visit your D8 (standalone) site at [http://d8.fs-demo.local](http://d8.fs-demo.local)
 8. Visit your D8 (domain access) site at:
@@ -60,7 +60,7 @@ You may be interested in creating your own development environment and comparing
    - [http://d8-3.fs-demo.local](http://d8-3.fs-demo.local)
    - These sites are for future use, as Domain support has not yet been ported to D8.
 9. Visit your D7 site at [http://d7.fs-demo.local](http://d7.fs-demo.local)
-10. View the Solr index at [http://federated-search-demo.local:8983/solr/#/drupal8/query](http://federated-search-demo.local:8983/solr/#/drupal8/query). 
+10. View the Solr index at [http://federated-search-demo.local:8983/solr/#/drupal8/query](http://federated-search-demo.local:8983/solr/#/drupal8/query).
 
 You can log in to any of the Drupal sites at `/user` with `admin/admin`.
 
@@ -74,13 +74,14 @@ To run project-related commands other than `vagrant up` and `vagrant ssh`:
 * You'll be in your project root, at the path `/var/www/federated-search-demo.local/`
 * You can run `composer`, `drush`, and `phing` commands from here
 * Go to the path `/var/www/federated-search-demo.local/web/*` to add new modules to each site.
+* Use drush on the D8 sites - try `drush site:alias` or `drush @d8 status`
+* Use drush on the D7 site by navigating into the d7 directory:
 
-Avoid committing to git from within your VM, because your commits won't be properly attributed to you. If you must, make sure you [create a global .gitignore [internal]](https://github.com/palantirnet/documentation/wiki/Using-the-gitignore-File) within your VM at `/home/vagrant/.gitignore`, and configure your name and email for proper attribution:
-
-```
-git config --global user.email 'me@palantir.net'
-git config --global user.name 'My Name'
-```
+   ```
+   cd web/d7/
+   drush site-alias
+   drush @d7 status
+   ```
 
 ## Drupal Development
 
@@ -88,17 +89,16 @@ You can refresh/reset your local Drupal site at any time. SSH into your VM and t
 
 ### Rebuild all the things
 
-If you just want to get up and running, from the project root run `phing build install-all init`. If this fails for any reason, proceed to run it step by step.
+If you just want to get up and running, from the project root run `phing install-all init`. If this fails for any reason, proceed to run it step by step.
 
 ### Run each step individually
 
-1. Download the most current dependencies for D8 (standalone): `cd web/d8` then `composer install`. Don't forget to return to the project root to run the phing commands.
-2. Download the most current dependencies for D8 (domain access): `cd web/d8-domain` then `composer install`. Don't forget to return to the project root to run the phing commands.
-3. Download the most current dependencies for D7: `cd web/d7` then `composer install`. Don't forget to return to the project root to run the phing commands.
-4. Rebuild your local CSS and Drupal settings file: `phing build`
-5. Reinstall Drupal 8: 
-   - Standalone: `phing install-d8 -Dbuild.env=d8`
-   - Domain site: `phing install-d8 -Dbuild.env=d8-domain`
+1. Download the most current dependencies for D8 (standalone): `composer install --working-dir=web/d8`
+2. Download the most current dependencies for D8 (domain access): `composer install --working-dir=web/d8-domain`
+3. Download the most current dependencies for D7: `composer install --working-dir=web/d7`
+4. Reinstall Drupal 8:
+   - Standalone: `phing install-d8 -Ddrush.alias=@d8`
+   - Domain site: `phing install-d8 -Ddrush.alias=@d8-domain`
 6. Reinstall Drupal 7: `phing install-d7`
 7. Build the `/src` directory and symlink modules there: `phing init`
    - This links each of the two modules: `search_api_federated_solr` and `search_api_field_map` from the D8/D7 single site docroot to the `/src` directory and also into the D8/D7 Domain Access-enabled docroot. This means all changes made in `/src/search_api_...` will propagate to both sites simultaneously.
@@ -125,7 +125,7 @@ Once you've made an update to a config file in `conf/solr/drupal[7/8]/custom/`, 
 
 ### Restarting Solr
 
-You can restart the Solr service from the project within the vm with `sudo service solr restart`. 
+You can restart the Solr service from the project within the vm with `sudo service solr restart`.
 
 ## Deployment
 
@@ -137,26 +137,18 @@ This repo is structured a little differently than usual, since it contains 4 ind
 
 ```
 
-├── conf  # Build properties go in here
-│   ├── apache.circle.conf
-│   ├── build.circle.properties
-│   ├── build.d7.properties
-│   ├── build.d8.properties
-│   ├── build.default.properties
-│   ├── drupal  # Settings.php templates go here
-│   │   ├── config
-│   │   ├── services.yml
-│   │   ├── settings.acquia.php
-│   │   ├── settings.d7.php
-│   │   └── settings.php
-│   └── drushrc.php
+├── conf
+│   └── solr
+│       ├── drupal7
+│       └── drupal8
 ├── config
 │   ├── config_split  # Not using this at the moment
 │   └── sites  # D8 site config goes here
 │       └── d8
-├── drush  # Drush aliases go here.
-│   ├── fsd-d7.aliases.drushrc.php
-│   └── fsd-d8.aliases.drushrc.php
+├── drush
+│   └── sites # Drush aliases go here.
+│       ├── d8-domain.site.yml
+│       └── d8.site.yml
 ├── features  # Tests could eventually go here.
 │   ├── bootstrap
 │   │   └── FeatureContext.php
@@ -192,4 +184,4 @@ General:
 * [Styleguide Development](docs/general/styleguide_development.md)
 
 ----
-Copyright 2018 Palantir.net, Inc.
+Copyright 2018, 2019, 2020 Palantir.net, Inc.
