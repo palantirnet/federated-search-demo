@@ -178,7 +178,7 @@
                      The query needs to be escaped to pass through phing, but here it is unescaped:
                      http://federated-search-demo.local:8984/solr/drupal8/update?commit=true&stream.body=<delete><query>*:*</query></delete>
                 -->
-                <exec command="curl &apos;http://federated-search-demo.local:8983/solr/drupal8/update?commit=true&amp;stream.body&#61;&lt;delete&gt;&lt;query&gt;*:*&lt;/query&gt;&lt;/delete&gt;&apos;" passthru="true" dir="${build.dir}" escape="false" checkreturn="true" />
+                <exec command="curl &apos;http://federated-search-demo.local:8983/solr/drupal8/update?commit=true&amp;stream.body&#61;&lt;delete&gt;&lt;query&gt;*:*&lt;/query&gt;&lt;/delete&gt;&apos;" passthru="true" escape="false" checkreturn="true" />
                 <echo message="Your Solr is now clean."/>
             </then>
         </if>
