@@ -130,11 +130,11 @@
         <phingcall target="install-d7" />
 
         <phingcall target="install-d8">
-            <property name="drush.alias" value="d8" override="true" />
+            <property name="drush.alias" value="@d8" override="true" />
         </phingcall>
 
         <phingcall target="install-d8">
-            <property name="drush.alias" value="d8-domain" override="true" />
+            <property name="drush.alias" value="@d8-domain" override="true" />
         </phingcall>
     </target>
 
