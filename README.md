@@ -172,16 +172,5 @@ This repo is structured a little differently than usual, since it contains 4 ind
     │   # Directories for the domain-enabled docroots go here
 ```
 
-## Additional Documentation
-
-Project-specific:
-
-* [Technical Approach](docs/technical_approach.md)
-
-General:
-
-* [Drupal Development](docs/general/drupal_development.md)
-* [Styleguide Development](docs/general/styleguide_development.md)
-
 ----
 Copyright 2018, 2019, 2020 Palantir.net, Inc.
