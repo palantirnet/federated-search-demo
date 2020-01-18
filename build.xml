@@ -44,7 +44,7 @@
             <option name="site-name">${drush.alias}</option>
             <option name="account-name">admin</option>
             <option name="account-pass">admin</option>
-            <option name="existing-config" />
+            <param>config_installer</param>
         </drush>
 
         <!-- The public files directory, and everything in it, needs to be world writable. -->
