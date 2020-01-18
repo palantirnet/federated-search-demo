@@ -28,7 +28,7 @@
         <php function="trim" returnProperty="drupal.root"><param value="${drupal.root_padded}" /></php>
 
         <exec command="composer install" dir="${drupal.root}/.." passthru="true" />
-        <phingcall target="install-drupal-at-root" />
+        <phingcall target="install-drupal-by-alias" />
 
         <!-- Reinstall the Umami demo content -->
         <drush command="pm-uninstall" assume="yes"><param>demo_umami_content</param></drush>
@@ -64,8 +64,8 @@
     </target>
 
 
-    <!-- Target: install-drupal-at-root -->
-    <target name="install-drupal-at-root" hidden="true">
+    <!-- Target: install-drupal-by-alias -->
+    <target name="install-drupal-by-alias" hidden="true">
         <drush command="status" returnProperty="drupal.site_padded"><option name="field" value="site" /></drush>
         <php function="trim" returnProperty="drupal.site"><param value="${drupal.site_padded}" /></php>
 
