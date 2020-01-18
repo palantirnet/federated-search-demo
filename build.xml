@@ -62,21 +62,23 @@
         <exec command="composer install" dir="${drupal.root}/.." passthru="true" />
         <phingcall target="install-drupal-at-root" />
 
+        <!-- Reinstall the Umami demo content -->
+        <drush command="pm-uninstall" assume="yes"><param>demo_umami_content</param></drush>
+        <drush command="pm-enable" assume="yes"><param>demo_umami_content</param></drush>
+
         <!-- Create demo content -->
         <drush command="pm-enable" assume="yes">
-            <param>demo_umami_content</param>
             <param>federated_terms</param>
             <param>federated_default_content</param>
         </drush>
 
         <!-- Uninstall the demo content modules -->
         <drush command="pm-uninstall" assume="yes">
-            <param>demo_umami_content</param>
             <param>federated_terms</param>
             <param>federated_default_content</param>
         </drush>
 
-        <drush command="seach-api:clear" assume="yes">
+        <drush command="search-api:clear" assume="yes">
             <param>federated_search</param>
         </drush>
         <drush command="search-api:index" assume="yes">
