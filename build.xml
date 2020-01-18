@@ -1,4 +1,4 @@
-<project name="federated-search-demo" default="build">
+<project name="federated-search-demo" default="list">
     <!-- Run with: vendor/bin/phing -->
     <!-- For a list of commands, try: vendor/bin/phing -Dbuild.env=vagrant -l -->
 
@@ -187,6 +187,12 @@
                 <echo message="Your Solr is now clean."/>
             </then>
         </if>
+    </target>
+
+
+    <!-- Default target: list -->
+    <target name="list" hidden="true">
+        <exec command="phing -q -f ${phing.file} -l" passthru="true"/>
     </target>
 
 
