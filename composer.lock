@@ -3270,16 +3270,16 @@
         },
         {
             "name": "palantirnet/the-vagrant",
-            "version": "2.5.1",
+            "version": "2.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/palantirnet/the-vagrant.git",
-                "reference": "9d51cf159791fe25cda448070c975de18ec205ed"
+                "reference": "10a124250e5974062d84bf9ae9d45d33dea96485"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/palantirnet/the-vagrant/zipball/9d51cf159791fe25cda448070c975de18ec205ed",
-                "reference": "9d51cf159791fe25cda448070c975de18ec205ed",
+                "url": "https://api.github.com/repos/palantirnet/the-vagrant/zipball/10a124250e5974062d84bf9ae9d45d33dea96485",
+                "reference": "10a124250e5974062d84bf9ae9d45d33dea96485",
                 "shasum": ""
             },
             "require": {
@@ -3300,7 +3300,7 @@
                 }
             ],
             "description": "Install a Vagrant environment into a Drupal project.",
-            "time": "2020-01-17T23:36:34+00:00"
+            "time": "2020-01-18T00:10:59+00:00"
         },
         {
             "name": "paragonie/random_compat",
