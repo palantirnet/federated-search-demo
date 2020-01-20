@@ -97,8 +97,8 @@ If you just want to get up and running, from the project root run `phing install
 2. Download the most current dependencies for D8 (domain access): `composer install --working-dir=web/d8-domain`
 3. Download the most current dependencies for D7: `composer install --working-dir=web/d7`
 4. Reinstall Drupal 8:
-   - Standalone: `phing install-d8 -Ddrush.alias=@d8`
-   - Domain site: `phing install-d8 -Ddrush.alias=@d8-domain`
+   - Standalone: `phing install-d8 -Ddrush.root=web/d8/docroot`
+   - Domain site: `phing install-d8 -Ddrush.root=web/d8-domain/docroot`
 6. Reinstall Drupal 7: `phing install-d7`
 7. Build the `/src` directory and symlink modules there: `phing init`
    - This links each of the two modules: `search_api_federated_solr` and `search_api_field_map` from the D8/D7 single site docroot to the `/src` directory and also into the D8/D7 Domain Access-enabled docroot. This means all changes made in `/src/search_api_...` will propagate to both sites simultaneously.

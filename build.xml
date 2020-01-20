@@ -11,23 +11,21 @@
         <phingcall target="install-d7" />
 
         <phingcall target="install-d8">
-            <property name="drush.alias" value="@d8" override="true" />
+            <property name="drush.root" value="web/d8/docroot" override="true" />
         </phingcall>
 
         <phingcall target="install-d8">
-            <property name="drush.alias" value="@d8-domain" override="true" />
-            <property name="drupal.root" value="web/d8-domain/docroot" override="true" />
+            <property name="drush.root" value="web/d8-domain/docroot" override="true" />
         </phingcall>
     </target>
 
 
     <!-- Target: install-d8 -->
-    <target name="install-d8" description="Install one of the Drupal 8 sites; specify which site using -Ddrush.alias=@d8">
-        <property name="drush.alias" value="@d8" />
+    <target name="install-d8" description="Install one of the Drupal 8 sites; specify which site with -Ddrush.root=web/d8/docroot">
+        <property name="drush.root" value="web/d8/docroot" />
 
-        <property name="drupal.root" value="web/d8/docroot" />
-        <exec command="composer install" dir="${drupal.root}/.." passthru="true" />
-        <phingcall target="install-drupal-by-alias" />
+        <exec command="composer install" dir="${drush.root}/.." passthru="true" />
+        <phingcall target="install-drupal-by-path" />
 
         <!-- Reinstall the Umami demo content -->
         <drush command="pm-uninstall" assume="yes"><param>demo_umami_content</param></drush>
@@ -63,8 +61,8 @@
     </target>
 
 
-    <!-- Target: install-drupal-by-alias -->
-    <target name="install-drupal-by-alias" hidden="true">
+    <!-- Target: install-drupal-by-path -->
+    <target name="install-drupal-by-path" hidden="true">
         <drush command="status" returnProperty="drupal.site_padded"><option name="field" value="site" /></drush>
         <php function="trim" returnProperty="drupal.site"><param value="${drupal.site_padded}" /></php>
 
@@ -73,13 +71,13 @@
 
         <!-- The sites subdirectory and settings.php should be writable; Drupal will
              change the permissions on this directory after install. -->
-        <chmod file="${drupal.root}/${drupal.site}" mode="777" />
-        <chmod file="${drupal.root}/${drupal.site}/settings.php" mode="777" />
+        <chmod file="${drush.root}/${drupal.site}" mode="777" />
+        <chmod file="${drush.root}/${drupal.site}/settings.php" mode="777" />
 
         <!-- Delete and re-create the public files directory -->
-        <delete file="${drupal.root}/${drupal.files}" />
-        <delete dir="${drupal.root}/${drupal.files}" />
-        <mkdir dir="${drupal.root}/${drupal.files}" mode="775" />
+        <delete file="${drush.root}/${drupal.files}" />
+        <delete dir="${drush.root}/${drupal.files}" />
+        <mkdir dir="${drush.root}/${drupal.files}" mode="775" />
 
         <!-- Delete and re-create the private files directory -->
         <if>
@@ -90,22 +88,20 @@
                 </not>
             </and>
             <then>
-                <resolvepath propertyName="drupal.settings.file_private_path.resolved" file="${drupal.root}/${drupal.settings.file_private_path}" />
-                <delete file="${drupal.root}/${drupal.private}" />
-                <delete dir="${drupal.root}/${drupal.private}" />
-                <mkdir dir="${drupal.root}/${drupal.private}" mode="777" />
+                <delete file="${drush.root}/${drupal.private}" />
+                <delete dir="${drush.root}/${drupal.private}" />
+                <mkdir dir="${drush.root}/${drupal.private}" mode="777" />
             </then>
         </if>
 
         <drush command="site-install" assume="yes">
-            <option name="site-name">${drush.alias}</option>
             <option name="account-name">admin</option>
             <option name="account-pass">admin</option>
             <param>config_installer</param>
         </drush>
 
         <!-- The public files directory, and everything in it, needs to be world writable. -->
-        <exec command="chmod -R 777 ${drupal.root}/${drupal.files}" checkreturn="true" />
+        <exec command="chmod -R 777 ${drush.root}/${drupal.files}" checkreturn="true" />
     </target>
 
 
