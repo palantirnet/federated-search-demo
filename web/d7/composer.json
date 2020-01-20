@@ -34,7 +34,7 @@
     "drupal-composer/preserve-paths": "^0.1.4",
     "drupal/admin_menu": "^3.0@RC",
     "drupal/devel": "^1.6",
-    "drupal/drupal": "7.61",
+    "drupal/drupal": "7.69",
     "drupal/features": "^2.10",
     "drupal/features_extra": "^1.0",
     "drupal/imagecache_token": "^1.0@RC",
