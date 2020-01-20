@@ -35,6 +35,7 @@ module:
   options: 0
   page_cache: 0
   path: 0
+  path_alias: 0
   quickedit: 0
   rdf: 0
   responsive_image: 0
@@ -57,13 +58,11 @@ module:
   workflows: 0
   menu_link_content: 1
   views: 10
-  demo_umami: 1000
 theme:
   stable: 0
   classy: 0
   seven: 0
-  umami: 0
   stark: 0
-profile: demo_umami
+profile: standard
 _core:
   default_config_hash: R4IF-ClDHXxblLcG0L7MgsLvfBIMAvi_skumNFQwkDc

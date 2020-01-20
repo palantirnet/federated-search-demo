@@ -28,8 +28,8 @@
         <phingcall target="install-drupal-by-path" />
 
         <!-- Reinstall the Umami demo content -->
-        <drush command="pm-uninstall" assume="yes"><param>demo_umami_content</param></drush>
-        <drush command="pm-enable" assume="yes"><param>demo_umami_content</param></drush>
+        <!--drush command="pm-uninstall" assume="yes"><param>demo_umami_content</param></drush-->
+        <!--drush command="pm-enable" assume="yes"><param>demo_umami_content</param></drush-->
 
         <!-- Create demo content -->
         <drush command="pm-enable" assume="yes">
@@ -75,9 +75,8 @@
         <chmod file="${drush.root}/${drupal.site}/settings.php" mode="777" />
 
         <!-- Delete and re-create the public files directory -->
-        <delete file="${drush.root}/${drupal.files}" />
         <delete dir="${drush.root}/${drupal.files}" />
-        <mkdir dir="${drush.root}/${drupal.files}" mode="775" />
+        <mkdir dir="${drush.root}/${drupal.files}" mode="777" />
 
         <!-- Delete and re-create the private files directory -->
         <if>
@@ -88,7 +87,6 @@
                 </not>
             </and>
             <then>
-                <delete file="${drush.root}/${drupal.private}" />
                 <delete dir="${drush.root}/${drupal.private}" />
                 <mkdir dir="${drush.root}/${drupal.private}" mode="777" />
             </then>
@@ -97,7 +95,8 @@
         <drush command="site-install" assume="yes">
             <option name="account-name">admin</option>
             <option name="account-pass">admin</option>
-            <param>config_installer</param>
+            <param>standard</param>
+            <!--param>config_installer_sync_configure_form.sync_directory=../../../config/sites/d8</param-->
         </drush>
 
         <!-- The public files directory, and everything in it, needs to be world writable. -->

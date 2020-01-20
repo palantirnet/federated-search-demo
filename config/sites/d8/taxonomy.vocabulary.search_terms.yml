@@ -5,5 +5,4 @@ dependencies: {  }
 name: 'Search Terms'
 vid: search_terms
 description: ''
-hierarchy: 0
 weight: 0
