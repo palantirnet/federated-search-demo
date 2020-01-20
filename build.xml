@@ -16,6 +16,7 @@
 
         <phingcall target="install-d8">
             <property name="drush.alias" value="@d8-domain" override="true" />
+            <property name="drupal.root" value="web/d8-domain/docroot" override="true" />
         </phingcall>
     </target>
 
@@ -24,9 +25,7 @@
     <target name="install-d8" description="Install one of the Drupal 8 sites; specify which site using -Ddrush.alias=@d8">
         <property name="drush.alias" value="@d8" />
 
-        <drush command="status" returnProperty="drupal.root_padded"><option name="field" value="root" /></drush>
-        <php function="trim" returnProperty="drupal.root"><param value="${drupal.root_padded}" /></php>
-
+        <property name="drupal.root" value="web/d8/docroot" />
         <exec command="composer install" dir="${drupal.root}/.." passthru="true" />
         <phingcall target="install-drupal-by-alias" />
 
