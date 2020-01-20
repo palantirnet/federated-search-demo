@@ -6,6 +6,9 @@
 # Ignore Drupal site files
 web/*/docroot/sites/*/files
 
+# Ignore sites.php files
+web/*/docroot/sites/sites.php
+
 # Ignore virtual environment and artifacts
 .vagrant/
 /artifacts/
