@@ -1,0 +1,9 @@
+one:
+  root: /var/www/federated-search-demo.local/web/d8-domain/docroot
+  uri: d8-1.fs-demo.local
+two:
+  root: /var/www/federated-search-demo.local/web/d8-domain/docroot
+  uri: d8-2.fs-demo.local
+three:
+  root: /var/www/federated-search-demo.local/web/d8-domain/docroot
+  uri: d8-3.fs-demo.local

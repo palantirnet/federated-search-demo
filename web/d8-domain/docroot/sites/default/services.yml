@@ -7,7 +7,7 @@ parameters:
     cookie_lifetime: 2000000
     cookie_domain: '.fs-demo.local'
   twig.config:
-    debug: ${drupal.twig.debug}
+    debug: 
     auto_reload: null
     cache: true
   renderer.config:
