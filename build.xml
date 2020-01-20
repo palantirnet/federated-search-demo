@@ -12,10 +12,12 @@
 
         <phingcall target="install-d8">
             <property name="drush.root" value="web/d8/docroot" override="true" />
+            <property name="site.name" value="Federated Search Drupal 8" override="true" />
         </phingcall>
 
         <phingcall target="install-d8">
             <property name="drush.root" value="web/d8-domain/docroot" override="true" />
+            <property name="site.name" value="Federated Search Drupal 8 Domain" override="true" />
         </phingcall>
     </target>
 
@@ -23,6 +25,7 @@
     <!-- Target: install-d8 -->
     <target name="install-d8" description="Install one of the Drupal 8 sites; specify which site with -Ddrush.root=web/d8/docroot">
         <property name="drush.root" value="web/d8/docroot" />
+        <property name="site.name" value="Federated Search Drupal 8" />
 
         <exec command="composer install" dir="${drush.root}/.." passthru="true" />
         <phingcall target="install-drupal-by-path" />
@@ -31,27 +34,27 @@
         <!--drush command="pm-uninstall" assume="yes"><param>demo_umami_content</param></drush-->
         <!--drush command="pm-enable" assume="yes"><param>demo_umami_content</param></drush-->
 
-        <!-- Create demo content -->
+        <!-- Create demo content
         <drush command="pm-enable" assume="yes">
             <param>federated_terms</param>
             <param>federated_default_content</param>
-        </drush>
+        </drush> -->
 
-        <!-- Uninstall the demo content modules -->
+        <!-- Uninstall the demo content modules
         <drush command="pm-uninstall" assume="yes">
             <param>federated_terms</param>
             <param>federated_default_content</param>
-        </drush>
-
+        </drush>-->
+<!--
         <drush command="search-api:clear" assume="yes">
             <param>federated_search</param>
         </drush>
         <drush command="search-api:index" assume="yes">
             <param>federated_search</param>
         </drush>
-
-        <!-- Import config to fix rogue blocks changing UUIDs -->
-        <drush command="config-import" assume="yes" />
+-->
+        <!-- Import config to fix rogue blocks changing UUIDs
+        <drush command="config-import" assume="yes" /> -->
 
         <!-- Rebuild node acces permissions. No direct drush command for this
              as per https://www.drupal.org/project/devel/issues/2677218#comment-10907984 -->
@@ -95,6 +98,7 @@
         <drush command="site-install" assume="yes">
             <option name="account-name">admin</option>
             <option name="account-pass">admin</option>
+            <option name="site-name">${site.name}</option>
             <param>standard</param>
             <!--param>config_installer_sync_configure_form.sync_directory=../../../config/sites/d8</param-->
         </drush>
@@ -115,7 +119,7 @@
         <exec command="composer install" dir="${drush.root}/.." passthru="true" />
 
         <drush command="site-install" assume="yes">
-            <option name="site-name">Federated SOLR D7</option>
+            <option name="site-name">Drupal 7 - Federated Search</option>
             <option name="account-pass">admin</option>
             <param>standard</param>
         </drush>
