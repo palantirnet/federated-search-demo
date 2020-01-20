@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "composer/installers",
-            "version": "v1.6.0",
+            "version": "v1.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "cfcca6b1b60bc4974324efb5783c13dca6932b5b"
+                "reference": "141b272484481432cda342727a427dc1e206bfa0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/cfcca6b1b60bc4974324efb5783c13dca6932b5b",
-                "reference": "cfcca6b1b60bc4974324efb5783c13dca6932b5b",
+                "url": "https://api.github.com/repos/composer/installers/zipball/141b272484481432cda342727a427dc1e206bfa0",
+                "reference": "141b272484481432cda342727a427dc1e206bfa0",
                 "shasum": ""
             },
             "require": {
@@ -73,6 +73,7 @@
                 "RadPHP",
                 "SMF",
                 "Thelia",
+                "Whmcs",
                 "WolfCMS",
                 "agl",
                 "aimeos",
@@ -95,6 +96,7 @@
                 "installer",
                 "itop",
                 "joomla",
+                "known",
                 "kohana",
                 "laravel",
                 "lavalite",
@@ -124,7 +126,7 @@
                 "zend",
                 "zikula"
             ],
-            "time": "2018-08-27T06:10:37+00:00"
+            "time": "2019-08-12T15:00:31+00:00"
         },
         {
             "name": "consolidation/annotated-command",
@@ -417,16 +419,16 @@
         },
         {
             "name": "drupal-composer/preserve-paths",
-            "version": "0.1.4",
+            "version": "0.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal-composer/preserve-paths.git",
-                "reference": "d557250928235fe23e11c86329bd7cef05397648"
+                "reference": "7f99622800504c058e5230b63d3cd25809fa23ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal-composer/preserve-paths/zipball/d557250928235fe23e11c86329bd7cef05397648",
-                "reference": "d557250928235fe23e11c86329bd7cef05397648",
+                "url": "https://api.github.com/repos/drupal-composer/preserve-paths/zipball/7f99622800504c058e5230b63d3cd25809fa23ba",
+                "reference": "7f99622800504c058e5230b63d3cd25809fa23ba",
                 "shasum": ""
             },
             "require": {
@@ -441,11 +443,11 @@
             },
             "type": "composer-plugin",
             "extra": {
-                "class": "derhasi\\Composer\\Plugin"
+                "class": "DrupalComposer\\PreservePaths\\Plugin"
             },
             "autoload": {
                 "psr-4": {
-                    "derhasi\\Composer\\": "src/"
+                    "DrupalComposer\\PreservePaths\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -460,28 +462,28 @@
                 }
             ],
             "description": "Composer plugin for preserving custom paths and supporting nested packages",
-            "homepage": "https://github.com/derhasi/composer-preserve-paths",
+            "homepage": "https://github.com/drupal-composer/preserve-paths",
             "keywords": [
                 "composer-plugin",
                 "custom path",
                 "installer",
                 "nested package"
             ],
-            "time": "2017-02-03T11:32:31+00:00"
+            "time": "2017-07-20T14:32:18+00:00"
         },
         {
             "name": "drupal/admin_menu",
-            "version": "3.0.0-rc5",
+            "version": "3.0.0-rc6",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/admin_menu.git",
-                "reference": "7.x-3.0-rc5"
+                "reference": "7.x-3.0-rc6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/admin_menu-7.x-3.0-rc5.zip",
-                "reference": "7.x-3.0-rc5",
-                "shasum": "64de77d5b1ed7158549a4fc6f2fd657aaacdaead"
+                "url": "https://ftp.drupal.org/files/projects/admin_menu-7.x-3.0-rc6.zip",
+                "reference": "7.x-3.0-rc6",
+                "shasum": "c2c554aed8c8db494831ef3edf900d53f03d83a7"
             },
             "require": {
                 "drupal/drupal": "^7.11"
@@ -492,11 +494,11 @@
                     "dev-3.x": "3.x-dev"
                 },
                 "drupal": {
-                    "version": "7.x-3.0-rc5",
+                    "version": "7.x-3.0-rc6",
                     "datestamp": "1543859280",
                     "security-coverage": {
                         "status": "not-covered",
-                        "message": "Project has not opted into security advisory coverage!"
+                        "message": "RC releases are not covered by Drupal security advisories."
                     }
                 }
             },
@@ -510,24 +512,20 @@
                     "homepage": "https://www.drupal.org/user/53892"
                 },
                 {
+                    "name": "HongPong",
+                    "homepage": "https://www.drupal.org/user/60005"
+                },
+                {
                     "name": "RenatoG",
                     "homepage": "https://www.drupal.org/user/3326031"
                 },
                 {
-                    "name": "fubhy",
-                    "homepage": "https://www.drupal.org/user/761344"
-                },
-                {
-                    "name": "pwolanin",
-                    "homepage": "https://www.drupal.org/user/49851"
-                },
-                {
-                    "name": "smk-ka",
-                    "homepage": "https://www.drupal.org/user/48898"
-                },
-                {
                     "name": "sun",
                     "homepage": "https://www.drupal.org/user/54136"
+                },
+                {
+                    "name": "thalles",
+                    "homepage": "https://www.drupal.org/user/3589086"
                 },
                 {
                     "name": "truls1502",
@@ -537,22 +535,22 @@
             "description": "Provides a dropdown menu to most administrative tasks and other common destinations (to users with the proper permissions).",
             "homepage": "https://www.drupal.org/project/admin_menu",
             "support": {
-                "source": "http://cgit.drupalcode.org/admin_menu"
+                "source": "https://git.drupalcode.org/project/admin_menu"
             }
         },
         {
             "name": "drupal/ctools",
-            "version": "1.14.0",
+            "version": "1.15.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/ctools.git",
-                "reference": "7.x-1.14"
+                "reference": "7.x-1.15"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/ctools-7.x-1.14.zip",
-                "reference": "7.x-1.14",
-                "shasum": "866b4a5eb5f6085e80aff155ec7a2cd476eea117"
+                "url": "https://ftp.drupal.org/files/projects/ctools-7.x-1.15.zip",
+                "reference": "7.x-1.15",
+                "shasum": "d55e992f3c68dc663505b3e68a0418fee17cf960"
             },
             "require": {
                 "drupal/drupal": "~7.0"
@@ -569,8 +567,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "7.x-1.14",
-                    "datestamp": "1519455784",
+                    "version": "7.x-1.15",
+                    "datestamp": "1549603684",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -630,22 +628,22 @@
             "description": "A library of helpful tools by Merlin of Chaos.",
             "homepage": "https://www.drupal.org/project/ctools",
             "support": {
-                "source": "http://cgit.drupalcode.org/ctools"
+                "source": "https://git.drupalcode.org/project/ctools"
             }
         },
         {
             "name": "drupal/devel",
-            "version": "1.6.0",
+            "version": "1.7.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/devel.git",
-                "reference": "7.x-1.6"
+                "reference": "7.x-1.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/devel-7.x-1.6.zip",
-                "reference": "7.x-1.6",
-                "shasum": "d6f8381430229f13a39e3bf3b8119f48a1b47365"
+                "url": "https://ftp.drupal.org/files/projects/devel-7.x-1.7.zip",
+                "reference": "7.x-1.7",
+                "shasum": "dbbd9a2e1a45b16467a26d0db2887a0c3dd6a63b"
             },
             "require": {
                 "drupal/drupal": "~7.0"
@@ -656,8 +654,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "7.x-1.6",
-                    "datestamp": "1524009780",
+                    "version": "7.x-1.7",
+                    "datestamp": "1550852888",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -672,6 +670,10 @@
                 {
                     "name": "catch",
                     "homepage": "https://www.drupal.org/user/35733"
+                },
+                {
+                    "name": "jonathan1055",
+                    "homepage": "https://www.drupal.org/user/92645"
                 },
                 {
                     "name": "juampynr",
@@ -701,7 +703,7 @@
             "description": "Various blocks, pages, and functions for developers.",
             "homepage": "https://www.drupal.org/project/devel",
             "support": {
-                "source": "http://cgit.drupalcode.org/devel"
+                "source": "https://git.drupalcode.org/project/devel"
             }
         },
         {
@@ -872,17 +874,17 @@
         },
         {
             "name": "drupal/features",
-            "version": "2.10.0",
+            "version": "2.11.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/features.git",
-                "reference": "7.x-2.10"
+                "reference": "7.x-2.11"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/features-7.x-2.10.zip",
-                "reference": "7.x-2.10",
-                "shasum": "b49cf87df5197195003e24ec679ffbc7c4ea1e08"
+                "url": "https://ftp.drupal.org/files/projects/features-7.x-2.11.zip",
+                "reference": "7.x-2.11",
+                "shasum": "8bd66190e23cb323bccb1af57b63c4bdd5d629a6"
             },
             "require": {
                 "drupal/drupal": "~7.0"
@@ -897,8 +899,8 @@
                     "dev-2.x": "2.x-dev"
                 },
                 "drupal": {
-                    "version": "7.x-2.10",
-                    "datestamp": "1541050680",
+                    "version": "7.x-2.11",
+                    "datestamp": "1541189192",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -913,6 +915,10 @@
                 {
                     "name": "dawehner",
                     "homepage": "https://www.drupal.org/user/99340"
+                },
+                {
+                    "name": "donquixote",
+                    "homepage": "https://www.drupal.org/user/459338"
                 },
                 {
                     "name": "e2thex",
@@ -946,7 +952,7 @@
             "description": "Provides feature management for Drupal.",
             "homepage": "https://www.drupal.org/project/features",
             "support": {
-                "source": "http://cgit.drupalcode.org/features"
+                "source": "https://git.drupalcode.org/project/features"
             }
         },
         {
@@ -1028,17 +1034,17 @@
         },
         {
             "name": "drupal/imagecache_token",
-            "version": "1.0.0-rc2",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/imagecache_token.git",
-                "reference": "7.x-1.0-rc2"
+                "reference": "7.x-1.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/imagecache_token-7.x-1.0-rc2.zip",
-                "reference": "7.x-1.0-rc2",
-                "shasum": "36271e7fc7cc059ea00377dbceeeeca2e6b67d94"
+                "url": "https://ftp.drupal.org/files/projects/imagecache_token-7.x-1.0.zip",
+                "reference": "7.x-1.0",
+                "shasum": "ecb29a8b49b7f93c9ee6dfbe1ac247a05c8fa321"
             },
             "require": {
                 "drupal/drupal": "*",
@@ -1050,11 +1056,11 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "7.x-1.0-rc2",
-                    "datestamp": "1457296439",
+                    "version": "7.x-1.0",
+                    "datestamp": "1554988385",
                     "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Project has not opted into security advisory coverage!"
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
                     }
                 }
             },
@@ -1063,6 +1069,10 @@
                 "GPL-2.0-or-later"
             ],
             "authors": [
+                {
+                    "name": "Chris Matthews",
+                    "homepage": "https://www.drupal.org/user/1398684"
+                },
                 {
                     "name": "DamienMcKenna",
                     "homepage": "https://www.drupal.org/user/108450"
@@ -1083,22 +1093,22 @@
             "description": "Provides additional image tokens for use with ImageCache",
             "homepage": "https://www.drupal.org/project/imagecache_token",
             "support": {
-                "source": "http://cgit.drupalcode.org/imagecache_token"
+                "source": "https://git.drupalcode.org/project/imagecache_token"
             }
         },
         {
             "name": "drupal/search_api",
-            "version": "1.24.0",
+            "version": "1.26.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/search_api.git",
-                "reference": "7.x-1.24"
+                "reference": "7.x-1.26"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/search_api-7.x-1.24.zip",
-                "reference": "7.x-1.24",
-                "shasum": "ef56128c64001a8e43f3897b08485ce944ce3e5b"
+                "url": "https://ftp.drupal.org/files/projects/search_api-7.x-1.26.zip",
+                "reference": "7.x-1.26",
+                "shasum": "22ed23fae93672660669d2c676be0ef6471bba04"
             },
             "require": {
                 "drupal/drupal": "~7.0",
@@ -1114,8 +1124,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "7.x-1.24",
-                    "datestamp": "1537171084",
+                    "version": "7.x-1.26",
+                    "datestamp": "1552334580",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -1132,6 +1142,10 @@
                     "homepage": "https://www.drupal.org/user/122682"
                 },
                 {
+                    "name": "borisson_",
+                    "homepage": "https://www.drupal.org/user/2393360"
+                },
+                {
                     "name": "drunken monkey",
                     "homepage": "https://www.drupal.org/user/205582"
                 }
@@ -1139,22 +1153,22 @@
             "description": "Provides a generic API for modules offering search capabilities.",
             "homepage": "https://www.drupal.org/project/search_api",
             "support": {
-                "source": "http://cgit.drupalcode.org/search_api"
+                "source": "https://git.drupalcode.org/project/search_api"
             }
         },
         {
             "name": "drupal/search_api_solr",
-            "version": "1.14.0",
+            "version": "1.15.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/search_api_solr.git",
-                "reference": "7.x-1.14"
+                "reference": "7.x-1.15"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/search_api_solr-7.x-1.14.zip",
-                "reference": "7.x-1.14",
-                "shasum": "bd08b1fb4383effcdbe495ba8a9af4568ce071ce"
+                "url": "https://ftp.drupal.org/files/projects/search_api_solr-7.x-1.15.zip",
+                "reference": "7.x-1.15",
+                "shasum": "067e7bd7b40496ab682a9099e33279c1829b74a7"
             },
             "require": {
                 "drupal/drupal": "~7.0",
@@ -1166,8 +1180,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "7.x-1.14",
-                    "datestamp": "1539192489",
+                    "version": "7.x-1.15",
+                    "datestamp": "1573123085",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -1207,7 +1221,7 @@
             "description": "Offers an implementation of the Search API that uses an Apache Solr server for indexing content.",
             "homepage": "https://www.drupal.org/project/search_api_solr",
             "support": {
-                "source": "http://cgit.drupalcode.org/search_api_solr"
+                "source": "https://git.drupalcode.org/project/search_api_solr"
             }
         },
         {
