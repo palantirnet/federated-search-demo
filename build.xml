@@ -39,7 +39,12 @@
         <drush command="pm-enable" assume="yes">
             <param>federated_default_content</param>
         </drush>
-
+        <!-- Copy demo files -->
+        <copy todir="web/d8/docroot/sites/default/files" mode="777">
+          <fileset dir="web/d8/docroot/modules/custom/federated_default_content/assets">
+            <include name="**/*.jpg" />
+          </fileset>
+        </copy>
         <!-- Uninstall the demo content modules -->
         <drush command="pm-uninstall" assume="yes">
             <param>federated_default_content</param>
@@ -51,7 +56,7 @@
 
         <exec command="drush @d8 search-api:index federated_search -y" />
         <!-- If we run the above normally, we get the error:
-          "Command batch-process was not found. Pass root or a @siteAlias in 
+          "Command batch-process was not found. Pass root or a @siteAlias in
           order to run Drupal-specific commands." -->
         <!--<drush command="search-api:index" assume="yes">
             <param>federated_search</param>
@@ -192,7 +197,6 @@
             </then>
         </if>
     </target>
-
 
     <!-- Default target: list -->
     <target name="list" hidden="true">
