@@ -47,12 +47,13 @@ field_settings:
         - node
   federated_type:
     label: 'Federated Type'
-    datasource_id: 'entity:node'
-    property_path: type
+    property_path: mapped_field
     type: string
-    dependencies:
-      module:
-        - node
+    configuration:
+      field_data:
+        node:
+          article: Article
+          page: Page
   rendered_item:
     label: 'Rendered HTML output'
     property_path: rendered_item
