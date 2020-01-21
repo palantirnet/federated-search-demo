@@ -15,11 +15,11 @@
             <property name="drush.root" value="web/d8/docroot" override="true" />
             <property name="site.name" value="Federated Search Drupal 8" override="true" />
         </phingcall>
-
+        <!-- This target has not been updated
         <phingcall target="install-d8">
             <property name="drush.root" value="web/d8-domain/docroot" override="true" />
             <property name="site.name" value="Federated Search Drupal 8 Domain" override="true" />
-        </phingcall>
+        </phingcall>-->
     </target>
 
 
