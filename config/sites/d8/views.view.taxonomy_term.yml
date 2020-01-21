@@ -1,15 +1,15 @@
-uuid: c8944120-ec6d-4efa-9cba-f08a77e16536
+uuid: 5b8a7554-ece8-4756-9fe5-9785d6837c52
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.card
+    - core.entity_view_mode.node.teaser
   module:
     - node
     - taxonomy
     - user
 _core:
-  default_config_hash: 9SdFwA9Z9x426hDbix6kJr4gAa9NbGaR9Kd3Q2c877o
+  default_config_hash: uvMAn5Qf8Uni989mhr5KY4hx66xkSpP8nFYZMHgj7kY
 id: taxonomy_term
 label: 'Taxonomy term'
 module: taxonomy
@@ -52,13 +52,10 @@ display:
       pager:
         type: mini
         options:
-          items_per_page: 12
+          items_per_page: 10
           offset: 0
           id: 0
           total_pages: 0
-          tags:
-            previous: ‹‹
-            next: ››
           expose:
             items_per_page: false
             items_per_page_label: 'Items per page'
@@ -67,6 +64,9 @@ display:
             items_per_page_options_all_label: '- All -'
             offset: false
             offset_label: Offset
+          tags:
+            previous: ‹‹
+            next: ››
       sorts:
         sticky:
           id: sticky
@@ -226,8 +226,7 @@ display:
       row:
         type: 'entity:node'
         options:
-          relationship: none
-          view_mode: card
+          view_mode: teaser
       header:
         entity_taxonomy_term:
           id: entity_taxonomy_term
@@ -249,7 +248,6 @@ display:
       display_extenders: {  }
       link_url: ''
       link_display: page_1
-      css_class: grid--4
     cache_metadata:
       contexts:
         - 'languages:language_interface'
@@ -289,7 +287,6 @@ display:
           relationship: none
           view_mode: default
       display_extenders: {  }
-      enabled: false
     cache_metadata:
       contexts:
         - 'languages:language_interface'

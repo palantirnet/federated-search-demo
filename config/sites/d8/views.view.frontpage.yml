@@ -1,16 +1,15 @@
-uuid: 0206f566-ed88-4d1c-b2f6-4931e97f2e4f
+uuid: b458ed6e-4ee6-4aae-8500-1846f01c3b01
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.card_common
     - core.entity_view_mode.node.rss
-    - node.type.recipe
+    - core.entity_view_mode.node.teaser
   module:
     - node
     - user
 _core:
-  default_config_hash: M9MHYUzPvsgI81rkLS_Lqp2qHIcw_82TmpQKUPvvb_g
+  default_config_hash: Xk6puCoRlHSJG8mU9Zg2iN4fbnzaw2dFolwMfpWxDSE
 id: frontpage
 label: Frontpage
 module: node
@@ -31,7 +30,7 @@ display:
       empty:
         area_text_custom:
           admin_label: ''
-          content: 'No front page content has been created yet.'
+          content: 'No front page content has been created yet.<br/>Follow the <a target="_blank" href="https://www.drupal.org/docs/user_guide/en/index.html">User Guide</a> to start building your site.'
           empty: true
           field: area_text_custom
           group_type: group
@@ -169,53 +168,27 @@ display:
           plugin_id: language
           entity_type: node
           entity_field: langcode
-        type:
-          id: type
-          table: node_field_data
-          field: type
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: in
-          value:
-            recipe: recipe
-          group: 1
-          exposed: false
-          expose:
-            operator_id: ''
-            label: ''
-            description: ''
-            use_operator: false
-            operator: ''
-            identifier: ''
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-            reduce: false
-            operator_limit_selection: false
-            operator_list: {  }
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          entity_type: node
-          entity_field: type
-          plugin_id: bundle
       pager:
-        type: some
+        type: full
         options:
-          items_per_page: 4
+          items_per_page: 10
           offset: 0
+          id: 0
+          total_pages: 0
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- All -'
+            offset: false
+            offset_label: Offset
+          tags:
+            previous: '‹ Previous'
+            next: 'Next ›'
+            first: '« First'
+            last: 'Last »'
+          quantity: 9
       query:
         type: views_query
         options:
@@ -227,8 +200,7 @@ display:
       row:
         type: 'entity:node'
         options:
-          relationship: none
-          view_mode: card_common
+          view_mode: teaser
       sorts:
         sticky:
           admin_label: ''
@@ -266,21 +238,8 @@ display:
           row_class: ''
           default_row_class: true
           uses_fields: false
-      title: Home
-      header:
-        area:
-          id: area
-          table: views
-          field: area
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: false
-          tokenize: false
-          content:
-            value: '<h2 class="text-align-center">Explore recipes across every type of occasion, ingredient, and skill level.</h2>'
-            format: full_html
-          plugin_id: text
+      title: ''
+      header: {  }
       footer: {  }
       relationships: {  }
       fields: {  }
@@ -293,6 +252,7 @@ display:
     cache_metadata:
       contexts:
         - 'languages:language_interface'
+        - url.query_args
         - 'user.node_grants:view'
         - user.permissions
       max-age: -1
@@ -325,7 +285,6 @@ display:
           relationship: none
           view_mode: rss
       display_extenders: {  }
-      enabled: false
     cache_metadata:
       contexts:
         - 'languages:language_interface'
@@ -337,9 +296,6 @@ display:
     display_options:
       path: node
       display_extenders: {  }
-      css_class: grid--2
-      defaults:
-        css_class: false
     display_plugin: page
     display_title: Page
     id: page_1
@@ -347,6 +303,7 @@ display:
     cache_metadata:
       contexts:
         - 'languages:language_interface'
+        - url.query_args
         - 'user.node_grants:view'
         - user.permissions
       max-age: -1

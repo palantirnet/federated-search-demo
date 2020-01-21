@@ -35,17 +35,15 @@
         <!--drush command="pm-uninstall" assume="yes"><param>demo_umami_content</param></drush-->
         <!--drush command="pm-enable" assume="yes"><param>demo_umami_content</param></drush-->
 
-        <!-- Create demo content
+        <!-- Create demo content -->
         <drush command="pm-enable" assume="yes">
-            <param>federated_terms</param>
             <param>federated_default_content</param>
-        </drush> -->
+        </drush>
 
-        <!-- Uninstall the demo content modules
+        <!-- Uninstall the demo content modules -->
         <drush command="pm-uninstall" assume="yes">
-            <param>federated_terms</param>
             <param>federated_default_content</param>
-        </drush>-->
+        </drush>
 <!--
         <drush command="search-api:clear" assume="yes">
             <param>federated_search</param>

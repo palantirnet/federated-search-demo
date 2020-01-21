@@ -1,18 +1,18 @@
-uuid: 27e7d629-b4d1-460c-b660-1f79776cc79c
+uuid: 596d1d1b-e761-4b19-b445-c0fe4c6d5f09
 langcode: en
 status: true
 dependencies:
   module:
-    - search_api_field_map
+    - search_api_federated_solr
     - taxonomy
 id: taxonomy_term.field_federated_terms
 field_name: field_federated_terms
 entity_type: taxonomy_term
-type: mapped_terms
+type: federated_terms
 settings:
-  max_length: 255
+  max_length: '255'
   is_ascii: false
-module: search_api_field_map
+module: search_api_federated_solr
 locked: false
 cardinality: 1
 translatable: true

@@ -1,0 +1,29 @@
+uuid: 6ec5b017-2959-4ad0-ae28-f12046198fb0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_traits
+    - node.type.page
+    - taxonomy.vocabulary.traits
+id: node.page.field_traits
+field_name: field_traits
+entity_type: node
+bundle: page
+label: Traits
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      traits: traits
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

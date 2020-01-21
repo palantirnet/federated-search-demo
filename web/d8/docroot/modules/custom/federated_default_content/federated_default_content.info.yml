@@ -6,10 +6,25 @@ core: 8.x
 dependencies:
   - drupal:default_content
 default_content:
+  file:
+    - 13cd32cf-dad1-46dc-8cdf-b82f7d9065f1
+    - 70e2c88b-1bfd-44c4-8287-5678ea85e29e
+    - d3b37611-170f-4553-976b-1b18c6d5539b
+  node:
+    - 0a22e102-8410-4c83-b789-782fb17f1393
+    - 05f3dd291-a3bf-4455-b454-a580726453c2
+    - 8df2d7ac-e7ce-4e81-b67d-3c3e46273983
+    - 8e6f71ca-83e5-4c67-bede-e9149a5c5345
+    - 021d4698-66ba-4f5b-a95a-209768b58a8c
+    - 63ade9b6-97e8-4203-9faf-a5b5fc65ff03
+    - 71ba0879-f592-486d-8ff4-9595444778fb
+    - 9047bf3b-ae93-4e5d-b448-be92bd079407
+    - a4782db6-832c-4190-b654-6cfec21be155
+    - f1277919-2dbb-44a2-a15e-a6f1bb140e72
   taxonomy_term:
-    - 0f2d34c4-71b0-4c09-b64f-da0882df1bf0
-    - 9ed9c3a2-956d-44e1-871d-8fe3e25c679d
-    - 13bdf0b2-d71e-4f6d-a7fb-8fbc92a71a79
-    - 98d41799-8e0c-4ca7-9e22-c6d0c41e722e
-    - caf08457-c952-44c5-831a-b1da1d49ce00
-    - fead186e-24ea-4c03-9983-c36df90f096c
+    - 2d45c3a1-4ab3-431b-a9e8-1212c5f4f6b4
+    - 5a419857-a179-469e-94d7-48402ad2e7d0
+    - 031ef1d1-7853-4118-a7a0-b64785d65a2f
+    - 76efd0d2-9781-4ff5-a789-3425796a30b3
+    - 85347fc5-9df2-493d-bfcc-146045e86ae9
+    - ae53caf7-0ace-4c06-9314-d3c5b58fe489
