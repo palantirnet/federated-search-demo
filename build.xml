@@ -136,6 +136,8 @@
             <param>overlay</param>
             <param>toolbar</param>
         </drush>
+        <drush command="search-api-reindex" assume="yes" />
+        <drush command="search-api-index" assume="yes" />
     </target>
 
 
