@@ -8,6 +8,7 @@
 
     <!-- Target: install-all -->
     <target name="install-all" description="Install all three Drupal sites in the Federated Search Demo">
+        <phingcall target="solr-clear" />
         <phingcall target="install-d7" />
 
         <phingcall target="install-d8">
@@ -127,6 +128,10 @@
             <param>features_search_api_config</param>
             <param>federated_content</param>
         </drush>
+        <!-- The feature is not loading properly, but does reload correctly. -->
+        <drush command="features-revert" assume="yes">
+            <param>federated_content</param>
+        </drush>
         <drush command="pm-disable" assume="yes">
             <param>overlay</param>
             <param>toolbar</param>
@@ -170,7 +175,7 @@
 
     <!-- Target: solr-clear -->
     <target name="solr-clear" description="Delete all entries in the local Solr 'drupal8' core">
-        <input message="Are you sure? There is no undo." propertyName="dump.confirm" defaultValue="y" validArgs="y,n" />
+        <input message="You are about to clear the SOLR index. Are you sure? There is no undo." propertyName="dump.confirm" defaultValue="y" validArgs="y,n" />
         <if>
             <equals arg1="${dump.confirm}" arg2="y" />
             <then>
