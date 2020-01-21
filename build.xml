@@ -125,14 +125,11 @@
         </drush>
         <drush command="pm-enable" assume="yes">
             <param>features_search_api_config</param>
-            <param>devel_generate</param>
+            <param>federated_content</param>
         </drush>
         <drush command="pm-disable" assume="yes">
             <param>overlay</param>
             <param>toolbar</param>
-        </drush>
-        <drush command="generate-content" assume="yes">
-            <param>10</param>
         </drush>
     </target>
 

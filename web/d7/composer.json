@@ -42,6 +42,7 @@
     "drupal/search_api_solr": "^1.14",
     "drupal/strongarm": "^2.0",
     "drupal/token": "^1.7",
+    "drupal/uuid_features": "^1.0@RC",
     "drush/drush": "^8",
     "palantirnet/search_api_federated_solr": "7.x-dev"
   },
