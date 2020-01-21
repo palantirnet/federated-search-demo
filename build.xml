@@ -44,14 +44,18 @@
         <drush command="pm-uninstall" assume="yes">
             <param>federated_default_content</param>
         </drush>
-<!--
+
         <drush command="search-api:clear" assume="yes">
             <param>federated_search</param>
         </drush>
-        <drush command="search-api:index" assume="yes">
+
+        <exec command="drush @d8 search-api:index federated_search -y" />
+        <!-- If we run the above normally, we get the error:
+          "Command batch-process was not found. Pass root or a @siteAlias in 
+          order to run Drupal-specific commands." -->
+        <!--<drush command="search-api:index" assume="yes">
             <param>federated_search</param>
-        </drush>
--->
+        </drush>-->
         <!-- Import config to fix rogue blocks changing UUIDs
         <drush command="config-import" assume="yes" /> -->
 
@@ -98,8 +102,8 @@
             <option name="account-name">admin</option>
             <option name="account-pass">admin</option>
             <option name="site-name">${site.name}</option>
-            <param>standard</param>
-            <!--param>config_installer_sync_configure_form.sync_directory=../../../config/sites/d8</param-->
+            <param>config_installer</param>
+            <param>config_installer_sync_configure_form.sync_directory=../../../config/sites/d8</param>
         </drush>
 
         <!-- The public files directory, and everything in it, needs to be world writable. -->
