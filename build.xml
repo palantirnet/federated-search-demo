@@ -13,7 +13,6 @@
 
         <phingcall target="install-d8">
             <property name="drush.root" value="web/d8/docroot" override="true" />
-            <property name="site.name" value="Federated Search Drupal 8" override="true" />
         </phingcall>
         <!-- This target has not been updated
         <phingcall target="install-d8">
@@ -31,17 +30,13 @@
         <exec command="composer install" dir="${drush.root}/.." passthru="true" />
         <phingcall target="install-drupal-by-path" />
 
-        <!-- Reinstall the Umami demo content -->
-        <!--drush command="pm-uninstall" assume="yes"><param>demo_umami_content</param></drush-->
-        <!--drush command="pm-enable" assume="yes"><param>demo_umami_content</param></drush-->
-
         <!-- Create demo content -->
         <drush command="pm-enable" assume="yes">
             <param>federated_default_content</param>
         </drush>
         <!-- Copy demo files -->
-        <copy todir="web/d8/docroot/sites/default/files" mode="777">
-          <fileset dir="web/d8/docroot/modules/custom/federated_default_content/assets">
+        <copy todir="${drush.root}/sites/default/files" mode="777">
+          <fileset dir="${drush.root}/modules/custom/federated_default_content/assets">
             <include name="**/*.jpg" />
           </fileset>
         </copy>
