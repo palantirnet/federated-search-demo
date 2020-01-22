@@ -107,6 +107,8 @@
             <option name="account-name">admin</option>
             <option name="account-pass">admin</option>
             <option name="site-name">${site.name}</option>
+            <!-- We should be able to use the existing-config flag, but cannot.
+                 See https://www.drupal.org/project/drupal/issues/2982052 -->
             <param>config_installer</param>
             <param>config_installer_sync_configure_form.sync_directory=../../../config/sites/d8</param>
         </drush>
