@@ -123,6 +123,10 @@
 
         <exec command="composer install" dir="${drush.root}/.." passthru="true" />
 
+        <!-- Swap out the composer file for our git repository -->
+        <delete dir="${drush.root}/sites/all/modules/contrib/search_api_federated_solr" />
+        <symlink link="${drush.root}/sites/all/modules/contrib/search_api_federated_solr" target="../../../../../../../src/search_api_federated_solr-7.x" />
+
         <drush command="site-install" assume="yes">
             <option name="site-name">Drupal 7 - Federated Search</option>
             <option name="account-pass">admin</option>
@@ -171,7 +175,6 @@
         <!-- Link search_api_federated_solr:7.x into the src/ directory so the code is easy to find. -->
         <delete dir="src/search_api_federated_solr-7.x" />
         <exec command="git clone --branch=7.x-2.x git@github.com:palantirnet/search_api_federated_solr.git search_api_federated_solr-7.x" dir="src" checkreturn="true" />
-        <!--symlink target="../web/d7/docroot/sites/all/modules/contrib/search_api_federated_solr" link="src/search_api_federated_solr-7.x" /-->
     </target>
 
 

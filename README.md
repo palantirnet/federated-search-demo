@@ -51,8 +51,8 @@ You may be interested in creating your own development environment and comparing
   ```
 3. You will be prompted for the administration password on your host machine
 4. Log in to the virtual machine (the VM): `vagrant ssh`
-5. Build, install, and enable demo content: `phing install-all`
-6. Build the `/src` directory and symlink modules there to make development easier: `phing init`
+5. Build the `/src` directory and checkout git code: `phing init`
+6. Build, install, and enable demo content: `phing install-all`
 7. Visit your D8 (standalone) site at [http://d8.fs-demo.local](http://d8.fs-demo.local)
 8. Visit your D8 (domain access) site at:
    - [http://fs-demo.d8-1.local](http://d8-1.fs-demo.local)
