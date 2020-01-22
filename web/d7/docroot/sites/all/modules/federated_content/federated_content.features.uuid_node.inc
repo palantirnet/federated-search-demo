@@ -34,25 +34,8 @@ function federated_content_uuid_features_default_content() {
       ),
     ),
   ),
-  'field_image' => array(
-    'und' => array(
-      0 => array(
-        'uid' => 1,
-        'filename' => 'vintage-irish-terrier-illustration-public-domain.jpg',
-        'uri' => 'public://field/image/vintage-irish-terrier-illustration-public-domain.jpg',
-        'filemime' => 'image/jpeg',
-        'filesize' => 1239780,
-        'status' => 1,
-        'uuid' => '16bea3c1-fc03-407e-841d-67a693341be2',
-        'rdf_mapping' => array(),
-        'alt' => '',
-        'title' => '',
-        'width' => 1474,
-        'height' => 1121,
-        'uuid_features_packaged_file_path' => 'assets/vintage-irish-terrier-illustration-public-domain.jpg',
-      ),
-    ),
-  ),
+  'field_tags' => array(),
+  'field_image' => array(),
   'field_age' => array(
     'und' => array(
       0 => array(
@@ -66,6 +49,14 @@ function federated_content_uuid_features_default_content() {
       0 => array(
         'tid' => '3314295d-522e-4182-a5dc-93ce20aecfe3',
         'uuid' => '3314295d-522e-4182-a5dc-93ce20aecfe3',
+      ),
+    ),
+  ),
+  'field_color' => array(
+    'und' => array(
+      0 => array(
+        'tid' => 'fc091dfd-e82e-4296-b5b6-0dfc588b92a9',
+        'uuid' => 'fc091dfd-e82e-4296-b5b6-0dfc588b92a9',
       ),
     ),
   ),
@@ -150,7 +141,7 @@ function federated_content_uuid_features_default_content() {
   'sticky' => 0,
   'type' => 'page',
   'language' => 'und',
-  'created' => 1577926860,
+  'created' => 1579571337,
   'tnid' => 0,
   'translate' => 0,
   'uuid' => '3e170d1e-1fa7-4097-9e2e-f7ce44792467',
@@ -177,6 +168,14 @@ function federated_content_uuid_features_default_content() {
       0 => array(
         'tid' => '2fc26e3a-620f-4ba2-b167-dffee783751c',
         'uuid' => '2fc26e3a-620f-4ba2-b167-dffee783751c',
+      ),
+    ),
+  ),
+  'field_color' => array(
+    'und' => array(
+      0 => array(
+        'tid' => '6ff642c5-a0e0-4bb3-8419-65e03a0c5a86',
+        'uuid' => '6ff642c5-a0e0-4bb3-8419-65e03a0c5a86',
       ),
     ),
   ),
@@ -247,7 +246,7 @@ function federated_content_uuid_features_default_content() {
   'sticky' => 0,
   'type' => 'page',
   'language' => 'und',
-  'created' => 1578926860,
+  'created' => 1579567178,
   'tnid' => 0,
   'translate' => 0,
   'uuid' => '6fe99c23-0cda-4ae6-affe-dd4c9538bfdd',
@@ -274,6 +273,14 @@ function federated_content_uuid_features_default_content() {
       0 => array(
         'tid' => '2fc26e3a-620f-4ba2-b167-dffee783751c',
         'uuid' => '2fc26e3a-620f-4ba2-b167-dffee783751c',
+      ),
+    ),
+  ),
+  'field_color' => array(
+    'und' => array(
+      0 => array(
+        'tid' => '1f522b08-d8b4-4719-9193-c244c10c9972',
+        'uuid' => '1f522b08-d8b4-4719-9193-c244c10c9972',
       ),
     ),
   ),
@@ -344,7 +351,7 @@ function federated_content_uuid_features_default_content() {
   'sticky' => 0,
   'type' => 'page',
   'language' => 'und',
-  'created' => 1578226860,
+  'created' => 1579571361,
   'tnid' => 0,
   'translate' => 0,
   'uuid' => '74b8532e-3203-4b88-90e2-f9af252da610',
@@ -371,6 +378,14 @@ function federated_content_uuid_features_default_content() {
       0 => array(
         'tid' => '03140448-dc7d-4079-bc33-30db6d35c793',
         'uuid' => '03140448-dc7d-4079-bc33-30db6d35c793',
+      ),
+    ),
+  ),
+  'field_color' => array(
+    'und' => array(
+      0 => array(
+        'tid' => 'fc091dfd-e82e-4296-b5b6-0dfc588b92a9',
+        'uuid' => 'fc091dfd-e82e-4296-b5b6-0dfc588b92a9',
       ),
     ),
   ),
@@ -441,7 +456,7 @@ function federated_content_uuid_features_default_content() {
   'sticky' => 0,
   'type' => 'page',
   'language' => 'und',
-  'created' => 1575226860,
+  'created' => 1579571301,
   'tnid' => 0,
   'translate' => 0,
   'uuid' => '8d8e9523-a06d-4c60-9f79-b6c9bb5fef84',
@@ -468,6 +483,14 @@ function federated_content_uuid_features_default_content() {
       0 => array(
         'tid' => '3314295d-522e-4182-a5dc-93ce20aecfe3',
         'uuid' => '3314295d-522e-4182-a5dc-93ce20aecfe3',
+      ),
+    ),
+  ),
+  'field_color' => array(
+    'und' => array(
+      0 => array(
+        'tid' => '6ff642c5-a0e0-4bb3-8419-65e03a0c5a86',
+        'uuid' => '6ff642c5-a0e0-4bb3-8419-65e03a0c5a86',
       ),
     ),
   ),
@@ -538,7 +561,7 @@ function federated_content_uuid_features_default_content() {
   'sticky' => 0,
   'type' => 'article',
   'language' => 'und',
-  'created' => 1575526860,
+  'created' => 1579571979,
   'tnid' => 0,
   'translate' => 0,
   'uuid' => 'b4002bc5-f02e-4937-81fa-e640a44a70d4',
@@ -552,25 +575,8 @@ function federated_content_uuid_features_default_content() {
       ),
     ),
   ),
-  'field_image' => array(
-    'und' => array(
-      0 => array(
-        'uid' => 1,
-        'filename' => 'vintage-english-terriers-illustration-public-domain.jpg',
-        'uri' => 'public://field/image/vintage-english-terriers-illustration-public-domain.jpg',
-        'filemime' => 'image/jpeg',
-        'filesize' => 345026,
-        'status' => 1,
-        'uuid' => '4bc0b6b2-7d3b-4b6e-b79f-9fd88a8d04b1',
-        'rdf_mapping' => array(),
-        'alt' => '',
-        'title' => '',
-        'width' => 1474,
-        'height' => 1121,
-        'uuid_features_packaged_file_path' => 'assets/vintage-english-terriers-illustration-public-domain.jpg',
-      ),
-    ),
-  ),
+  'field_tags' => array(),
+  'field_image' => array(),
   'field_age' => array(
     'und' => array(
       0 => array(
@@ -584,6 +590,14 @@ function federated_content_uuid_features_default_content() {
       0 => array(
         'tid' => '3314295d-522e-4182-a5dc-93ce20aecfe3',
         'uuid' => '3314295d-522e-4182-a5dc-93ce20aecfe3',
+      ),
+    ),
+  ),
+  'field_color' => array(
+    'und' => array(
+      0 => array(
+        'tid' => 'fc091dfd-e82e-4296-b5b6-0dfc588b92a9',
+        'uuid' => 'fc091dfd-e82e-4296-b5b6-0dfc588b92a9',
       ),
     ),
   ),
@@ -668,7 +682,7 @@ function federated_content_uuid_features_default_content() {
   'sticky' => 0,
   'type' => 'article',
   'language' => 'und',
-  'created' => 1575126860,
+  'created' => 1579572007,
   'tnid' => 0,
   'translate' => 0,
   'uuid' => 'c99cf66f-6e37-4dcd-a9f9-013e4a4370e3',
@@ -682,25 +696,8 @@ function federated_content_uuid_features_default_content() {
       ),
     ),
   ),
-  'field_image' => array(
-    'und' => array(
-      0 => array(
-        'uid' => 1,
-        'filename' => 'vintage-newfoundland-dog-illustration-public-domain.jpg',
-        'uri' => 'public://field/image/vintage-newfoundland-dog-illustration-public-domain.jpg',
-        'filemime' => 'image/jpeg',
-        'filesize' => 853761,
-        'status' => 1,
-        'uuid' => '37428606-ac03-4cff-9f8b-c1e9f4eeee53',
-        'rdf_mapping' => array(),
-        'alt' => '',
-        'title' => '',
-        'width' => 1455,
-        'height' => 1118,
-        'uuid_features_packaged_file_path' => 'assets/vintage-newfoundland-dog-illustration-public-domain.jpg',
-      ),
-    ),
-  ),
+  'field_tags' => array(),
+  'field_image' => array(),
   'field_age' => array(
     'und' => array(
       0 => array(
@@ -714,6 +711,14 @@ function federated_content_uuid_features_default_content() {
       0 => array(
         'tid' => '2fc26e3a-620f-4ba2-b167-dffee783751c',
         'uuid' => '2fc26e3a-620f-4ba2-b167-dffee783751c',
+      ),
+    ),
+  ),
+  'field_color' => array(
+    'und' => array(
+      0 => array(
+        'tid' => '1f522b08-d8b4-4719-9193-c244c10c9972',
+        'uuid' => '1f522b08-d8b4-4719-9193-c244c10c9972',
       ),
     ),
   ),
@@ -798,7 +803,7 @@ function federated_content_uuid_features_default_content() {
   'sticky' => 0,
   'type' => 'article',
   'language' => 'und',
-  'created' => 1575126865,
+  'created' => 1579572029,
   'tnid' => 0,
   'translate' => 0,
   'uuid' => 'd66e78d4-ee7b-4e0c-9931-86f39f1ffbc2',
@@ -812,6 +817,7 @@ function federated_content_uuid_features_default_content() {
       ),
     ),
   ),
+  'field_tags' => array(),
   'field_image' => array(),
   'field_age' => array(
     'und' => array(
@@ -826,6 +832,14 @@ function federated_content_uuid_features_default_content() {
       0 => array(
         'tid' => '03140448-dc7d-4079-bc33-30db6d35c793',
         'uuid' => '03140448-dc7d-4079-bc33-30db6d35c793',
+      ),
+    ),
+  ),
+  'field_color' => array(
+    'und' => array(
+      0 => array(
+        'tid' => '1f522b08-d8b4-4719-9193-c244c10c9972',
+        'uuid' => '1f522b08-d8b4-4719-9193-c244c10c9972',
       ),
     ),
   ),
@@ -924,6 +938,7 @@ function federated_content_uuid_features_default_content() {
       ),
     ),
   ),
+  'field_tags' => array(),
   'field_image' => array(),
   'field_age' => array(
     'und' => array(
@@ -938,6 +953,14 @@ function federated_content_uuid_features_default_content() {
       0 => array(
         'tid' => '03140448-dc7d-4079-bc33-30db6d35c793',
         'uuid' => '03140448-dc7d-4079-bc33-30db6d35c793',
+      ),
+    ),
+  ),
+  'field_color' => array(
+    'und' => array(
+      0 => array(
+        'tid' => '1f522b08-d8b4-4719-9193-c244c10c9972',
+        'uuid' => '1f522b08-d8b4-4719-9193-c244c10c9972',
       ),
     ),
   ),
@@ -1022,7 +1045,7 @@ function federated_content_uuid_features_default_content() {
   'sticky' => 0,
   'type' => 'page',
   'language' => 'und',
-  'created' => 1573126860,
+  'created' => 1579571320,
   'tnid' => 0,
   'translate' => 0,
   'uuid' => 'ec9df35b-0c09-4a1c-9962-6577be3126c3',
@@ -1049,6 +1072,14 @@ function federated_content_uuid_features_default_content() {
       0 => array(
         'tid' => '2fc26e3a-620f-4ba2-b167-dffee783751c',
         'uuid' => '2fc26e3a-620f-4ba2-b167-dffee783751c',
+      ),
+    ),
+  ),
+  'field_color' => array(
+    'und' => array(
+      0 => array(
+        'tid' => '6ff642c5-a0e0-4bb3-8419-65e03a0c5a86',
+        'uuid' => '6ff642c5-a0e0-4bb3-8419-65e03a0c5a86',
       ),
     ),
   ),

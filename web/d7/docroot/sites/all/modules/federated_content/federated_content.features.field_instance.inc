@@ -96,6 +96,43 @@ function federated_content_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-article-field_color'.
+  $field_instances['node-article-field_color'] = array(
+    'bundle' => 'article',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 11,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_color',
+    'label' => 'Color',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 3,
+    ),
+  );
+
   // Exported field_instance: 'node-article-field_image'.
   $field_instances['node-article-field_image'] = array(
     'bundle' => 'article',
@@ -146,6 +183,46 @@ function federated_content_field_default_field_instances() {
       ),
       'type' => 'image_image',
       'weight' => -1,
+    ),
+  );
+
+  // Exported field_instance: 'node-article-field_tags'.
+  $field_instances['node-article-field_tags'] = array(
+    'bundle' => 'article',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Enter a comma-separated list of words to describe your content.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 10,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 10,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_tags',
+    'label' => 'Tags',
+    'required' => FALSE,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'taxonomy',
+      'settings' => array(
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'size' => 60,
+      ),
+      'type' => 'taxonomy_autocomplete',
+      'weight' => -4,
     ),
   );
 
@@ -271,6 +348,43 @@ function federated_content_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-page-field_color'.
+  $field_instances['node-page-field_color'] = array(
+    'bundle' => 'page',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 3,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_color',
+    'label' => 'Color',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 1,
+    ),
+  );
+
   // Exported field_instance: 'node-page-field_traits'.
   $field_instances['node-page-field_traits'] = array(
     'bundle' => 'page',
@@ -339,6 +453,37 @@ function federated_content_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'taxonomy_term-coloring-field_federated_terms'.
+  $field_instances['taxonomy_term-coloring-field_federated_terms'] = array(
+    'bundle' => 'coloring',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => NULL,
+        'settings' => array(),
+        'type' => 'string',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'taxonomy_term',
+    'field_name' => 'field_federated_terms',
+    'label' => 'Federated Terms',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'search_api_federated_solr',
+      'settings' => array(),
+      'type' => 'federated_terms_textfield',
+      'weight' => 2,
+    ),
+  );
+
   // Exported field_instance: 'taxonomy_term-traits-field_federated_terms'.
   $field_instances['taxonomy_term-traits-field_federated_terms'] = array(
     'bundle' => 'traits',
@@ -374,8 +519,11 @@ function federated_content_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Age');
   t('Body');
+  t('Color');
+  t('Enter a comma-separated list of words to describe your content.');
   t('Federated Terms');
   t('Image');
+  t('Tags');
   t('Traits');
   t('Upload an image to go with this article.');
 
