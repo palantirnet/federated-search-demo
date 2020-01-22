@@ -105,7 +105,7 @@
             <!-- We should be able to use the existing-config flag, but cannot.
                  See https://www.drupal.org/project/drupal/issues/2982052 -->
             <param>config_installer</param>
-            
+
         </drush>
 
         <!-- The public files directory, and everything in it, needs to be world writable. -->
@@ -194,6 +194,7 @@
             </then>
         </if>
     </target>
+
 
     <!-- Default target: list -->
     <target name="list" hidden="true">
