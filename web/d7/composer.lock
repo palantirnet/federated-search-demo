@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "19e59b535d82fceb92cb53491723cb1d",
+    "content-hash": "a7bf0dd067169132fabdfd5464d86acf",
     "packages": [
         {
             "name": "composer/installers",
@@ -1360,6 +1360,159 @@
             }
         },
         {
+            "name": "drupal/uuid",
+            "version": "1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/uuid.git",
+                "reference": "7.x-1.3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/uuid-7.x-1.3.zip",
+                "reference": "7.x-1.3",
+                "shasum": "cf125deb3f11e96767bdbb3c171b11376c9f6955"
+            },
+            "require": {
+                "drupal/drupal": "*"
+            },
+            "require-dev": {
+                "drupal/ctools": "1.x-dev",
+                "drupal/entity": "~1.0",
+                "drupal/file_entity": "*",
+                "drupal/rest_server": "~3.0",
+                "drupal/services": "~3.0",
+                "drupal/uuid_services": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "7.x-1.3",
+                    "datestamp": "1559152264",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/7/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Manuel Garcia",
+                    "homepage": "https://www.drupal.org/user/213194"
+                },
+                {
+                    "name": "dixon_",
+                    "homepage": "https://www.drupal.org/user/239911"
+                },
+                {
+                    "name": "neochief",
+                    "homepage": "https://www.drupal.org/user/233667"
+                },
+                {
+                    "name": "recidive",
+                    "homepage": "https://www.drupal.org/user/12564"
+                },
+                {
+                    "name": "skwashd",
+                    "homepage": "https://www.drupal.org/user/116305"
+                }
+            ],
+            "description": "Extends the entity functionality and adds support for universally unique identifiers.",
+            "homepage": "https://www.drupal.org/project/uuid",
+            "support": {
+                "source": "https://git.drupalcode.org/project/uuid"
+            }
+        },
+        {
+            "name": "drupal/uuid_features",
+            "version": "1.0.0-rc2",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/uuid_features.git",
+                "reference": "7.x-1.0-rc2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/uuid_features-7.x-1.0-rc2.zip",
+                "reference": "7.x-1.0-rc2",
+                "shasum": "57269d565e576dfd1a980062745616cc45ece821"
+            },
+            "require": {
+                "drupal/drupal": "~7.0",
+                "drupal/entity": "*",
+                "drupal/features": "*",
+                "drupal/uuid": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "7.x-1.0-rc2",
+                    "datestamp": "1574015285",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/7/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Jeffrey C.",
+                    "homepage": "https://www.drupal.org/user/1290564"
+                },
+                {
+                    "name": "RobLoach",
+                    "homepage": "https://www.drupal.org/user/61114"
+                },
+                {
+                    "name": "brantwynn",
+                    "homepage": "https://www.drupal.org/user/252788"
+                },
+                {
+                    "name": "das-peter",
+                    "homepage": "https://www.drupal.org/user/762870"
+                },
+                {
+                    "name": "ezra-g",
+                    "homepage": "https://www.drupal.org/user/69959"
+                },
+                {
+                    "name": "igor.ro",
+                    "homepage": "https://www.drupal.org/user/234004"
+                },
+                {
+                    "name": "vishy_singhal",
+                    "homepage": "https://www.drupal.org/user/507976"
+                },
+                {
+                    "name": "wizonesolutions",
+                    "homepage": "https://www.drupal.org/user/739994"
+                },
+                {
+                    "name": "zroger",
+                    "homepage": "https://www.drupal.org/user/67977"
+                }
+            ],
+            "description": "Provides features integration for content (nodes, taxonomy, etc) based on the UUID module.",
+            "homepage": "https://www.drupal.org/project/uuid_features",
+            "support": {
+                "source": "https://git.drupalcode.org/project/uuid_features"
+            }
+        },
+        {
             "name": "drush/drush",
             "version": "8.3.2",
             "source": {
@@ -2446,6 +2599,7 @@
     "stability-flags": {
         "drupal/admin_menu": 5,
         "drupal/imagecache_token": 5,
+        "drupal/uuid_features": 5,
         "palantirnet/search_api_federated_solr": 20
     },
     "prefer-stable": true,

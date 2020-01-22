@@ -1,4 +1,4 @@
-uuid: c5b16670-2cc2-4858-b9d0-1c5a4e52792c
+uuid: 2e0fdbdb-4d72-4e3e-9453-c001f9a233ee
 langcode: en
 status: true
 dependencies:
@@ -7,7 +7,7 @@ dependencies:
   module:
     - node
 _core:
-  default_config_hash: LXsfDktrB8Z3co_mGEUlHUI37jLBU_8xXrSmkMiWLas
+  default_config_hash: IdobJe379eDudt7-bXFfJjF7pDqFl-kYxVFtpWrgkro
 id: node.article
 targetEntityType: node
 bundle: article
@@ -33,6 +33,17 @@ fieldMappings:
   uid:
     properties:
       - 'schema:author'
+  comment:
+    properties:
+      - 'schema:comment'
+    mapping_type: rel
+  comment_count:
+    properties:
+      - 'schema:interactionCount'
+    datatype_callback:
+      callable: 'Drupal\rdf\SchemaOrgDataConverter::interactionCount'
+      arguments:
+        interaction_type: UserComments
   field_image:
     properties:
       - 'schema:image'

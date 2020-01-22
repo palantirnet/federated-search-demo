@@ -1,4 +1,4 @@
-uuid: 518c4a61-ef6b-49c9-a688-af644b6f73ee
+uuid: 7c0a9743-c4aa-4295-bcd9-e454cf6cacd0
 langcode: en
 status: true
 dependencies:
@@ -7,11 +7,11 @@ dependencies:
   theme:
     - stark
 _core:
-  default_config_hash: hwPGi0Da9zOozalnzJ_sBJNI1Z1iM8nQQGhux08_-kM
+  default_config_hash: 8I8iACSa0sKO3k3jlvUG1ge52rfcKX7USJAQYnzuBgg
 id: stark_help
 theme: stark
-region: highlighted
-weight: -6
+region: content
+weight: -30
 provider: null
 plugin: help_block
 settings:

@@ -68,7 +68,7 @@
         },
         "patches": {
             "drupal/config_installer": {
-                "Allow config installer to find themes.": "https://www.drupal.org/files/issues/2018-05-28/2975675-2.patch"
+                "Allow config installer to find themes: https://www.drupal.org/node/2975675": "https://www.drupal.org/files/issues/2019-06-21/2975675-8.patch"
             },
             "drupal/default_content": {
                 "Do not reimport existing entities: https://www.drupal.org/project/default_content/issues/2698425": "https://www.drupal.org/files/issues/2018-12-11/default_content-dont-reimport-2698425-109.patch"

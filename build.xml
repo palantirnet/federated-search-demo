@@ -8,50 +8,56 @@
 
     <!-- Target: install-all -->
     <target name="install-all" description="Install all three Drupal sites in the Federated Search Demo">
+        <phingcall target="solr-clear" />
         <phingcall target="install-d7" />
 
         <phingcall target="install-d8">
             <property name="drush.root" value="web/d8/docroot" override="true" />
         </phingcall>
-
+        <!-- This target has not been updated
         <phingcall target="install-d8">
             <property name="drush.root" value="web/d8-domain/docroot" override="true" />
-        </phingcall>
+            <property name="site.name" value="Federated Search Drupal 8 Domain" override="true" />
+        </phingcall>-->
     </target>
 
 
     <!-- Target: install-d8 -->
     <target name="install-d8" description="Install one of the Drupal 8 sites; specify which site with -Ddrush.root=web/d8/docroot">
         <property name="drush.root" value="web/d8/docroot" />
+        <property name="site.name" value="Federated Search Drupal 8" />
 
         <exec command="composer install" dir="${drush.root}/.." passthru="true" />
         <phingcall target="install-drupal-by-path" />
 
-        <!-- Reinstall the Umami demo content -->
-        <drush command="pm-uninstall" assume="yes"><param>demo_umami_content</param></drush>
-        <drush command="pm-enable" assume="yes"><param>demo_umami_content</param></drush>
-
         <!-- Create demo content -->
         <drush command="pm-enable" assume="yes">
-            <param>federated_terms</param>
             <param>federated_default_content</param>
         </drush>
-
+        <!-- Copy demo files -->
+        <copy todir="${drush.root}/sites/default/files" mode="777">
+          <fileset dir="${drush.root}/modules/custom/federated_default_content/assets">
+            <include name="**/*.jpg" />
+          </fileset>
+        </copy>
         <!-- Uninstall the demo content modules -->
         <drush command="pm-uninstall" assume="yes">
-            <param>federated_terms</param>
             <param>federated_default_content</param>
         </drush>
 
         <drush command="search-api:clear" assume="yes">
             <param>federated_search</param>
         </drush>
-        <drush command="search-api:index" assume="yes">
-            <param>federated_search</param>
-        </drush>
 
-        <!-- Import config to fix rogue blocks changing UUIDs -->
-        <drush command="config-import" assume="yes" />
+        <exec command="drush @d8 search-api:index federated_search -y" />
+        <!-- If we run the above normally, we get the error:
+          "Command batch-process was not found. Pass root or a @siteAlias in
+          order to run Drupal-specific commands." -->
+        <!--<drush command="search-api:index" assume="yes">
+            <param>federated_search</param>
+        </drush>-->
+        <!-- Import config to fix rogue blocks changing UUIDs
+        <drush command="config-import" assume="yes" /> -->
 
         <!-- Rebuild node acces permissions. No direct drush command for this
              as per https://www.drupal.org/project/devel/issues/2677218#comment-10907984 -->
@@ -75,9 +81,8 @@
         <chmod file="${drush.root}/${drupal.site}/settings.php" mode="777" />
 
         <!-- Delete and re-create the public files directory -->
-        <delete file="${drush.root}/${drupal.files}" />
         <delete dir="${drush.root}/${drupal.files}" />
-        <mkdir dir="${drush.root}/${drupal.files}" mode="775" />
+        <mkdir dir="${drush.root}/${drupal.files}" mode="777" />
 
         <!-- Delete and re-create the private files directory -->
         <if>
@@ -88,15 +93,18 @@
                 </not>
             </and>
             <then>
-                <delete file="${drush.root}/${drupal.private}" />
                 <delete dir="${drush.root}/${drupal.private}" />
                 <mkdir dir="${drush.root}/${drupal.private}" mode="777" />
             </then>
         </if>
 
+        <!-- Install the site. -->
         <drush command="site-install" assume="yes">
             <option name="account-name">admin</option>
             <option name="account-pass">admin</option>
+            <option name="site-name">${site.name}</option>
+            <!-- We should be able to use the existing-config flag, but cannot.
+                 See https://www.drupal.org/project/drupal/issues/2982052 -->
             <param>config_installer</param>
         </drush>
 
@@ -116,21 +124,24 @@
         <exec command="composer install" dir="${drush.root}/.." passthru="true" />
 
         <drush command="site-install" assume="yes">
-            <option name="site-name">Federated SOLR D7</option>
+            <option name="site-name">Drupal 7 - Federated Search</option>
             <option name="account-pass">admin</option>
             <param>standard</param>
         </drush>
         <drush command="pm-enable" assume="yes">
             <param>features_search_api_config</param>
-            <param>devel_generate</param>
+            <param>federated_content</param>
+        </drush>
+        <!-- The feature is not loading properly, but does reload correctly. -->
+        <drush command="features-revert" assume="yes">
+            <param>federated_content</param>
         </drush>
         <drush command="pm-disable" assume="yes">
             <param>overlay</param>
             <param>toolbar</param>
         </drush>
-        <drush command="generate-content" assume="yes">
-            <param>10</param>
-        </drush>
+        <drush command="search-api-reindex" assume="yes" />
+        <drush command="search-api-index" assume="yes" />
     </target>
 
 
@@ -170,7 +181,7 @@
 
     <!-- Target: solr-clear -->
     <target name="solr-clear" description="Delete all entries in the local Solr 'drupal8' core">
-        <input message="Are you sure? There is no undo." propertyName="dump.confirm" defaultValue="y" validArgs="y,n" />
+        <input message="You are about to clear the SOLR index. Are you sure? There is no undo." propertyName="dump.confirm" defaultValue="y" validArgs="y,n" />
         <if>
             <equals arg1="${dump.confirm}" arg2="y" />
             <then>

@@ -1,15 +1,16 @@
-uuid: 51c47311-2d0d-4701-9440-6c43a82da21b
+uuid: 32b6c54a-cc6a-4cba-a7c8-269d1cfe8ac3
 langcode: en
 status: true
 dependencies:
   module:
     - search_api_federated_solr
+    - system
   theme:
     - stark
 id: stark_federatedsearchpageformblock
 theme: stark
-region: highlighted
-weight: -8
+region: sidebar_first
+weight: 0
 provider: null
 plugin: federated_search_page_form_block
 settings:
@@ -17,4 +18,10 @@ settings:
   label: 'Federated Search Page Form block'
   provider: search_api_federated_solr
   label_display: '0'
-visibility: {  }
+  autocomplete: {  }
+visibility:
+  request_path:
+    id: request_path
+    pages: "/search-app\r\n/search-app*"
+    negate: true
+    context_mapping: {  }

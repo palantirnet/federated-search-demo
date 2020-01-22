@@ -1,4 +1,4 @@
-uuid: 8863543d-ada9-429b-b3cc-93feb041c66a
+uuid: be6bd1d3-392a-41fa-84bf-8a76e13a074b
 langcode: en
 status: true
 dependencies:
@@ -9,18 +9,19 @@ dependencies:
   theme:
     - stark
 _core:
-  default_config_hash: V_A9DLAFRV_t_apxzqNfQOEPYgPTWrJcMp_D4TKfsoU
+  default_config_hash: 8zRjTNbfNAJ94lQpZDu6MkyD87GYJ2zpH9VQPVmRbcM
 id: stark_footer
 theme: stark
-region: footer
+region: sidebar_first
 weight: 0
 provider: null
 plugin: 'system_menu_block:footer'
 settings:
   id: 'system_menu_block:footer'
-  label: 'Tell us what you think'
+  label: 'Footer menu'
   provider: system
-  label_display: '1'
+  label_display: '0'
   level: 1
   depth: 0
+  expand_all_items: false
 visibility: {  }

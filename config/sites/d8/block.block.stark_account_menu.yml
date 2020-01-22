@@ -1,4 +1,4 @@
-uuid: 656c8865-1e9f-44d3-8bce-1e896ee5ff4c
+uuid: 71b4ac81-2725-4cae-ad2f-96473cb46ecb
 langcode: en
 status: true
 dependencies:
@@ -9,11 +9,11 @@ dependencies:
   theme:
     - stark
 _core:
-  default_config_hash: 2zPj0o1Yh78nP8BHkvLWXoyN4KqsQ54BlHRxkiFMGoM
+  default_config_hash: 8a31Ywc1t2zlddGd3bmDrFMefWqgSK2E02ceFdr-bfc
 id: stark_account_menu
 theme: stark
-region: sidebar_first
-weight: -6
+region: secondary_menu
+weight: 0
 provider: null
 plugin: 'system_menu_block:account'
 settings:
@@ -23,4 +23,5 @@ settings:
   label_display: '0'
   level: 1
   depth: 1
+  expand_all_items: false
 visibility: {  }

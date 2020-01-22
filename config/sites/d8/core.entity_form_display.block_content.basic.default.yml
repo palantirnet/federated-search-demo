@@ -1,4 +1,4 @@
-uuid: efd5fdf6-093f-4a50-907a-91bbfc957332
+uuid: 4ca47a8b-6f05-47b2-98f0-e22e65f9218f
 langcode: en
 status: true
 dependencies:
@@ -8,7 +8,7 @@ dependencies:
   module:
     - text
 _core:
-  default_config_hash: XTjCg8GntuGZ0Uj-FkkCuQkkbkZcwRQ6ebioZj4qRRo
+  default_config_hash: jAps3FCxvKecABS_tgExbhCZrBLQB3bNPWw18WjE3ss
 id: block_content.basic.default
 targetEntityType: block_content
 bundle: basic
@@ -22,6 +22,7 @@ content:
       rows: 9
       summary_rows: 3
       placeholder: ''
+      show_summary: false
     third_party_settings: {  }
   info:
     type: string_textfield
@@ -31,5 +32,4 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden:
-  moderation_state: true
+hidden: {  }

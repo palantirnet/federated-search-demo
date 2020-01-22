@@ -1,4 +1,4 @@
-uuid: 46b18191-1e4b-441a-befc-ff551dc4bd64
+uuid: 3888a3b4-3bb5-4d71-b63c-7b9d959082b6
 langcode: en
 status: true
 dependencies:
@@ -7,10 +7,10 @@ dependencies:
   theme:
     - stark
 _core:
-  default_config_hash: kGBJMXyDmDg5sa7AQOgzrkg2O5AB1DXYm77YJZedhRE
+  default_config_hash: oXUb3JZR2WW5VOdw4HrhRicCsq51mCgLfRyvheG68ck
 id: stark_breadcrumbs
 theme: stark
-region: sidebar_first
+region: breadcrumb
 weight: 0
 provider: null
 plugin: system_breadcrumb_block
@@ -19,9 +19,4 @@ settings:
   label: Breadcrumbs
   provider: system
   label_display: '0'
-visibility:
-  request_path:
-    id: request_path
-    pages: '<front>'
-    negate: true
-    context_mapping: {  }
+visibility: {  }

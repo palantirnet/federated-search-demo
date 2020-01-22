@@ -1,5 +1,5 @@
-uuid: 5142afd6-8ac2-491d-b5bf-f7ef870ec393
-name: 'Federated Search Demo'
+uuid: c4b5e069-46ab-46a7-b87d-3f4bdc1aff69
+name: 'Federated Search Drupal 8'
 mail: admin@example.com
 slogan: ''
 page:
@@ -11,4 +11,4 @@ weight_select_max: 100
 langcode: en
 default_langcode: en
 _core:
-  default_config_hash: yXadRE77Va-G6dxhd2kPYapAvbnSvTF6hO4oXiOEynI
+  default_config_hash: yTxtFqBHnEWxQswuWvkjE8mKw2t8oKuCL1q8KnfHuGE

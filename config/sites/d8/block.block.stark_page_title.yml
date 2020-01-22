@@ -1,15 +1,15 @@
-uuid: 517bd0a6-e150-46d0-a5d0-b46f163621af
+uuid: 30ea376d-a6cd-4e3c-af48-a8f52a4a76ab
 langcode: en
 status: true
 dependencies:
   theme:
     - stark
 _core:
-  default_config_hash: q6m4raFgRjMQbo7CkBMUIW1dRS1ix0XNoex2S2NV8sM
+  default_config_hash: 7rR9chwXvdM2H8OYMAYx9Zj3GGlPMrZp_M3ZA4thYTk
 id: stark_page_title
 theme: stark
-region: sidebar_first
-weight: -7
+region: content
+weight: -50
 provider: null
 plugin: page_title_block
 settings:

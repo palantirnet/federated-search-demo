@@ -1,9 +1,0 @@
-uuid: 30412146-aeaf-43c9-b8f3-82b5ffaf060e
-langcode: en
-status: true
-dependencies: {  }
-name: 'Search Terms'
-vid: search_terms
-description: ''
-hierarchy: 0
-weight: 0
