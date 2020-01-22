@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * features_search_api_config.features.fe_block_settings.inc

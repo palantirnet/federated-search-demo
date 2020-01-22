@@ -1,8 +1,0 @@
-<?php
-
-/**
- * @file
- * Code for the Federated Content feature.
- */
-
-include_once 'federated_content.features.inc';

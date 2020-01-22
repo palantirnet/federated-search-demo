@@ -2,13 +2,13 @@
 
 /**
  * @file
- * federated_content.features.inc
+ * federated_default_content.features.inc
  */
 
 /**
  * Implements hook_ctools_plugin_api().
  */
-function federated_content_ctools_plugin_api($module = NULL, $api = NULL) {
+function federated_default_content_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "strongarm" && $api == "strongarm") {
     return array("version" => "1");
   }
@@ -17,7 +17,7 @@ function federated_content_ctools_plugin_api($module = NULL, $api = NULL) {
 /**
  * Implements hook_node_info().
  */
-function federated_content_node_info() {
+function federated_default_content_node_info() {
   $items = array(
     'article' => array(
       'name' => t('Article'),

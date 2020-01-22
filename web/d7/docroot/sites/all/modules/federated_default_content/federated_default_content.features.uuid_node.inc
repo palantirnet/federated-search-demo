@@ -2,13 +2,13 @@
 
 /**
  * @file
- * federated_content.features.uuid_node.inc
+ * federated_default_content.features.uuid_node.inc
  */
 
 /**
  * Implements hook_uuid_features_default_content().
  */
-function federated_content_uuid_features_default_content() {
+function federated_default_content_uuid_features_default_content() {
   $nodes = array();
 
   $nodes[] = array(
@@ -35,7 +35,25 @@ function federated_content_uuid_features_default_content() {
     ),
   ),
   'field_tags' => array(),
-  'field_image' => array(),
+  'field_image' => array(
+    'und' => array(
+      0 => array(
+        'uid' => 1,
+        'filename' => 'vintage-irish-terrier-illustration-public-domain.jpg',
+        'uri' => 'public://field/image/vintage-irish-terrier-illustration-public-domain.jpg',
+        'filemime' => 'image/jpeg',
+        'filesize' => 1239780,
+        'status' => 1,
+        'uuid' => 'd5af4477-8d54-4274-93d9-46c334aca504',
+        'rdf_mapping' => array(),
+        'alt' => 'An illustration of an Irish terrier',
+        'title' => '',
+        'width' => 1474,
+        'height' => 1121,
+        'uuid_features_packaged_file_path' => 'assets/vintage-irish-terrier-illustration-public-domain.jpg',
+      ),
+    ),
+  ),
   'field_age' => array(
     'und' => array(
       0 => array(
@@ -44,19 +62,19 @@ function federated_content_uuid_features_default_content() {
       ),
     ),
   ),
+  'field_color' => array(
+    'und' => array(
+      0 => array(
+        'tid' => '06e7a413-5755-41b8-8dc9-e09762b9c9be',
+        'uuid' => '06e7a413-5755-41b8-8dc9-e09762b9c9be',
+      ),
+    ),
+  ),
   'field_traits' => array(
     'und' => array(
       0 => array(
         'tid' => '3314295d-522e-4182-a5dc-93ce20aecfe3',
         'uuid' => '3314295d-522e-4182-a5dc-93ce20aecfe3',
-      ),
-    ),
-  ),
-  'field_color' => array(
-    'und' => array(
-      0 => array(
-        'tid' => 'fc091dfd-e82e-4296-b5b6-0dfc588b92a9',
-        'uuid' => 'fc091dfd-e82e-4296-b5b6-0dfc588b92a9',
       ),
     ),
   ),
@@ -163,19 +181,19 @@ function federated_content_uuid_features_default_content() {
       ),
     ),
   ),
+  'field_color' => array(
+    'und' => array(
+      0 => array(
+        'tid' => '7b4c09e9-4801-4b8e-a68f-b1eebba5b6bb',
+        'uuid' => '7b4c09e9-4801-4b8e-a68f-b1eebba5b6bb',
+      ),
+    ),
+  ),
   'field_traits' => array(
     'und' => array(
       0 => array(
         'tid' => '2fc26e3a-620f-4ba2-b167-dffee783751c',
         'uuid' => '2fc26e3a-620f-4ba2-b167-dffee783751c',
-      ),
-    ),
-  ),
-  'field_color' => array(
-    'und' => array(
-      0 => array(
-        'tid' => '6ff642c5-a0e0-4bb3-8419-65e03a0c5a86',
-        'uuid' => '6ff642c5-a0e0-4bb3-8419-65e03a0c5a86',
       ),
     ),
   ),
@@ -268,19 +286,19 @@ function federated_content_uuid_features_default_content() {
       ),
     ),
   ),
+  'field_color' => array(
+    'und' => array(
+      0 => array(
+        'tid' => '06e7a413-5755-41b8-8dc9-e09762b9c9be',
+        'uuid' => '06e7a413-5755-41b8-8dc9-e09762b9c9be',
+      ),
+    ),
+  ),
   'field_traits' => array(
     'und' => array(
       0 => array(
         'tid' => '2fc26e3a-620f-4ba2-b167-dffee783751c',
         'uuid' => '2fc26e3a-620f-4ba2-b167-dffee783751c',
-      ),
-    ),
-  ),
-  'field_color' => array(
-    'und' => array(
-      0 => array(
-        'tid' => '1f522b08-d8b4-4719-9193-c244c10c9972',
-        'uuid' => '1f522b08-d8b4-4719-9193-c244c10c9972',
       ),
     ),
   ),
@@ -373,19 +391,19 @@ function federated_content_uuid_features_default_content() {
       ),
     ),
   ),
+  'field_color' => array(
+    'und' => array(
+      0 => array(
+        'tid' => 'd387e61f-74ee-42b3-b13e-c125a967b295',
+        'uuid' => 'd387e61f-74ee-42b3-b13e-c125a967b295',
+      ),
+    ),
+  ),
   'field_traits' => array(
     'und' => array(
       0 => array(
         'tid' => '03140448-dc7d-4079-bc33-30db6d35c793',
         'uuid' => '03140448-dc7d-4079-bc33-30db6d35c793',
-      ),
-    ),
-  ),
-  'field_color' => array(
-    'und' => array(
-      0 => array(
-        'tid' => 'fc091dfd-e82e-4296-b5b6-0dfc588b92a9',
-        'uuid' => 'fc091dfd-e82e-4296-b5b6-0dfc588b92a9',
       ),
     ),
   ),
@@ -478,19 +496,19 @@ function federated_content_uuid_features_default_content() {
       ),
     ),
   ),
+  'field_color' => array(
+    'und' => array(
+      0 => array(
+        'tid' => 'd387e61f-74ee-42b3-b13e-c125a967b295',
+        'uuid' => 'd387e61f-74ee-42b3-b13e-c125a967b295',
+      ),
+    ),
+  ),
   'field_traits' => array(
     'und' => array(
       0 => array(
         'tid' => '3314295d-522e-4182-a5dc-93ce20aecfe3',
         'uuid' => '3314295d-522e-4182-a5dc-93ce20aecfe3',
-      ),
-    ),
-  ),
-  'field_color' => array(
-    'und' => array(
-      0 => array(
-        'tid' => '6ff642c5-a0e0-4bb3-8419-65e03a0c5a86',
-        'uuid' => '6ff642c5-a0e0-4bb3-8419-65e03a0c5a86',
       ),
     ),
   ),
@@ -576,7 +594,25 @@ function federated_content_uuid_features_default_content() {
     ),
   ),
   'field_tags' => array(),
-  'field_image' => array(),
+  'field_image' => array(
+    'und' => array(
+      0 => array(
+        'uid' => 1,
+        'filename' => 'vintage-english-terriers-illustration-public-domain.jpg',
+        'uri' => 'public://field/image/vintage-english-terriers-illustration-public-domain.jpg',
+        'filemime' => 'image/jpeg',
+        'filesize' => 345026,
+        'status' => 1,
+        'uuid' => '2d20e484-33a0-4548-a5be-36e8c22c2877',
+        'rdf_mapping' => array(),
+        'alt' => 'An illustration of a group of English terriers',
+        'title' => '',
+        'width' => 1474,
+        'height' => 1121,
+        'uuid_features_packaged_file_path' => 'assets/vintage-english-terriers-illustration-public-domain.jpg',
+      ),
+    ),
+  ),
   'field_age' => array(
     'und' => array(
       0 => array(
@@ -585,19 +621,19 @@ function federated_content_uuid_features_default_content() {
       ),
     ),
   ),
+  'field_color' => array(
+    'und' => array(
+      0 => array(
+        'tid' => 'd387e61f-74ee-42b3-b13e-c125a967b295',
+        'uuid' => 'd387e61f-74ee-42b3-b13e-c125a967b295',
+      ),
+    ),
+  ),
   'field_traits' => array(
     'und' => array(
       0 => array(
         'tid' => '3314295d-522e-4182-a5dc-93ce20aecfe3',
         'uuid' => '3314295d-522e-4182-a5dc-93ce20aecfe3',
-      ),
-    ),
-  ),
-  'field_color' => array(
-    'und' => array(
-      0 => array(
-        'tid' => 'fc091dfd-e82e-4296-b5b6-0dfc588b92a9',
-        'uuid' => 'fc091dfd-e82e-4296-b5b6-0dfc588b92a9',
       ),
     ),
   ),
@@ -697,7 +733,25 @@ function federated_content_uuid_features_default_content() {
     ),
   ),
   'field_tags' => array(),
-  'field_image' => array(),
+  'field_image' => array(
+    'und' => array(
+      0 => array(
+        'uid' => 1,
+        'filename' => 'vintage-newfoundland-dog-illustration-public-domain.jpg',
+        'uri' => 'public://field/image/vintage-newfoundland-dog-illustration-public-domain.jpg',
+        'filemime' => 'image/jpeg',
+        'filesize' => 853761,
+        'status' => 1,
+        'uuid' => '4b22c382-99dd-47d7-a19d-2113d1a93250',
+        'rdf_mapping' => array(),
+        'alt' => 'An illustration of a newfoundland',
+        'title' => '',
+        'width' => 1455,
+        'height' => 1118,
+        'uuid_features_packaged_file_path' => 'assets/vintage-newfoundland-dog-illustration-public-domain.jpg',
+      ),
+    ),
+  ),
   'field_age' => array(
     'und' => array(
       0 => array(
@@ -706,19 +760,19 @@ function federated_content_uuid_features_default_content() {
       ),
     ),
   ),
+  'field_color' => array(
+    'und' => array(
+      0 => array(
+        'tid' => '7b4c09e9-4801-4b8e-a68f-b1eebba5b6bb',
+        'uuid' => '7b4c09e9-4801-4b8e-a68f-b1eebba5b6bb',
+      ),
+    ),
+  ),
   'field_traits' => array(
     'und' => array(
       0 => array(
         'tid' => '2fc26e3a-620f-4ba2-b167-dffee783751c',
         'uuid' => '2fc26e3a-620f-4ba2-b167-dffee783751c',
-      ),
-    ),
-  ),
-  'field_color' => array(
-    'und' => array(
-      0 => array(
-        'tid' => '1f522b08-d8b4-4719-9193-c244c10c9972',
-        'uuid' => '1f522b08-d8b4-4719-9193-c244c10c9972',
       ),
     ),
   ),
@@ -827,19 +881,19 @@ function federated_content_uuid_features_default_content() {
       ),
     ),
   ),
+  'field_color' => array(
+    'und' => array(
+      0 => array(
+        'tid' => '06e7a413-5755-41b8-8dc9-e09762b9c9be',
+        'uuid' => '06e7a413-5755-41b8-8dc9-e09762b9c9be',
+      ),
+    ),
+  ),
   'field_traits' => array(
     'und' => array(
       0 => array(
         'tid' => '03140448-dc7d-4079-bc33-30db6d35c793',
         'uuid' => '03140448-dc7d-4079-bc33-30db6d35c793',
-      ),
-    ),
-  ),
-  'field_color' => array(
-    'und' => array(
-      0 => array(
-        'tid' => '1f522b08-d8b4-4719-9193-c244c10c9972',
-        'uuid' => '1f522b08-d8b4-4719-9193-c244c10c9972',
       ),
     ),
   ),
@@ -948,19 +1002,19 @@ function federated_content_uuid_features_default_content() {
       ),
     ),
   ),
+  'field_color' => array(
+    'und' => array(
+      0 => array(
+        'tid' => '06e7a413-5755-41b8-8dc9-e09762b9c9be',
+        'uuid' => '06e7a413-5755-41b8-8dc9-e09762b9c9be',
+      ),
+    ),
+  ),
   'field_traits' => array(
     'und' => array(
       0 => array(
         'tid' => '03140448-dc7d-4079-bc33-30db6d35c793',
         'uuid' => '03140448-dc7d-4079-bc33-30db6d35c793',
-      ),
-    ),
-  ),
-  'field_color' => array(
-    'und' => array(
-      0 => array(
-        'tid' => '1f522b08-d8b4-4719-9193-c244c10c9972',
-        'uuid' => '1f522b08-d8b4-4719-9193-c244c10c9972',
       ),
     ),
   ),
@@ -1067,19 +1121,19 @@ function federated_content_uuid_features_default_content() {
       ),
     ),
   ),
+  'field_color' => array(
+    'und' => array(
+      0 => array(
+        'tid' => '7b4c09e9-4801-4b8e-a68f-b1eebba5b6bb',
+        'uuid' => '7b4c09e9-4801-4b8e-a68f-b1eebba5b6bb',
+      ),
+    ),
+  ),
   'field_traits' => array(
     'und' => array(
       0 => array(
         'tid' => '2fc26e3a-620f-4ba2-b167-dffee783751c',
         'uuid' => '2fc26e3a-620f-4ba2-b167-dffee783751c',
-      ),
-    ),
-  ),
-  'field_color' => array(
-    'und' => array(
-      0 => array(
-        'tid' => '6ff642c5-a0e0-4bb3-8419-65e03a0c5a86',
-        'uuid' => '6ff642c5-a0e0-4bb3-8419-65e03a0c5a86',
       ),
     ),
   ),

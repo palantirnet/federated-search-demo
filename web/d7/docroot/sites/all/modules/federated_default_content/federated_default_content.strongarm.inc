@@ -2,13 +2,13 @@
 
 /**
  * @file
- * federated_content.strongarm.inc
+ * federated_default_content.strongarm.inc
  */
 
 /**
  * Implements hook_strongarm().
  */
-function federated_content_strongarm() {
+function federated_default_content_strongarm() {
   $export = array();
 
   $strongarm = new stdClass();

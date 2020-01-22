@@ -2,13 +2,13 @@
 
 /**
  * @file
- * federated_content.features.taxonomy.inc
+ * federated_default_content.features.taxonomy.inc
  */
 
 /**
  * Implements hook_taxonomy_default_vocabularies().
  */
-function federated_content_taxonomy_default_vocabularies() {
+function federated_default_content_taxonomy_default_vocabularies() {
   return array(
     'age' => array(
       'name' => 'Age',

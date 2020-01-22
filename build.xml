@@ -128,13 +128,27 @@
             <option name="account-pass">admin</option>
             <param>standard</param>
         </drush>
+
+        <!-- The public files directory, and everything in it, needs to be world writable. -->
+        <exec command="chmod -R 777 ${drush.root}/sites/default/files" checkreturn="true" />
+
+        <!-- Copy demo files
+        <copy todir="${drush.root}/sites/default/files/field/image" mode="777">
+          <fileset dir="${drush.root}/sites/all/modules/federated_content/assets">
+            <include name="**/*.jpg" />
+          </fileset>
+        </copy> -->
+
+        <!-- Install default configuration and content. -->
         <drush command="pm-enable" assume="yes">
             <param>features_search_api_config</param>
-            <param>federated_content</param>
+            <param>federated_default_content</param>
         </drush>
-        <!-- The feature is not loading properly, but does reload correctly. -->
+        <!-- The public files directory, and everything in it, needs to be world writable. -->
+        <exec command="chmod -R 777 ${drush.root}/sites/default/files" checkreturn="true" />
+        <!-- The feature is not loading properly due to file permissions, but does reload correctly. -->
         <drush command="features-revert" assume="yes">
-            <param>federated_content</param>
+            <param>federated_default_content</param>
         </drush>
         <drush command="pm-disable" assume="yes">
             <param>overlay</param>
@@ -158,15 +172,15 @@
         <symlink target="../web/d8/docroot/modules/contrib/search_api_field_map" link="src/search_api_field_map" />
 
         <!-- Link d8/.../search_api_federated_solr to d8-domain/.../search_api_federated_solr
-             so that changes in the module are reflected in both sites. -->
+             so that changes in the module are reflected in both sites.
         <delete dir="web/d8-domain/docroot/modules/contrib/search_api_federated_solr" />
         <symlink target="../../../../../web/d8/docroot/modules/contrib/search_api_federated_solr" link="web/d8-domain/docroot/modules/contrib/search_api_federated_solr" />
-
+        -->
         <!-- Link d8/.../search_api_field_map to d8-domain/.../search_api_field_map
-            so that changes in the module are reflected in both sites. -->
+            so that changes in the module are reflected in both sites.
         <delete dir="web/d8-domain/docroot/modules/contrib/search_api_field_map" />
         <symlink target="../../../../../web/d8/docroot/modules/contrib/search_api_field_map" link="web/d8-domain/docroot/modules/contrib/search_api_field_map" />
-
+        -->
         <!-- Link search_api_federated_solr:7.x into the src/ directory so the code is easy to find. -->
         <mkdir dir="src" />
         <delete file="src/search_api_federated_solr-7.x" />

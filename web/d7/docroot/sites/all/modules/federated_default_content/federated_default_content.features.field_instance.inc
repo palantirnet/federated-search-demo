@@ -2,13 +2,13 @@
 
 /**
  * @file
- * federated_content.features.field_instance.inc
+ * federated_default_content.features.field_instance.inc
  */
 
 /**
  * Implements hook_field_default_field_instances().
  */
-function federated_content_field_default_field_instances() {
+function federated_default_content_field_default_field_instances() {
   $field_instances = array();
 
   // Exported field_instance: 'node-article-body'.

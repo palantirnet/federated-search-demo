@@ -2,13 +2,13 @@
 
 /**
  * @file
- * federated_content.features.field_base.inc
+ * federated_default_content.features.field_base.inc
  */
 
 /**
  * Implements hook_field_default_field_bases().
  */
-function federated_content_field_default_field_bases() {
+function federated_default_content_field_default_field_bases() {
   $field_bases = array();
 
   // Exported field_base: 'body'.
