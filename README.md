@@ -8,6 +8,9 @@ This is the development repository for Federated Search Demo environment. It con
 * [Development Environment Components](#development-environment-components)
 * [Getting Started](#getting-started)
 * [How do I work on this?](#how-do-i-work-on-this)
+* [Working with content](#working-with-content)
+* [Sample searches](#sample-searches)
+* [Reading the SOLR index](#reading-the-solr-index)
 * [Drupal Development](#drupal-development)
 * [Deployment](#Deployment)
 * [Styleguide Development](#styleguide-development)
@@ -122,6 +125,46 @@ These two search results should be identical:
 * http://d8.fs-demo.local/search-app?search=terrier
 * http://d7.fs-demo.local/search-app?search=terrier
 
+## Reading the SOLR index
+
+With the VM running, you can visit the SOLR index at http://federated-search-demo.local:8983/solr/#/drupal8/query to see indexed data. When looking at an item indexed by federated search, compare it to this sample:
+
+```
+        "id": "dqiuue-federated_search-1",
+        "index_id": "federated_search",
+        "item_id": "1",
+        "hash": "dqiuue",
+        "site": "http://d7.fs-demo.local/",
+        "ds_federated_date": "2020-01-21T02:00:53Z",
+        "ss_federated_image": "http://d7.fs-demo.local/sites/default/files/styles/search_api_federated_solr_image/public/field/image/vintage-irish-terrier-illustration-public-domain.jpg?itok=voT10QLK",
+        "sm_federated_terms": [
+          "Age>Mature",
+          "Color>Gold",
+          "Color>Yellow",
+          "Traits>Loyal"
+        ],
+        "ss_federated_title": "Irish Terrier",
+        "ss_federated_type": "Article",
+        "tm_rendered_item": [
+          "Irish Terrier",
+          "Submitted by admin on Tue, 01/21/2020 - 02:00 An illustration of an Irish terrier Ball down roll over bell sit pretty dog toy dog bone. Milk bone k9 dog toy tail release dog. Squirrel release collar lab sit dog toy dog house. Puppy bring it, peanut butter leash milk bone dog bowl catch chew toy. Leave it stand k9, catch roll over jump shake stand. come tug come puppies squeak toy speak, peanut butter squirrel k9 speak. Squirrel shake bring it peanut butter squirrel dog toy, spin stand. Dog bone dog chew toy fetch tug. Come roll over bang, down roll over collar great dance great dance lap dog leave it stand. Mature Affectionate Gold"
+        ],
+        "spell": [
+          "Irish Terrier",
+          "Submitted by admin on Tue, 01/21/2020 - 02:00 An illustration of an Irish terrier Ball down roll over bell sit pretty dog toy dog bone. Milk bone k9 dog toy tail release dog. Squirrel release collar lab sit dog toy dog house. Puppy bring it, peanut butter leash milk bone dog bowl catch chew toy. Leave it stand k9, catch roll over jump shake stand. come tug come puppies squeak toy speak, peanut butter squirrel k9 speak. Squirrel shake bring it peanut butter squirrel dog toy, spin stand. Dog bone dog chew toy fetch tug. Come roll over bang, down roll over collar great dance great dance lap dog leave it stand. Mature Affectionate Gold",
+          "Irish Terrier Submitted by admin on Tue, 01/21/2020 - 02:00 An illustration of an Irish terrier Ball down roll over bell sit pretty dog toy dog bone. Milk bone k9 dog toy tail release dog. Squirrel release collar lab sit dog toy dog house. Puppy bring it, peanut butter leash milk bone dog bowl catch chew toy. Leave it stand k9, catch roll over jump shake stand. come tug come puppies squeak toy speak, peanut butter squirrel k9 speak. Squirrel shake bring it peanut butter squirrel dog toy, spin stand. Dog bone dog chew toy fetch tug. Come roll over bang, down roll over collar great dance great dance lap dog leave it stand. Mature Affectionate Gold"
+        ],
+        "ss_search_api_language": "und",
+        "sm_site_name": [
+          "Federated SOLR D7"
+        ],
+        "sm_urls": [
+          "http://d7.fs-demo.local/node/1"
+        ],
+        "content": "Irish Terrier Submitted by admin on Tue, 01/21/2020 - 02:00 An illustration of an Irish terrier Ball down roll over bell sit pretty dog toy dog bone. Milk bone k9 dog toy tail release dog. Squirrel release collar lab sit dog toy dog house. Puppy bring it, peanut butter leash milk bone dog bowl catch chew toy. Leave it stand k9, catch roll over jump shake stand. come tug come puppies squeak toy speak, peanut butter squirrel k9 speak. Squirrel shake bring it peanut butter squirrel dog toy, spin stand. Dog bone dog chew toy fetch tug. Come roll over bang, down roll over collar great dance great dance lap dog leave it stand. Mature Affectionate Gold",
+        "_version_": 1656545346728231000,
+        "timestamp": "2020-01-23T18:39:11.137Z"
+```
 
 ## Drupal Development
 
