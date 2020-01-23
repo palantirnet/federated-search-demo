@@ -1,7 +1,7 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/d8.fs-demo.local\/taxonomy\/term\/2?_format=hal_json"
+            "href": "http:\/\/d8-3.fs-demo.local\/taxonomy\/term\/2?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/age"
@@ -22,7 +22,7 @@
     ],
     "revision_id": [
         {
-            "value": 2
+            "value": 1
         }
     ],
     "langcode": [

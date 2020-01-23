@@ -1,48 +1,48 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/d8.fs-demo.local\/node\/6?_format=hal_json"
+            "href": "http:\/\/d8-1.fs-demo.local\/node\/12?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/node\/page"
         },
         "http:\/\/drupal.org\/rest\/relation\/node\/page\/revision_uid": [
             {
-                "href": "http:\/\/d8.fs-demo.local\/user\/1?_format=hal_json"
+                "href": "http:\/\/d8-3.fs-demo.local\/user\/1?_format=hal_json"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/page\/uid": [
             {
-                "href": "http:\/\/d8.fs-demo.local\/user\/1?_format=hal_json",
+                "href": "http:\/\/d8-3.fs-demo.local\/user\/1?_format=hal_json",
                 "lang": "en"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/page\/field_age": [
             {
-                "href": "http:\/\/d8.fs-demo.local\/taxonomy\/term\/1?_format=hal_json",
+                "href": "http:\/\/d8-3.fs-demo.local\/taxonomy\/term\/1?_format=hal_json",
                 "lang": "en"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/page\/field_traits": [
             {
-                "href": "http:\/\/d8.fs-demo.local\/taxonomy\/term\/6?_format=hal_json",
+                "href": "http:\/\/d8-3.fs-demo.local\/taxonomy\/term\/4?_format=hal_json",
                 "lang": "en"
             }
         ]
     },
     "nid": [
         {
-            "value": 6
+            "value": 12
         }
     ],
     "uuid": [
         {
-            "value": "8e6f71ca-83e5-4c67-bede-e9149a5c5345"
+            "value": "058c1a73-6fbb-4f06-8759-67a651daa3a6"
         }
     ],
     "vid": [
         {
-            "value": 6
+            "value": 12
         }
     ],
     "langcode": [
@@ -58,7 +58,7 @@
     ],
     "revision_timestamp": [
         {
-            "value": "2020-01-21T04:14:25+00:00",
+            "value": "2020-01-23T21:28:38+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -67,7 +67,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/d8.fs-demo.local\/user\/1?_format=hal_json"
+                        "href": "http:\/\/d8-3.fs-demo.local\/user\/1?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
@@ -75,7 +75,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "56ecf667-265e-4c1f-bbbe-14daf00ee9fe"
+                        "value": "29ff2137-f139-4560-842c-b41be710fc30"
                     }
                 ]
             }
@@ -84,7 +84,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/d8.fs-demo.local\/user\/1?_format=hal_json"
+                        "href": "http:\/\/d8-3.fs-demo.local\/user\/1?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
@@ -92,7 +92,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "56ecf667-265e-4c1f-bbbe-14daf00ee9fe"
+                        "value": "29ff2137-f139-4560-842c-b41be710fc30"
                     }
                 ],
                 "lang": "en"
@@ -102,7 +102,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/d8.fs-demo.local\/taxonomy\/term\/1?_format=hal_json"
+                        "href": "http:\/\/d8-3.fs-demo.local\/taxonomy\/term\/1?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/age"
@@ -120,7 +120,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/d8.fs-demo.local\/taxonomy\/term\/6?_format=hal_json"
+                        "href": "http:\/\/d8-3.fs-demo.local\/taxonomy\/term\/4?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/traits"
@@ -128,7 +128,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "ae53caf7-0ace-4c06-9314-d3c5b58fe489"
+                        "value": "031ef1d1-7853-4118-a7a0-b64785d65a2f"
                     }
                 ],
                 "lang": "en"
@@ -143,20 +143,20 @@
     ],
     "title": [
         {
-            "value": "Boston Terrier",
+            "value": "Schipperke",
             "lang": "en"
         }
     ],
     "created": [
         {
-            "value": "2020-01-21T04:14:14+00:00",
+            "value": "2020-01-23T21:28:04+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
     "changed": [
         {
-            "value": "2020-01-21T04:14:25+00:00",
+            "value": "2020-01-23T21:28:38+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -194,10 +194,28 @@
     ],
     "body": [
         {
-            "value": "<p><span>Dog house kong dog bone squeak toy. bite bring it dog, roll over fetch catch lab take it chew toy stay. Bark shake leap, paw tug leap bite lap dog. K9 k9 peanut butter dog bone heel, chew toy dog bone speak squirrel spin. puppies puppy, spin lap dog bite play dead sit leash. Tail tail great dance collar come tail, bring it spin puppies. sit pretty, shake roll over dog toy shake sit pretty. Sit leash dog house chew toy fetch. tug sit dog house speak fetch.<\/span><\/p>\r\n",
+            "value": "<p><span>Leash bang collar tail lap dog, come leash play dead tail. k9 tug bark leap bang release lab, catch take it. great dance bark collar, shake leave it tug down. Puppy dog tug dog bone, lap dog dog take it come leap. Catch milk bone bell leave it, puppy catch dog house shake bring it peanut butter dog house jump.<\/span><\/p>\r\n",
             "format": "basic_html",
-            "processed": "<p><span>Dog house kong dog bone squeak toy. bite bring it dog, roll over fetch catch lab take it chew toy stay. Bark shake leap, paw tug leap bite lap dog. K9 k9 peanut butter dog bone heel, chew toy dog bone speak squirrel spin. puppies puppy, spin lap dog bite play dead sit leash. Tail tail great dance collar come tail, bring it spin puppies. sit pretty, shake roll over dog toy shake sit pretty. Sit leash dog house chew toy fetch. tug sit dog house speak fetch.<\/span><\/p>",
+            "processed": "<p><span>Leash bang collar tail lap dog, come leash play dead tail. k9 tug bark leap bang release lab, catch take it. great dance bark collar, shake leave it tug down. Puppy dog tug dog bone, lap dog dog take it come leap. Catch milk bone bell leave it, puppy catch dog house shake bring it peanut butter dog house jump.<\/span><\/p>",
             "summary": "",
+            "lang": "en"
+        }
+    ],
+    "field_domain_access": [
+        {
+            "target_id": "d8_1_fs_demo_local",
+            "lang": "en"
+        }
+    ],
+    "field_domain_all_affiliates": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "field_domain_source": [
+        {
+            "target_id": "d8_1_fs_demo_local",
             "lang": "en"
         }
     ]
