@@ -1,0 +1,21 @@
+uuid: c68faac2-9a5a-4158-80a3-e12d6c1e5e68
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_federated_terms
+    - taxonomy.vocabulary.traits
+  module:
+    - search_api_federated_solr
+id: taxonomy_term.traits.field_federated_terms
+field_name: field_federated_terms
+entity_type: taxonomy_term
+bundle: traits
+label: 'Federated terms'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: federated_terms

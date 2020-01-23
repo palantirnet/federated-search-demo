@@ -1,0 +1,21 @@
+uuid: 344064b7-2cd7-4d35-b5ae-201b35f67009
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_federated_terms
+    - taxonomy.vocabulary.age
+  module:
+    - search_api_federated_solr
+id: taxonomy_term.age.field_federated_terms
+field_name: field_federated_terms
+entity_type: taxonomy_term
+bundle: age
+label: 'Federated terms'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: federated_terms
