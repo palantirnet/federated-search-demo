@@ -103,8 +103,6 @@ If you just want to get up and running, from the project root run `phing install
 7. Build the `/src` directory and checkout modules there: `phing init`
    - This links each of the two modules: `search_api_federated_solr` and `search_api_field_map` from the D8/D7 single site docroot to the `/src` directory and also into the D8/D7 Domain Access-enabled docroot. This means all changes made in `/src/search_api_...` will propagate to both sites simultaneously. The `phing init` command is run automatically by any of the installer scripts. These git checkouts point to GitHub and have `drupal` aliased remotes to drupal.org (`git remote show`).
 
-Additional information on developing for Drupal within this environment is in [docs/general/drupal_development.md](docs/general/drupal_development.md).
-
 ### Clear the search index
 
 If you rebuild the Drupal sites you might end up with orphaned content in Solr. To clear:
