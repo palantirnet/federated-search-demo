@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5afc4167842dcb5f1cb740ca677b8129",
+    "content-hash": "3df6ea410639b50644c03366a815aeb0",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -732,7 +732,7 @@
             "version": "1.25.0",
             "source": {
                 "type": "git",
-                "url": "https://git.drupal.org/project/admin_toolbar",
+                "url": "https://git.drupalcode.org/project/admin_toolbar.git",
                 "reference": "8.x-1.25"
             },
             "dist": {
@@ -751,7 +751,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.25",
-                    "datestamp": "1542915180",
+                    "datestamp": "1549218480",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -813,7 +813,7 @@
             "version": "8.3.1",
             "source": {
                 "type": "git",
-                "url": "https://git.drupal.org/project/coder.git",
+                "url": "https://git.drupalcode.org/project/coder.git",
                 "reference": "29a25627e7148b3119c84f18e087fc3b8c85b959"
             },
             "require": {
@@ -850,7 +850,7 @@
             "version": "1.4.0",
             "source": {
                 "type": "git",
-                "url": "https://git.drupal.org/project/config_filter",
+                "url": "https://git.drupalcode.org/project/config_filter.git",
                 "reference": "8.x-1.4"
             },
             "dist": {
@@ -872,7 +872,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.4",
-                    "datestamp": "1542184982",
+                    "datestamp": "1572542288",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -919,7 +919,7 @@
             "version": "1.0.0-beta2",
             "source": {
                 "type": "git",
-                "url": "https://git.drupal.org/project/config_inspector",
+                "url": "https://git.drupalcode.org/project/config_inspector.git",
                 "reference": "8.x-1.0-beta2"
             },
             "dist": {
@@ -938,7 +938,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.0-beta2",
-                    "datestamp": "1537879680",
+                    "datestamp": "1569419586",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
@@ -965,6 +965,10 @@
                 {
                     "name": "vijaycs85",
                     "homepage": "https://www.drupal.org/user/93488"
+                },
+                {
+                    "name": "vuil",
+                    "homepage": "https://www.drupal.org/user/3568458"
                 }
             ],
             "description": "Provides a configuration data and structure inspector tool",
@@ -980,7 +984,7 @@
             "version": "1.8.0",
             "source": {
                 "type": "git",
-                "url": "https://git.drupal.org/project/config_installer",
+                "url": "https://git.drupalcode.org/project/config_installer.git",
                 "reference": "8.x-1.8"
             },
             "dist": {
@@ -1021,7 +1025,7 @@
             ],
             "homepage": "https://www.drupal.org/project/config_installer",
             "support": {
-                "source": "http://cgit.drupalcode.org/config_installer"
+                "source": "https://git.drupalcode.org/project/config_installer"
             }
         },
         {
@@ -1029,7 +1033,7 @@
             "version": "1.4.0",
             "source": {
                 "type": "git",
-                "url": "https://git.drupal.org/project/config_split",
+                "url": "https://git.drupalcode.org/project/config_split.git",
                 "reference": "8.x-1.4"
             },
             "dist": {
@@ -1339,7 +1343,7 @@
             "version": "1.0.0-alpha7",
             "source": {
                 "type": "git",
-                "url": "https://git.drupal.org/project/default_content",
+                "url": "https://git.drupalcode.org/project/default_content.git",
                 "reference": "8.x-1.0-alpha7"
             },
             "dist": {
@@ -1358,11 +1362,14 @@
                 },
                 "drupal": {
                     "version": "8.x-1.0-alpha7",
-                    "datestamp": "1508448545",
+                    "datestamp": "1556924587",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Alpha releases are not covered by Drupal security advisories."
                     }
+                },
+                "patches_applied": {
+                    "Do not reimport existing entities: https://www.drupal.org/project/default_content/issues/2698425": "https://www.drupal.org/files/issues/2018-12-11/default_content-dont-reimport-2698425-109.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -1402,7 +1409,7 @@
             "description": "Imports default content when a module is enabled",
             "homepage": "https://www.drupal.org/project/default_content",
             "support": {
-                "source": "http://cgit.drupalcode.org/default_content"
+                "source": "https://git.drupalcode.org/project/default_content"
             }
         },
         {
@@ -1410,7 +1417,7 @@
             "version": "1.0.0-alpha14",
             "source": {
                 "type": "git",
-                "url": "https://git.drupal.org/project/domain",
+                "url": "https://git.drupalcode.org/project/domain.git",
                 "reference": "8.x-1.0-alpha14"
             },
             "dist": {
@@ -1432,7 +1439,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.0-alpha14",
-                    "datestamp": "1539981780",
+                    "datestamp": "1550763184",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Alpha releases are not covered by Drupal security advisories."
@@ -1456,7 +1463,7 @@
             "description": "Creates domain records within a Drupal installation.",
             "homepage": "https://www.drupal.org/project/domain",
             "support": {
-                "source": "http://cgit.drupalcode.org/domain"
+                "source": "https://git.drupalcode.org/project/domain"
             }
         },
         {
@@ -1473,7 +1480,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.0-alpha14",
-                    "datestamp": "1539981780",
+                    "datestamp": "1550763184",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Alpha releases are not covered by Drupal security advisories."
@@ -1497,7 +1504,7 @@
             "description": "Allows domain specific configuration.",
             "homepage": "https://www.drupal.org/project/domain",
             "support": {
-                "source": "http://cgit.drupalcode.org/domain"
+                "source": "https://git.drupalcode.org/project/domain"
             }
         },
         {
@@ -1505,7 +1512,7 @@
             "version": "1.3.0",
             "source": {
                 "type": "git",
-                "url": "https://git.drupal.org/project/domain_site_settings",
+                "url": "https://git.drupalcode.org/project/domain_site_settings.git",
                 "reference": "8.x-1.3"
             },
             "dist": {
@@ -1541,6 +1548,10 @@
                 {
                     "name": "aloknarwaria",
                     "homepage": "https://www.drupal.org/user/906640"
+                },
+                {
+                    "name": "malaynayak",
+                    "homepage": "https://www.drupal.org/user/3529755"
                 }
             ],
             "description": "Basic Site Setting for Domains.",
@@ -1558,7 +1569,7 @@
             "version": "1.11.0",
             "source": {
                 "type": "git",
-                "url": "https://git.drupal.org/project/search_api",
+                "url": "https://git.drupalcode.org/project/search_api.git",
                 "reference": "8.x-1.11"
             },
             "dist": {
@@ -1586,7 +1597,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.11",
-                    "datestamp": "1542564480",
+                    "datestamp": "1552334285",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -1625,11 +1636,152 @@
             }
         },
         {
+            "name": "drupal/search_api_federated_solr",
+            "version": "2.9.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/search_api_federated_solr.git",
+                "reference": "8.x-2.9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/search_api_federated_solr-8.x-2.9.zip",
+                "reference": "8.x-2.9",
+                "shasum": "0a3f792d76a0b1c6fe7b7c41dfafaf3e8881625a"
+            },
+            "require": {
+                "drupal/core": "^8.0",
+                "drupal/search_api_field_map": "^2.0",
+                "drupal/search_api_solr": "^1.2",
+                "drupal/token": "^1.1"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-2.x": "2.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-2.9",
+                    "datestamp": "1574699586",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "MalakDesai",
+                    "homepage": "https://www.drupal.org/user/3584087"
+                },
+                {
+                    "name": "agentrickard",
+                    "homepage": "https://www.drupal.org/user/20975"
+                },
+                {
+                    "name": "becw",
+                    "homepage": "https://www.drupal.org/user/81067"
+                },
+                {
+                    "name": "byrond",
+                    "homepage": "https://www.drupal.org/user/1279040"
+                },
+                {
+                    "name": "jesconstantine",
+                    "homepage": "https://www.drupal.org/user/3455145"
+                },
+                {
+                    "name": "mcarmichael21",
+                    "homepage": "https://www.drupal.org/user/3224074"
+                }
+            ],
+            "description": "Allows indexing multiple Drupal sites into a single Solr search index.",
+            "homepage": "https://www.drupal.org/project/search_api_federated_solr",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "https://git.drupalcode.org/project/search_api_federated_solr"
+            }
+        },
+        {
+            "name": "drupal/search_api_field_map",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/search_api_field_map.git",
+                "reference": "8.x-2.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/search_api_field_map-8.x-2.0.zip",
+                "reference": "8.x-2.0",
+                "shasum": "bcef5c9c5830194bf4ea439d83eeb0ba47ea9176"
+            },
+            "require": {
+                "drupal/core": "^8.0",
+                "drupal/search_api_solr": "^1.2",
+                "drupal/token": "^1.1"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-2.x": "2.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-2.0",
+                    "datestamp": "1554473602",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "MalakDesai",
+                    "homepage": "https://www.drupal.org/user/3584087"
+                },
+                {
+                    "name": "agentrickard",
+                    "homepage": "https://www.drupal.org/user/20975"
+                },
+                {
+                    "name": "becw",
+                    "homepage": "https://www.drupal.org/user/81067"
+                },
+                {
+                    "name": "jesconstantine",
+                    "homepage": "https://www.drupal.org/user/3455145"
+                },
+                {
+                    "name": "mcarmichael21",
+                    "homepage": "https://www.drupal.org/user/3224074"
+                }
+            ],
+            "description": "Allows indexing multiple Drupal sites into a single Solr search index by field.",
+            "homepage": "https://www.drupal.org/project/search_api_field_map",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "https://git.drupalcode.org/project/search_api_field_map"
+            }
+        },
+        {
             "name": "drupal/search_api_solr",
             "version": "1.2.0",
             "source": {
                 "type": "git",
-                "url": "https://git.drupal.org/project/search_api_solr",
+                "url": "https://git.drupalcode.org/project/search_api_solr.git",
                 "reference": "8.x-1.2"
             },
             "dist": {
@@ -1661,7 +1813,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.2",
-                    "datestamp": "1523090287",
+                    "datestamp": "1575044885",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -1711,7 +1863,7 @@
             "version": "1.5.0",
             "source": {
                 "type": "git",
-                "url": "https://git.drupal.org/project/token",
+                "url": "https://git.drupalcode.org/project/token.git",
                 "reference": "8.x-1.5"
             },
             "dist": {
@@ -1730,7 +1882,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.5",
-                    "datestamp": "1537557481",
+                    "datestamp": "1577708583",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -1770,7 +1922,7 @@
             "description": "Provides a user interface for the Token API and some missing core tokens.",
             "homepage": "https://www.drupal.org/project/token",
             "support": {
-                "source": "http://cgit.drupalcode.org/token"
+                "source": "https://git.drupalcode.org/project/token"
             }
         },
         {
@@ -2136,72 +2288,6 @@
                 "xml"
             ],
             "time": "2018-11-17T20:24:36+00:00"
-        },
-        {
-            "name": "palantirnet/search_api_federated_solr",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/palantirnet/search_api_federated_solr.git",
-                "reference": "7cf3343b3532ced2c4a556f768e2ffe469d3396f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/palantirnet/search_api_federated_solr/zipball/7cf3343b3532ced2c4a556f768e2ffe469d3396f",
-                "reference": "7cf3343b3532ced2c4a556f768e2ffe469d3396f",
-                "shasum": ""
-            },
-            "require": {
-                "drupal/core": "^8.0",
-                "drupal/search_api_solr": "^1.2",
-                "drupal/token": "^1.1",
-                "palantirnet/search_api_field_map": "dev-master"
-            },
-            "type": "drupal-module",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "description": "Allows indexing multiple Drupal sites into a single Solr search index.",
-            "keywords": [
-                "Drupal"
-            ],
-            "support": {
-                "source": "https://github.com/palantirnet/search_api_federated_solr/tree/master"
-            },
-            "time": "2018-12-03T21:33:40+00:00"
-        },
-        {
-            "name": "palantirnet/search_api_field_map",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/palantirnet/search_api_field_map.git",
-                "reference": "6cb8df3b93332738a29dfa3a71ab9b002730100e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/palantirnet/search_api_field_map/zipball/6cb8df3b93332738a29dfa3a71ab9b002730100e",
-                "reference": "6cb8df3b93332738a29dfa3a71ab9b002730100e",
-                "shasum": ""
-            },
-            "require": {
-                "drupal/core": "^8.0",
-                "drupal/search_api_solr": "^1.2",
-                "drupal/token": "^1.1"
-            },
-            "type": "drupal-module",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "description": "Allows indexing multiple Drupal sites into a single Solr search index by field.",
-            "keywords": [
-                "Drupal"
-            ],
-            "support": {
-                "source": "https://github.com/palantirnet/search_api_field_map/tree/master",
-                "issues": "https://github.com/palantirnet/search_api_field_map/issues"
-            },
-            "time": "2018-12-04T14:39:03+00:00"
         },
         {
             "name": "paragonie/random_compat",
@@ -3954,6 +4040,7 @@
                 "psr",
                 "psr-7"
             ],
+            "abandoned": "laminas/laminas-diactoros",
             "time": "2018-09-05T19:29:37+00:00"
         },
         {
@@ -3999,6 +4086,7 @@
                 "escaper",
                 "zf"
             ],
+            "abandoned": "laminas/laminas-escaper",
             "time": "2018-04-25T15:48:53+00:00"
         },
         {
@@ -4060,6 +4148,7 @@
                 "feed",
                 "zf"
             ],
+            "abandoned": "laminas/laminas-feed",
             "time": "2018-08-01T13:53:20+00:00"
         },
         {
@@ -4106,6 +4195,7 @@
                 "stdlib",
                 "zf"
             ],
+            "abandoned": "laminas/laminas-stdlib",
             "time": "2018-08-28T21:34:05+00:00"
         }
     ],
@@ -4114,8 +4204,7 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "drupal/config_inspector": 10,
-        "drupal/default_content": 15,
-        "palantirnet/search_api_federated_solr": 20
+        "drupal/default_content": 15
     },
     "prefer-stable": true,
     "prefer-lowest": false,
