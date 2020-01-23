@@ -10,7 +10,6 @@
     <target name="install-all" description="Install all three Drupal sites in the Federated Search Demo">
         <phingcall target="solr-clear" />
         <phingcall target="install-d7" />
-
         <phingcall target="install-d8">
             <property name="drush.root" value="web/d8/docroot" override="true" />
         </phingcall>
@@ -24,6 +23,7 @@
 
     <!-- Target: install-d8 -->
     <target name="install-d8" description="Install one of the Drupal 8 sites; specify which site with -Ddrush.root=web/d8/docroot">
+        <phingcall target="init" />
         <property name="drush.root" value="web/d8/docroot" />
         <property name="site.name" value="Federated Search Drupal 8" />
 
@@ -115,6 +115,7 @@
 
     <!-- Target: install-d7 -->
     <target name="install-d7" description="Install the D7 site">
+        <phingcall target="init" />
         <!-- Drush 9/10 are not compatible with Drupal 7, so we can't use a regular drush
              alias. Hence, we provide drush.root and drush.uri, which the <drush> task
              uses in its commands. -->
@@ -123,18 +124,30 @@
 
         <exec command="composer install" dir="${drush.root}/.." passthru="true" />
 
+        <!-- Swap out the composer file for our git repository -->
+        <delete dir="${drush.root}/sites/all/modules/contrib/search_api_federated_solr" />
+        <symlink link="${drush.root}/sites/all/modules/contrib/search_api_federated_solr" target="../../../../../../../src/search_api_federated_solr-7.x" />
+
         <drush command="site-install" assume="yes">
             <option name="site-name">Drupal 7 - Federated Search</option>
             <option name="account-pass">admin</option>
             <param>standard</param>
         </drush>
+
+        <!-- The public files directory, and everything in it, needs to be world writable. -->
+        <exec command="chmod -R 777 ${drush.root}/sites/default/files" checkreturn="true" />
+
+        <!-- Install default configuration and content. -->
         <drush command="pm-enable" assume="yes">
             <param>features_search_api_config</param>
-            <param>federated_content</param>
+            <param>federated_default_content</param>
         </drush>
-        <!-- The feature is not loading properly, but does reload correctly. -->
+        <!-- The public files directory, and everything in it, needs to be world writable,
+             but the content creation step changes that, so we do it again. -->
+        <exec command="chmod -R 777 ${drush.root}/sites/default/files" checkreturn="true" />
+        <!-- The feature is not loading properly due to file permissions, but does reload correctly. -->
         <drush command="features-revert" assume="yes">
-            <param>federated_content</param>
+            <param>federated_default_content</param>
         </drush>
         <drush command="pm-disable" assume="yes">
             <param>overlay</param>
@@ -147,41 +160,28 @@
 
     <!-- Target: init -->
     <target name="init" description="Initialize the repo for development">
-        <!-- Link search_api_federated_solr:master (D8) into the src/ directory so the code is easy to find. -->
-        <mkdir dir="src" />
-        <delete file="src/search_api_federated_solr" />
-        <symlink target="../web/d8/docroot/modules/contrib/search_api_federated_solr" link="src/search_api_federated_solr" />
-
-        <!-- Link search_api_field_map:master (D8) into the src/ directory so the code is easy to find. -->
-        <mkdir dir="src" />
-        <delete file="src/search_api_field_map" />
-        <symlink target="../web/d8/docroot/modules/contrib/search_api_field_map" link="src/search_api_field_map" />
-
-        <!-- Link d8/.../search_api_federated_solr to d8-domain/.../search_api_federated_solr
-             so that changes in the module are reflected in both sites. -->
-        <delete dir="web/d8-domain/docroot/modules/contrib/search_api_federated_solr" />
-        <symlink target="../../../../../web/d8/docroot/modules/contrib/search_api_federated_solr" link="web/d8-domain/docroot/modules/contrib/search_api_federated_solr" />
-
-        <!-- Link d8/.../search_api_field_map to d8-domain/.../search_api_field_map
-            so that changes in the module are reflected in both sites. -->
-        <delete dir="web/d8-domain/docroot/modules/contrib/search_api_field_map" />
-        <symlink target="../../../../../web/d8/docroot/modules/contrib/search_api_field_map" link="web/d8-domain/docroot/modules/contrib/search_api_field_map" />
-
-        <!-- Link search_api_federated_solr:7.x into the src/ directory so the code is easy to find. -->
-        <mkdir dir="src" />
-        <delete file="src/search_api_federated_solr-7.x" />
-        <symlink target="../web/d7/docroot/sites/all/modules/contrib/search_api_federated_solr" link="src/search_api_federated_solr-7.x" />
-
-        <!-- Link search_api_field_map:7.x into the src/ directory so the code is easy to find. -->
-        <mkdir dir="src" />
-        <delete file="src/search_api_field_map-7.x" />
-        <symlink target="../web/d7/docroot/sites/all/modules/contrib/search_api_field_map" link="src/search_api_field_map-7.x" />
+        <available file="src" type="dir" property="src.checkout" value="y" />
+        <if>
+            <equals arg1="${src.checkout}" arg2="y" />
+            <then>
+              <echo message="Git sources already checked out." />
+            </then>
+            <else>
+              <mkdir dir="src" />
+              <echo message="git clone --branch=8.x-2.x git@github.com:palantirnet/search_api_federated_solr.git" />
+              <exec command="git clone --branch=8.x-2.x git@github.com:palantirnet/search_api_federated_solr.git" dir="src" checkreturn="true" />
+              <echo message="git clone --branch=8.x-2.x git@github.com:palantirnet/search_api_field_map.git" />
+              <exec command="git clone --branch=8.x-2.x git@github.com:palantirnet/search_api_field_map.git" dir="src" checkreturn="true" />
+              <echo message="git clone --branch=7.x-2.x git@github.com:palantirnet/search_api_federated_solr.git search_api_federated_solr-7.x" />
+              <exec command="git clone --branch=7.x-2.x git@github.com:palantirnet/search_api_federated_solr.git search_api_federated_solr-7.x" dir="src" checkreturn="true" />
+            </else>
+          </if>
     </target>
 
 
     <!-- Target: solr-clear -->
     <target name="solr-clear" description="Delete all entries in the local Solr 'drupal8' core">
-        <input message="You are about to clear the SOLR index. Are you sure? There is no undo." propertyName="dump.confirm" defaultValue="y" validArgs="y,n" />
+        <input message="Would you like to clear the SOLR index? This action cannot be undone." propertyName="dump.confirm" defaultValue="y" validArgs="y,n" />
         <if>
             <equals arg1="${dump.confirm}" arg2="y" />
             <then>

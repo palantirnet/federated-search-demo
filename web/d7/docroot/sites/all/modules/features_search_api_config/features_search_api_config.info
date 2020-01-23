@@ -33,3 +33,4 @@ features[variable][] = search_api_federated_solr_search_index_basic_auth_passwor
 features[variable][] = search_api_federated_solr_search_index_basic_auth_username
 features[variable][] = search_api_federated_solr_search_prompt_text
 features[variable][] = search_api_federated_solr_set_search_site
+features[variable][] = search_api_federated_solr_show_empty_search_results

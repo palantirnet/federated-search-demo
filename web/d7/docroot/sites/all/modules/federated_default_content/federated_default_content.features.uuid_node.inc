@@ -2,13 +2,13 @@
 
 /**
  * @file
- * federated_content.features.uuid_node.inc
+ * federated_default_content.features.uuid_node.inc
  */
 
 /**
  * Implements hook_uuid_features_default_content().
  */
-function federated_content_uuid_features_default_content() {
+function federated_default_content_uuid_features_default_content() {
   $nodes = array();
 
   $nodes[] = array(
@@ -34,6 +34,7 @@ function federated_content_uuid_features_default_content() {
       ),
     ),
   ),
+  'field_tags' => array(),
   'field_image' => array(
     'und' => array(
       0 => array(
@@ -43,9 +44,9 @@ function federated_content_uuid_features_default_content() {
         'filemime' => 'image/jpeg',
         'filesize' => 1239780,
         'status' => 1,
-        'uuid' => '16bea3c1-fc03-407e-841d-67a693341be2',
+        'uuid' => 'd5af4477-8d54-4274-93d9-46c334aca504',
         'rdf_mapping' => array(),
-        'alt' => '',
+        'alt' => 'An illustration of an Irish terrier',
         'title' => '',
         'width' => 1474,
         'height' => 1121,
@@ -58,6 +59,14 @@ function federated_content_uuid_features_default_content() {
       0 => array(
         'tid' => '71dd39e8-4220-4cda-8be5-997b7695e66f',
         'uuid' => '71dd39e8-4220-4cda-8be5-997b7695e66f',
+      ),
+    ),
+  ),
+  'field_color' => array(
+    'und' => array(
+      0 => array(
+        'tid' => '06e7a413-5755-41b8-8dc9-e09762b9c9be',
+        'uuid' => '06e7a413-5755-41b8-8dc9-e09762b9c9be',
       ),
     ),
   ),
@@ -150,7 +159,7 @@ function federated_content_uuid_features_default_content() {
   'sticky' => 0,
   'type' => 'page',
   'language' => 'und',
-  'created' => 1577926860,
+  'created' => 1579571337,
   'tnid' => 0,
   'translate' => 0,
   'uuid' => '3e170d1e-1fa7-4097-9e2e-f7ce44792467',
@@ -169,6 +178,14 @@ function federated_content_uuid_features_default_content() {
       0 => array(
         'tid' => '71dd39e8-4220-4cda-8be5-997b7695e66f',
         'uuid' => '71dd39e8-4220-4cda-8be5-997b7695e66f',
+      ),
+    ),
+  ),
+  'field_color' => array(
+    'und' => array(
+      0 => array(
+        'tid' => '7b4c09e9-4801-4b8e-a68f-b1eebba5b6bb',
+        'uuid' => '7b4c09e9-4801-4b8e-a68f-b1eebba5b6bb',
       ),
     ),
   ),
@@ -247,7 +264,7 @@ function federated_content_uuid_features_default_content() {
   'sticky' => 0,
   'type' => 'page',
   'language' => 'und',
-  'created' => 1578926860,
+  'created' => 1579567178,
   'tnid' => 0,
   'translate' => 0,
   'uuid' => '6fe99c23-0cda-4ae6-affe-dd4c9538bfdd',
@@ -266,6 +283,14 @@ function federated_content_uuid_features_default_content() {
       0 => array(
         'tid' => 'f656f669-22d7-44cd-8bde-8c342f9d5858',
         'uuid' => 'f656f669-22d7-44cd-8bde-8c342f9d5858',
+      ),
+    ),
+  ),
+  'field_color' => array(
+    'und' => array(
+      0 => array(
+        'tid' => '06e7a413-5755-41b8-8dc9-e09762b9c9be',
+        'uuid' => '06e7a413-5755-41b8-8dc9-e09762b9c9be',
       ),
     ),
   ),
@@ -344,7 +369,7 @@ function federated_content_uuid_features_default_content() {
   'sticky' => 0,
   'type' => 'page',
   'language' => 'und',
-  'created' => 1578226860,
+  'created' => 1579571361,
   'tnid' => 0,
   'translate' => 0,
   'uuid' => '74b8532e-3203-4b88-90e2-f9af252da610',
@@ -363,6 +388,14 @@ function federated_content_uuid_features_default_content() {
       0 => array(
         'tid' => '1eec55eb-c188-4a08-ba07-4fe416393573',
         'uuid' => '1eec55eb-c188-4a08-ba07-4fe416393573',
+      ),
+    ),
+  ),
+  'field_color' => array(
+    'und' => array(
+      0 => array(
+        'tid' => 'd387e61f-74ee-42b3-b13e-c125a967b295',
+        'uuid' => 'd387e61f-74ee-42b3-b13e-c125a967b295',
       ),
     ),
   ),
@@ -441,7 +474,7 @@ function federated_content_uuid_features_default_content() {
   'sticky' => 0,
   'type' => 'page',
   'language' => 'und',
-  'created' => 1575226860,
+  'created' => 1579571301,
   'tnid' => 0,
   'translate' => 0,
   'uuid' => '8d8e9523-a06d-4c60-9f79-b6c9bb5fef84',
@@ -460,6 +493,14 @@ function federated_content_uuid_features_default_content() {
       0 => array(
         'tid' => '71dd39e8-4220-4cda-8be5-997b7695e66f',
         'uuid' => '71dd39e8-4220-4cda-8be5-997b7695e66f',
+      ),
+    ),
+  ),
+  'field_color' => array(
+    'und' => array(
+      0 => array(
+        'tid' => 'd387e61f-74ee-42b3-b13e-c125a967b295',
+        'uuid' => 'd387e61f-74ee-42b3-b13e-c125a967b295',
       ),
     ),
   ),
@@ -538,7 +579,7 @@ function federated_content_uuid_features_default_content() {
   'sticky' => 0,
   'type' => 'article',
   'language' => 'und',
-  'created' => 1575526860,
+  'created' => 1579571979,
   'tnid' => 0,
   'translate' => 0,
   'uuid' => 'b4002bc5-f02e-4937-81fa-e640a44a70d4',
@@ -552,6 +593,7 @@ function federated_content_uuid_features_default_content() {
       ),
     ),
   ),
+  'field_tags' => array(),
   'field_image' => array(
     'und' => array(
       0 => array(
@@ -561,9 +603,9 @@ function federated_content_uuid_features_default_content() {
         'filemime' => 'image/jpeg',
         'filesize' => 345026,
         'status' => 1,
-        'uuid' => '4bc0b6b2-7d3b-4b6e-b79f-9fd88a8d04b1',
+        'uuid' => '2d20e484-33a0-4548-a5be-36e8c22c2877',
         'rdf_mapping' => array(),
-        'alt' => '',
+        'alt' => 'An illustration of a group of English terriers',
         'title' => '',
         'width' => 1474,
         'height' => 1121,
@@ -576,6 +618,14 @@ function federated_content_uuid_features_default_content() {
       0 => array(
         'tid' => '71dd39e8-4220-4cda-8be5-997b7695e66f',
         'uuid' => '71dd39e8-4220-4cda-8be5-997b7695e66f',
+      ),
+    ),
+  ),
+  'field_color' => array(
+    'und' => array(
+      0 => array(
+        'tid' => 'd387e61f-74ee-42b3-b13e-c125a967b295',
+        'uuid' => 'd387e61f-74ee-42b3-b13e-c125a967b295',
       ),
     ),
   ),
@@ -668,7 +718,7 @@ function federated_content_uuid_features_default_content() {
   'sticky' => 0,
   'type' => 'article',
   'language' => 'und',
-  'created' => 1575126860,
+  'created' => 1579572007,
   'tnid' => 0,
   'translate' => 0,
   'uuid' => 'c99cf66f-6e37-4dcd-a9f9-013e4a4370e3',
@@ -682,6 +732,7 @@ function federated_content_uuid_features_default_content() {
       ),
     ),
   ),
+  'field_tags' => array(),
   'field_image' => array(
     'und' => array(
       0 => array(
@@ -691,9 +742,9 @@ function federated_content_uuid_features_default_content() {
         'filemime' => 'image/jpeg',
         'filesize' => 853761,
         'status' => 1,
-        'uuid' => '37428606-ac03-4cff-9f8b-c1e9f4eeee53',
+        'uuid' => '4b22c382-99dd-47d7-a19d-2113d1a93250',
         'rdf_mapping' => array(),
-        'alt' => '',
+        'alt' => 'An illustration of a newfoundland',
         'title' => '',
         'width' => 1455,
         'height' => 1118,
@@ -706,6 +757,14 @@ function federated_content_uuid_features_default_content() {
       0 => array(
         'tid' => '71dd39e8-4220-4cda-8be5-997b7695e66f',
         'uuid' => '71dd39e8-4220-4cda-8be5-997b7695e66f',
+      ),
+    ),
+  ),
+  'field_color' => array(
+    'und' => array(
+      0 => array(
+        'tid' => '7b4c09e9-4801-4b8e-a68f-b1eebba5b6bb',
+        'uuid' => '7b4c09e9-4801-4b8e-a68f-b1eebba5b6bb',
       ),
     ),
   ),
@@ -798,7 +857,7 @@ function federated_content_uuid_features_default_content() {
   'sticky' => 0,
   'type' => 'article',
   'language' => 'und',
-  'created' => 1575126865,
+  'created' => 1579572029,
   'tnid' => 0,
   'translate' => 0,
   'uuid' => 'd66e78d4-ee7b-4e0c-9931-86f39f1ffbc2',
@@ -812,12 +871,21 @@ function federated_content_uuid_features_default_content() {
       ),
     ),
   ),
+  'field_tags' => array(),
   'field_image' => array(),
   'field_age' => array(
     'und' => array(
       0 => array(
         'tid' => '71dd39e8-4220-4cda-8be5-997b7695e66f',
         'uuid' => '71dd39e8-4220-4cda-8be5-997b7695e66f',
+      ),
+    ),
+  ),
+  'field_color' => array(
+    'und' => array(
+      0 => array(
+        'tid' => '06e7a413-5755-41b8-8dc9-e09762b9c9be',
+        'uuid' => '06e7a413-5755-41b8-8dc9-e09762b9c9be',
       ),
     ),
   ),
@@ -924,12 +992,21 @@ function federated_content_uuid_features_default_content() {
       ),
     ),
   ),
+  'field_tags' => array(),
   'field_image' => array(),
   'field_age' => array(
     'und' => array(
       0 => array(
         'tid' => 'f656f669-22d7-44cd-8bde-8c342f9d5858',
         'uuid' => 'f656f669-22d7-44cd-8bde-8c342f9d5858',
+      ),
+    ),
+  ),
+  'field_color' => array(
+    'und' => array(
+      0 => array(
+        'tid' => '06e7a413-5755-41b8-8dc9-e09762b9c9be',
+        'uuid' => '06e7a413-5755-41b8-8dc9-e09762b9c9be',
       ),
     ),
   ),
@@ -1022,7 +1099,7 @@ function federated_content_uuid_features_default_content() {
   'sticky' => 0,
   'type' => 'page',
   'language' => 'und',
-  'created' => 1573126860,
+  'created' => 1579571320,
   'tnid' => 0,
   'translate' => 0,
   'uuid' => 'ec9df35b-0c09-4a1c-9962-6577be3126c3',
@@ -1041,6 +1118,14 @@ function federated_content_uuid_features_default_content() {
       0 => array(
         'tid' => 'f656f669-22d7-44cd-8bde-8c342f9d5858',
         'uuid' => 'f656f669-22d7-44cd-8bde-8c342f9d5858',
+      ),
+    ),
+  ),
+  'field_color' => array(
+    'und' => array(
+      0 => array(
+        'tid' => '7b4c09e9-4801-4b8e-a68f-b1eebba5b6bb',
+        'uuid' => '7b4c09e9-4801-4b8e-a68f-b1eebba5b6bb',
       ),
     ),
   ),

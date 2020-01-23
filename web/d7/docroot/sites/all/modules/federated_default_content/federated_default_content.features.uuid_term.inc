@@ -2,13 +2,13 @@
 
 /**
  * @file
- * federated_content.features.uuid_term.inc
+ * federated_default_content.features.uuid_term.inc
  */
 
 /**
  * Implements hook_uuid_features_default_terms().
  */
-function federated_content_uuid_features_default_terms() {
+function federated_default_content_uuid_features_default_terms() {
   $terms = array();
 
   $terms[] = array(
@@ -22,6 +22,21 @@ function federated_content_uuid_features_default_terms() {
       'und' => array(
         0 => array(
           'value' => 'Traits>Curious',
+        ),
+      ),
+    ),
+  );
+  $terms[] = array(
+    'name' => 'Brown',
+    'description' => '',
+    'format' => 'filtered_html',
+    'weight' => 0,
+    'uuid' => '06e7a413-5755-41b8-8dc9-e09762b9c9be',
+    'vocabulary_machine_name' => 'coloring',
+    'field_federated_terms' => array(
+      'und' => array(
+        0 => array(
+          'value' => 'Color>Brown',
         ),
       ),
     ),
@@ -85,6 +100,39 @@ function federated_content_uuid_features_default_terms() {
       'und' => array(
         0 => array(
           'value' => 'Age>Mature',
+        ),
+      ),
+    ),
+  );
+  $terms[] = array(
+    'name' => 'Black',
+    'description' => '',
+    'format' => 'filtered_html',
+    'weight' => 0,
+    'uuid' => '7b4c09e9-4801-4b8e-a68f-b1eebba5b6bb',
+    'vocabulary_machine_name' => 'coloring',
+    'field_federated_terms' => array(
+      'und' => array(
+        0 => array(
+          'value' => 'Color>Black',
+        ),
+      ),
+    ),
+  );
+  $terms[] = array(
+    'name' => 'Gold',
+    'description' => '',
+    'format' => 'filtered_html',
+    'weight' => 0,
+    'uuid' => 'd387e61f-74ee-42b3-b13e-c125a967b295',
+    'vocabulary_machine_name' => 'coloring',
+    'field_federated_terms' => array(
+      'und' => array(
+        0 => array(
+          'value' => 'Color>Gold',
+        ),
+        1 => array(
+          'value' => 'Color>Yellow',
         ),
       ),
     ),

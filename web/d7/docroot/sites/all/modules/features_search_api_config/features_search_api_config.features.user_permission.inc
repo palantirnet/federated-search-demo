@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * features_search_api_config.features.user_permission.inc
