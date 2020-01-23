@@ -39,7 +39,7 @@ You may be interested in creating your own development environment and comparing
 * Database: MySQL version 5.7.21
 * PHP version 7.3.9
 * Search Server: Apache Solr version 4.5.1
-* Web Application: Drupal versions 7.61 and 8.6.2
+* Web Application: Drupal versions 7.69 and 8.8.1
 
 ## Getting Started
 
