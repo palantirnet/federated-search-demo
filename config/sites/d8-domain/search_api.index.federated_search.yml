@@ -54,6 +54,13 @@ field_settings:
         node:
           article: Article
           page: Page
+  mapped_field:
+    label: 'Mapped field'
+    property_path: mapped_field
+    type: string
+    configuration:
+      type: union
+      fields: {  }
   rendered_item:
     label: 'Rendered HTML output'
     property_path: rendered_item
@@ -71,7 +78,7 @@ field_settings:
     type: string
     configuration:
       use_system_site_name: 1
-      site_name: 'Federated Search Drupal 8'
+      site_name: 'Federated Search Domain 1'
   urls:
     label: Urls
     property_path: search_api_urls
