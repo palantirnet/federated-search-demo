@@ -62,19 +62,19 @@ function federated_default_content_uuid_features_default_content() {
       ),
     ),
   ),
-  'field_color' => array(
-    'und' => array(
-      0 => array(
-        'tid' => '06e7a413-5755-41b8-8dc9-e09762b9c9be',
-        'uuid' => '06e7a413-5755-41b8-8dc9-e09762b9c9be',
-      ),
-    ),
-  ),
   'field_traits' => array(
     'und' => array(
       0 => array(
         'tid' => '3314295d-522e-4182-a5dc-93ce20aecfe3',
         'uuid' => '3314295d-522e-4182-a5dc-93ce20aecfe3',
+      ),
+    ),
+  ),
+  'field_color' => array(
+    'und' => array(
+      0 => array(
+        'target_id' => 'd387e61f-74ee-42b3-b13e-c125a967b295',
+        'uuid' => 'd387e61f-74ee-42b3-b13e-c125a967b295',
       ),
     ),
   ),
@@ -148,7 +148,7 @@ function federated_default_content_uuid_features_default_content() {
   ),
   'comment_count' => 0,
   'date' => '2020-01-21 02:00:53 +0000',
-  'user_uuid' => '33e73139-8794-42e1-8179-4a571eb1aaa4',
+  'user_uuid' => '54c5443a-ab26-4e7c-8d5c-30b5434efc55',
 );
   $nodes[] = array(
   'title' => 'American Water Spaniel',
@@ -181,19 +181,19 @@ function federated_default_content_uuid_features_default_content() {
       ),
     ),
   ),
-  'field_color' => array(
-    'und' => array(
-      0 => array(
-        'tid' => '7b4c09e9-4801-4b8e-a68f-b1eebba5b6bb',
-        'uuid' => '7b4c09e9-4801-4b8e-a68f-b1eebba5b6bb',
-      ),
-    ),
-  ),
   'field_traits' => array(
     'und' => array(
       0 => array(
         'tid' => '2fc26e3a-620f-4ba2-b167-dffee783751c',
         'uuid' => '2fc26e3a-620f-4ba2-b167-dffee783751c',
+      ),
+    ),
+  ),
+  'field_color' => array(
+    'und' => array(
+      0 => array(
+        'target_id' => '7b4c09e9-4801-4b8e-a68f-b1eebba5b6bb',
+        'uuid' => '7b4c09e9-4801-4b8e-a68f-b1eebba5b6bb',
       ),
     ),
   ),
@@ -253,7 +253,7 @@ function federated_default_content_uuid_features_default_content() {
   ),
   'comment_count' => 0,
   'date' => '2020-01-21 01:48:57 +0000',
-  'user_uuid' => '33e73139-8794-42e1-8179-4a571eb1aaa4',
+  'user_uuid' => '54c5443a-ab26-4e7c-8d5c-30b5434efc55',
 );
   $nodes[] = array(
   'title' => 'Basenji',
@@ -286,19 +286,19 @@ function federated_default_content_uuid_features_default_content() {
       ),
     ),
   ),
-  'field_color' => array(
-    'und' => array(
-      0 => array(
-        'tid' => '06e7a413-5755-41b8-8dc9-e09762b9c9be',
-        'uuid' => '06e7a413-5755-41b8-8dc9-e09762b9c9be',
-      ),
-    ),
-  ),
   'field_traits' => array(
     'und' => array(
       0 => array(
         'tid' => '2fc26e3a-620f-4ba2-b167-dffee783751c',
         'uuid' => '2fc26e3a-620f-4ba2-b167-dffee783751c',
+      ),
+    ),
+  ),
+  'field_color' => array(
+    'und' => array(
+      0 => array(
+        'target_id' => '06e7a413-5755-41b8-8dc9-e09762b9c9be',
+        'uuid' => '06e7a413-5755-41b8-8dc9-e09762b9c9be',
       ),
     ),
   ),
@@ -358,7 +358,7 @@ function federated_default_content_uuid_features_default_content() {
   ),
   'comment_count' => 0,
   'date' => '2020-01-21 00:39:38 +0000',
-  'user_uuid' => '33e73139-8794-42e1-8179-4a571eb1aaa4',
+  'user_uuid' => '54c5443a-ab26-4e7c-8d5c-30b5434efc55',
 );
   $nodes[] = array(
   'title' => 'Lhasa Apso',
@@ -391,19 +391,19 @@ function federated_default_content_uuid_features_default_content() {
       ),
     ),
   ),
-  'field_color' => array(
-    'und' => array(
-      0 => array(
-        'tid' => 'd387e61f-74ee-42b3-b13e-c125a967b295',
-        'uuid' => 'd387e61f-74ee-42b3-b13e-c125a967b295',
-      ),
-    ),
-  ),
   'field_traits' => array(
     'und' => array(
       0 => array(
         'tid' => '03140448-dc7d-4079-bc33-30db6d35c793',
         'uuid' => '03140448-dc7d-4079-bc33-30db6d35c793',
+      ),
+    ),
+  ),
+  'field_color' => array(
+    'und' => array(
+      0 => array(
+        'target_id' => '7b4c09e9-4801-4b8e-a68f-b1eebba5b6bb',
+        'uuid' => '7b4c09e9-4801-4b8e-a68f-b1eebba5b6bb',
       ),
     ),
   ),
@@ -463,7 +463,7 @@ function federated_default_content_uuid_features_default_content() {
   ),
   'comment_count' => 0,
   'date' => '2020-01-21 01:49:21 +0000',
-  'user_uuid' => '33e73139-8794-42e1-8179-4a571eb1aaa4',
+  'user_uuid' => '54c5443a-ab26-4e7c-8d5c-30b5434efc55',
 );
   $nodes[] = array(
   'title' => 'Welsh Springer Spaniel',
@@ -496,19 +496,19 @@ function federated_default_content_uuid_features_default_content() {
       ),
     ),
   ),
-  'field_color' => array(
-    'und' => array(
-      0 => array(
-        'tid' => 'd387e61f-74ee-42b3-b13e-c125a967b295',
-        'uuid' => 'd387e61f-74ee-42b3-b13e-c125a967b295',
-      ),
-    ),
-  ),
   'field_traits' => array(
     'und' => array(
       0 => array(
         'tid' => '3314295d-522e-4182-a5dc-93ce20aecfe3',
         'uuid' => '3314295d-522e-4182-a5dc-93ce20aecfe3',
+      ),
+    ),
+  ),
+  'field_color' => array(
+    'und' => array(
+      0 => array(
+        'target_id' => 'd387e61f-74ee-42b3-b13e-c125a967b295',
+        'uuid' => 'd387e61f-74ee-42b3-b13e-c125a967b295',
       ),
     ),
   ),
@@ -568,7 +568,7 @@ function federated_default_content_uuid_features_default_content() {
   ),
   'comment_count' => 0,
   'date' => '2020-01-21 01:48:21 +0000',
-  'user_uuid' => '33e73139-8794-42e1-8179-4a571eb1aaa4',
+  'user_uuid' => '54c5443a-ab26-4e7c-8d5c-30b5434efc55',
 );
   $nodes[] = array(
   'title' => 'English Terrier',
@@ -621,19 +621,19 @@ function federated_default_content_uuid_features_default_content() {
       ),
     ),
   ),
-  'field_color' => array(
-    'und' => array(
-      0 => array(
-        'tid' => 'd387e61f-74ee-42b3-b13e-c125a967b295',
-        'uuid' => 'd387e61f-74ee-42b3-b13e-c125a967b295',
-      ),
-    ),
-  ),
   'field_traits' => array(
     'und' => array(
       0 => array(
         'tid' => '3314295d-522e-4182-a5dc-93ce20aecfe3',
         'uuid' => '3314295d-522e-4182-a5dc-93ce20aecfe3',
+      ),
+    ),
+  ),
+  'field_color' => array(
+    'und' => array(
+      0 => array(
+        'target_id' => '06e7a413-5755-41b8-8dc9-e09762b9c9be',
+        'uuid' => '06e7a413-5755-41b8-8dc9-e09762b9c9be',
       ),
     ),
   ),
@@ -707,7 +707,7 @@ function federated_default_content_uuid_features_default_content() {
   ),
   'comment_count' => 0,
   'date' => '2020-01-21 01:59:39 +0000',
-  'user_uuid' => '33e73139-8794-42e1-8179-4a571eb1aaa4',
+  'user_uuid' => '54c5443a-ab26-4e7c-8d5c-30b5434efc55',
 );
   $nodes[] = array(
   'title' => 'Newfoundland',
@@ -760,19 +760,19 @@ function federated_default_content_uuid_features_default_content() {
       ),
     ),
   ),
-  'field_color' => array(
-    'und' => array(
-      0 => array(
-        'tid' => '7b4c09e9-4801-4b8e-a68f-b1eebba5b6bb',
-        'uuid' => '7b4c09e9-4801-4b8e-a68f-b1eebba5b6bb',
-      ),
-    ),
-  ),
   'field_traits' => array(
     'und' => array(
       0 => array(
         'tid' => '2fc26e3a-620f-4ba2-b167-dffee783751c',
         'uuid' => '2fc26e3a-620f-4ba2-b167-dffee783751c',
+      ),
+    ),
+  ),
+  'field_color' => array(
+    'und' => array(
+      0 => array(
+        'target_id' => 'd387e61f-74ee-42b3-b13e-c125a967b295',
+        'uuid' => 'd387e61f-74ee-42b3-b13e-c125a967b295',
       ),
     ),
   ),
@@ -846,7 +846,7 @@ function federated_default_content_uuid_features_default_content() {
   ),
   'comment_count' => 0,
   'date' => '2020-01-21 02:00:07 +0000',
-  'user_uuid' => '33e73139-8794-42e1-8179-4a571eb1aaa4',
+  'user_uuid' => '54c5443a-ab26-4e7c-8d5c-30b5434efc55',
 );
   $nodes[] = array(
   'title' => 'German Shepherd',
@@ -881,19 +881,19 @@ function federated_default_content_uuid_features_default_content() {
       ),
     ),
   ),
-  'field_color' => array(
-    'und' => array(
-      0 => array(
-        'tid' => '06e7a413-5755-41b8-8dc9-e09762b9c9be',
-        'uuid' => '06e7a413-5755-41b8-8dc9-e09762b9c9be',
-      ),
-    ),
-  ),
   'field_traits' => array(
     'und' => array(
       0 => array(
         'tid' => '03140448-dc7d-4079-bc33-30db6d35c793',
         'uuid' => '03140448-dc7d-4079-bc33-30db6d35c793',
+      ),
+    ),
+  ),
+  'field_color' => array(
+    'und' => array(
+      0 => array(
+        'target_id' => '06e7a413-5755-41b8-8dc9-e09762b9c9be',
+        'uuid' => '06e7a413-5755-41b8-8dc9-e09762b9c9be',
       ),
     ),
   ),
@@ -967,7 +967,7 @@ function federated_default_content_uuid_features_default_content() {
   ),
   'comment_count' => 0,
   'date' => '2020-01-21 02:00:29 +0000',
-  'user_uuid' => '33e73139-8794-42e1-8179-4a571eb1aaa4',
+  'user_uuid' => '54c5443a-ab26-4e7c-8d5c-30b5434efc55',
 );
   $nodes[] = array(
   'title' => 'English Cocker Spaniel',
@@ -1002,19 +1002,19 @@ function federated_default_content_uuid_features_default_content() {
       ),
     ),
   ),
-  'field_color' => array(
-    'und' => array(
-      0 => array(
-        'tid' => '06e7a413-5755-41b8-8dc9-e09762b9c9be',
-        'uuid' => '06e7a413-5755-41b8-8dc9-e09762b9c9be',
-      ),
-    ),
-  ),
   'field_traits' => array(
     'und' => array(
       0 => array(
         'tid' => '03140448-dc7d-4079-bc33-30db6d35c793',
         'uuid' => '03140448-dc7d-4079-bc33-30db6d35c793',
+      ),
+    ),
+  ),
+  'field_color' => array(
+    'und' => array(
+      0 => array(
+        'target_id' => '06e7a413-5755-41b8-8dc9-e09762b9c9be',
+        'uuid' => '06e7a413-5755-41b8-8dc9-e09762b9c9be',
       ),
     ),
   ),
@@ -1088,7 +1088,7 @@ function federated_default_content_uuid_features_default_content() {
   ),
   'comment_count' => 0,
   'date' => '2020-01-21 02:01:13 +0000',
-  'user_uuid' => '33e73139-8794-42e1-8179-4a571eb1aaa4',
+  'user_uuid' => '54c5443a-ab26-4e7c-8d5c-30b5434efc55',
 );
   $nodes[] = array(
   'title' => 'Akita',
@@ -1121,19 +1121,19 @@ function federated_default_content_uuid_features_default_content() {
       ),
     ),
   ),
-  'field_color' => array(
-    'und' => array(
-      0 => array(
-        'tid' => '7b4c09e9-4801-4b8e-a68f-b1eebba5b6bb',
-        'uuid' => '7b4c09e9-4801-4b8e-a68f-b1eebba5b6bb',
-      ),
-    ),
-  ),
   'field_traits' => array(
     'und' => array(
       0 => array(
         'tid' => '2fc26e3a-620f-4ba2-b167-dffee783751c',
         'uuid' => '2fc26e3a-620f-4ba2-b167-dffee783751c',
+      ),
+    ),
+  ),
+  'field_color' => array(
+    'und' => array(
+      0 => array(
+        'target_id' => '7b4c09e9-4801-4b8e-a68f-b1eebba5b6bb',
+        'uuid' => '7b4c09e9-4801-4b8e-a68f-b1eebba5b6bb',
       ),
     ),
   ),
@@ -1193,7 +1193,7 @@ function federated_default_content_uuid_features_default_content() {
   ),
   'comment_count' => 0,
   'date' => '2020-01-21 01:48:40 +0000',
-  'user_uuid' => '33e73139-8794-42e1-8179-4a571eb1aaa4',
+  'user_uuid' => '54c5443a-ab26-4e7c-8d5c-30b5434efc55',
 );
   return $nodes;
 }
