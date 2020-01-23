@@ -110,6 +110,9 @@ Additional information on developing for Drupal within this environment is in [d
 If you rebuild the Drupal sites you might end up with orphaned content in Solr. To clear:
 `phing solr-clear`
 
+To clear and re-index all content:
+`phing solr-reindex`
+
 ### Updating Solr config
 
 This project is currently using [Solr v4.5.1](http://archive.apache.org/dist/lucene/solr/ref-guide/apache-solr-ref-guide-4.5.pdf).

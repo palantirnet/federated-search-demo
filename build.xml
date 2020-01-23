@@ -8,7 +8,6 @@
 
     <!-- Target: install-all -->
     <target name="install-all" description="Install all three Drupal sites in the Federated Search Demo">
-        <phingcall target="solr-clear" />
         <phingcall target="install-d7" />
         <phingcall target="install-d8">
             <property name="drush.root" value="web/d8/docroot" override="true" />
@@ -18,6 +17,7 @@
             <property name="drush.root" value="web/d8-domain/docroot" override="true" />
             <property name="site.name" value="Federated Search Drupal 8 Domain" override="true" />
         </phingcall>-->
+        <phingcall target="solr-reindex" />
     </target>
 
 
@@ -50,14 +50,6 @@
         </drush>
 
         <exec command="drush @d8 search-api:index federated_search -y" />
-        <!-- If we run the above normally, we get the error:
-          "Command batch-process was not found. Pass root or a @siteAlias in
-          order to run Drupal-specific commands." -->
-        <!--<drush command="search-api:index" assume="yes">
-            <param>federated_search</param>
-        </drush>-->
-        <!-- Import config to fix rogue blocks changing UUIDs
-        <drush command="config-import" assume="yes" /> -->
 
         <!-- Rebuild node acces permissions. No direct drush command for this
              as per https://www.drupal.org/project/devel/issues/2677218#comment-10907984 -->
@@ -193,6 +185,20 @@
                 <echo message="Your Solr is now clean."/>
             </then>
         </if>
+    </target>
+
+    <target name="solr-reindex" description="Delete and rebuild the SOLR index">
+        <exec command="curl &apos;http://federated-search-demo.local:8983/solr/drupal8/update?commit=true&amp;stream.body&#61;&lt;delete&gt;&lt;query&gt;*:*&lt;/query&gt;&lt;/delete&gt;&apos;" passthru="true" escape="false" checkreturn="true" />
+        <echo message="Your Solr is now clean."/>
+
+        <!-- Index Drupal 7 -->
+        <property name="drush.root" value="web/d7/docroot" />
+        <property name="drush.uri" value="http://d7.fs-demo.local" />
+        <drush command="search-api-reindex" assume="yes" />
+        <drush command="search-api-index federated_search" assume="yes" />
+        <!-- Index Drupal 8-->
+        <exec command="drush @d8 search-api:reset-tracker federated_search -y" />
+        <exec command="drush @d8 search-api:index federated_search -y" />
     </target>
 
 
