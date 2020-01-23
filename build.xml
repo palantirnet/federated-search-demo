@@ -10,7 +10,6 @@
     <target name="install-all" description="Install all three Drupal sites in the Federated Search Demo">
         <phingcall target="solr-clear" />
         <phingcall target="install-d7" />
-
         <phingcall target="install-d8">
             <property name="drush.root" value="web/d8/docroot" override="true" />
         </phingcall>
@@ -24,6 +23,7 @@
 
     <!-- Target: install-d8 -->
     <target name="install-d8" description="Install one of the Drupal 8 sites; specify which site with -Ddrush.root=web/d8/docroot">
+        <phingcall target="init" />
         <property name="drush.root" value="web/d8/docroot" />
         <property name="site.name" value="Federated Search Drupal 8" />
 
@@ -115,6 +115,7 @@
 
     <!-- Target: install-d7 -->
     <target name="install-d7" description="Install the D7 site">
+        <phingcall target="init" />
         <!-- Drush 9/10 are not compatible with Drupal 7, so we can't use a regular drush
              alias. Hence, we provide drush.root and drush.uri, which the <drush> task
              uses in its commands. -->
