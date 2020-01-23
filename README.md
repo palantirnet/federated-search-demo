@@ -99,6 +99,31 @@ Each content page is assigned to the available vocabularies. This setup allows o
 
 Note that term mapping in Federated Search lets you alias terms. In the Drupal 7 version, the Color `Gold` is aliased to `Yellow` in the search index, so both terms appear as filters. Likewise, the Drupal 7 term `Affectionate` is mapped to `Loyal`, matching the term from Drupal 8, so only `Loyal` appears in the filter. These configurations show how disparate taxonomies can be merged in the search index.
 
+### Images
+
+Some of the dogs -- but not all -- have images. These show how the index handles image display. The following dogs should have images: `Irish Terrier, English Terrier, Newfoundland, Pointer, Greyhound, Dachshund`.
+
+Note that sometimes the image cache must be primed, so if you see a broken image on first page load, reload the page. If an image has the url `default`, it means the index has not been built properly. Run `phing solr-reindex` to correct the issue.
+
+
+
+## Sample searches
+
+Buy default, the sites will show all content when no search keywords are entered. There should be 20 items in the default result set.
+
+A good sample search is for `terrier`, which should return 4 results:
+
+* English Terrier (D7)
+* Jack Russell Terrier (D8)
+* Irish Terrier (D7)
+* Boston Terrier (D8)
+
+These two search results should be identical:
+
+* http://d8.fs-demo.local/search-app?search=terrier
+* http://d7.fs-demo.local/search-app?search=terrier
+
+
 ## Drupal Development
 
 You can refresh/reset your local Drupal site at any time. SSH into your VM and then:
