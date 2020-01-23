@@ -10,7 +10,7 @@ dependencies:
 id: federatedsearchpageformblock
 theme: bartik
 region: sidebar_first
-weight: 0
+weight: -7
 provider: null
 plugin: federated_search_page_form_block
 settings:
