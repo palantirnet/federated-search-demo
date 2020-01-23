@@ -108,10 +108,11 @@ Some of the dogs -- but not all -- have images. These show how the index handles
 
 Note that sometimes the image cache must be primed, so if you see a broken image on first page load, reload the page. If an image has the url `default`, it means the index has not been built properly. Run `phing solr-reindex` to correct the issue.
 
+Images are [public domain](https://freevintageillustrations.com/faq/) and sourced from [Free Vintage Illustration](https://freevintageillustrations.com/vintage-dog-illustrations-public-domain/). They are intended for demonstration purposes only.
 
 ## Sample searches
 
-Buy default, the sites will show all content when no search keywords are entered. There should be 20 items in the default result set.
+By default, the sites will show all content when no search keywords are entered. There should be 20 items in the default result set.
 
 A good sample search is for `terrier`, which should return 4 results:
 
