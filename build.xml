@@ -137,19 +137,13 @@
         <!-- The public files directory, and everything in it, needs to be world writable. -->
         <exec command="chmod -R 777 ${drush.root}/sites/default/files" checkreturn="true" />
 
-        <!-- Copy demo files
-        <copy todir="${drush.root}/sites/default/files/field/image" mode="777">
-          <fileset dir="${drush.root}/sites/all/modules/federated_content/assets">
-            <include name="**/*.jpg" />
-          </fileset>
-        </copy> -->
-
         <!-- Install default configuration and content. -->
         <drush command="pm-enable" assume="yes">
             <param>features_search_api_config</param>
             <param>federated_default_content</param>
         </drush>
-        <!-- The public files directory, and everything in it, needs to be world writable. -->
+        <!-- The public files directory, and everything in it, needs to be world writable,
+             but the content creation step changes that, so we do it again. -->
         <exec command="chmod -R 777 ${drush.root}/sites/default/files" checkreturn="true" />
         <!-- The feature is not loading properly due to file permissions, but does reload correctly. -->
         <drush command="features-revert" assume="yes">
@@ -187,7 +181,7 @@
 
     <!-- Target: solr-clear -->
     <target name="solr-clear" description="Delete all entries in the local Solr 'drupal8' core">
-        <input message="You are about to clear the SOLR index. Are you sure? There is no undo." propertyName="dump.confirm" defaultValue="y" validArgs="y,n" />
+        <input message="Would you like to clear the SOLR index? This action cannot be undone." propertyName="dump.confirm" defaultValue="y" validArgs="y,n" />
         <if>
             <equals arg1="${dump.confirm}" arg2="y" />
             <then>

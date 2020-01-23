@@ -51,16 +51,16 @@ You may be interested in creating your own development environment and comparing
   ```
 3. You will be prompted for the administration password on your host machine
 4. Log in to the virtual machine (the VM): `vagrant ssh`
-5. Build the `/src` directory and checkout git code: `phing init`
-6. Build, install, and enable demo content: `phing install-all`
-7. Visit your D8 (standalone) site at [http://d8.fs-demo.local](http://d8.fs-demo.local)
-8. Visit your D8 (domain access) site at:
+5. Build, install, and enable demo content: `phing install-all`
+  * When prompted, you may choose to empty the current SOLR index. This action is recommended when re-installing all sites, but not one site.
+6. Visit your D8 (standalone) site at [http://d8.fs-demo.local](http://d8.fs-demo.local)
+7. Visit your D8 (domain access) site at:
    - [http://fs-demo.d8-1.local](http://d8-1.fs-demo.local)
    - [http://d8-2.fs-demo.local](http://d8-2.fs-demo.local)
    - [http://d8-3.fs-demo.local](http://d8-3.fs-demo.local)
    - These sites are for future use, as Domain support has not yet been ported to D8.
-9. Visit your D7 site at [http://d7.fs-demo.local](http://d7.fs-demo.local)
-10. View the Solr index at [http://federated-search-demo.local:8983/solr/#/drupal8/query](http://federated-search-demo.local:8983/solr/#/drupal8/query).
+8. Visit your D7 site at [http://d7.fs-demo.local](http://d7.fs-demo.local)
+9. View the Solr index at [http://federated-search-demo.local:8983/solr/#/drupal8/query](http://federated-search-demo.local:8983/solr/#/drupal8/query).
 
 You can log in to any of the Drupal sites at `/user` with `admin/admin`.
 
@@ -100,9 +100,8 @@ If you just want to get up and running, from the project root run `phing install
    - Standalone: `phing install-d8 -Ddrush.root=web/d8/docroot`
    - Domain site: `phing install-d8 -Ddrush.root=web/d8-domain/docroot`
 6. Reinstall Drupal 7: `phing install-d7`
-7. Build the `/src` directory and symlink modules there: `phing init`
-   - This links each of the two modules: `search_api_federated_solr` and `search_api_field_map` from the D8/D7 single site docroot to the `/src` directory and also into the D8/D7 Domain Access-enabled docroot. This means all changes made in `/src/search_api_...` will propagate to both sites simultaneously.
-   - If you re-run composer in any of the docroots you may need to re-run `phing init`.
+7. Build the `/src` directory and checkout modules there: `phing init`
+   - This links each of the two modules: `search_api_federated_solr` and `search_api_field_map` from the D8/D7 single site docroot to the `/src` directory and also into the D8/D7 Domain Access-enabled docroot. This means all changes made in `/src/search_api_...` will propagate to both sites simultaneously. The `phing init` command is run automatically by any of the installer scripts.
 
 Additional information on developing for Drupal within this environment is in [docs/general/drupal_development.md](docs/general/drupal_development.md).
 
