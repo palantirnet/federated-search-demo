@@ -1,0 +1,14 @@
+uuid: ee01d08e-82be-4c26-ab7b-e300af392712
+langcode: en
+status: true
+dependencies:
+  config:
+    - domain.record.d8_1_fs_demo_local
+  module:
+    - domain_access
+id: domain_access_add_action.d8_1_fs_demo_local
+label: 'Add selected content to the Federated Search Domain 8 domain'
+type: node
+plugin: domain_access_add_action
+configuration:
+  domain_id: d8_1_fs_demo_local

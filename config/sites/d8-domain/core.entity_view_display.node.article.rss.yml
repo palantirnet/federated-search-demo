@@ -7,6 +7,9 @@ dependencies:
     - field.field.node.article.body
     - field.field.node.article.comment
     - field.field.node.article.field_age
+    - field.field.node.article.field_domain_access
+    - field.field.node.article.field_domain_all_affiliates
+    - field.field.node.article.field_domain_source
     - field.field.node.article.field_image
     - field.field.node.article.field_tags
     - field.field.node.article.field_traits
@@ -27,6 +30,9 @@ hidden:
   body: true
   comment: true
   field_age: true
+  field_domain_access: true
+  field_domain_all_affiliates: true
+  field_domain_source: true
   field_image: true
   field_tags: true
   field_traits: true

@@ -1,0 +1,14 @@
+uuid: bee4ace7-4488-45b8-8279-dce178e0e0fd
+langcode: en
+status: true
+dependencies:
+  config:
+    - domain.record.d8_1_fs_demo_local
+  module:
+    - domain_access
+id: domain_access_remove_action.d8_1_fs_demo_local
+label: 'Remove selected content from the Federated Search Domain 8 domain'
+type: node
+plugin: domain_access_remove_action
+configuration:
+  domain_id: d8_1_fs_demo_local

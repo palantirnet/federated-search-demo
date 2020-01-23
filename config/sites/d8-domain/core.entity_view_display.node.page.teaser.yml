@@ -6,6 +6,9 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.page.body
     - field.field.node.page.field_age
+    - field.field.node.page.field_domain_access
+    - field.field.node.page.field_domain_all_affiliates
+    - field.field.node.page.field_domain_source
     - field.field.node.page.field_traits
     - node.type.page
   module:
@@ -31,5 +34,8 @@ content:
     region: content
 hidden:
   field_age: true
+  field_domain_access: true
+  field_domain_all_affiliates: true
+  field_domain_source: true
   field_traits: true
   search_api_excerpt: true

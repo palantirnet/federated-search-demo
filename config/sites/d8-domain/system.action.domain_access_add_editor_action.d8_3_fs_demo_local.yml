@@ -1,0 +1,14 @@
+uuid: f08e302c-76e3-47e1-87f8-486262878dc1
+langcode: en
+status: true
+dependencies:
+  config:
+    - domain.record.d8_3_fs_demo_local
+  module:
+    - domain_access
+id: domain_access_add_editor_action.d8_3_fs_demo_local
+label: 'Add editors to the Federated Search Domain 3 domain'
+type: user
+plugin: domain_access_add_editor_action
+configuration:
+  domain_id: d8_3_fs_demo_local
