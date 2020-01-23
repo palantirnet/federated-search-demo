@@ -106,7 +106,6 @@ Some of the dogs -- but not all -- have images. These show how the index handles
 Note that sometimes the image cache must be primed, so if you see a broken image on first page load, reload the page. If an image has the url `default`, it means the index has not been built properly. Run `phing solr-reindex` to correct the issue.
 
 
-
 ## Sample searches
 
 Buy default, the sites will show all content when no search keywords are entered. There should be 20 items in the default result set.
