@@ -89,7 +89,7 @@ You can refresh/reset your local Drupal site at any time. SSH into your VM and t
 
 ### Rebuild all the things
 
-If you just want to get up and running, from the project root run `phing install-all init`. If this fails for any reason, proceed to run it step by step.
+If you just want to get up and running, from the project root run `phing install-all`. If this fails for any reason, proceed to run it step by step.
 
 ### Run each step individually
 
