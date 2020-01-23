@@ -165,16 +165,22 @@
 
     <!-- Target: init -->
     <target name="init" description="Initialize the repo for development">
-        <mkdir dir="src" />
-        <delete dir="src/search_api_federated_solr" />
-        <exec command="git clone --branch=8.x-2.x git@github.com:palantirnet/search_api_federated_solr.git" dir="src" checkreturn="true" />
-
-        <delete dir="src/search_api_field_map" />
-        <exec command="git clone --branch=8.x-2.x git@github.com:palantirnet/search_api_field_map.git" dir="src" checkreturn="true" />
-
-        <!-- Link search_api_federated_solr:7.x into the src/ directory so the code is easy to find. -->
-        <delete dir="src/search_api_federated_solr-7.x" />
-        <exec command="git clone --branch=7.x-2.x git@github.com:palantirnet/search_api_federated_solr.git search_api_federated_solr-7.x" dir="src" checkreturn="true" />
+        <available file="src" type="dir" property="src.checkout" value="y" />
+        <if>
+            <equals arg1="${src.checkout}" arg2="y" />
+            <then>
+              <echo message="Git sources already checked out." />
+            </then>
+            <else>
+              <mkdir dir="src" />
+              <echo message="git clone --branch=8.x-2.x git@github.com:palantirnet/search_api_federated_solr.git" />
+              <exec command="git clone --branch=8.x-2.x git@github.com:palantirnet/search_api_federated_solr.git" dir="src" checkreturn="true" />
+              <echo message="git clone --branch=8.x-2.x git@github.com:palantirnet/search_api_field_map.git" />
+              <exec command="git clone --branch=8.x-2.x git@github.com:palantirnet/search_api_field_map.git" dir="src" checkreturn="true" />
+              <echo message="git clone --branch=7.x-2.x git@github.com:palantirnet/search_api_federated_solr.git search_api_federated_solr-7.x" />
+              <exec command="git clone --branch=7.x-2.x git@github.com:palantirnet/search_api_federated_solr.git search_api_federated_solr-7.x" dir="src" checkreturn="true" />
+            </else>
+          </if>
     </target>
 
 
