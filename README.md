@@ -167,6 +167,8 @@ With the VM running, you can visit the SOLR index at http://federated-search-dem
         "timestamp": "2020-01-23T18:39:11.137Z"
 ```
 
+*Bonus example*: The sample above shows how the `Yellow` and `Gold` colors are stored as synonyms.
+
 ## Drupal Development
 
 You can refresh/reset your local Drupal site at any time. SSH into your VM and then:
