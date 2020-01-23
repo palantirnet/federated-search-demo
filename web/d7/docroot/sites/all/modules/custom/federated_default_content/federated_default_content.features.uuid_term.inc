@@ -75,7 +75,7 @@ function federated_default_content_uuid_features_default_terms() {
     ),
   );
   $terms[] = array(
-    'name' => 'Loyal',
+    'name' => 'Affectionate',
     'description' => '',
     'format' => 'filtered_html',
     'weight' => 0,
