@@ -83,6 +83,22 @@ To run project-related commands other than `vagrant up` and `vagrant ssh`:
    drush @d7 status
    ```
 
+## Working with content
+
+This version of the demo site is all about dogs. We use simple core content types (basic page and article) supplemented by taxonomy terms. The content titles are meaningful (they are all dog breeds). Content body is lorem ipsum text.
+
+We create three vocabularies in Drupal 7: 
+
+* Age
+* Color
+* Traits
+
+In Drupal 8, the Color vocabulary is not present.
+
+Each content page is assigned to the available vocabularies. This setup allows our search index to provide filters by each term.
+
+Note that term mapping in Federated Search lets you alias terms. In the Drupal 7 version, the Color `Gold` is aliased to `Yellow` in the search index, so both terms appear as filters. Likewise, the Drupal 7 term `Affectionate` is mapped to `Loyal`, matching the term from Drupal 8, so only `Loyal` appears in the filter. These configurations show how disparate taxonomies can be merged in the search index.
+
 ## Drupal Development
 
 You can refresh/reset your local Drupal site at any time. SSH into your VM and then:
