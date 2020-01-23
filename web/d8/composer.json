@@ -16,8 +16,6 @@
             "php": "7.0.8"
         },
         "preferred-install": {
-            "palantirnet/search_api_federated_solr": "source",
-            "palantirnet/search_api_field_map": "source",
             "*": "dist"
         },
         "sort-packages": true
@@ -26,14 +24,6 @@
         {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
-        },
-        {
-            "type": "vcs",
-            "url": "git@github.com:palantirnet/search_api_federated_solr.git"
-        },
-        {
-            "type": "vcs",
-            "url": "git@github.com:palantirnet/search_api_field_map.git"
         }
     ],
     "require": {
@@ -47,7 +37,7 @@
         "drupal/config_split": "^1.4",
         "drupal/core": "^8.5",
         "drupal/default_content": "^1.0@alpha",
-        "palantirnet/search_api_federated_solr": "dev-master"
+        "drupal/search_api_federated_solr": "^2.9"
     },
     "require-dev": {
     },

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "99facc36594cbaf155cbdfc6cd4dccf4",
+    "content-hash": "c165306dfe5f197bbafefafd8de8a1de",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1022,7 +1022,7 @@
                     }
                 },
                 "patches_applied": {
-                    "Allow config installer to find themes.": "https://www.drupal.org/files/issues/2018-05-28/2975675-2.patch"
+                    "Allow config installer to find themes: https://www.drupal.org/node/2975675": "https://www.drupal.org/files/issues/2019-06-21/2975675-8.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -1494,6 +1494,147 @@
                 "source": "http://git.drupal.org/project/search_api.git",
                 "issues": "https://www.drupal.org/project/issues/search_api",
                 "irc": "irc://irc.freenode.org/drupal-search-api"
+            }
+        },
+        {
+            "name": "drupal/search_api_federated_solr",
+            "version": "2.9.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/search_api_federated_solr.git",
+                "reference": "8.x-2.9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/search_api_federated_solr-8.x-2.9.zip",
+                "reference": "8.x-2.9",
+                "shasum": "0a3f792d76a0b1c6fe7b7c41dfafaf3e8881625a"
+            },
+            "require": {
+                "drupal/core": "^8.0",
+                "drupal/search_api_field_map": "^2.0",
+                "drupal/search_api_solr": "^1.2",
+                "drupal/token": "^1.1"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-2.x": "2.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-2.9",
+                    "datestamp": "1574699586",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "MalakDesai",
+                    "homepage": "https://www.drupal.org/user/3584087"
+                },
+                {
+                    "name": "agentrickard",
+                    "homepage": "https://www.drupal.org/user/20975"
+                },
+                {
+                    "name": "becw",
+                    "homepage": "https://www.drupal.org/user/81067"
+                },
+                {
+                    "name": "byrond",
+                    "homepage": "https://www.drupal.org/user/1279040"
+                },
+                {
+                    "name": "jesconstantine",
+                    "homepage": "https://www.drupal.org/user/3455145"
+                },
+                {
+                    "name": "mcarmichael21",
+                    "homepage": "https://www.drupal.org/user/3224074"
+                }
+            ],
+            "description": "Allows indexing multiple Drupal sites into a single Solr search index.",
+            "homepage": "https://www.drupal.org/project/search_api_federated_solr",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "https://git.drupalcode.org/project/search_api_federated_solr"
+            }
+        },
+        {
+            "name": "drupal/search_api_field_map",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/search_api_field_map.git",
+                "reference": "8.x-2.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/search_api_field_map-8.x-2.0.zip",
+                "reference": "8.x-2.0",
+                "shasum": "bcef5c9c5830194bf4ea439d83eeb0ba47ea9176"
+            },
+            "require": {
+                "drupal/core": "^8.0",
+                "drupal/search_api_solr": "^1.2",
+                "drupal/token": "^1.1"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-2.x": "2.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-2.0",
+                    "datestamp": "1554473602",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "MalakDesai",
+                    "homepage": "https://www.drupal.org/user/3584087"
+                },
+                {
+                    "name": "agentrickard",
+                    "homepage": "https://www.drupal.org/user/20975"
+                },
+                {
+                    "name": "becw",
+                    "homepage": "https://www.drupal.org/user/81067"
+                },
+                {
+                    "name": "jesconstantine",
+                    "homepage": "https://www.drupal.org/user/3455145"
+                },
+                {
+                    "name": "mcarmichael21",
+                    "homepage": "https://www.drupal.org/user/3224074"
+                }
+            ],
+            "description": "Allows indexing multiple Drupal sites into a single Solr search index by field.",
+            "homepage": "https://www.drupal.org/project/search_api_field_map",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "https://git.drupalcode.org/project/search_api_field_map"
             }
         },
         {
@@ -2024,72 +2165,6 @@
                 "xml"
             ],
             "time": "2019-07-25T07:03:26+00:00"
-        },
-        {
-            "name": "palantirnet/search_api_federated_solr",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/palantirnet/search_api_federated_solr.git",
-                "reference": "7cf3343b3532ced2c4a556f768e2ffe469d3396f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/palantirnet/search_api_federated_solr/zipball/7cf3343b3532ced2c4a556f768e2ffe469d3396f",
-                "reference": "7cf3343b3532ced2c4a556f768e2ffe469d3396f",
-                "shasum": ""
-            },
-            "require": {
-                "drupal/core": "^8.0",
-                "drupal/search_api_solr": "^1.2",
-                "drupal/token": "^1.1",
-                "palantirnet/search_api_field_map": "dev-master"
-            },
-            "type": "drupal-module",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "description": "Allows indexing multiple Drupal sites into a single Solr search index.",
-            "keywords": [
-                "Drupal"
-            ],
-            "support": {
-                "source": "https://github.com/palantirnet/search_api_federated_solr/tree/master"
-            },
-            "time": "2018-12-03T21:33:40+00:00"
-        },
-        {
-            "name": "palantirnet/search_api_field_map",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/palantirnet/search_api_field_map.git",
-                "reference": "6cb8df3b93332738a29dfa3a71ab9b002730100e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/palantirnet/search_api_field_map/zipball/6cb8df3b93332738a29dfa3a71ab9b002730100e",
-                "reference": "6cb8df3b93332738a29dfa3a71ab9b002730100e",
-                "shasum": ""
-            },
-            "require": {
-                "drupal/core": "^8.0",
-                "drupal/search_api_solr": "^1.2",
-                "drupal/token": "^1.1"
-            },
-            "type": "drupal-module",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "description": "Allows indexing multiple Drupal sites into a single Solr search index by field.",
-            "keywords": [
-                "Drupal"
-            ],
-            "support": {
-                "source": "https://github.com/palantirnet/search_api_field_map/tree/master",
-                "issues": "https://github.com/palantirnet/search_api_field_map/issues"
-            },
-            "time": "2018-12-04T14:39:03+00:00"
         },
         {
             "name": "paragonie/random_compat",
@@ -4380,8 +4455,7 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "drupal/config_inspector": 10,
-        "drupal/default_content": 15,
-        "palantirnet/search_api_federated_solr": 20
+        "drupal/default_content": 15
     },
     "prefer-stable": true,
     "prefer-lowest": false,
