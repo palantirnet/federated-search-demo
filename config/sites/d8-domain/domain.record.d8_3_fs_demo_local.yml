@@ -1,0 +1,11 @@
+uuid: 0a6fa7ca-33c7-480b-a779-f490915261a0
+langcode: en
+status: true
+dependencies: {  }
+id: d8_3_fs_demo_local
+domain_id: 13682614
+hostname: d8-3.fs-demo.local
+name: 'Federated Search Domain 3'
+scheme: http
+weight: 3
+is_default: false

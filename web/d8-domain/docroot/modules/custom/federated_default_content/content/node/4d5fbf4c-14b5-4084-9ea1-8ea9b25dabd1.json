@@ -1,0 +1,224 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/d8-3.fs-demo.local\/node\/16?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/node\/article"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/node\/article\/revision_uid": [
+            {
+                "href": "http:\/\/d8-3.fs-demo.local\/user\/1?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/article\/uid": [
+            {
+                "href": "http:\/\/d8-3.fs-demo.local\/user\/1?_format=hal_json",
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/article\/field_age": [
+            {
+                "href": "http:\/\/d8-3.fs-demo.local\/taxonomy\/term\/3?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/article\/field_traits": [
+            {
+                "href": "http:\/\/d8-3.fs-demo.local\/taxonomy\/term\/6?_format=hal_json"
+            }
+        ]
+    },
+    "nid": [
+        {
+            "value": 16
+        }
+    ],
+    "uuid": [
+        {
+            "value": "4d5fbf4c-14b5-4084-9ea1-8ea9b25dabd1"
+        }
+    ],
+    "vid": [
+        {
+            "value": 16
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "article"
+        }
+    ],
+    "revision_timestamp": [
+        {
+            "value": "2020-01-23T21:38:30+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/node\/article\/revision_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/d8-3.fs-demo.local\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "29ff2137-f139-4560-842c-b41be710fc30"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/article\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/d8-3.fs-demo.local\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "29ff2137-f139-4560-842c-b41be710fc30"
+                    }
+                ],
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/article\/field_age": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/d8-3.fs-demo.local\/taxonomy\/term\/3?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/age"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "5a419857-a179-469e-94d7-48402ad2e7d0"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/article\/field_traits": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/d8-3.fs-demo.local\/taxonomy\/term\/6?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/traits"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "ae53caf7-0ace-4c06-9314-d3c5b58fe489"
+                    }
+                ]
+            }
+        ]
+    },
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "title": [
+        {
+            "value": "Corgi",
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2020-01-23T21:38:13+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2020-01-23T21:38:30+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "promote": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "sticky": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "path": [
+        {
+            "alias": null,
+            "pid": null,
+            "langcode": "en",
+            "lang": "en"
+        }
+    ],
+    "body": [
+        {
+            "value": "<p><span>Dog bowl leave it bang lap dog peanut butter bell, stand kibbles leap. Bell bark roll over bell chew toy leash. Dog toy leash chew toy take it bring it k9. K9 peanut butter puppy tail take it release dog house. squeak toy dog bone, stay dog house bang bell. Tennis ball puppy speak take it roll over sit bite. k9 chew toy kibbles leash, tail kibbles heel dog toy. puppies dog house spin bell kibbles puppy down. stay squeak toy bring it, jump heel come down come.<\/span><\/p>\r\n",
+            "format": "basic_html",
+            "processed": "<p><span>Dog bowl leave it bang lap dog peanut butter bell, stand kibbles leap. Bell bark roll over bell chew toy leash. Dog toy leash chew toy take it bring it k9. K9 peanut butter puppy tail take it release dog house. squeak toy dog bone, stay dog house bang bell. Tennis ball puppy speak take it roll over sit bite. k9 chew toy kibbles leash, tail kibbles heel dog toy. puppies dog house spin bell kibbles puppy down. stay squeak toy bring it, jump heel come down come.<\/span><\/p>",
+            "summary": "",
+            "lang": "en"
+        }
+    ],
+    "comment": [
+        {
+            "status": 2,
+            "cid": 0,
+            "last_comment_timestamp": 1579815510,
+            "last_comment_name": null,
+            "last_comment_uid": 1,
+            "comment_count": 0,
+            "lang": "en"
+        }
+    ],
+    "field_domain_access": [
+        {
+            "target_id": "d8_3_fs_demo_local",
+            "lang": "en"
+        }
+    ],
+    "field_domain_all_affiliates": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ]
+}

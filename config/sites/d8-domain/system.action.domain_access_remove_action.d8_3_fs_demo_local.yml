@@ -1,0 +1,14 @@
+uuid: 324bfc34-a3e5-47e0-b00d-9e02dc764206
+langcode: en
+status: true
+dependencies:
+  config:
+    - domain.record.d8_3_fs_demo_local
+  module:
+    - domain_access
+id: domain_access_remove_action.d8_3_fs_demo_local
+label: 'Remove selected content from the Federated Search Domain 3 domain'
+type: node
+plugin: domain_access_remove_action
+configuration:
+  domain_id: d8_3_fs_demo_local

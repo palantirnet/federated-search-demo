@@ -104,7 +104,7 @@ Note that term mapping in Federated Search lets you alias terms. In the Drupal 7
 
 ### Images
 
-Some of the dogs -- but not all -- have images. These show how the index handles image display. The following dogs should have images: `Irish Terrier, English Terrier, Newfoundland, Pointer, Greyhound, Dachshund`.
+Some of the dogs -- but not all -- have images. These show how the index handles image display. The following dogs should have images: `Irish Terrier, English Terrier, Newfoundland, Pointer, Greyhound, Dachshund, Maltese, Cumberland Sheepdog`.
 
 Note that sometimes the image cache must be primed, so if you see a broken image on first page load, reload the page. If an image has the url `default`, it means the index has not been built properly. Run `phing solr-reindex` to correct the issue.
 
@@ -112,19 +112,25 @@ Images are [public domain](https://freevintageillustrations.com/faq/) and source
 
 ## Sample searches
 
-By default, the sites will show all content when no search keywords are entered. There should be 20 items in the default result set.
+By default, the sites will show all content when no search keywords are entered. There should be 26 items in the default result set.
 
-A good sample search is for `terrier`, which should return 4 results:
+A good sample search is for `terrier`, which should return 5 results:
 
 * English Terrier (D7)
 * Jack Russell Terrier (D8)
 * Irish Terrier (D7)
 * Boston Terrier (D8)
+* Norfolk Terrier (Domain 1)
 
-These two search results should be identical:
+These three search results should be identical:
 
 * http://d8.fs-demo.local/search-app?search=terrier
 * http://d7.fs-demo.local/search-app?search=terrier
+* http://d8-1.fs-demo.local/search-app?search=terrier
+
+### Note on Domain Access
+
+The domain access indexing is not currently working for Drupal 8. All content is being assigned to `Domain 1`, which is incorrect.
 
 ## Reading the SOLR index
 

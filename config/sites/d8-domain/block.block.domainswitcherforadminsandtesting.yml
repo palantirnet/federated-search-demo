@@ -1,0 +1,26 @@
+uuid: d4ecb8df-05ac-41ea-aa2b-4a3996a6490e
+langcode: en
+status: true
+dependencies:
+  module:
+    - domain
+    - system
+  theme:
+    - bartik
+id: domainswitcherforadminsandtesting
+theme: bartik
+region: sidebar_first
+weight: -6
+provider: null
+plugin: domain_switcher_block
+settings:
+  id: domain_switcher_block
+  label: 'Domain switcher (for admins and testing)'
+  provider: domain
+  label_display: visible
+visibility:
+  request_path:
+    id: request_path
+    pages: "/search-app\r\n/search-app*"
+    negate: true
+    context_mapping: {  }

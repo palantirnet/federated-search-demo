@@ -1,0 +1,11 @@
+uuid: ce7b759f-0064-4897-9480-7c59e1d28e0f
+langcode: en
+status: true
+dependencies: {  }
+id: d8_2_fs_demo_local
+domain_id: 10626745
+hostname: d8-2.fs-demo.local
+name: 'Federated Search Domain 2'
+scheme: http
+weight: 2
+is_default: false

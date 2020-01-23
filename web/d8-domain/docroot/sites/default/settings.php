@@ -11,10 +11,7 @@ $databases['default']['default'] = array(
   'collation' => 'utf8mb4_general_ci',
 );
 
-$config_directories = array();
-$config_directories[CONFIG_SYNC_DIRECTORY] = '../../../config/sites/d8';
-
-$config['config_split.config_split.d8_domain']['status'] = TRUE;
+$settings['config_sync_directory'] = '../../../config/sites/d8-domain';
 
 $settings['hash_salt'] = '528a2e810ba1473af9118387b9ebb9fbe5634047cff5ab3bb29cc360dbf25c7a';
 $settings['update_free_access'] = FALSE;

@@ -1,0 +1,25 @@
+uuid: f4b2fd4d-2602-4238-8f60-2e1dc7a09cd3
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - domain_access
+  module:
+    - domain
+    - node
+_core:
+  default_config_hash: NMaXfffaoOhBnZCIYpQB0A08AFvuTV2TpqblBmCkLb4
+id: node.field_domain_access
+field_name: field_domain_access
+entity_type: node
+type: entity_reference
+settings:
+  target_type: domain
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
