@@ -9,14 +9,8 @@
     <!-- Target: install-all -->
     <target name="install-all" description="Install all three Drupal sites in the Federated Search Demo">
         <phingcall target="install-d7" />
-        <phingcall target="install-d8">
-            <property name="drush.root" value="web/d8/docroot" override="true" />
-        </phingcall>
-        <!-- This target has not been updated
-        <phingcall target="install-d8">
-            <property name="drush.root" value="web/d8-domain/docroot" override="true" />
-            <property name="site.name" value="Federated Search Drupal 8 Domain" override="true" />
-        </phingcall>-->
+        <phingcall target="install-d8" />
+        <phingcall target="install-d8-domain" />
         <phingcall target="solr-reindex" />
     </target>
 
@@ -81,7 +75,7 @@
             <param>federated_search</param>
         </drush>
 
-        <!--exec command="drush @d8 search-api:index federated_search -y" /-->
+        <exec command="drush @d8-domain.one search-api:index federated_search -y" />
 
         <!-- Rebuild node acces permissions. No direct drush command for this
              as per https://www.drupal.org/project/devel/issues/2677218#comment-10907984 -->
@@ -239,6 +233,9 @@
         <!-- Index Drupal 8-->
         <exec command="drush @d8 search-api:reset-tracker federated_search -y" />
         <exec command="drush @d8 search-api:index federated_search -y" />
+        <!-- Index Drupal 8 Domain-->
+        <exec command="drush @d8-domain.one search-api:reset-tracker federated_search -y" />
+        <exec command="drush @d8-domain.one search-api:index federated_search -y" />        
     </target>
 
 
