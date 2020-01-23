@@ -75,6 +75,12 @@
         <property name="drupal.files" value="${drupal.site}/files" />
         <property name="drupal.private" value="${drupal.site}/private" />
 
+        <!-- Swap out the composer file for our git repository -->
+        <delete dir="${drush.root}/modules/contrib/search_api_federated_solr" />
+        <symlink link="${drush.root}/modules/contrib/search_api_federated_solr" target="../../../../../src/search_api_federated_solr" />
+        <delete dir="${drush.root}/modules/contrib/search_api_field_map" />
+        <symlink link="${drush.root}/modules/contrib/search_api_field_map" target="../../../../../src/search_api_field_map" />
+
         <!-- The sites subdirectory and settings.php should be writable; Drupal will
              change the permissions on this directory after install. -->
         <chmod file="${drush.root}/${drupal.site}" mode="777" />
