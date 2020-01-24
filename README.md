@@ -62,13 +62,11 @@ You may be interested in creating your own development environment and comparing
    - [http://d8-1.fs-demo.local](http://d8-1.fs-demo.local)
    - [http://d8-2.fs-demo.local](http://d8-2.fs-demo.local)
    - [http://d8-3.fs-demo.local](http://d8-3.fs-demo.local)
-   - These sites are for future use, as Domain support has not yet been ported to D8.
 8. Visit your D7 site at [http://d7.fs-demo.local](http://d7.fs-demo.local)
 9. Visit your D7 (domain access) site at:
    - [http://d7-1.fs-demo.local](http://d7-1.fs-demo.local)
    - [http://d7-2.fs-demo.local](http://d7-2.fs-demo.local)
    - [http://d7-3.fs-demo.local](http://d7-3.fs-demo.local)
-   - These sites are fully supported for Domain.
 10. View the Solr index at [http://federated-search-demo.local:8983/solr/#/drupal8/query](http://federated-search-demo.local:8983/solr/#/drupal8/query).
 
 You can log in to any of the Drupal sites at `/user` with `admin/admin`.
@@ -132,11 +130,18 @@ By default, the sites will show all content when no search keywords are entered.
 * Domain 1 - Drupal 7 (3 results)
 * Domain 2 - Drupal 7 (2 results)
 * Domain 3 - Drupal 7 (3 results)
-* Federated SOLR D7 (10 results)
-* Federated Search Domain 1 (6 results)
+* Drupal 7 - Federated Search (10 results)
+* Federated Search Domain 1 (2 results)
+* Federated Search Domain 2 (2 results)
+* Federated Search Domain 3 (3 results)
 * Federated Search Drupal 8 (10 results)
 
 Note: Theses numbers add up to more than 32 because some content is assigned to multiple domains.
+
+If you did not install the domain sites, then there will be 20 items:
+
+* Drupal 7 - Federated Search (10 results)
+* Federated Search Drupal 8 (10 results)
 
 A good sample search is for `terrier`, which should return 5 results:
 
