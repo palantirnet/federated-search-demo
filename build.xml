@@ -218,11 +218,10 @@
             <param>standard</param>
         </drush>
 
-        <!-- Copy settings files -->
+        <!-- Copy settings files that enable Domain Access. -->
         <chmod file="${drush.root}/sites/default/" mode="0775" />
         <chmod file="${drush.root}/sites/default/settings.php" mode="0775" />
         <copy file="config/sites/d7-domain/settings.php" tofile="${drush.root}/sites/default/settings.php" overwrite="true" />
-
 
         <!-- The public files directory, and everything in it, needs to be world writable. -->
         <exec command="chmod -R 777 ${drush.root}/sites/default/files" checkreturn="true" />
