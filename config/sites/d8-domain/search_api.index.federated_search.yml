@@ -114,23 +114,6 @@ processor_settings:
     weights:
       preprocess_index: -5
       preprocess_query: -5
-  ignore_character:
-    all_fields: false
-    fields:
-      - federated_title
-      - rendered_item
-    ignorable: '[''¿¡!?,.:;]'
-    ignorable_classes:
-      - Pc
-      - Pd
-      - Pe
-      - Pf
-      - Pi
-      - Po
-      - Ps
-    weights:
-      preprocess_index: -10
-      preprocess_query: -10
   language_with_fallback: {  }
   mapped_field: {  }
   mapped_terms: {  }
