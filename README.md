@@ -158,10 +158,6 @@ These four search results should be identical:
 * http://d8-1.fs-demo.local/search-app?search=terrier
 * http://d7-1.fs-demo.local/search-app?search=terrier
 
-### Note on Domain Access
-
-The domain access indexing is not currently working for Drupal 8. All content is being assigned to `Domain 1`, which is incorrect.
-
 ## Reading the SOLR index
 
 With the VM running, you can visit the SOLR index at http://federated-search-demo.local:8983/solr/#/drupal8/query to see indexed data. When looking at an item indexed by federated search, compare it to this sample:
