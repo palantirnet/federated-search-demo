@@ -262,7 +262,7 @@
               <echo message="Git sources already checked out." />
             </then>
             <else>
-              <mkdir dir="src" />
+              <mkdir dir="src" mode="777" />
               <echo message="git clone --branch=8.x-2.x git@github.com:palantirnet/search_api_federated_solr.git" />
               <exec command="git clone --branch=8.x-2.x git@github.com:palantirnet/search_api_federated_solr.git" dir="src" checkreturn="true" />
               <exec command="git remote add drupal git@git.drupal.org:project/search_api_federated_solr.git" dir="src/search_api_federated_solr" checkreturn="true" />
