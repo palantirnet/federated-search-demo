@@ -56,14 +56,20 @@ You may be interested in creating your own development environment and comparing
 4. Log in to the virtual machine (the VM): `vagrant ssh`
 5. Build, install, and enable demo content: `phing install-all`
   * When prompted, you may choose to empty the current SOLR index. This action is recommended when re-installing all sites, but not one site.
+  * If you wish to install without Domain Access, run `phing install-no-domain`. In that case, two sites will be built with 20 pieces of content.
 6. Visit your D8 (standalone) site at [http://d8.fs-demo.local](http://d8.fs-demo.local)
 7. Visit your D8 (domain access) site at:
-   - [http://fs-demo.d8-1.local](http://d8-1.fs-demo.local)
+   - [http://d8-1.fs-demo.local](http://d8-1.fs-demo.local)
    - [http://d8-2.fs-demo.local](http://d8-2.fs-demo.local)
    - [http://d8-3.fs-demo.local](http://d8-3.fs-demo.local)
    - These sites are for future use, as Domain support has not yet been ported to D8.
 8. Visit your D7 site at [http://d7.fs-demo.local](http://d7.fs-demo.local)
-9. View the Solr index at [http://federated-search-demo.local:8983/solr/#/drupal8/query](http://federated-search-demo.local:8983/solr/#/drupal8/query).
+9. Visit your D7 (domain access) site at:
+   - [http://d7-1.fs-demo.local](http://d7-1.fs-demo.local)
+   - [http://d7-2.fs-demo.local](http://d7-2.fs-demo.local)
+   - [http://d7-3.fs-demo.local](http://d7-3.fs-demo.local)
+   - These sites are fully supported for Domain.
+10. View the Solr index at [http://federated-search-demo.local:8983/solr/#/drupal8/query](http://federated-search-demo.local:8983/solr/#/drupal8/query).
 
 You can log in to any of the Drupal sites at `/user` with `admin/admin`.
 
@@ -86,6 +92,15 @@ To run project-related commands other than `vagrant up` and `vagrant ssh`:
    drush @d7 status
    ```
 
+* Use drush on the d7-domain sites by navigating into the d7-domain directory:
+
+    ```
+    cd web/d7-domain
+    drush site-alias
+    drush @d7-domain status
+    ```
+
+
 ## Working with content
 
 This version of the demo site is all about dogs. We use simple core content types (basic page and article) supplemented by taxonomy terms. The content titles are meaningful (they are all dog breeds). Content body is lorem ipsum text.
@@ -104,7 +119,7 @@ Note that term mapping in Federated Search lets you alias terms. In the Drupal 7
 
 ### Images
 
-Some of the dogs -- but not all -- have images. These show how the index handles image display. The following dogs should have images: `Irish Terrier, English Terrier, Newfoundland, Pointer, Greyhound, Dachshund, Maltese, Cumberland Sheepdog`.
+Some of the dogs -- but not all -- have images. These show how the index handles image display. The following dogs should have images: `Irish Terrier, English Terrier, Newfoundland, Pointer, Greyhound, Dachshund, Maltese, Cumberland Sheepdog, Dalmation, Toy Spaniel`.
 
 Note that sometimes the image cache must be primed, so if you see a broken image on first page load, reload the page. If an image has the url `default`, it means the index has not been built properly. Run `phing solr-reindex` to correct the issue.
 
@@ -112,7 +127,16 @@ Images are [public domain](https://freevintageillustrations.com/faq/) and source
 
 ## Sample searches
 
-By default, the sites will show all content when no search keywords are entered. There should be 26 items in the default result set.
+By default, the sites will show all content when no search keywords are entered. There should be 32 items in the default result set.
+
+* Domain 1 - Drupal 7 (3 results)
+* Domain 2 - Drupal 7 (2 results)
+* Domain 3 - Drupal 7 (3 results)
+* Federated SOLR D7 (10 results)
+* Federated Search Domain 1 (6 results)
+* Federated Search Drupal 8 (10 results)
+
+Note: Theses numbers add up to more than 32 because some content is assigned to multiple domains.
 
 A good sample search is for `terrier`, which should return 5 results:
 
@@ -120,13 +144,14 @@ A good sample search is for `terrier`, which should return 5 results:
 * Jack Russell Terrier (D8)
 * Irish Terrier (D7)
 * Boston Terrier (D8)
-* Norfolk Terrier (Domain 1)
+* Norfolk Terrier (D8 Domain 1)
 
-These three search results should be identical:
+These four search results should be identical:
 
 * http://d8.fs-demo.local/search-app?search=terrier
 * http://d7.fs-demo.local/search-app?search=terrier
 * http://d8-1.fs-demo.local/search-app?search=terrier
+* http://d7-1.fs-demo.local/search-app?search=terrier
 
 ### Note on Domain Access
 
@@ -188,10 +213,13 @@ If you just want to get up and running, from the project root run `phing install
 1. Download the most current dependencies for D8 (standalone): `composer install --working-dir=web/d8`
 2. Download the most current dependencies for D8 (domain access): `composer install --working-dir=web/d8-domain`
 3. Download the most current dependencies for D7: `composer install --working-dir=web/d7`
-4. Reinstall Drupal 8:
+4. Download the most current dependencies for D7: `composer install --working-dir=web/d7-domain`
+5. Reinstall Drupal 8:
    - Standalone: `phing install-d8 -Ddrush.root=web/d8/docroot`
    - Domain site: `phing install-d8 -Ddrush.root=web/d8-domain/docroot`
 6. Reinstall Drupal 7: `phing install-d7`
+   - Standalone: `phing install-d7 -Ddrush.root=web/d7/docroot`
+   - Domain site: `phing install-d7-domain -Ddrush.root=web/d7-domain/docroot`
 7. Build the `/src` directory and checkout modules there: `phing init`
    - This links each of the two modules: `search_api_federated_solr` and `search_api_field_map` from the D8/D7 single site docroot to the `/src` directory and also into the D8/D7 Domain Access-enabled docroot. This means all changes made in `/src/search_api_...` will propagate to both sites simultaneously. The `phing init` command is run automatically by any of the installer scripts. These git checkouts point to GitHub and have `drupal` aliased remotes to drupal.org (`git remote show`).
 
