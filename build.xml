@@ -9,6 +9,7 @@
     <!-- Target: install-all -->
     <target name="install-all" description="Install all three Drupal sites in the Federated Search Demo">
         <phingcall target="install-d7" />
+        <phingcall target="install-d7-domain" />
         <phingcall target="install-d8" />
         <phingcall target="install-d8-domain" />
         <phingcall target="solr-reindex" />
@@ -284,19 +285,24 @@
 
     <target name="solr-reindex" description="Delete and rebuild the SOLR index">
         <exec command="curl &apos;http://federated-search-demo.local:8983/solr/drupal8/update?commit=true&amp;stream.body&#61;&lt;delete&gt;&lt;query&gt;*:*&lt;/query&gt;&lt;/delete&gt;&apos;" passthru="true" escape="false" checkreturn="true" />
-        <echo message="Your Solr is now clean."/>
+        <echo message="Your Solr is now clean." />
 
         <!-- Index Drupal 7 -->
-        <property name="drush.root" value="web/d7/docroot" />
-        <property name="drush.uri" value="http://d7.fs-demo.local" />
-        <drush command="search-api-reindex" assume="yes" />
-        <drush command="search-api-index federated_search" assume="yes" />
-        <!-- Index Drupal 8-->
+        <exec command="drush --root='web/d7/docroot' --uri='http://d7.fs-demo.local' search-api-reindex federated_search -y" />
+        <exec command="drush --root='web/d7/docroot' --uri='http://d7.fs-demo.local' search-api-index federated_search -y" />
+        <echo message="Drupal 7 indexed." />
+        <!-- Index Drupal 7 Domain -->
+        <exec command="drush --root='web/d7-domain/docroot' --uri='http://d7-1.fs-demo.local' search-api-reindex federated_search -y" />
+        <exec command="drush --root='web/d7-domain/docroot' --uri='http://d7-1.fs-demo.local' search-api-index federated_search -y" />
+        <echo message="Drupal 7 domain indexed." />
+        <!-- Index Drupal 8 -->
         <exec command="drush @d8 search-api:reset-tracker federated_search -y" />
         <exec command="drush @d8 search-api:index federated_search -y" />
-        <!-- Index Drupal 8 Domain-->
+        <echo message="Drupal 8 indexed." />
+        <!-- Index Drupal 8 Domain -->
         <exec command="drush @d8-domain.one search-api:reset-tracker federated_search -y" />
         <exec command="drush @d8-domain.one search-api:index federated_search -y" />
+        <echo message="Drupal 8 domain indexed." />        
     </target>
 
 
