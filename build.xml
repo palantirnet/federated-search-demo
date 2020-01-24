@@ -205,11 +205,11 @@
         <!-- The public files directory, and everything in it, needs to be world writable. -->
         <exec command="chmod -R 777 ${drush.root}/sites/default/files" checkreturn="true" />
 
-        <!-- Install default configuration and content.
+        <!-- Install default configuration and content. -->
         <drush command="pm-enable" assume="yes">
             <param>features_search_api_config</param>
             <param>federated_default_content</param>
-        </drush> -->
+        </drush>
         <!-- The public files directory, and everything in it, needs to be world writable,
              but the content creation step changes that, so we do it again. -->
         <exec command="chmod -R 777 ${drush.root}/sites/default/files" checkreturn="true" />
