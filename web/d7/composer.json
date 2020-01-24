@@ -13,8 +13,6 @@
   "prefer-stable": true,
   "config": {
       "preferred-install": {
-          "palantirnet/search_api_federated_solr": "source",
-          "palantirnet/search_api_field_map": "source",
           "*": "dist"
       },
       "sort-packages": true
@@ -23,10 +21,6 @@
     {
       "type": "composer",
       "url": "https://packages.drupal.org/7"
-    },
-    {
-      "type": "vcs",
-      "url": "https://github.com/palantirnet/search_api_federated_solr.git"
     }
   ],
   "require": {
@@ -34,15 +28,18 @@
     "drupal-composer/preserve-paths": "^0.1.4",
     "drupal/admin_menu": "^3.0@RC",
     "drupal/devel": "^1.6",
-    "drupal/drupal": "7.61",
+    "drupal/drupal": "7.69",
+    "drupal/entityreference": "^1.5",
     "drupal/features": "^2.10",
     "drupal/features_extra": "^1.0",
     "drupal/imagecache_token": "^1.0@RC",
     "drupal/search_api": "^1.24",
+    "drupal/search_api_federated_solr": "^2.4",
     "drupal/search_api_solr": "^1.14",
     "drupal/strongarm": "^2.0",
     "drupal/token": "^1.7",
-    "palantirnet/search_api_federated_solr": "7.x-dev"
+    "drupal/uuid_features": "^1.0@RC",
+    "drush/drush": "^8"
   },
   "suggest": {
     "cweagans/composer-patches": "Try ^1.0. Apply patches to packages, especially Drupal.org contrib."

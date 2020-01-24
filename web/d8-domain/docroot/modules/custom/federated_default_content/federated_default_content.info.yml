@@ -1,0 +1,25 @@
+name: 'Federated Search Demo default content'
+type: module
+description: 'Imports additional default content for testing search'
+package: 'Federated Search Demo'
+core: 8.x
+dependencies:
+  - drupal:default_content
+default_content:
+  file:
+    - 1c5d6fb2-c6d5-49bd-8f5b-89ce0a3419a2.json
+    - 1cf7a7b0-ede9-4ab9-a107-e0a2d3959b7b.json
+  node:
+    - 4d5fbf4c-14b5-4084-9ea1-8ea9b25dabd1.json
+    - 058c1a73-6fbb-4f06-8759-67a651daa3a6.json
+    - 086c9774-f1b0-4050-92f4-32fd6e693674.json
+    - 53900ed6-63b9-4abd-9014-dadd6f11646a.json
+    - c5adaa95-f11a-431a-adf2-b13409ff0227.json
+    - c48cc553-a61f-4fdd-b34b-97f3382b34f0.json
+  taxonomy_term:
+    - 2d45c3a1-4ab3-431b-a9e8-1212c5f4f6b4.json
+    - 5a419857-a179-469e-94d7-48402ad2e7d0.json
+    - 031ef1d1-7853-4118-a7a0-b64785d65a2f.json
+    - 76efd0d2-9781-4ff5-a789-3425796a30b3.json
+    - 85347fc5-9df2-493d-bfcc-146045e86ae9.json
+    - ae53caf7-0ace-4c06-9314-d3c5b58fe489.json

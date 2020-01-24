@@ -1,0 +1,14 @@
+uuid: 1238843d-e190-4fd3-ade6-c70030d6814a
+langcode: en
+status: true
+dependencies:
+  config:
+    - domain.record.d8_1_fs_demo_local
+  module:
+    - domain_access
+id: domain_access_remove_editor_action.d8_1_fs_demo_local
+label: 'Remove editors from the Federated Search Domain 8 domain'
+type: user
+plugin: domain_access_remove_editor_action
+configuration:
+  domain_id: d8_1_fs_demo_local

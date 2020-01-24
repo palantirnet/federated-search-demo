@@ -2,7 +2,11 @@
 - hosts: all
 
   vars:
+    app_root: "/var/www/federated-search-demo.local"
+
     web_root: "/var/www/federated-search-demo.local/web"
+
+    solr_conf: "{{ app_root }}/conf/solr"
 
     sites:
       -
@@ -46,8 +50,17 @@
         database: fs-demo-d8-domain
         docroot: "{{ web_root }}/d8-domain/docroot"
 
+    solr_cores:
+      - name: drupal7
+        module: search_api_solr-7.x-1.12
+        subdir: solr-conf/4.x
+      - name: drupal8
+        module: search_api_solr-8.x-1.2
+        subdir: solr-conf/4.x
+
   roles:
     - { role: mysql }
     - { role: apache }
     - { role: solr-cors }
     - { role: selenium-webdriver }
+    - { role: drush }

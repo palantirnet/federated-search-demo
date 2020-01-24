@@ -1,0 +1,150 @@
+uuid: 35a16480-4530-46a0-88ec-e295f3449fcc
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - search_api
+    - search_api_federated_solr
+    - search_api_field_map
+  config:
+    - search_api.server.local_server
+    - core.entity_view_mode.node.full
+id: federated_search
+name: 'Federated search'
+description: ''
+read_only: false
+field_settings:
+  federated_date:
+    label: 'Federated Date'
+    property_path: mapped_field
+    type: date
+    configuration:
+      field_data:
+        node:
+          article: '[node:created:custom:Y-m-d\TH:i:s\Z]'
+          page: '[node:created:custom:Y-m-d\TH:i:s\Z]'
+  federated_image:
+    label: 'Federated Image'
+    property_path: mapped_field
+    type: string
+    configuration:
+      field_data:
+        node:
+          article: '[node:field_image:search_api_federated_solr_image:url]'
+          page: ''
+  federated_terms:
+    label: 'Federated Terms'
+    property_path: federated_terms
+    type: string
+  federated_title:
+    label: 'Federated Title'
+    datasource_id: 'entity:node'
+    property_path: title
+    type: string
+    dependencies:
+      module:
+        - node
+  federated_type:
+    label: 'Federated Type'
+    property_path: mapped_field
+    type: string
+    configuration:
+      field_data:
+        node:
+          article: Article
+          page: Page
+  mapped_field:
+    label: 'Mapped field'
+    property_path: mapped_field
+    type: string
+    configuration:
+      type: union
+      fields: {  }
+  rendered_item:
+    label: 'Rendered HTML output'
+    property_path: rendered_item
+    type: text
+    configuration:
+      roles:
+        anonymous: anonymous
+      view_mode:
+        'entity:node':
+          article: full
+          page: full
+  site_name:
+    label: 'Site Name'
+    property_path: site_name
+    type: string
+    configuration:
+      use_system_site_name: 1
+      site_name: 'Federated Search Domain 1'
+  urls:
+    label: Urls
+    property_path: search_api_urls
+    type: string
+datasource_settings:
+  'entity:node':
+    bundles:
+      default: true
+      selected: {  }
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  entity_status: {  }
+  federated_terms: {  }
+  html_filter:
+    all_fields: false
+    fields:
+      - federated_terms
+      - federated_title
+      - federated_type
+      - rendered_item
+    title: true
+    alt: true
+    tags:
+      b: 2
+      h1: 5
+      h2: 3
+      h3: 2
+      strong: 2
+    weights:
+      preprocess_index: -5
+      preprocess_query: -5
+  ignore_character:
+    all_fields: false
+    fields:
+      - federated_title
+      - rendered_item
+    ignorable: '[''¿¡!?,.:;]'
+    ignorable_classes:
+      - Pc
+      - Pd
+      - Pe
+      - Pf
+      - Pi
+      - Po
+      - Ps
+    weights:
+      preprocess_index: -10
+      preprocess_query: -10
+  language_with_fallback: {  }
+  mapped_field: {  }
+  mapped_terms: {  }
+  rendered_item: {  }
+  search_api_urls: {  }
+  site_name: {  }
+  site_name_link:
+    description: ''
+    weights:
+      postprocess_query: 0
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  index_directly: true
+  cron_limit: 50
+server: local_server

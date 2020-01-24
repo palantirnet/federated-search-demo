@@ -2,13 +2,13 @@
 - name: Install Jetty Servlets
   become: yes
   get_url:
-    url: http://central.maven.org/maven2/org/eclipse/jetty/jetty-servlets/9.4.10.v20180503/jetty-servlets-9.4.10.v20180503.jar
+    url: https://repo1.maven.org/maven2/org/eclipse/jetty/jetty-servlets/9.4.10.v20180503/jetty-servlets-9.4.10.v20180503.jar
     dest: /opt/solr/example/solr-webapp/webapp/WEB-INF/lib/jetty-servlets-9.4.10.v20180503.jar
 
 - name: Install Jetty Util
   become: yes
   get_url:
-    url: http://central.maven.org/maven2/org/eclipse/jetty/jetty-util/9.4.10.v20180503/jetty-util-9.4.10.v20180503.jar
+    url: https://repo1.maven.org/maven2/org/eclipse/jetty/jetty-util/9.4.10.v20180503/jetty-util-9.4.10.v20180503.jar
     dest: /opt/solr/example/solr-webapp/webapp/WEB-INF/lib/jetty-util-9.4.10.v20180503.jar
 
 - name: Add CORS configuration to Solr
@@ -49,6 +49,11 @@
         <filter-name>cross-origin</filter-name>
         <url-pattern>/*</url-pattern>
       </filter-mapping>
+
+- name: Copy Federated Search Demo Solr conf directories into place
+  command: "cp -r {{solr_conf}}/{{ item.name }}/custom/{{ item.subdir }}/. /var/solr/{{ item.name }}/conf"
+  with_items: "{{ solr_cores }}"
+  become: true
 
 - name: Restart Solr
   become: yes

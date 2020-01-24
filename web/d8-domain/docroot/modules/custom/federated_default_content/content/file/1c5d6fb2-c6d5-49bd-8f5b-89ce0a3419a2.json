@@ -1,0 +1,87 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/d8-3.fs-demo.local\/sites\/default\/files\/2020-01\/vintage-Pomeranian-illustration-public-domain-.jpg"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "href": "http:\/\/d8-3.fs-demo.local\/user\/1?_format=hal_json"
+            }
+        ]
+    },
+    "fid": [
+        {
+            "value": 4
+        }
+    ],
+    "uuid": [
+        {
+            "value": "1c5d6fb2-c6d5-49bd-8f5b-89ce0a3419a2"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/d8-3.fs-demo.local\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "29ff2137-f139-4560-842c-b41be710fc30"
+                    }
+                ]
+            }
+        ]
+    },
+    "filename": [
+        {
+            "value": "vintage-Pomeranian-illustration-public-domain-.jpg"
+        }
+    ],
+    "uri": [
+        {
+            "value": "public:\/\/2020-01\/vintage-Pomeranian-illustration-public-domain-.jpg",
+            "url": "\/sites\/default\/files\/2020-01\/vintage-Pomeranian-illustration-public-domain-.jpg"
+        }
+    ],
+    "filemime": [
+        {
+            "value": "image\/jpeg"
+        }
+    ],
+    "filesize": [
+        {
+            "value": 306410
+        }
+    ],
+    "status": [
+        {
+            "value": true
+        }
+    ],
+    "created": [
+        {
+            "value": "2020-01-23T21:42:25+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2020-01-23T21:42:46+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ]
+}

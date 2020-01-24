@@ -1,20 +1,23 @@
-uuid: bb57a7b5-056a-41eb-a377-6e808b5e71ba
+uuid: 9f45d887-9020-4144-a893-552e9b7cdfdc
 langcode: en
 status: true
 dependencies:
   config:
     - field.field.node.article.body
+    - field.field.node.article.comment
+    - field.field.node.article.field_age
     - field.field.node.article.field_image
     - field.field.node.article.field_tags
+    - field.field.node.article.field_traits
     - image.style.thumbnail
     - node.type.article
   module:
-    - content_moderation
+    - comment
     - image
     - path
     - text
 _core:
-  default_config_hash: v9cTof-44HouregfMRFEBhGSkhv4bBGa56a0Xd1kbHo
+  default_config_hash: 6VUXB1jTUjK5zjkfMa2Kd2WW4sFUlgfBlfJSx01qLpU
 id: node.article.default
 targetEntityType: node
 bundle: article
@@ -28,6 +31,13 @@ content:
       rows: 9
       summary_rows: 3
       placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+  comment:
+    type: comment_default
+    weight: 8
+    region: content
+    settings: {  }
     third_party_settings: {  }
   created:
     type: datetime_timestamp
@@ -35,6 +45,12 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_age:
+    weight: 9
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
   field_image:
     type: image_image
     weight: 3
@@ -49,18 +65,19 @@ content:
     region: content
     settings:
       match_operator: CONTAINS
+      match_limit: 10
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  moderation_state:
-    type: moderation_state_default
+  field_traits:
     weight: 10
-    region: content
     settings: {  }
     third_party_settings: {  }
+    type: options_buttons
+    region: content
   path:
     type: path
-    weight: 8
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -75,7 +92,7 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 9
+    weight: 12
     region: content
     third_party_settings: {  }
   sticky:
@@ -99,6 +116,7 @@ content:
     region: content
     settings:
       match_operator: CONTAINS
+      match_limit: 10
       size: 60
       placeholder: ''
     third_party_settings: {  }

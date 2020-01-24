@@ -1,0 +1,87 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/d8-1.fs-demo.local\/sites\/default\/files\/2020-01\/vintage-sheep-dogs-illustration-public-domain.jpg"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "href": "http:\/\/d8-1.fs-demo.local\/user\/1?_format=hal_json"
+            }
+        ]
+    },
+    "fid": [
+        {
+            "value": 5
+        }
+    ],
+    "uuid": [
+        {
+            "value": "1cf7a7b0-ede9-4ab9-a107-e0a2d3959b7b"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/d8-1.fs-demo.local\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "29ff2137-f139-4560-842c-b41be710fc30"
+                    }
+                ]
+            }
+        ]
+    },
+    "filename": [
+        {
+            "value": "vintage-sheep-dogs-illustration-public-domain.jpg"
+        }
+    ],
+    "uri": [
+        {
+            "value": "public:\/\/2020-01\/vintage-sheep-dogs-illustration-public-domain.jpg",
+            "url": "\/sites\/default\/files\/2020-01\/vintage-sheep-dogs-illustration-public-domain.jpg"
+        }
+    ],
+    "filemime": [
+        {
+            "value": "image\/jpeg"
+        }
+    ],
+    "filesize": [
+        {
+            "value": 126946
+        }
+    ],
+    "status": [
+        {
+            "value": true
+        }
+    ],
+    "created": [
+        {
+            "value": "2020-01-23T21:43:44+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2020-01-23T21:43:55+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ]
+}

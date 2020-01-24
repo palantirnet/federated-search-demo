@@ -1,0 +1,4 @@
+drush:
+  paths:
+    alias-path:
+      - /var/www/federated-search-demo.local/drush/sites
