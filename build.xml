@@ -266,8 +266,8 @@
               <echo message="git clone --branch=8.x-2.x git@github.com:palantirnet/search_api_federated_solr.git" />
               <exec command="git clone --branch=8.x-2.x git@github.com:palantirnet/search_api_federated_solr.git" dir="src" checkreturn="true" />
               <exec command="git remote add drupal git@git.drupal.org:project/search_api_federated_solr.git" dir="src/search_api_federated_solr" checkreturn="true" />
-              <echo message="git clone --branch=8.x-2.x git@github.com:palantirnet/search_api_field_map.git" />
-              <exec command="git clone --branch=8.x-2.x git@github.com:palantirnet/search_api_field_map.git" dir="src" checkreturn="true" />
+              <echo message="git clone --branch=8.x-1.x git@github.com:palantirnet/search_api_field_map.git" />
+              <exec command="git clone --branch=8.x-1.x git@github.com:palantirnet/search_api_field_map.git" dir="src" checkreturn="true" />
               <exec command="git remote add drupal git@git.drupal.org:project/search_api_field_map.git" dir="src/search_api_field_map" checkreturn="true" />
               <echo message="git clone --branch=7.x-2.x git@github.com:palantirnet/search_api_federated_solr.git search_api_federated_solr-7.x" />
               <exec command="git clone --branch=7.x-2.x git@github.com:palantirnet/search_api_federated_solr.git search_api_federated_solr-7.x" dir="src" checkreturn="true" />
@@ -293,6 +293,13 @@
         </if>
     </target>
 
+    <!-- Target: solr-reindex-all -->
+    <target name="solr-reindex-all" description="Delete and rebuild the SOLR index">
+        <property name="index.domains" value="y" />
+        <phingcall target="solr-reindex" />
+    </target>
+
+    <!-- Target: solr-reindex -->
     <target name="solr-reindex" description="Delete and rebuild the SOLR index">
         <exec command="curl &apos;http://federated-search-demo.local:8983/solr/drupal8/update?commit=true&amp;stream.body&#61;&lt;delete&gt;&lt;query&gt;*:*&lt;/query&gt;&lt;/delete&gt;&apos;" passthru="true" escape="false" checkreturn="true" />
         <echo message="Your Solr is now clean." />
