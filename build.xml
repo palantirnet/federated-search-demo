@@ -196,11 +196,22 @@
         <delete dir="${drush.root}/sites/all/modules/contrib/search_api_federated_solr" />
         <symlink link="${drush.root}/sites/all/modules/contrib/search_api_federated_solr" target="../../../../../../../src/search_api_federated_solr-7.x" />
 
+        <!-- Copy settings files. Domain Access must be added after install. -->
+        <chmod file="${drush.root}/sites/default/" mode="0775" />
+        <chmod file="${drush.root}/sites/default/settings.php" mode="0775" />
+        <copy file="config/sites/d7-domain/settings-install.php" tofile="${drush.root}/sites/default/settings.php" overwrite="true" />
+
         <drush command="site-install" assume="yes">
             <option name="site-name">Domain 7 - Federated Search</option>
             <option name="account-pass">admin</option>
             <param>standard</param>
         </drush>
+
+        <!-- Copy settings files -->
+        <chmod file="${drush.root}/sites/default/" mode="0775" />
+        <chmod file="${drush.root}/sites/default/settings.php" mode="0775" />
+        <copy file="config/sites/d7-domain/settings.php" tofile="${drush.root}/sites/default/settings.php" overwrite="true" />
+
 
         <!-- The public files directory, and everything in it, needs to be world writable. -->
         <exec command="chmod -R 777 ${drush.root}/sites/default/files" checkreturn="true" />
@@ -213,16 +224,22 @@
         <!-- The public files directory, and everything in it, needs to be world writable,
              but the content creation step changes that, so we do it again. -->
         <exec command="chmod -R 777 ${drush.root}/sites/default/files" checkreturn="true" />
-        <!-- The feature is not loading properly due to file permissions, but does reload correctly.
+        <!-- The feature is not loading properly due to file permissions, but does reload correctly. -->
         <drush command="features-revert" assume="yes">
             <param>federated_default_content</param>
-        </drush> -->
+        </drush>
         <drush command="pm-disable" assume="yes">
             <param>overlay</param>
             <param>toolbar</param>
         </drush>
         <drush command="search-api-reindex" assume="yes" />
         <drush command="search-api-index" assume="yes" />
+
+        <!-- Rebuild node acces permissions. No direct drush command for this
+             as per https://www.drupal.org/project/devel/issues/2677218#comment-10907984 -->
+        <drush command="php-eval">
+           <param>'node_access_rebuild();'</param>
+        </drush>
     </target>
 
     <!-- Target: init -->
