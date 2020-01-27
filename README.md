@@ -12,9 +12,9 @@ This is the development repository for Federated Search Demo environment. It con
 * [Sample searches](#sample-searches)
 * [Reading the SOLR index](#reading-the-solr-index)
 * [Drupal Development](#drupal-development)
+* [Working with Styles](#working-with-styles)
+* [Directory structure](#directory-structure)
 * [Deployment](#Deployment)
-* [Styleguide Development](#styleguide-development)
-* [Additional Documentation](#additional-documentation)
 
 ## Development Environment
 
@@ -248,9 +248,11 @@ Once you've made an update to a config file in `conf/solr/drupal[7/8]/custom/`, 
 
 You can restart the Solr service from the project within the vm with `sudo service solr restart`.
 
-## Deployment
+## Working with styles
 
-This project is for demo purposes only and is not to be deployed.
+The default CSS for the search application page can be overwritten by a local file. See the Federated Styles module included in the Drupal 8 project for an example.
+
+`/web/d8/docroot/modules/custom/federated_styles`
 
 ## Directory structure
 
@@ -292,6 +294,10 @@ This repo is structured a little differently than usual, since it contains 4 ind
     │   └── vendor
     │   # Directories for the domain-enabled docroots go here
 ```
+
+## Deployment
+
+This project is for demo purposes only and is not to be deployed.
 
 ----
 Copyright 2018, 2019, 2020 Palantir.net, Inc.
