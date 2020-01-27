@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b2d7b8c5e388704b4c823d5737fe3381",
+    "content-hash": "8a4ecda8521ea1e3c43c8d6cb9a03957",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1696,6 +1696,9 @@
                         "[web-root]/profiles/README.txt": "assets/scaffold/files/profiles.README.txt",
                         "[web-root]/themes/README.txt": "assets/scaffold/files/themes.README.txt"
                     }
+                },
+                "patches_applied": {
+                    "Allow symfony/event-dispatcher 4+ to be installed in Drupal 8: https://www.drupal.org/project/drupal/issues/2876675": "https://www.drupal.org/files/issues/2019-09-17/2876675-48.Fix-symfony-version-requirements-for-symfonyeventdispatcher.patch"
                 }
             },
             "autoload": {

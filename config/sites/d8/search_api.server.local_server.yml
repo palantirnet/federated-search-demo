@@ -14,7 +14,7 @@ backend_config:
     scheme: http
     host: localhost
     port: '8983'
-    path: /solr
+    path: /
     core: drupal8
     timeout: 5
     index_timeout: 5
@@ -24,9 +24,10 @@ backend_config:
     http_method: AUTO
   retrieve_data: false
   highlight_data: false
-  excerpt: false
   skip_schema_check: false
   site_hash: false
-  suggest_suffix: true
-  suggest_corrections: true
-  suggest_words: false
+  domain: generic
+  finalize_timeout: 30
+  server_prefix: ''
+  optimize: false
+  environment: default
