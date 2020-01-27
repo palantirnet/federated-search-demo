@@ -103,13 +103,13 @@ To run project-related commands other than `vagrant up` and `vagrant ssh`:
 
 This version of the demo site is all about dogs. We use simple core content types (basic page and article) supplemented by taxonomy terms. The content titles are meaningful (they are all dog breeds). Content body is lorem ipsum text.
 
-We create three vocabularies in Drupal 7: 
+We create three vocabularies in Drupal 7:
 
 * Age
 * Color
 * Traits
 
-In Drupal 8, the Color vocabulary is not present.
+In Drupal 8, the Color vocabulary is not present. This difference shows how sites with different taxonomies can be integrated in search results.
 
 Each content page is assigned to the available vocabularies. This setup allows our search index to provide filters by each term.
 
@@ -143,7 +143,7 @@ If you did not install the domain sites, then there will be 20 items:
 * Drupal 7 - Federated Search (10 results)
 * Federated Search Drupal 8 (10 results)
 
-A good sample search is for `terrier`, which should return 5 results:
+A good sample search is for `terrier`, which should return 5 results (4 without domain support):
 
 * English Terrier (D7)
 * Jack Russell Terrier (D8)
@@ -199,7 +199,7 @@ With the VM running, you can visit the SOLR index at http://federated-search-dem
         "timestamp": "2020-01-23T18:39:11.137Z"
 ```
 
-*Bonus example*: The sample above shows how the `Yellow` and `Gold` colors are stored as synonyms.
+*Bonus example*: The sample above shows how the `Yellow` and `Gold` colors are stored as synonyms in `sm_federated_terms`.
 
 ## Drupal Development
 
@@ -217,7 +217,7 @@ If you just want to get up and running, from the project root run `phing install
 4. Download the most current dependencies for D7: `composer install --working-dir=web/d7-domain`
 5. Reinstall Drupal 8:
    - Standalone: `phing install-d8 -Ddrush.root=web/d8/docroot`
-   - Domain site: `phing install-d8 -Ddrush.root=web/d8-domain/docroot`
+   - Domain site: `phing install-d8-domain -Ddrush.root=web/d8-domain/docroot`
 6. Reinstall Drupal 7: `phing install-d7`
    - Standalone: `phing install-d7 -Ddrush.root=web/d7/docroot`
    - Domain site: `phing install-d7-domain -Ddrush.root=web/d7-domain/docroot`
@@ -230,7 +230,7 @@ If you rebuild the Drupal sites you might end up with orphaned content in Solr. 
 `phing solr-clear`
 
 To clear and re-index all content:
-`phing solr-reindex`
+`phing solr-reindex-all`
 
 ### Updating Solr config
 

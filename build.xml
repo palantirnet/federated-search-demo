@@ -17,8 +17,8 @@
     </target>
 
 
-    <!-- Target: install-all-no-domain -->
-    <target name="install-all-no-domain" description="Install all three Drupal sites in the Federated Search Demo">
+    <!-- Target: install-no-domain -->
+    <target name="install-no-domain" description="Install all three Drupal sites in the Federated Search Demo">
         <phingcall target="install-d7" />
         <phingcall target="install-d8" />
         <property name="index.domains" value="n" />
