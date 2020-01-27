@@ -29,7 +29,7 @@ This branch uses Search API Federated Solr version 8.x-2.x. No new development i
 
 ### solr-7
 
-The `solr-4` branch will contain release 2.0 and is compatible with Drupal 7.69, 8.81, and Solr 7. It relies on Search API 8.3, and will be Drupal 9 compatible.
+The `solr-7` branch will contain release 2.0 and is compatible with Drupal 7.69, 8.81, and Solr 7. It relies on Search API 8.3, and will be Drupal 9 compatible.
 
 This branch uses Search API Federated Solr version 8.x-3.x. All new development is done on this branch.
 
