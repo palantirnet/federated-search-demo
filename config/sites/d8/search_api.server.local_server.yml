@@ -13,7 +13,7 @@ backend_config:
   connector_config:
     scheme: http
     host: localhost
-    port: '8983'
+    port: 8983
     path: /
     core: drupal8
     timeout: 5
@@ -31,3 +31,8 @@ backend_config:
   server_prefix: ''
   optimize: false
   environment: default
+  disabled_field_types: {  }
+  disabled_caches: {  }
+  disabled_request_handlers: {  }
+  disabled_request_dispatchers: {  }
+  rows: 10
