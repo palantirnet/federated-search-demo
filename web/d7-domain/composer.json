@@ -1,6 +1,6 @@
 {
-  "name": "palantirnet/federated-search-demo-domain7",
-  "description": "Federated Search setup for Drupal 7 testing with Domain module support.",
+  "name": "palantirnet/federated-search-demo-d7",
+  "description": "Federated Search setup for Drupal 7 testing.",
   "type": "project",
   "license": "proprietary",
   "authors": [
@@ -31,6 +31,7 @@
     "drupal-composer/preserve-paths": "^0.1.4",
     "drupal/admin_menu": "^3.0@RC",
     "drupal/devel": "^1.6",
+    "drupal/domain": "^3.17",
     "drupal/drupal": "7.69",
     "drupal/entityreference": "^1.5",
     "drupal/features": "^2.10",

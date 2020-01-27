@@ -9,8 +9,19 @@
     <!-- Target: install-all -->
     <target name="install-all" description="Install all three Drupal sites in the Federated Search Demo">
         <phingcall target="install-d7" />
+        <phingcall target="install-d7-domain" />
         <phingcall target="install-d8" />
         <phingcall target="install-d8-domain" />
+        <property name="index.domains" value="y" />
+        <phingcall target="solr-reindex" />
+    </target>
+
+
+    <!-- Target: install-no-domain -->
+    <target name="install-no-domain" description="Install all three Drupal sites in the Federated Search Demo">
+        <phingcall target="install-d7" />
+        <phingcall target="install-d8" />
+        <property name="index.domains" value="n" />
         <phingcall target="solr-reindex" />
     </target>
 
@@ -181,6 +192,67 @@
     </target>
 
 
+    <!-- Target: install-d7 -->
+    <target name="install-d7-domain" description="Install the D7 domain site">
+        <phingcall target="init" />
+        <!-- Drush 9/10 are not compatible with Drupal 7, so we can't use a regular drush
+             alias. Hence, we provide drush.root and drush.uri, which the <drush> task
+             uses in its commands. -->
+        <property name="drush.root" value="web/d7-domain/docroot" />
+        <property name="drush.uri" value="http://d7-1.fs-demo.local" />
+
+        <exec command="composer install" dir="${drush.root}/.." passthru="true" />
+
+        <!-- Swap out the composer file for our git repository -->
+        <delete dir="${drush.root}/sites/all/modules/contrib/search_api_federated_solr" />
+        <symlink link="${drush.root}/sites/all/modules/contrib/search_api_federated_solr" target="../../../../../../../src/search_api_federated_solr-7.x" />
+
+        <!-- Copy settings files. Domain Access must be added after install. -->
+        <chmod file="${drush.root}/sites/default/" mode="0775" />
+        <chmod file="${drush.root}/sites/default/settings.php" mode="0775" />
+        <copy file="config/sites/d7-domain/settings-install.php" tofile="${drush.root}/sites/default/settings.php" overwrite="true" />
+
+        <drush command="site-install" assume="yes">
+            <option name="site-name">Domain 7 - Federated Search</option>
+            <option name="account-pass">admin</option>
+            <param>standard</param>
+        </drush>
+
+        <!-- Copy settings files that enable Domain Access. -->
+        <chmod file="${drush.root}/sites/default/" mode="0775" />
+        <chmod file="${drush.root}/sites/default/settings.php" mode="0775" />
+        <copy file="config/sites/d7-domain/settings.php" tofile="${drush.root}/sites/default/settings.php" overwrite="true" />
+
+        <!-- The public files directory, and everything in it, needs to be world writable. -->
+        <exec command="chmod -R 777 ${drush.root}/sites/default/files" checkreturn="true" />
+
+        <!-- Install default configuration and content. -->
+        <drush command="pm-enable" assume="yes">
+            <param>features_search_api_config</param>
+            <param>federated_default_content</param>
+        </drush>
+        <!-- The public files directory, and everything in it, needs to be world writable,
+             but the content creation step changes that, so we do it again. -->
+        <exec command="chmod -R 777 ${drush.root}/sites/default/files" checkreturn="true" />
+        <!-- The feature is not loading properly due to file permissions, but does reload correctly. -->
+        <drush command="features-revert" assume="yes">
+            <param>federated_default_content</param>
+        </drush>
+        <drush command="pm-disable" assume="yes">
+            <param>overlay</param>
+            <param>toolbar</param>
+        </drush>
+        <drush command="search-api-reindex" assume="yes" />
+        <drush command="search-api-index" assume="yes" />
+
+        <!-- Rebuild node acces permissions. No direct drush command for this
+             as per https://www.drupal.org/project/devel/issues/2677218#comment-10907984 -->
+        <drush command="php-eval">
+           <param>'node_access_rebuild();'</param>
+        </drush>
+    </target>
+
+
     <!-- Target: init -->
     <target name="init" description="Initialize the repo for development">
         <available file="src" type="dir" property="src.checkout" value="y" />
@@ -190,12 +262,12 @@
               <echo message="Git sources already checked out." />
             </then>
             <else>
-              <mkdir dir="src" />
+              <mkdir dir="src" mode="777" />
               <echo message="git clone --branch=8.x-2.x git@github.com:palantirnet/search_api_federated_solr.git" />
               <exec command="git clone --branch=8.x-2.x git@github.com:palantirnet/search_api_federated_solr.git" dir="src" checkreturn="true" />
               <exec command="git remote add drupal git@git.drupal.org:project/search_api_federated_solr.git" dir="src/search_api_federated_solr" checkreturn="true" />
-              <echo message="git clone --branch=8.x-2.x git@github.com:palantirnet/search_api_field_map.git" />
-              <exec command="git clone --branch=8.x-2.x git@github.com:palantirnet/search_api_field_map.git" dir="src" checkreturn="true" />
+              <echo message="git clone --branch=8.x-1.x git@github.com:palantirnet/search_api_field_map.git" />
+              <exec command="git clone --branch=8.x-1.x git@github.com:palantirnet/search_api_field_map.git" dir="src" checkreturn="true" />
               <exec command="git remote add drupal git@git.drupal.org:project/search_api_field_map.git" dir="src/search_api_field_map" checkreturn="true" />
               <echo message="git clone --branch=7.x-2.x git@github.com:palantirnet/search_api_federated_solr.git search_api_federated_solr-7.x" />
               <exec command="git clone --branch=7.x-2.x git@github.com:palantirnet/search_api_federated_solr.git search_api_federated_solr-7.x" dir="src" checkreturn="true" />
@@ -221,21 +293,40 @@
         </if>
     </target>
 
+    <!-- Target: solr-reindex-all -->
+    <target name="solr-reindex-all" description="Delete and rebuild the SOLR index">
+        <property name="index.domains" value="y" />
+        <phingcall target="solr-reindex" />
+    </target>
+
+    <!-- Target: solr-reindex -->
     <target name="solr-reindex" description="Delete and rebuild the SOLR index">
         <exec command="curl &apos;http://federated-search-demo.local:8983/solr/drupal8/update?commit=true&amp;stream.body&#61;&lt;delete&gt;&lt;query&gt;*:*&lt;/query&gt;&lt;/delete&gt;&apos;" passthru="true" escape="false" checkreturn="true" />
-        <echo message="Your Solr is now clean."/>
+        <echo message="Your Solr is now clean." />
 
         <!-- Index Drupal 7 -->
-        <property name="drush.root" value="web/d7/docroot" />
-        <property name="drush.uri" value="http://d7.fs-demo.local" />
-        <drush command="search-api-reindex" assume="yes" />
-        <drush command="search-api-index federated_search" assume="yes" />
-        <!-- Index Drupal 8-->
+        <exec command="drush --root='web/d7/docroot' --uri='http://d7.fs-demo.local' search-api-reindex federated_search -y" />
+        <exec command="drush --root='web/d7/docroot' --uri='http://d7.fs-demo.local' search-api-index federated_search -y" />
+        <echo message="Drupal 7 indexed." />
+
+        <!-- Index Drupal 8 -->
         <exec command="drush @d8 search-api:reset-tracker federated_search -y" />
         <exec command="drush @d8 search-api:index federated_search -y" />
-        <!-- Index Drupal 8 Domain-->
-        <exec command="drush @d8-domain.one search-api:reset-tracker federated_search -y" />
-        <exec command="drush @d8-domain.one search-api:index federated_search -y" />        
+        <echo message="Drupal 8 indexed." />
+
+        <if>
+            <equals arg1="${index.domains}" arg2="y" />
+            <then>
+                <!-- Index Drupal 8 Domain -->
+                <exec command="drush @d8-domain.one search-api:reset-tracker federated_search -y" />
+                <exec command="drush @d8-domain.one search-api:index federated_search -y" />
+                <echo message="Drupal 8 domain indexed." />
+                <!-- Index Drupal 7 Domain -->
+                <exec command="drush --root='web/d7-domain/docroot' --uri='http://d7-1.fs-demo.local' search-api-reindex federated_search -y" />
+                <exec command="drush --root='web/d7-domain/docroot' --uri='http://d7-1.fs-demo.local' search-api-index federated_search -y" />
+                <echo message="Drupal 7 domain indexed." />
+            </then>
+        </if>
     </target>
 
 
