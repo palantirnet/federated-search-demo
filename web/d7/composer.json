@@ -1,6 +1,6 @@
 {
-  "name": "palantirnet/federated-search-d7",
-  "description": "A Drupal 7 project template.",
+  "name": "palantirnet/federated-search-demo-domain7",
+  "description": "Federated Search setup for Drupal 7 testing with Domain module support.",
   "type": "project",
   "license": "proprietary",
   "authors": [
@@ -12,6 +12,9 @@
   "minimum-stability": "dev",
   "prefer-stable": true,
   "config": {
+      "platform": {
+          "php": "7.3"
+      },
       "preferred-install": {
           "*": "dist"
       },
@@ -64,3 +67,4 @@
     ]
   }
 }
+
