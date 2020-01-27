@@ -21,17 +21,17 @@ This is the development repository for Federated Search Demo environment. It con
 
 There are two demo builds included in the package, and you should be sure to check out the one that is appropriate to your work.
 
-### solr-4
-
-The `solr-4` branch contains release 1.0 and is compatible with Drupal 7.69, 8.81, and Solr 4-6. Most important, it relies on Search API 8.1, which is no longer maintained. This branch is stable and appropriate for deployment to Acquia, provided your site is not using Solr 7.
-
-This branch uses Search API Federated Solr version 8.x-2.x. No new development is expected on this branch and it is not expected to be Drupal 9 compatible.
-
 ### solr-7
 
 The `solr-7` branch will contain release 2.0 and is compatible with Drupal 7.69, 8.81, and Solr 7. It relies on Search API 8.3, and will be Drupal 9 compatible.
 
 This branch uses Search API Federated Solr version 8.x-3.x. All new development is done on this branch.
+
+### solr-4
+
+The `solr-4` branch contains release 1.0 and is compatible with Drupal 7.69, 8.81, and Solr 4-6. Most important, it relies on Search API 8.1, which is no longer maintained. This branch is stable and appropriate for deployment to Acquia, provided your site is not using Solr 7.
+
+This branch uses Search API Federated Solr version 8.x-2.x. No new development is expected on this branch and it is not expected to be Drupal 9 compatible.
 
 ## Development Environment
 
