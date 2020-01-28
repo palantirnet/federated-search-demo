@@ -80,6 +80,13 @@ Vagrant.configure(2) do |config|
 
         ansible.galaxy_role_file = "vendor/palantirnet/the-vagrant/conf/vagrant/provisioning/requirements.yml"
         ansible.galaxy_roles_path = "vendor/palantirnet/the-vagrant/conf/vagrant/provisioning/roles/"
+        if (defined?(ansible_custom_playbook) && !ansible_custom_playbook.empty?)
+            config.vm.provision "myproject-provision", type: "ansible" do |ansible|
+                ansible.playbook = ansible_custom_playbook
+                ansible.galaxy_role_file = "provisioning/requirements.yml"
+                ansible.galaxy_roles_path = "provisioning/roles/"
+            end
+        end
     end
 
     if (defined?(ansible_custom_playbook) && !ansible_custom_playbook.empty?)
@@ -101,3 +108,4 @@ Vagrant.configure(2) do |config|
         }
     end
 end
+
