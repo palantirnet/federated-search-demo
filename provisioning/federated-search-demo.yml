@@ -1,12 +1,4 @@
 ---
-- hosts: solr-servers
-  roles:
-    - geerlingguy.solr
-  vars:
-    - solr_version: "7.7.2"
-    - solr_cores:
-      - drupal8
-
 - hosts: all
 
   vars:
@@ -15,6 +7,12 @@
     web_root: "/var/www/federated-search-demo.local/web"
 
     solr_conf: "{{ app_root }}/conf/solr"
+
+    solr_workspace: /opt
+    solr_version: "7.7.2"
+    solr_connect_host: d8.fs-demo.local
+    solr_cores:
+      - drupal8
 
     sites:
       -
@@ -58,14 +56,15 @@
         database: fs-demo-d8-domain
         docroot: "{{ web_root }}/d8-domain/docroot"
 
-    solr_cores:
-      - name: drupal8
-        module: search_api_solr-8.x-3.8
-        subdir: solr-conf/4.x
+    #solr_cores:
+    #  - drupal8
+    #    module: search_api_solr-8.x-3.8
+    #    subdir: solr-conf/4.x
 
   roles:
     - { role: mysql }
     - { role: apache }
-    - { role: solr-cors }
+    - { role: geerlingguy.solr }
     - { role: drush }
+    #- { role: solr-cors }
 
