@@ -85,6 +85,7 @@ You may be interested in creating your own development environment and comparing
    - [http://d7-2.fs-demo.local](http://d7-2.fs-demo.local)
    - [http://d7-3.fs-demo.local](http://d7-3.fs-demo.local)
 10. View the Solr index at [http://federated-search-demo.local:8983/solr/#/drupal8/query](http://federated-search-demo.local:8983/solr/#/drupal8/query).
+11. See the bare React app (without Drupal) at [http://react.fs-demo.local](http://react.fs-demo.local)
 
 You can log in to any of the Drupal sites at `/user` with `admin/admin`.
 
@@ -271,6 +272,20 @@ The default CSS for the search application page can be overwritten by a local fi
 
 `/web/d8/docroot/modules/custom/federated_styles`
 
+## Testing without using Drupal
+
+If you prefer, you can see the app running as pure HTML in the browser. The URL http://react.fs-demo.local will load the Federated Search application, showing how cross-site search can be run as a standalone service.
+
+To run this app, first copy the `web/react/settings.example.js` file to `web/react/settings.js`.
+
+You can then change the configuration of the application by editing the file:
+
+`/web/react/settings.js`
+
+You can edit the CSS of the application by copying the file `web/react/custom.example.css` to `web/react/custom.css`
+
+You will still need to build and index content using Drupal, however.
+
 ## Directory structure
 
 This repo is structured a little differently than usual, since it contains 4 independent Drupal docroots. Here're some important pieces:
@@ -318,4 +333,3 @@ This project is for demo purposes only and is not to be deployed.
 
 ----
 Copyright 2018, 2019, 2020 Palantir.net, Inc.
-
