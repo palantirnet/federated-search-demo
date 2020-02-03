@@ -14,6 +14,7 @@ This is the development repository for Federated Search Demo environment. It con
 * [Reading the SOLR index](#reading-the-solr-index)
 * [Drupal Development](#drupal-development)
 * [Working with Styles](#working-with-styles)
+* [Testing without using Drupal](#testing-without-using-drupal)
 * [Directory structure](#directory-structure)
 * [Deployment](#Deployment)
 
@@ -276,15 +277,17 @@ The default CSS for the search application page can be overwritten by a local fi
 
 If you prefer, you can see the app running as pure HTML in the browser. The URL http://react.fs-demo.local will load the Federated Search application, showing how cross-site search can be run as a standalone service.
 
-To run this app, first copy the `web/react/settings.example.js` file to `web/react/settings.js`.
+To run this app, configure it with `phing react`. This command will copy two files that you may edit.
 
-You can then change the configuration of the application by editing the file:
+Change the configuration of the application by editing the file:
 
-`/web/react/settings.js`
+`/web/react/app/settings.js`
 
-You can edit the CSS of the application by copying the file `web/react/custom.example.css` to `web/react/custom.css`
+Edit the CSS of the application:
 
-You will still need to build and index content using Drupal, however.
+`web/react/app/custom.css`
+
+You will still need to build and index content using Drupa; to populate the search index.
 
 ## Directory structure
 

@@ -39,7 +39,7 @@ const config = {
   // OPTIONAL: The number of page buttons to show for pagination.
   paginationButtons: 5,
   // OPTIONAL: The title of the search results page (null to hide).
-  pageTitle: null,
+  pageTitle: 'Search',
   // OPTIONAL: The hostname to emulate when testing.
   //hostname: "example.local",
   // OPTIONAL: Machine name of those search fields whose facets/filter and current values should be hidden in UI.
