@@ -287,7 +287,7 @@ Edit the CSS of the application:
 
 `web/react/app/custom.css`
 
-You will still need to build and index content using Drupa; to populate the search index.
+You will still need to build and index content using Drupal to populate the search index.
 
 ## Directory structure
 
