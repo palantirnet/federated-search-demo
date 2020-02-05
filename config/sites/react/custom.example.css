@@ -1,0 +1,10 @@
+/**
+ * This file can be used to override the default styles of the application.
+ */
+body {
+  padding: 1em;
+}
+
+h1 {
+  color: #003;
+}

@@ -330,6 +330,14 @@
     </target>
 
 
+    <!-- Target: React settings -->
+    <target name="react" description="Setup the React demo">
+      <copy file="config/sites/react/settings.example.js" tofile="web/react/app/settings.js" overwrite="true" />
+      <copy file="config/sites/react/custom.example.css" tofile="web/react/app/custom.css" overwrite="true" />
+      <echo message="React application setup on http://react.fs-demo.local" />
+    </target>
+
+
     <!-- Default target: list -->
     <target name="list" hidden="true">
         <exec command="phing -q -f ${phing.file} -l" passthru="true"/>
@@ -337,4 +345,3 @@
 
 
 </project>
-

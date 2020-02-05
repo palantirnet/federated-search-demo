@@ -21,6 +21,7 @@ extra_hostnames = [
   'd8-1.fs-demo.local',
   'd8-2.fs-demo.local',
   'd8-3.fs-demo.local',
+  'react.fs-demo.local'
 ]
 
 ansible_solr_enabled = true
