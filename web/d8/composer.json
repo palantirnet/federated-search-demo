@@ -1,6 +1,6 @@
 {
-    "name": "palantirnet/drupal-skeleton",
-    "description": "A Drupal 8 project template.",
+    "name": "palantirnet/federated-search-demo-d8",
+    "description": "Federated Search setup for Drupal 8 testing.",
     "type": "project",
     "license": "proprietary",
     "authors": [
@@ -13,7 +13,7 @@
     "prefer-stable": true,
     "config": {
         "platform": {
-            "php": "7.0.8"
+            "php": "7.3"
         },
         "preferred-install": {
             "*": "dist"
@@ -65,3 +65,4 @@
         }
     }
 }
+

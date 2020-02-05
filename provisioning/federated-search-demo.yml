@@ -49,6 +49,11 @@
         hostname: d8-3.fs-demo.local
         database: fs-demo-d8-domain
         docroot: "{{ web_root }}/d8-domain/docroot"
+      -
+        name: fs-demo-react
+        hostname: react.fs-demo.local
+        database: react
+        docroot: "{{ web_root }}/react"
 
     solr_cores:
       - name: drupal7

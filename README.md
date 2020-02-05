@@ -4,6 +4,7 @@ This is the development repository for Federated Search Demo environment. It con
 
 ## Table of Contents
 
+* [Demo versions](#demo-versions)
 * [Development Environment](#development-environment)
 * [Development Environment Components](#development-environment-components)
 * [Getting Started](#getting-started)
@@ -12,9 +13,26 @@ This is the development repository for Federated Search Demo environment. It con
 * [Sample searches](#sample-searches)
 * [Reading the SOLR index](#reading-the-solr-index)
 * [Drupal Development](#drupal-development)
+* [Working with Styles](#working-with-styles)
+* [Testing without using Drupal](#testing-without-using-drupal)
+* [Directory structure](#directory-structure)
 * [Deployment](#Deployment)
-* [Styleguide Development](#styleguide-development)
-* [Additional Documentation](#additional-documentation)
+
+## Demo versions
+
+There are two demo builds included in the package, and you should be sure to check out the one that is appropriate to your work.
+
+### solr-7
+
+The `solr-7` branch will contain release 2.0 and is compatible with Drupal 7.69, 8.81, and Solr 7. It relies on Search API Solr 8.3, and will be Drupal 9 compatible.
+
+This branch uses Search API Federated Solr version 8.x-3.x. All new development is done on this branch.
+
+### solr-4
+
+The `solr-4` branch contains release 1.0 and is compatible with Drupal 7.69, 8.81, and Solr 4-6. Most important, it relies on Search API Solr 8.1, which is no longer maintained. This branch is stable and appropriate for deployment to Acquia, provided your site is not using Solr 7.
+
+This branch uses Search API Federated Solr version 8.x-2.x. No new development is expected on this branch and it is not expected to be Drupal 9 compatible.
 
 ## Development Environment
 
@@ -56,14 +74,19 @@ You may be interested in creating your own development environment and comparing
 4. Log in to the virtual machine (the VM): `vagrant ssh`
 5. Build, install, and enable demo content: `phing install-all`
   * When prompted, you may choose to empty the current SOLR index. This action is recommended when re-installing all sites, but not one site.
+  * If you wish to install without Domain Access, run `phing install-no-domain`. In that case, two sites will be built with 20 pieces of content.
 6. Visit your D8 (standalone) site at [http://d8.fs-demo.local](http://d8.fs-demo.local)
 7. Visit your D8 (domain access) site at:
-   - [http://fs-demo.d8-1.local](http://d8-1.fs-demo.local)
+   - [http://d8-1.fs-demo.local](http://d8-1.fs-demo.local)
    - [http://d8-2.fs-demo.local](http://d8-2.fs-demo.local)
    - [http://d8-3.fs-demo.local](http://d8-3.fs-demo.local)
-   - These sites are for future use, as Domain support has not yet been ported to D8.
 8. Visit your D7 site at [http://d7.fs-demo.local](http://d7.fs-demo.local)
-9. View the Solr index at [http://federated-search-demo.local:8983/solr/#/drupal8/query](http://federated-search-demo.local:8983/solr/#/drupal8/query).
+9. Visit your D7 (domain access) site at:
+   - [http://d7-1.fs-demo.local](http://d7-1.fs-demo.local)
+   - [http://d7-2.fs-demo.local](http://d7-2.fs-demo.local)
+   - [http://d7-3.fs-demo.local](http://d7-3.fs-demo.local)
+10. View the Solr index at [http://federated-search-demo.local:8983/solr/#/drupal8/query](http://federated-search-demo.local:8983/solr/#/drupal8/query).
+11. See the bare React app (without Drupal) at [http://react.fs-demo.local](http://react.fs-demo.local)
 
 You can log in to any of the Drupal sites at `/user` with `admin/admin`.
 
@@ -86,17 +109,26 @@ To run project-related commands other than `vagrant up` and `vagrant ssh`:
    drush @d7 status
    ```
 
+* Use drush on the d7-domain sites by navigating into the d7-domain directory:
+
+    ```
+    cd web/d7-domain
+    drush site-alias
+    drush @d7-domain status
+    ```
+
+
 ## Working with content
 
 This version of the demo site is all about dogs. We use simple core content types (basic page and article) supplemented by taxonomy terms. The content titles are meaningful (they are all dog breeds). Content body is lorem ipsum text.
 
-We create three vocabularies in Drupal 7: 
+We create three vocabularies in Drupal 7:
 
 * Age
 * Color
 * Traits
 
-In Drupal 8, the Color vocabulary is not present.
+In Drupal 8, the Color vocabulary is not present. This difference shows how sites with different taxonomies can be integrated in search results.
 
 Each content page is assigned to the available vocabularies. This setup allows our search index to provide filters by each term.
 
@@ -104,7 +136,7 @@ Note that term mapping in Federated Search lets you alias terms. In the Drupal 7
 
 ### Images
 
-Some of the dogs -- but not all -- have images. These show how the index handles image display. The following dogs should have images: `Irish Terrier, English Terrier, Newfoundland, Pointer, Greyhound, Dachshund, Maltese, Cumberland Sheepdog`.
+Some of the dogs -- but not all -- have images. These show how the index handles image display. The following dogs should have images: `Irish Terrier, English Terrier, Newfoundland, Pointer, Greyhound, Dachshund, Maltese, Cumberland Sheepdog, Dalmation, Toy Spaniel`.
 
 Note that sometimes the image cache must be primed, so if you see a broken image on first page load, reload the page. If an image has the url `default`, it means the index has not been built properly. Run `phing solr-reindex` to correct the issue.
 
@@ -112,25 +144,38 @@ Images are [public domain](https://freevintageillustrations.com/faq/) and source
 
 ## Sample searches
 
-By default, the sites will show all content when no search keywords are entered. There should be 26 items in the default result set.
+By default, the sites will show all content when no search keywords are entered. There should be 32 items in the default result set.
 
-A good sample search is for `terrier`, which should return 5 results:
+* Domain 1 - Drupal 7 (3 results)
+* Domain 2 - Drupal 7 (2 results)
+* Domain 3 - Drupal 7 (3 results)
+* Drupal 7 - Federated Search (10 results)
+* Federated Search Domain 1 (2 results)
+* Federated Search Domain 2 (2 results)
+* Federated Search Domain 3 (3 results)
+* Federated Search Drupal 8 (10 results)
+
+Note: Theses numbers add up to more than 32 because some content is assigned to multiple domains.
+
+If you did not install the domain sites, then there will be 20 items:
+
+* Drupal 7 - Federated Search (10 results)
+* Federated Search Drupal 8 (10 results)
+
+A good sample search is for `terrier`, which should return 5 results (4 without domain support):
 
 * English Terrier (D7)
 * Jack Russell Terrier (D8)
 * Irish Terrier (D7)
 * Boston Terrier (D8)
-* Norfolk Terrier (Domain 1)
+* Norfolk Terrier (D8 Domain 1)
 
-These three search results should be identical:
+These four search results should be identical:
 
 * http://d8.fs-demo.local/search-app?search=terrier
 * http://d7.fs-demo.local/search-app?search=terrier
 * http://d8-1.fs-demo.local/search-app?search=terrier
-
-### Note on Domain Access
-
-The domain access indexing is not currently working for Drupal 8. All content is being assigned to `Domain 1`, which is incorrect.
+* http://d7-1.fs-demo.local/search-app?search=terrier
 
 ## Reading the SOLR index
 
@@ -173,7 +218,7 @@ With the VM running, you can visit the SOLR index at http://federated-search-dem
         "timestamp": "2020-01-23T18:39:11.137Z"
 ```
 
-*Bonus example*: The sample above shows how the `Yellow` and `Gold` colors are stored as synonyms.
+*Bonus example*: The sample above shows how the `Yellow` and `Gold` colors are stored as synonyms in `sm_federated_terms`.
 
 ## Drupal Development
 
@@ -188,10 +233,13 @@ If you just want to get up and running, from the project root run `phing install
 1. Download the most current dependencies for D8 (standalone): `composer install --working-dir=web/d8`
 2. Download the most current dependencies for D8 (domain access): `composer install --working-dir=web/d8-domain`
 3. Download the most current dependencies for D7: `composer install --working-dir=web/d7`
-4. Reinstall Drupal 8:
+4. Download the most current dependencies for D7: `composer install --working-dir=web/d7-domain`
+5. Reinstall Drupal 8:
    - Standalone: `phing install-d8 -Ddrush.root=web/d8/docroot`
-   - Domain site: `phing install-d8 -Ddrush.root=web/d8-domain/docroot`
+   - Domain site: `phing install-d8-domain -Ddrush.root=web/d8-domain/docroot`
 6. Reinstall Drupal 7: `phing install-d7`
+   - Standalone: `phing install-d7 -Ddrush.root=web/d7/docroot`
+   - Domain site: `phing install-d7-domain -Ddrush.root=web/d7-domain/docroot`
 7. Build the `/src` directory and checkout modules there: `phing init`
    - This links each of the two modules: `search_api_federated_solr` and `search_api_field_map` from the D8/D7 single site docroot to the `/src` directory and also into the D8/D7 Domain Access-enabled docroot. This means all changes made in `/src/search_api_...` will propagate to both sites simultaneously. The `phing init` command is run automatically by any of the installer scripts. These git checkouts point to GitHub and have `drupal` aliased remotes to drupal.org (`git remote show`).
 
@@ -201,7 +249,7 @@ If you rebuild the Drupal sites you might end up with orphaned content in Solr. 
 `phing solr-clear`
 
 To clear and re-index all content:
-`phing solr-reindex`
+`phing solr-reindex-all`
 
 ### Updating Solr config
 
@@ -219,9 +267,27 @@ Once you've made an update to a config file in `conf/solr/drupal[7/8]/custom/`, 
 
 You can restart the Solr service from the project within the vm with `sudo service solr restart`.
 
-## Deployment
+## Working with styles
 
-This project is for demo purposes only and is not to be deployed.
+The default CSS for the search application page can be overwritten by a local file. See the Federated Styles module included in the Drupal 8 project for an example.
+
+`/web/d8/docroot/modules/custom/federated_styles`
+
+## Testing without using Drupal
+
+If you prefer, you can see the app running as pure HTML in the browser. The URL http://react.fs-demo.local will load the Federated Search application, showing how cross-site search can be run as a standalone service.
+
+To run this app, configure it with `phing react`. This command will copy two files that you may edit.
+
+Change the configuration of the application by editing the file:
+
+`/web/react/app/settings.js`
+
+Edit the CSS of the application:
+
+`web/react/app/custom.css`
+
+You will still need to build and index content using Drupal to populate the search index.
 
 ## Directory structure
 
@@ -263,6 +329,10 @@ This repo is structured a little differently than usual, since it contains 4 ind
     │   └── vendor
     │   # Directories for the domain-enabled docroots go here
 ```
+
+## Deployment
+
+This project is for demo purposes only and is not to be deployed.
 
 ----
 Copyright 2018, 2019, 2020 Palantir.net, Inc.
