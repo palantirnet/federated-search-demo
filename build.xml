@@ -338,6 +338,19 @@
     </target>
 
 
+    <!-- Target: start-selenium -->
+    <target name="start-selenium">
+        <exec command='java -jar -Dwebdriver.chrome.driver="/usr/local/share/chromedriver/chromedriver" /usr/local/share/selenium/selenium-server-standalone.jar >/dev/null 2>&amp;1 &amp;' dir="/home" />
+    </target>
+
+
+    <!-- Target: behat -->
+    <target name="behat">
+        <phingcall target="start-selenium" />
+        <exec command='vendor/bin/behat --tags=javascript' logoutput="true" checkreturn="true" />
+    </target>
+
+
     <!-- Default target: list -->
     <target name="list" hidden="true">
         <exec command="phing -q -f ${phing.file} -l" passthru="true"/>

@@ -67,4 +67,5 @@
     - { role: mysql }
     - { role: apache }
     - { role: solr-cors }
+    - { role: selenium-webdriver }
     - { role: drush }

@@ -1,0 +1,44 @@
+---
+- name: Create directory for Selenium
+  become: yes
+  file:
+    path: /usr/local/share/selenium
+    state: directory
+
+- name: Selenium
+  become: yes
+  get_url:
+    url: https://selenium-release.storage.googleapis.com/3.141/selenium-server-standalone-3.141.59.jar
+    dest: /usr/local/share/selenium/selenium-server-standalone.jar
+
+- name: Create directory for Chromedriver
+  become: yes
+  file:
+    path: /usr/local/share/chromedriver
+    state: directory
+
+- name: Download Chromedriver
+  become: yes
+  unarchive:
+    remote_src: yes
+    src: https://chromedriver.storage.googleapis.com/72.0.3626.7/chromedriver_linux64.zip
+    dest: /usr/local/share/chromedriver
+    mode: "+x"
+
+- name: "Install Chrome - Ensure Google linux signing key present"
+  become: yes
+  apt_key:
+    url: https://dl-ssl.google.com/linux/linux_signing_key.pub
+
+- name: "Install Chrome - Ensure Google Chrome repo present"
+  become: yes
+  apt_repository:
+    repo: "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main"
+    filename: "google-chrome"
+    state: present
+    update_cache: yes
+
+- name: Install Chrome
+  become: yes
+  apt:
+    name: google-chrome-stable
