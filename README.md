@@ -15,6 +15,7 @@ This is the development repository for Federated Search Demo environment. It con
 * [Drupal Development](#drupal-development)
 * [Working with Styles](#working-with-styles)
 * [Testing without using Drupal](#testing-without-using-drupal)
+* [Automated Behat testing](#automated-behat-testing)
 * [Directory structure](#directory-structure)
 * [Deployment](#Deployment)
 
@@ -288,6 +289,14 @@ Edit the CSS of the application:
 `web/react/app/custom.css`
 
 You will still need to build and index content using Drupal to populate the search index.
+
+## Automated Behat testing
+
+Since the function of the application is to search across multiple sites, Behat is our best method for testing.
+
+You can run Behat tests with `phing behat` or `vendor/bin/behat --tags=javascript`. You may need to start the selenium service first with `phing start-selenium`.
+
+The settings for Behat are in `/behat.xml` and tests are in the `/features` directory. These tests run against the default Drupal 8 installation (http://d8.fs-demo.local).
 
 ## Directory structure
 
