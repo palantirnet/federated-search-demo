@@ -32,4 +32,5 @@ content:
 hidden:
   field_age: true
   field_traits: true
+  langcode: true
   search_api_excerpt: true
