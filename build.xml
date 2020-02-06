@@ -12,6 +12,7 @@
         <phingcall target="install-d7-domain" />
         <phingcall target="install-d8" />
         <phingcall target="install-d8-domain" />
+        <phingcall target="react" />
         <property name="index.domains" value="y" />
         <phingcall target="solr-reindex" />
     </target>
@@ -21,6 +22,7 @@
     <target name="install-no-domain" description="Install all three Drupal sites in the Federated Search Demo">
         <phingcall target="install-d7" />
         <phingcall target="install-d8" />
+        <phingcall target="react" />
         <property name="index.domains" value="n" />
         <phingcall target="solr-reindex" />
     </target>
