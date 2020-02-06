@@ -346,8 +346,10 @@
 
     <!-- Target: behat -->
     <target name="behat">
+        <phingcall target="start-selenium" />
         <exec command='vendor/bin/behat --tags=javascript' logoutput="true" checkreturn="true" />
     </target>
+
 
     <!-- Default target: list -->
     <target name="list" hidden="true">
