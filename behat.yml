@@ -13,16 +13,17 @@ default:
     cache: ~
   extensions:
     Behat\MinkExtension:
-      goutte: ~
+      browser_name: 'chrome'
       selenium2:
-        wd_host: "http://127.0.0.1:8643/wd/hub"
+        wd_host: "http://127.0.0.1:4444/wd/hub"
+        capabilities: { "browserName": "chrome", "browser": "chrome", "version": "72", 'chrome': {'switches':['--no-sandbox', '--headless']}}
       javascript_session: selenium2
-      base_url: http://federated-search-demo.local
+      base_url: http://d8.fs-demo.local
     Drupal\DrupalExtension:
       blackbox: ~
       api_driver: 'drupal'
       drupal:
-        drupal_root: 'web'
+        drupal_root: 'web/d8/docroot'
       text:
         username_field: 'name'
         password_field: 'pass'

@@ -20,4 +20,39 @@ class FeatureContext extends RawDrupalContext implements SnippetAcceptingContext
     {
     }
 
+    /**
+     * @When I wait for :arg1 second
+     */
+    public function iWaitForSecond($arg1)
+    {
+        sleep($arg1);
+    }
+
+    /**
+     * @Given I click the :arg1 element
+     * 
+     * See https://stackoverflow.com/questions/33649518/how-can-i-click-a-span-in-behat.
+     */
+    public function iClickTheElement($selector)
+    {
+        $page = $this->getSession()->getPage();
+        $element = $page->find('css', $selector);
+
+        if (empty($element)) {
+            throw new Exception("No html element found for the selector ('$selector')");
+        }
+
+        $element->click();
+    }
+
+     /**
+      * @BeforeStep
+      *
+      * Size the window so that all the elements are visible.
+      */
+    public function beforeStep()
+    {
+        $this->getSession()->resizeWindow(1920, 1080, 'current');
+    }
+
 }
