@@ -90,12 +90,6 @@ Vagrant.configure(2) do |config|
         end
     end
 
-    if (defined?(ansible_custom_playbook) && !ansible_custom_playbook.empty?)
-        config.vm.provision "federated-search-demo-provision", type: "ansible" do |ansible|
-            ansible.playbook = ansible_custom_playbook
-        end
-    end
-
     config.trigger.before [:up, :reload] do |trigger|
         trigger.name = "Composer Install"
         trigger.run = {
