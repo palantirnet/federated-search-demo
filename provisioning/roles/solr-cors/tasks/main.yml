@@ -1,62 +1,26 @@
 ---
-- name: Install Jetty Servlets
-  become: yes
-  get_url:
-    url: https://repo1.maven.org/maven2/org/eclipse/jetty/jetty-servlets/9.4.10.v20180503/jetty-servlets-9.4.10.v20180503.jar
-    dest: /opt/solr/example/solr-webapp/webapp/WEB-INF/lib/jetty-servlets-9.4.10.v20180503.jar
+- name: Allow stream body requests to drupal8
+  uri:
+    url: http://localhost:8983/solr/drupal8/config
+    method: POST
+    headers:
+      Content-type: application/json
+    body_format: json
+    body: '{"set-property": {"requestDispatcher.requestParsers.enableRemoteStreaming": true}, "set-property": {"requestDispatcher.requestParsers.enableStreamBody": true}}'
+  become: true
 
-- name: Install Jetty Util
-  become: yes
-  get_url:
-    url: https://repo1.maven.org/maven2/org/eclipse/jetty/jetty-util/9.4.10.v20180503/jetty-util-9.4.10.v20180503.jar
-    dest: /opt/solr/example/solr-webapp/webapp/WEB-INF/lib/jetty-util-9.4.10.v20180503.jar
-
-- name: Add CORS configuration to Solr
-  become: yes
-  blockinfile:
-    path: /opt/solr/example/solr-webapp/webapp/WEB-INF/web.xml
-    marker: "<!-- {mark} ANSIBLE MANAGED BLOCK -->"
-    # Multi-line matches were not working, so this more brittle match will be used.
-    # The lines need to go right after the <web-app> tag.
-    insertbefore: "<!-- Uncomment if you are trying to use a Resin version before 3.0.19."
-    content: |
-      <filter>
-        <filter-name>cross-origin</filter-name>
-        <filter-class>org.eclipse.jetty.servlets.CrossOriginFilter</filter-class>
-        <init-param>
-          <param-name>allowedOrigins</param-name>
-          <param-value>*</param-value>
-        </init-param>
-        <init-param>
-          <param-name>allowedMethods</param-name>
-          <param-value>GET,POST,OPTIONS,DELETE,PUT,HEAD</param-value>
-        </init-param>
-        <init-param>
-          <param-name>allowedHeaders</param-name>
-          <param-value>origin, content-type, cache-control, accept, options, authorization, x-requested-with</param-value>
-        </init-param>
-        <init-param>
-          <param-name>supportsCredentials</param-name>
-          <param-value>true</param-value>
-        </init-param>
-        <init-param>
-          <param-name>chainPreflight</param-name>
-          <param-value>false</param-value>
-        </init-param>
-      </filter>
-
-      <filter-mapping>
-        <filter-name>cross-origin</filter-name>
-        <url-pattern>/*</url-pattern>
-      </filter-mapping>
-
-- name: Copy Federated Search Demo Solr conf directories into place
-  command: "cp -r {{solr_conf}}/{{ item.name }}/custom/{{ item.subdir }}/. /var/solr/{{ item.name }}/conf"
-  with_items: "{{ solr_cores }}"
+- name: Allow stream body requests to drupal7
+  uri:
+    url: http://localhost:8983/solr/drupal7/config
+    method: POST
+    headers:
+      Content-type: application/json
+    body_format: json
+    body: '{"set-property": {"requestDispatcher.requestParsers.enableRemoteStreaming": true}, "set-property": {"requestDispatcher.requestParsers.enableStreamBody": true}}'
   become: true
 
 - name: Restart Solr
-  become: yes
+  become: true
   service:
     name: solr
     state: restarted

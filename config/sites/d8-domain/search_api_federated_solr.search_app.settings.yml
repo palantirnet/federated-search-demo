@@ -9,12 +9,11 @@ facet:
     is_hidden: false
 index:
   id: federated_search
-  has_site_name_property: true
-  server_url: ''
+  has_site_name_property: false
   username: ''
   password: ''
-  has_federated_type_property: true
-  has_federated_date_property: true
+  has_federated_type_property: false
+  has_federated_date_property: false
   has_federated_terms_property: true
 content:
   no_results: ''
