@@ -41,7 +41,7 @@ Vagrant.configure(2) do |config|
     config.vm.define "#{project}" do |box|
 
         box.vm.box = "palantir/drupalbox"
-        box.vm.box_version = ">= 1.2.0, < 2.0"
+        box.vm.box_version = "~> 2.0"
 
         box.vm.provider "virtualbox" do |vb|
             vb.customize ["modifyvm", :id, "--memory", "2048", "--audio", "none"]
@@ -109,4 +109,3 @@ Vagrant.configure(2) do |config|
         }
     end
 end
-
