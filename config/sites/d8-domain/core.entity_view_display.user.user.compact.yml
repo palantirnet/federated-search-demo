@@ -32,5 +32,6 @@ hidden:
   field_domain_access: true
   field_domain_admin: true
   field_domain_all_affiliates: true
+  langcode: true
   member_for: true
   search_api_excerpt: true
