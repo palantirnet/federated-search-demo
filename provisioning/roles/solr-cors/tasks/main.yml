@@ -51,7 +51,7 @@
 
 - name: Allow stream body requests to drupal7
   uri:
-    url: http://localhost:8983/solr/drupal7/config
+    url: http://federated-search-demo.local:8983/solr/drupal7/config
     method: POST
     headers:
       Content-type: application/json
