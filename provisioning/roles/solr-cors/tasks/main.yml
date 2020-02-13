@@ -38,23 +38,3 @@
   service:
     name: solr
     state: restarted
-
-- name: Allow stream body requests to drupal8
-  uri:
-    url: http://localhost:8983/solr/drupal8/config
-    method: POST
-    headers:
-      Content-type: application/json
-    body_format: json
-    body: '{"set-property": {"requestDispatcher.requestParsers.enableRemoteStreaming": true}, "set-property": {"requestDispatcher.requestParsers.enableStreamBody": true}}'
-  become: true
-
-- name: Allow stream body requests to drupal7
-  uri:
-    url: http://federated-search-demo.local:8983/solr/drupal7/config
-    method: POST
-    headers:
-      Content-type: application/json
-    body_format: json
-    body: '{"set-property": {"requestDispatcher.requestParsers.enableRemoteStreaming": true}, "set-property": {"requestDispatcher.requestParsers.enableStreamBody": true}}'
-  become: true
