@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "83ce9940e19e3ec81416d31f2c4b9ed3",
+    "content-hash": "77cdc4a372b2c0942a0fbcddb65ba336",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3405,23 +3405,22 @@
         },
         {
             "name": "solarium/solarium",
-            "version": "5.0.3",
+            "version": "5.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/solariumphp/solarium.git",
-                "reference": "fcec6d7fa9d6704e45afed0d050ff069f3e0e86f"
+                "reference": "3abd884313a52c47cefb44a6daa27f1d6eb253f6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/solariumphp/solarium/zipball/fcec6d7fa9d6704e45afed0d050ff069f3e0e86f",
-                "reference": "fcec6d7fa9d6704e45afed0d050ff069f3e0e86f",
+                "url": "https://api.github.com/repos/solariumphp/solarium/zipball/3abd884313a52c47cefb44a6daa27f1d6eb253f6",
+                "reference": "3abd884313a52c47cefb44a6daa27f1d6eb253f6",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
-                "php": "^7.1",
-                "symfony/cache": "^3.1 || ^4.0",
-                "symfony/event-dispatcher": "^3.1 || ^4.0"
+                "php": "^7.1.3",
+                "symfony/event-dispatcher": "^4.3 || ^5.0"
             },
             "require-dev": {
                 "guzzlehttp/guzzle": "^3.8 || ^6.2",
@@ -3434,11 +3433,6 @@
                 "minimalcode/search": "Query builder compatible with Solarium, allows simplified solr-query handling"
             },
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "4.1.x-dev"
-                }
-            },
             "autoload": {
                 "psr-4": {
                     "Solarium\\": "src/"
@@ -3461,7 +3455,7 @@
                 "search",
                 "solr"
             ],
-            "time": "2019-07-05T14:34:48+00:00"
+            "time": "2019-12-06T23:24:54+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",
