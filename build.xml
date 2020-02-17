@@ -281,7 +281,15 @@
 
     <!-- Target: solr-clear -->
     <target name="solr-clear" description="Delete all entries in the local Solr 'drupal8' core">
-        <input message="Would you like to clear the SOLR index? This action cannot be undone." propertyName="dump.confirm" defaultValue="y" validArgs="y,n" />
+        <if>
+            <not>
+                <isset property="dump.confirm" />
+            </not>
+            <then>
+                <input message="Would you like to clear the SOLR index? This action cannot be undone." propertyName="dump.confirm" defaultValue="y" validArgs="y,n" />
+            </then>
+        </if>
+
         <if>
             <equals arg1="${dump.confirm}" arg2="y" />
             <then>
