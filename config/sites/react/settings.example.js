@@ -24,7 +24,7 @@ const config = {
   //    If not using the proxy, the proxy, set to your solr backend, use:
   //        <host>:<port>/<path>/<core>/<requestHandler>
   //        i.e. `http://example.local:8983/solr/drupal8/select`
-  url: "http://d8.fs-demo.local:8983/solr/drupal8/select",
+  url: "http://d8.fs-demo.local:8983/solr/drupal7/select",
   // OPTIONAL: If the solr backend requires Basic Authentication, uncomment below and enter the username and password
   // in the btoa function as specified below. This should ONLY allow READ access, as it will be accessible client-side.
   // userpass: btoa("username:password"),
