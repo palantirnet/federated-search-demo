@@ -55,9 +55,18 @@
         database: react
         docroot: "{{ web_root }}/react"
 
+    solr_config:
+      - name: drupal7
+        module: search_api_solr-7.x-1.12
+        subdir: solr-conf/7.x
+      - name: drupal8
+        module: search_api_solr-8.x-3.8
+        subdir: solr-conf/7.x
+
   roles:
     - { role: mysql }
     - { role: apache }
+    - { role: solr-config }
     - { role: solr-cors }
     - { role: selenium-webdriver }
     - { role: drush }

@@ -290,6 +290,7 @@
                      http://federated-search-demo.local:8984/solr/drupal8/update?commit=true&stream.body=<delete><query>*:*</query></delete>
                 -->
                 <exec command="curl &apos;http://federated-search-demo.local:8983/solr/drupal8/update?commit=true&amp;stream.body&#61;&lt;delete&gt;&lt;query&gt;*:*&lt;/query&gt;&lt;/delete&gt;&apos;" passthru="true" escape="false" checkreturn="true" />
+                <exec command="curl &apos;http://federated-search-demo.local:8983/solr/drupal7/update?commit=true&amp;stream.body&#61;&lt;delete&gt;&lt;query&gt;*:*&lt;/query&gt;&lt;/delete&gt;&apos;" passthru="true" escape="false" checkreturn="true" />
                 <echo message="Your Solr is now clean."/>
             </then>
         </if>
@@ -303,8 +304,8 @@
 
     <!-- Target: solr-reindex -->
     <target name="solr-reindex" description="Delete and rebuild the SOLR index">
-        <exec command="curl &apos;http://federated-search-demo.local:8983/solr/drupal8/update?commit=true&amp;stream.body&#61;&lt;delete&gt;&lt;query&gt;*:*&lt;/query&gt;&lt;/delete&gt;&apos;" passthru="true" escape="false" checkreturn="true" />
-        <echo message="Your Solr is now clean." />
+        <property name="dump.confirm" value="y" />
+        <phingcall target="solr-clear" />
 
         <!-- Index Drupal 7 -->
         <exec command="drush --root='web/d7/docroot' --uri='http://d7.fs-demo.local' search-api-reindex federated_search -y" />
