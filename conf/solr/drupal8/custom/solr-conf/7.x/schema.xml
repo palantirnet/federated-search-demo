@@ -140,6 +140,9 @@
   <!-- The Highlighter Component requires the id field to be "stored" even if docValues are set. -->
   <field name="id" type="string" indexed="true" stored="true" required="true" multiValued="false" docValues="true"/>
 
+  <!-- content is the default field for full text search - dump crap here -->
+  <field name="content" type="text_ws" indexed="true" stored="true" termVectors="true"/>
+
   <!-- Search Api specific fields -->
   <!-- index_id is the machine name of the search index this entry belongs to. -->
   <field name="index_id" type="string" indexed="true" stored="false" multiValued="false" docValues="true"/>
