@@ -64,8 +64,8 @@ You may be interested in creating your own development environment and comparing
 * Web Host: Apache HTTP version 2.x
 * Database: MySQL version 5.7.21
 * PHP version 7.3.9
-* Search Server: Apache Solr version 4.5.1
-* Web Application: Drupal versions 7.69 and 8.8.1
+* Search Server: Apache Solr version 7.7.2
+* Web Application: Drupal versions 7.69 and 8.8.2
 
 ## Getting Started
 
@@ -227,7 +227,7 @@ With the VM running, you can visit the SOLR index at http://federated-search-dem
 
 ## Drupal Development
 
-You can refresh/reset your local Drupal site at any time. SSH into your VM and then:
+You can refresh/reset your local Drupal site at any time. SSH into your VM with `vagrant ssh` and then follow one of the steps below:
 
 ### Rebuild all the things
 
