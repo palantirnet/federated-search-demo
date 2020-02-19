@@ -13,7 +13,7 @@
       <str name="thresholdTokenFrequency">.01</str>
       <str name="onlyMorePopular">true</str>
     </lst>
-  
+
     <lst name="spellchecker">
       <str name="name">und</str>
       <str name="field">spellcheck_und</str>
@@ -40,7 +40,7 @@
       <str name="buildOnCommit">true</str>
       <str name="buildOnStartup">false</str>
     </lst>
-  
+
     <lst name="suggester">
       <str name="name">und</str>
       <str name="lookupImpl">AnalyzingInfixLookupFactory</str>
@@ -81,7 +81,7 @@
 <requestHandler name="/elevate" class="solr.SearchHandler" startup="lazy">
   <lst name="defaults">
     <str name="echoParams">explicit</str>
-    <str name="df">id</str>
+    <str name="df">tm_rendered_item</str>
   </lst>
   <arr name="last-components">
     <str>elevator</str>
@@ -135,7 +135,7 @@
 <requestHandler name="/select" class="solr.SearchHandler">
   <lst name="defaults">
     <str name="defType">lucene</str>
-    <str name="df">id</str>
+    <str name="df">tm_rendered_item</str>
     <str name="echoParams">explicit</str>
     <str name="omitHeader">true</str>
     <str name="timeAllowed">${solr.selectSearchHandler.timeAllowed:-1}</str>
@@ -153,7 +153,7 @@
 -->
 <requestHandler name="/spell" class="solr.SearchHandler" startup="lazy">
   <lst name="defaults">
-    <str name="df">id</str>
+    <str name="df">tm_rendered_item</str>
     <str name="spellcheck.dictionary">und</str>
     <str name="spellcheck">on</str>
     <str name="spellcheck.onlyMorePopular">false</str>
@@ -192,7 +192,7 @@
 -->
 <requestHandler name="/tvrh" class="solr.SearchHandler" startup="lazy">
   <lst name="defaults">
-    <str name="df">id</str>
+    <str name="df">tm_rendered_item</str>
     <str name="tv">true</str>
   </lst>
   <arr name="last-components">
