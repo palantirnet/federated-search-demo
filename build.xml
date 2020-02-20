@@ -211,7 +211,6 @@
 
         <!-- Copy settings files. Domain Access must be added after install. -->
         <chmod file="${drush.root}/sites/default/" mode="0775" />
-        <chmod file="${drush.root}/sites/default/settings.php" mode="0775" />
         <copy file="config/sites/d7-domain/settings-install.php" tofile="${drush.root}/sites/default/settings.php" overwrite="true" />
 
         <drush command="site-install" assume="yes">
