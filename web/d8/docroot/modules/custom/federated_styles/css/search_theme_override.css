@@ -32,6 +32,23 @@ aside.l-25-75--1 {
       border-color: #b5b5b5;
       text-decoration: underline; }
 
+.search-filters__row h2.search-filters__title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.search-filters {
+  background-color: #f3f3f3;
+  padding-top: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+.search-accordion__content {
+  background-color: #fafafa;
+}
+
 /* Search filter accordion */
 .search-accordion {
   color: #333;
