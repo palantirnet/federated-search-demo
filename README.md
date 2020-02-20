@@ -246,7 +246,8 @@ If you just want to get up and running, from the project root run `phing install
    - Standalone: `phing install-d7 -Ddrush.root=web/d7/docroot`
    - Domain site: `phing install-d7-domain -Ddrush.root=web/d7-domain/docroot`
 7. Build the `/src` directory and checkout modules there: `phing init`
-   - This links each of the two modules: `search_api_federated_solr` and `search_api_field_map` from the D8/D7 single site docroot to the `/src` directory and also into the D8/D7 Domain Access-enabled docroot. This means all changes made in `/src/search_api_...` will propagate to both sites simultaneously. The `phing init` command is run automatically by any of the installer scripts. These git checkouts point to GitHub and have `drupal` aliased remotes to drupal.org (`git remote show`).
+   - This links each of the two modules: `search_api_federated_solr` and `search_api_field_map` from the D8/D7 single site docroot to the `/src` directory and also into the D8/D7 Domain Access-enabled docroot. This means all changes made in `/src/search_api_...` will propagate to both sites simultaneously. The `phing init` command is run automatically by any of the installer scripts.
+8. (optional) Run `phing init-git` to run authenticated git checkouts. These git checkouts point to GitHub and have `drupal` aliased remotes to drupal.org (`git remote show`).
 
 ### Clear the search index
 
