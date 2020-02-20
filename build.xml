@@ -114,7 +114,6 @@
         <!-- The sites subdirectory and settings.php should be writable; Drupal will
              change the permissions on this directory after install. -->
         <chmod file="${drush.root}/${drupal.site}" mode="777" />
-        <chmod file="${drush.root}/${drupal.site}/settings.php" mode="777" />
 
         <!-- Delete and re-create the public files directory -->
         <delete dir="${drush.root}/${drupal.files}" />
