@@ -21,9 +21,9 @@ Feature: Federated search filers
     And I wait for "1" second
     # When I expand the "Site Name" filter
     When I click the "#solr-list-facet-sm_site_name" element
-    # When I select the "Federated Search Drupal 8" filter
-    And I check "Federated Search Drupal 8"
-    Then I should see the text "Federated Search Drupal 8"
+    # When I select the "Drupal 8" filter
+    And I check "Drupal 8"
+    Then I should see the text "Drupal 8"
     And I should see the text "Jack Russell Terrier"
     And I should see the text "Boston Terrier"
     And I should not see the text "Drupal 7 - Federated Search"
@@ -38,5 +38,5 @@ Feature: Federated search filers
     And I check "Federated Search Domain 3"
     Then I should see the text "Federated Search Domain 3"
     And I should see the text "Norfolk Terrier"
-    And I should see the text "Federated Search Drupal 8"
+    And I should see the text "Drupal 8"
     And I should not see the text "Drupal 7 - Federated Search"

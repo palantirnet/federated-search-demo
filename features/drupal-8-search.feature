@@ -8,4 +8,4 @@ Feature: Drupal 8 search
     Given I visit "/search-app?search=terrier"
     And I wait for "1" second
     Then I should see the text "Jack Russell Terrier"
-    And I should see the text "Federated Search Drupal 8"
+    And I should see the text "Drupal 8"

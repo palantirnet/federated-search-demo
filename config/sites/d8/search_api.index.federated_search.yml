@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   module:
+    - search_api_solr
     - node
     - search_api
     - search_api_federated_solr
@@ -94,8 +95,7 @@ field_settings:
     property_path: site_name
     type: string
     configuration:
-      use_system_site_name: 1
-      site_name: 'Federated Search Drupal 8'
+      site_name: 'Drupal 8'
   urls:
     label: Urls
     property_path: search_api_urls
@@ -135,12 +135,14 @@ processor_settings:
   mapped_field: {  }
   mapped_terms: {  }
   rendered_item: {  }
+  search_api_canonical_url: {  }
   search_api_urls: {  }
   site_name: {  }
   site_name_link:
     description: ''
     weights:
       postprocess_query: 0
+  solr_date_range: {  }
 tracker_settings:
   default:
     indexing_order: fifo
