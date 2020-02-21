@@ -135,12 +135,11 @@ function federated_default_content_uuid_features_default_content() {
   ),
   'domain_site' => FALSE,
   'subdomains' => array(
-    0 => 'Domain 2 - Drupal 7',
-    1 => 'Domain 3 - Drupal 7',
+    0 => 'Search Domain Two',
+    1 => 'Search Domain Three',
   ),
-  'domain_source' => 2,
   'date' => '2020-01-24 15:35:27 +0000',
-  'user_uuid' => '63455ca9-8113-4401-a041-6ff7099064a8',
+  'user_uuid' => '94057913-2021-4b57-ae33-2f89dbaf0d0a',
 );
   $nodes[] = array(
   'title' => 'Dalmation',
@@ -166,25 +165,7 @@ function federated_default_content_uuid_features_default_content() {
     ),
   ),
   'field_tags' => array(),
-  'field_image' => array(
-    'und' => array(
-      0 => array(
-        'uid' => 1,
-        'filename' => 'vintage-bull-terrier-and-dalmatian-illustration-public-domain.jpg',
-        'uri' => 'public://field/image/vintage-bull-terrier-and-dalmatian-illustration-public-domain.jpg',
-        'filemime' => 'image/jpeg',
-        'filesize' => 87803,
-        'status' => 1,
-        'uuid' => '3ab49506-6876-413d-89b2-29bdc8507004',
-        'rdf_mapping' => array(),
-        'alt' => 'An illustation of a dalmation',
-        'title' => '',
-        'width' => 800,
-        'height' => 608,
-        'uuid_features_packaged_file_path' => 'assets/vintage-bull-terrier-and-dalmatian-illustration-public-domain.jpg',
-      ),
-    ),
-  ),
+  'field_image' => array(),
   'field_age' => array(
     'und' => array(
       0 => array(
@@ -277,11 +258,10 @@ function federated_default_content_uuid_features_default_content() {
   'domain_site' => TRUE,
   'subdomains' => array(
     0 => 'All affiliates',
-    1 => 'Domain 1 - Drupal 7',
+    1 => 'Search Domain One',
   ),
-  'domain_source' => -5,
   'date' => '2020-01-24 15:34:06 +0000',
-  'user_uuid' => '63455ca9-8113-4401-a041-6ff7099064a8',
+  'user_uuid' => '94057913-2021-4b57-ae33-2f89dbaf0d0a',
 );
   $nodes[] = array(
   'title' => 'Schipperke',
@@ -395,11 +375,10 @@ function federated_default_content_uuid_features_default_content() {
   'domain_site' => TRUE,
   'subdomains' => array(
     0 => 'All affiliates',
-    1 => 'Domain 1 - Drupal 7',
+    1 => 'Search Domain One',
   ),
-  'domain_source' => 1,
   'date' => '2020-01-24 15:32:36 +0000',
-  'user_uuid' => '63455ca9-8113-4401-a041-6ff7099064a8',
+  'user_uuid' => '94057913-2021-4b57-ae33-2f89dbaf0d0a',
 );
   $nodes[] = array(
   'title' => 'Great Dane',
@@ -509,12 +488,11 @@ function federated_default_content_uuid_features_default_content() {
   ),
   'domain_site' => FALSE,
   'subdomains' => array(
-    0 => 'Domain 1 - Drupal 7',
-    1 => 'Domain 3 - Drupal 7',
+    0 => 'Search Domain One',
+    1 => 'Search Domain Three',
   ),
-  'domain_source' => 3,
   'date' => '2020-01-24 15:37:05 +0000',
-  'user_uuid' => '63455ca9-8113-4401-a041-6ff7099064a8',
+  'user_uuid' => '94057913-2021-4b57-ae33-2f89dbaf0d0a',
 );
   $nodes[] = array(
   'title' => 'Chihuahua ',
@@ -623,11 +601,10 @@ function federated_default_content_uuid_features_default_content() {
   ),
   'domain_site' => FALSE,
   'subdomains' => array(
-    0 => 'Domain 2 - Drupal 7',
+    0 => 'Search Domain Two',
   ),
-  'domain_source' => 2,
   'date' => '2020-01-24 15:34:54 +0000',
-  'user_uuid' => '63455ca9-8113-4401-a041-6ff7099064a8',
+  'user_uuid' => '94057913-2021-4b57-ae33-2f89dbaf0d0a',
 );
   $nodes[] = array(
   'title' => 'Toy Spaniel',
@@ -653,25 +630,7 @@ function federated_default_content_uuid_features_default_content() {
     ),
   ),
   'field_tags' => array(),
-  'field_image' => array(
-    'und' => array(
-      0 => array(
-        'uid' => 1,
-        'filename' => 'vintage-toy-spaniels-illustration-public-domain.jpg',
-        'uri' => 'public://field/image/vintage-toy-spaniels-illustration-public-domain.jpg',
-        'filemime' => 'image/jpeg',
-        'filesize' => 359659,
-        'status' => 1,
-        'uuid' => '88451067-573d-461a-bf91-6a94e0bc31d7',
-        'rdf_mapping' => array(),
-        'alt' => 'An illustation of a toy spaniel',
-        'title' => '',
-        'width' => 1474,
-        'height' => 1121,
-        'uuid_features_packaged_file_path' => 'assets/vintage-toy-spaniels-illustration-public-domain.jpg',
-      ),
-    ),
-  ),
+  'field_image' => array(),
   'field_age' => array(
     'und' => array(
       0 => array(
@@ -770,11 +729,10 @@ function federated_default_content_uuid_features_default_content() {
   ),
   'domain_site' => FALSE,
   'subdomains' => array(
-    0 => 'Domain 3 - Drupal 7',
+    0 => 'Search Domain Three',
   ),
-  'domain_source' => 3,
   'date' => '2020-01-24 15:36:28 +0000',
-  'user_uuid' => '63455ca9-8113-4401-a041-6ff7099064a8',
+  'user_uuid' => '94057913-2021-4b57-ae33-2f89dbaf0d0a',
 );
   return $nodes;
 }

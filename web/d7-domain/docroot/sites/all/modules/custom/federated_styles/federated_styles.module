@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * @file federated_styles.module
+ * Contains hook implementations for the Federated Solr Search API Module.
+ *
+ * @copyright Copyright (c) 2018-2020 Palantir.net
+ */
+
+/**
+ * Declare search app static assets as module library.
+ */
+function federated_styles_init() {
+  drupal_add_css(drupal_get_path('module', 'federated_styles') . '/css/search_theme_override.css');
+}

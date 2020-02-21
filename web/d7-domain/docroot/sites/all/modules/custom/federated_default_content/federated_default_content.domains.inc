@@ -12,7 +12,7 @@ function federated_default_content_domain_default_domains() {
   $domains = array();
   $domains['d7_1_fs_demo_local'] = array(
     'subdomain' => 'd7-1.fs-demo.local',
-    'sitename' => 'Domain 1 - Drupal 7',
+    'sitename' => 'Search Domain One',
     'scheme' => 'http',
     'valid' => 1,
     'weight' => -1,
@@ -21,7 +21,7 @@ function federated_default_content_domain_default_domains() {
   );
   $domains['d7_2_fs_demo_local'] = array(
     'subdomain' => 'd7-2.fs-demo.local',
-    'sitename' => 'Domain 2 - Drupal 7',
+    'sitename' => 'Search Domain Two',
     'scheme' => 'http',
     'valid' => 1,
     'weight' => 1,
@@ -30,7 +30,7 @@ function federated_default_content_domain_default_domains() {
   );
   $domains['d7_3_fs_demo_local'] = array(
     'subdomain' => 'd7-3.fs-demo.local',
-    'sitename' => 'Domain 3 - Drupal 7',
+    'sitename' => 'Search Domain Three',
     'scheme' => 'http',
     'valid' => 1,
     'weight' => 2,
