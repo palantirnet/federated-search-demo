@@ -37,6 +37,10 @@ The `solr-4` branch contains release 1.0 and is compatible with Drupal 7.69, 8.6
 
 This branch uses Search API Federated Solr version 8.x-2.x. No new development is expected on this branch and it is not expected to be Drupal 9 compatible.le.
 
+### Switching versions
+
+If you switch between the `solr-7` and `solr-4` branches, you will need to rebuild your environment with `vagrant provision`. You may also need to run `vagrant box update.`
+
 ## Development Environment
 
 The development environment is based on [palantirnet/the-vagrant](https://github.com/palantirnet/the-vagrant). To run the environment, you will need:
