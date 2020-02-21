@@ -6,12 +6,26 @@
   display: none;
 }
 
+aside.layout-container, div.layout-container {
+  padding: 0;
+}
+
 /**
  * Search filters
  */
 /* The container for the search filters */
-aside.l-25-75--1 {
-  background-color: white; }
+#root aside.l-25-75--1 {
+  background-color: white;
+  width: 22%;
+  margin-left: 0; }
+
+#root div.l-25-75--2 {
+  width: 75%;
+}
+
+#root .container {
+  width: 100%;
+}
 
 /* Search filters */
 .search-filters {
@@ -169,40 +183,6 @@ button.search-form__submit, button.search-form__submit:active, button.search-for
   .search-results em {
     font-weight: 700;
     background-color: rgba(255, 242, 192, 0.85); }
-
-/**
- * Pagination component
- */
-.search-pager {
-  background-color: transparent;
-  /** pagination component **/
-  /** inactive page links **/
-  /** active page link **/ }
-  .search-pager__items {
-    border-radius: 3px;
-    background-color: #eff0f1; }
-    @media (min-width: 450px) {
-      .search-pager__items {
-        background-color: transparent; } }
-  @media (min-width: 450px) {
-    .search-pager__item a {
-      background-color: #ffcb05;
-      border-radius: 3px; } }
-  .search-pager__item a:hover, .search-pager__item a:active {
-    text-decoration: underline;
-    color: #00274c;
-    background-color: #ffcb05; }
-    @media (min-width: 450px) {
-      .search-pager__item a:hover, .search-pager__item a:active {
-        background-color: #f4bb06; } }
-    .search-pager__item a:hover svg, .search-pager__item a:active svg {
-      fill: #00274c; }
-  @media (min-width: 450px) {
-    .search-pager__item.is-active a {
-      background-color: #0d57aa;
-      color: #fff; }
-      .search-pager__item.is-active a:hover, .search-pager__item.is-active a:active {
-        background-color: #002a5b; } }
 
 /**
  DatePicker widget
