@@ -6,6 +6,7 @@ dependencies[] = ctools
 dependencies[] = domain
 dependencies[] = entityreference
 dependencies[] = fe_block
+dependencies[] = federated_styles
 dependencies[] = features
 dependencies[] = image
 dependencies[] = options

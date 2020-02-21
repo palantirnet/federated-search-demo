@@ -5,6 +5,7 @@ version = 7.x-1.0
 dependencies[] = ctools
 dependencies[] = entityreference
 dependencies[] = features
+dependencies[] = federated_styles
 dependencies[] = image
 dependencies[] = options
 dependencies[] = search_api_federated_solr
