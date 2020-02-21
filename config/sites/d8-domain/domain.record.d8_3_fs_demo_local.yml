@@ -5,7 +5,7 @@ dependencies: {  }
 id: d8_3_fs_demo_local
 domain_id: 13682614
 hostname: d8-3.fs-demo.local
-name: 'Federated Search Domain 3'
+name: 'Drupal 8 - Three'
 scheme: http
 weight: 3
 is_default: false

@@ -9,4 +9,4 @@ Feature: Drupal 7 search
     When I wait for "1" second
     Then I should see the text "English Terrier"
     And I should see the text "Drupal 7 - Federated Search"
-    And I should see the text "Federated Search Domain 3"
+    And I should see the text "Drupal 8 - Three"
