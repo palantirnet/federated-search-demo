@@ -26,7 +26,7 @@ Feature: Federated search filers
     Then I should see the text "Drupal 8"
     And I should see the text "Jack Russell Terrier"
     And I should see the text "Boston Terrier"
-    And I should not see the text "Drupal 7 - Federated Search"
+    And I should not see the text "Search Drupal 7"
     And I should not see the text "Drupal 8 - Three"
 
   Scenario: Filter by site - D8 domain
@@ -39,4 +39,4 @@ Feature: Federated search filers
     Then I should see the text "Drupal 8 - Three"
     And I should see the text "Norfolk Terrier"
     And I should see the text "Drupal 8"
-    And I should not see the text "Drupal 7 - Federated Search"
+    And I should not see the text "Search Drupal 7"
