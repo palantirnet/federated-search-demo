@@ -84,7 +84,9 @@ aside.l-25-75--1 {
 }
 
 .region-content ul.search-accordion__content {
-  padding: 0 1.25em 0 1.25em;
+  padding: 0.5em 1.25em 0.5em 1.25em;
+  background-color: #fafafa;
+  margin: 0;
 }
 
 /**
