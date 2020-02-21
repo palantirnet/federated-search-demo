@@ -164,7 +164,7 @@
         <symlink link="${drush.root}/sites/all/modules/contrib/search_api_federated_solr" target="../../../../../../../src/search_api_federated_solr-7.x" />
 
         <drush command="site-install" assume="yes">
-            <option name="site-name">Drupal 7 - Federated Search</option>
+            <option name="site-name">Search Drupal 7</option>
             <option name="account-pass">admin</option>
             <param>standard</param>
         </drush>
@@ -213,7 +213,7 @@
         <copy file="config/sites/d7-domain/settings-install.php" tofile="${drush.root}/sites/default/settings.php" overwrite="true" />
 
         <drush command="site-install" assume="yes">
-            <option name="site-name">Domain 7 - Federated Search</option>
+            <option name="site-name">Domain 7</option>
             <option name="account-pass">admin</option>
             <param>standard</param>
         </drush>

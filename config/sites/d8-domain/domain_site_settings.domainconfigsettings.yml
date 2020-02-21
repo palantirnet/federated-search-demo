@@ -2,7 +2,7 @@ domain_site_settings: null
 _core:
   default_config_hash: tkmglv8nLQzpf1cBcgSWFvPzgDJEfiz6bifpEQYXq84
 d8_1_fs_demo_local:
-  site_name: 'Federated Search Domain 1'
+  site_name: 'Drupal 8 - One'
   site_slogan: ''
   site_mail: admin@example.com
   site_frontpage: /node
@@ -16,7 +16,14 @@ d8_2_fs_demo_local_:
   site_403: ''
   site_404: ''
 d8_3_fs_demo_local:
-  site_name: 'Federated Search Domain 3'
+  site_name: 'Drupal 8 - Three'
+  site_slogan: ''
+  site_mail: admin@example.com
+  site_frontpage: /node
+  site_403: ''
+  site_404: ''
+d8_2_fs_demo_local:
+  site_name: 'Drupal 8 - Two'
   site_slogan: ''
   site_mail: admin@example.com
   site_frontpage: /node

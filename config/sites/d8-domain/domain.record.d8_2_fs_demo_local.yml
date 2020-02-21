@@ -5,7 +5,7 @@ dependencies: {  }
 id: d8_2_fs_demo_local
 domain_id: 10626745
 hostname: d8-2.fs-demo.local
-name: 'Federated Search Domain 2'
+name: 'Drupal 8 - Two'
 scheme: http
 weight: 2
 is_default: false

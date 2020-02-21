@@ -8,5 +8,5 @@ Feature: Drupal 7 search
     Given I visit "/search-app?search=terrier"
     When I wait for "1" second
     Then I should see the text "English Terrier"
-    And I should see the text "Drupal 7 - Federated Search"
-    And I should see the text "Federated Search Domain 3"
+    And I should see the text "Search Drupal 7"
+    And I should see the text "Drupal 8 - Three"
