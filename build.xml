@@ -12,6 +12,7 @@
         <phingcall target="install-d7-domain" />
         <phingcall target="install-d8" />
         <phingcall target="install-d8-domain" />
+        <phingcall target="react" />
         <property name="index.domains" value="y" />
         <phingcall target="solr-reindex" />
     </target>
@@ -21,6 +22,7 @@
     <target name="install-no-domain" description="Install all three Drupal sites in the Federated Search Demo">
         <phingcall target="install-d7" />
         <phingcall target="install-d8" />
+        <phingcall target="react" />
         <property name="index.domains" value="n" />
         <phingcall target="solr-reindex" />
     </target>
@@ -112,7 +114,6 @@
         <!-- The sites subdirectory and settings.php should be writable; Drupal will
              change the permissions on this directory after install. -->
         <chmod file="${drush.root}/${drupal.site}" mode="777" />
-        <chmod file="${drush.root}/${drupal.site}/settings.php" mode="777" />
 
         <!-- Delete and re-create the public files directory -->
         <delete dir="${drush.root}/${drupal.files}" />
@@ -209,7 +210,6 @@
 
         <!-- Copy settings files. Domain Access must be added after install. -->
         <chmod file="${drush.root}/sites/default/" mode="0775" />
-        <chmod file="${drush.root}/sites/default/settings.php" mode="0775" />
         <copy file="config/sites/d7-domain/settings-install.php" tofile="${drush.root}/sites/default/settings.php" overwrite="true" />
 
         <drush command="site-install" assume="yes">
@@ -263,23 +263,47 @@
             </then>
             <else>
               <mkdir dir="src" mode="777" />
-              <echo message="git clone --branch=8.x-2.x git@github.com:palantirnet/search_api_federated_solr.git" />
-              <exec command="git clone --branch=8.x-2.x git@github.com:palantirnet/search_api_federated_solr.git" dir="src" checkreturn="true" />
-              <exec command="git remote add drupal git@git.drupal.org:project/search_api_federated_solr.git" dir="src/search_api_federated_solr" checkreturn="true" />
-              <echo message="git clone --branch=8.x-1.x git@github.com:palantirnet/search_api_field_map.git" />
-              <exec command="git clone --branch=8.x-1.x git@github.com:palantirnet/search_api_field_map.git" dir="src" checkreturn="true" />
-              <exec command="git remote add drupal git@git.drupal.org:project/search_api_field_map.git" dir="src/search_api_field_map" checkreturn="true" />
-              <echo message="git clone --branch=7.x-2.x git@github.com:palantirnet/search_api_federated_solr.git search_api_federated_solr-7.x" />
-              <exec command="git clone --branch=7.x-2.x git@github.com:palantirnet/search_api_federated_solr.git search_api_federated_solr-7.x" dir="src" checkreturn="true" />
-              <exec command="git remote add drupal git@git.drupal.org:project/search_api_federated_solr.git" dir="src/search_api_federated_solr-7.x" checkreturn="true" />
+              <exec command="git clone --branch=8.x-3.x https://github.com/palantirnet/search_api_federated_solr.git" dir="src" checkreturn="true" />
+              <exec command="git clone --branch=8.x-3.x https://github.com/palantirnet/search_api_field_map.git" dir="src" checkreturn="true" />
+              <exec command="git clone --branch=7.x-2.x https://github.com/palantirnet/search_api_federated_solr.git search_api_federated_solr-7.x" dir="src" checkreturn="true" />
             </else>
           </if>
     </target>
 
 
+    <!-- Target: init-git -->
+    <target name="init-git" description="Initialize the repo for development with git. This action will delete existing checkouts.">
+        <available file="src" type="dir" property="src.checkout" value="y" />
+        <if>
+            <equals arg1="${src.checkout}" arg2="y" />
+            <then>
+              <delete dir="src" includeemptydirs="true" verbose="true" />
+              <mkdir dir="src" mode="777" />
+            </then>
+        </if>
+        <echo message="git clone --branch=8.x-3.x git@github.com:palantirnet/search_api_federated_solr.git" />
+        <exec command="git clone --branch=8.x-3.x git@github.com:palantirnet/search_api_federated_solr.git" dir="src" checkreturn="true" />
+        <exec command="git remote add drupal git@git.drupal.org:project/search_api_federated_solr.git" dir="src/search_api_federated_solr" checkreturn="true" />
+        <echo message="git clone --branch=8.x-3.x git@github.com:palantirnet/search_api_field_map.git" />
+        <exec command="git clone --branch=8.x-3.x git@github.com:palantirnet/search_api_field_map.git" dir="src" checkreturn="true" />
+        <exec command="git remote add drupal git@git.drupal.org:project/search_api_field_map.git" dir="src/search_api_field_map" checkreturn="true" />
+        <echo message="git clone --branch=7.x-2.x git@github.com:palantirnet/search_api_federated_solr.git search_api_federated_solr-7.x" />
+        <exec command="git clone --branch=7.x-2.x git@github.com:palantirnet/search_api_federated_solr.git search_api_federated_solr-7.x" dir="src" checkreturn="true" />
+        <exec command="git remote add drupal git@git.drupal.org:project/search_api_federated_solr.git" dir="src/search_api_federated_solr-7.x" checkreturn="true" />
+    </target>
+
+
     <!-- Target: solr-clear -->
     <target name="solr-clear" description="Delete all entries in the local Solr 'drupal8' core">
-        <input message="Would you like to clear the SOLR index? This action cannot be undone." propertyName="dump.confirm" defaultValue="y" validArgs="y,n" />
+        <if>
+            <not>
+                <isset property="dump.confirm" />
+            </not>
+            <then>
+                <input message="Would you like to clear the SOLR index? This action cannot be undone." propertyName="dump.confirm" defaultValue="y" validArgs="y,n" />
+            </then>
+        </if>
+
         <if>
             <equals arg1="${dump.confirm}" arg2="y" />
             <then>
@@ -288,6 +312,7 @@
                      http://federated-search-demo.local:8984/solr/drupal8/update?commit=true&stream.body=<delete><query>*:*</query></delete>
                 -->
                 <exec command="curl &apos;http://federated-search-demo.local:8983/solr/drupal8/update?commit=true&amp;stream.body&#61;&lt;delete&gt;&lt;query&gt;*:*&lt;/query&gt;&lt;/delete&gt;&apos;" passthru="true" escape="false" checkreturn="true" />
+                <exec command="curl &apos;http://federated-search-demo.local:8983/solr/drupal7/update?commit=true&amp;stream.body&#61;&lt;delete&gt;&lt;query&gt;*:*&lt;/query&gt;&lt;/delete&gt;&apos;" passthru="true" escape="false" checkreturn="true" />
                 <echo message="Your Solr is now clean."/>
             </then>
         </if>
@@ -301,8 +326,8 @@
 
     <!-- Target: solr-reindex -->
     <target name="solr-reindex" description="Delete and rebuild the SOLR index">
-        <exec command="curl &apos;http://federated-search-demo.local:8983/solr/drupal8/update?commit=true&amp;stream.body&#61;&lt;delete&gt;&lt;query&gt;*:*&lt;/query&gt;&lt;/delete&gt;&apos;" passthru="true" escape="false" checkreturn="true" />
-        <echo message="Your Solr is now clean." />
+        <property name="dump.confirm" value="y" />
+        <phingcall target="solr-clear" />
 
         <!-- Index Drupal 7 -->
         <exec command="drush --root='web/d7/docroot' --uri='http://d7.fs-demo.local' search-api-reindex federated_search -y" />
@@ -327,6 +352,27 @@
                 <echo message="Drupal 7 domain indexed." />
             </then>
         </if>
+    </target>
+
+
+    <!-- Target: React settings -->
+    <target name="react" description="Setup the React demo">
+      <copy file="config/sites/react/settings.example.js" tofile="web/react/app/settings.js" overwrite="true" />
+      <copy file="config/sites/react/custom.example.css" tofile="web/react/app/custom.css" overwrite="true" />
+      <echo message="React application setup on http://react.fs-demo.local" />
+    </target>
+
+
+    <!-- Target: start-selenium -->
+    <target name="start-selenium">
+        <exec command='java -jar -Dwebdriver.chrome.driver="/usr/local/share/chromedriver/chromedriver" /usr/local/share/selenium/selenium-server-standalone.jar >/dev/null 2>&amp;1 &amp;' dir="/home" />
+    </target>
+
+
+    <!-- Target: behat -->
+    <target name="behat">
+        <phingcall target="start-selenium" />
+        <exec command='vendor/bin/behat --tags=javascript' logoutput="true" checkreturn="true" />
     </target>
 
 

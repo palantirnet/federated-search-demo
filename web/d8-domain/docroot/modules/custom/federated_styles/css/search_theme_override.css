@@ -32,6 +32,23 @@ aside.l-25-75--1 {
       border-color: #b5b5b5;
       text-decoration: underline; }
 
+.search-filters__row h2.search-filters__title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.search-filters {
+  background-color: #f3f3f3;
+  padding-top: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+.search-accordion__content {
+  background-color: #fafafa;
+}
+
 /* Search filter accordion */
 .search-accordion {
   color: #333;
@@ -69,24 +86,29 @@ aside.l-25-75--1 {
     border: 1px solid #555;
     outline: 0; }
 
-.search-form__submit {
-  // background-color: #ffcb05 !important;
+button.search-form__submit, button.search-form__submit:active, button.search-form__submit:hover {
+  /* background-color: #ffcb05 !important; */
   border-radius: 0 3px 3px 0 !important;
-  border: 1px solid #e5e5e5 !important;
-  border-left: 0 !important;
+  border: 1px solid #009 !important;
   display: flex !important;
+  border-color: #009!important;
+  background-color: #36a; !important;
+  height: 34px;
+  width: 40px;
 }
   .search-form__submit svg {
-    fill: #222 !important; }
+    fill: #fff !important; }
   .search-form__submit:active, .search-form__submit:hover, .search-form__submit:focus {
-    background-color: #d8d8d8 !important;
-    border-color: #e5e5e5 !important; }
+    background-color: #66f; !important;
+    border-color: #009 !important; }
     .search-form__submit:active svg, .search-form__submit:hover svg, .search-form__submit:focus svg {
-      fill: #222 !important; }
+      background-color: #66f; !important;
+      border-color: #009 !important;
+      fill: #fff !important; }
 
 /**
-* Autocomplete styles
-*/
+ * Autocomplete styles
+ */
 .search-form__autocomplete-container .react-autosuggest__input {
   padding: .35em !important;
   min-width: auto !important;
@@ -105,9 +127,9 @@ aside.l-25-75--1 {
   padding: .35em .6em;
 }
 
-/**
- * Applied Filters
- */
+  /**
+   * Applied Filters
+   */
 .applied-filters__filter {
   border-bottom: solid 2px #ffcb05;
   font-size: .8em;
@@ -126,7 +148,7 @@ aside.l-25-75--1 {
     background-color: transparent;
     color: #0d57aa;
     text-decoration: none;
-    border-bottom: 2px dashed #0d57aa; }
+    border-bottom: 1px solid #0d57aa; }
     .search-results__heading a:active, .search-results__heading a:hover {
       outline-width: 0;
       color: #002a5b;

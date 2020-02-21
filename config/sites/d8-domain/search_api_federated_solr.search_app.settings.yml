@@ -10,7 +10,6 @@ facet:
 index:
   id: federated_search
   has_site_name_property: true
-  server_url: ''
   username: ''
   password: ''
   has_federated_type_property: true

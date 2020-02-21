@@ -21,6 +21,7 @@ extra_hostnames = [
   'd8-1.fs-demo.local',
   'd8-2.fs-demo.local',
   'd8-3.fs-demo.local',
+  'react.fs-demo.local'
 ]
 
 ansible_solr_enabled = true
@@ -40,7 +41,7 @@ Vagrant.configure(2) do |config|
     config.vm.define "#{project}" do |box|
 
         box.vm.box = "palantir/drupalbox"
-        box.vm.box_version = ">= 1.2.0, < 2.0"
+        box.vm.box_version = "~> 2.0"
 
         box.vm.provider "virtualbox" do |vb|
             vb.customize ["modifyvm", :id, "--memory", "2048", "--audio", "none"]
@@ -80,11 +81,12 @@ Vagrant.configure(2) do |config|
 
         ansible.galaxy_role_file = "vendor/palantirnet/the-vagrant/conf/vagrant/provisioning/requirements.yml"
         ansible.galaxy_roles_path = "vendor/palantirnet/the-vagrant/conf/vagrant/provisioning/roles/"
-    end
-
-    if (defined?(ansible_custom_playbook) && !ansible_custom_playbook.empty?)
-        config.vm.provision "federated-search-demo-provision", type: "ansible" do |ansible|
-            ansible.playbook = ansible_custom_playbook
+        if (defined?(ansible_custom_playbook) && !ansible_custom_playbook.empty?)
+            config.vm.provision "myproject-provision", type: "ansible" do |ansible|
+                ansible.playbook = ansible_custom_playbook
+                ansible.galaxy_role_file = "provisioning/requirements.yml"
+                ansible.galaxy_roles_path = "provisioning/roles/"
+            end
         end
     end
 

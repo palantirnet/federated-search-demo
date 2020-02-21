@@ -10,6 +10,30 @@ dependencies:
   config:
     - search_api.server.local_server
     - core.entity_view_mode.node.full
+third_party_settings:
+  search_api_solr:
+    highlighter:
+      maxAnalyzedChars: 51200
+      fragmenter: gap
+      usePhraseHighlighter: true
+      highlightMultiTerm: true
+      preserveMulti: false
+      regex:
+        slop: 0.5
+        pattern: blank
+        maxAnalyzedChars: 10000
+      highlight:
+        mergeContiguous: false
+        requireFieldMatch: false
+        snippets: 3
+        fragsize: 0
+      _core:
+        default_config_hash: 914vBglS7nVnl8EUqBejfUPPRT6wnWYcOhMli6oL4jY
+    advanced:
+      index_prefix: ''
+    multilingual:
+      limit_to_content_language: false
+      include_language_independent: true
 id: federated_search
 name: 'Federated search'
 description: ''

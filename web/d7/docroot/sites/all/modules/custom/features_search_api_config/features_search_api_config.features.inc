@@ -190,7 +190,7 @@ function features_search_api_config_default_search_api_server() {
       "scheme" : "http",
       "host" : "federated-search-demo.local",
       "port" : "8983",
-      "path" : "\\/solr\\/drupal8",
+      "path" : "\\/solr\\/drupal7",
       "http_user" : "",
       "http_pass" : "",
       "excerpt" : 0,

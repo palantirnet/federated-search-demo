@@ -14,6 +14,8 @@ This is the development repository for Federated Search Demo environment. It con
 * [Reading the SOLR index](#reading-the-solr-index)
 * [Drupal Development](#drupal-development)
 * [Working with Styles](#working-with-styles)
+* [Testing without using Drupal](#testing-without-using-drupal)
+* [Automated Behat testing](#automated-behat-testing)
 * [Directory structure](#directory-structure)
 * [Deployment](#Deployment)
 
@@ -21,17 +23,21 @@ This is the development repository for Federated Search Demo environment. It con
 
 There are two demo builds included in the package, and you should be sure to check out the one that is appropriate to your work.
 
+### solr-7
+
+The `solr-7` branch will contain release 3.0 and is compatible with Drupal 7.69, 8.82, and Solr 7. It relies on Search API Solr 8.3, and will be Drupal 9 compatible.
+
+This branch uses Search API Federated Solr version 8.x-3.x. All new development is done on this branch.
+
 ### solr-4
 
-The `solr-4` branch contains release 1.0 and is compatible with Drupal 7.69, 8.81, and Solr 4-6. Most important, it relies on Search API 8.1, which is no longer maintained. This branch is stable and appropriate for deployment to Acquia, provided your site is not using Solr 7.
+The `solr-4` branch contains release 1.0 and is compatible with Drupal 7.69, 8.81, and Solr 4-6. Most important, it relies on Search API Solr 8.1, which is no longer maintained. This branch is stable and appropriate for deployment to Acquia, provided your site is not using Solr 7.
 
 This branch uses Search API Federated Solr version 8.x-2.x. No new development is expected on this branch and it is not expected to be Drupal 9 compatible.
 
-### solr-7
+### Switching versions
 
-The `solr-4` branch will contain release 2.0 and is compatible with Drupal 7.69, 8.81, and Solr 7. It relies on Search API 8.3, and will be Drupal 9 compatible.
-
-This branch uses Search API Federated Solr version 8.x-3.x. All new development is done on this branch.
+If you switch between the `solr-7` and `solr-4` branches, you will need to rebuild your environment with `vagrant provision`.
 
 ## Development Environment
 
@@ -58,8 +64,8 @@ You may be interested in creating your own development environment and comparing
 * Web Host: Apache HTTP version 2.x
 * Database: MySQL version 5.7.21
 * PHP version 7.3.9
-* Search Server: Apache Solr version 4.5.1
-* Web Application: Drupal versions 7.69 and 8.8.1
+* Search Server: Apache Solr version 7.7.2
+* Web Application: Drupal versions 7.69 and 8.8.2
 
 ## Getting Started
 
@@ -85,6 +91,7 @@ You may be interested in creating your own development environment and comparing
    - [http://d7-2.fs-demo.local](http://d7-2.fs-demo.local)
    - [http://d7-3.fs-demo.local](http://d7-3.fs-demo.local)
 10. View the Solr index at [http://federated-search-demo.local:8983/solr/#/drupal8/query](http://federated-search-demo.local:8983/solr/#/drupal8/query).
+11. See the bare React app (without Drupal) at [http://react.fs-demo.local](http://react.fs-demo.local)
 
 You can log in to any of the Drupal sites at `/user` with `admin/admin`.
 
@@ -220,7 +227,7 @@ With the VM running, you can visit the SOLR index at http://federated-search-dem
 
 ## Drupal Development
 
-You can refresh/reset your local Drupal site at any time. SSH into your VM and then:
+You can refresh/reset your local Drupal site at any time. SSH into your VM with `vagrant ssh` and then follow one of the steps below:
 
 ### Rebuild all the things
 
@@ -239,7 +246,8 @@ If you just want to get up and running, from the project root run `phing install
    - Standalone: `phing install-d7 -Ddrush.root=web/d7/docroot`
    - Domain site: `phing install-d7-domain -Ddrush.root=web/d7-domain/docroot`
 7. Build the `/src` directory and checkout modules there: `phing init`
-   - This links each of the two modules: `search_api_federated_solr` and `search_api_field_map` from the D8/D7 single site docroot to the `/src` directory and also into the D8/D7 Domain Access-enabled docroot. This means all changes made in `/src/search_api_...` will propagate to both sites simultaneously. The `phing init` command is run automatically by any of the installer scripts. These git checkouts point to GitHub and have `drupal` aliased remotes to drupal.org (`git remote show`).
+   - This links each of the two modules: `search_api_federated_solr` and `search_api_field_map` from the D8/D7 single site docroot to the `/src` directory and also into the D8/D7 Domain Access-enabled docroot. This means all changes made in `/src/search_api_...` will propagate to both sites simultaneously. The `phing init` command is run automatically by any of the installer scripts.
+8. (optional) Run `phing init-git` to run authenticated git checkouts. These git checkouts point to GitHub and have `drupal` aliased remotes to drupal.org (`git remote show`).
 
 ### Clear the search index
 
@@ -270,6 +278,30 @@ You can restart the Solr service from the project within the vm with `sudo servi
 The default CSS for the search application page can be overwritten by a local file. See the Federated Styles module included in the Drupal 8 project for an example.
 
 `/web/d8/docroot/modules/custom/federated_styles`
+
+## Testing without using Drupal
+
+If you prefer, you can see the app running as pure HTML in the browser. The URL http://react.fs-demo.local will load the Federated Search application, showing how cross-site search can be run as a standalone service.
+
+To run this app, configure it with `phing react`. This command will copy two files that you may edit.
+
+Change the configuration of the application by editing the file:
+
+`/web/react/app/settings.js`
+
+Edit the CSS of the application:
+
+`web/react/app/custom.css`
+
+You will still need to build and index content using Drupal to populate the search index.
+
+## Automated Behat testing
+
+Since the function of the application is to search across multiple sites, Behat is our best method for testing.
+
+You can run Behat tests with `phing behat` or `vendor/bin/behat --tags=javascript`. You may need to start the selenium service first with `phing start-selenium`.
+
+The settings for Behat are in `/behat.xml` and tests are in the `/features` directory. These tests run against the default Drupal 8 installation (http://d8.fs-demo.local).
 
 ## Directory structure
 
@@ -318,4 +350,3 @@ This project is for demo purposes only and is not to be deployed.
 
 ----
 Copyright 2018, 2019, 2020 Palantir.net, Inc.
-

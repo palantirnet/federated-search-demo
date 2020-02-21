@@ -1,8 +1,4 @@
 ---
-- name: Apache | Disable the default vhost.
-  become: true
-  shell: "/usr/sbin/a2dissite federated-search-demo.local.conf"
-
 - name: Apache | Remove the default vhost .conf files.
   become: true
   file:
