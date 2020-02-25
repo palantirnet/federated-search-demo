@@ -131,7 +131,7 @@ button.search-form__submit, button.search-form__submit:active, button.search-for
 /**
  * Autocomplete styles
  */
-.search-form__autocomplete-container {
+.search-form__input-wrapper, .search-form__autocomplete-container {
   width: 65%;
 }
 
