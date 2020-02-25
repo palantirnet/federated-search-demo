@@ -92,14 +92,6 @@ aside.layout-container, div.layout-container {
   font-size: .8em;
   line-height: 1.83333em; }
 
-.search-form__input {
-  border-radius: 3px 0 0 3px;
-  border: 1px solid #e5e5e5;
-  margin: 0;}
-  .search-form__input:focus {
-    border: 1px solid #555;
-    outline: 0; }
-
 button.search-form__submit, button.search-form__submit:active, button.search-form__submit:hover {
   /* background-color: #ffcb05 !important; */
   border-radius: 0 3px 3px 0 !important;
@@ -123,10 +115,11 @@ button.search-form__submit, button.search-form__submit:active, button.search-for
 /**
  * Autocomplete styles
  */
-.search-form__autocomplete-container .react-autosuggest__input {
+.search-form__input, .search-form__autocomplete-container .react-autosuggest__input {
   padding: .35em !important;
   min-width: auto !important;
   margin: 0 !important;
+  height: 24px !important;
 }
 
 .search-form__autocomplete-container .react-autosuggest__input:focus {
