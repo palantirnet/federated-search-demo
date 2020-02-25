@@ -134,6 +134,10 @@ button.search-form__submit, button.search-form__submit:active, button.search-for
   padding: .35em .6em;
 }
 
+.search-form__autocomplete-container .react-autosuggest__suggestion-link {
+  color: #333;
+}
+
   /**
    * Applied Filters
    */

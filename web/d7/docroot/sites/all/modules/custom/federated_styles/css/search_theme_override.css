@@ -131,6 +131,10 @@ button.search-form__submit, button.search-form__submit:active, button.search-for
 /**
  * Autocomplete styles
  */
+.search-form__autocomplete-container {
+  width: 65%;
+}
+
 .search-form__autocomplete-container .react-autosuggest__input {
   padding: .35em !important;
   min-width: auto !important;
@@ -147,6 +151,15 @@ button.search-form__submit, button.search-form__submit:active, button.search-for
 
 .search-form__autocomplete-container .search-form__submit {
   padding: .35em .6em;
+}
+
+.search-form__autocomplete-container .react-autosuggest__suggestions-list {
+  margin: 0;
+  padding: 0;
+}
+
+.react-autosuggest__suggestion-link {
+  color: #333;
 }
 
 /**
