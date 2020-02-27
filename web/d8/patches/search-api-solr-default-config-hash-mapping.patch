@@ -1,0 +1,17 @@
+diff --git a/config/schema/search_api_solr.schema.yml b/config/schema/search_api_solr.schema.yml
+index 18dd83fd..745b7f02 100644
+--- a/config/schema/search_api_solr.schema.yml
++++ b/config/schema/search_api_solr.schema.yml
+@@ -59,6 +59,12 @@ search_api.index.*.third_party.search_api_solr:
+             fragsize:
+               type: integer
+               label: 'Specifies the size, in characters, of fragments to consider for highlighting.'
++        _core:
++          type: mapping
++          mapping:
++            default_config_hash:
++              type: string
++              label: 'Default configuration hash.'
+     mlt:
+       type: mapping
+       label: 'mlt settings'

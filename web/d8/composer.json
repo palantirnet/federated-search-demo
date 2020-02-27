@@ -67,6 +67,17 @@
             },
             "drupal/default_content": {
                 "Do not reimport existing entities: https://www.drupal.org/project/default_content/issues/2698425": "https://www.drupal.org/files/issues/2018-12-11/default_content-dont-reimport-2698425-109.patch"
+            },
+            "drupal/search_api_federated_solr" : {
+                "Correct schema for block.block.federatedsearchpageformblock: 1 error: https://www.drupal.org/project/search_api_federated_solr/issues/3110162": "https://www.drupal.org/files/issues/2020-01-30/3110162-fs-block-schema-2.patch",
+                "No schema for field_settings.site_name.configuration.use_system_site_name: https://www.drupal.org/project/search_api_field_map/issues/3110184": "https://www.drupal.org/files/issues/2020-02-04/3110184-field_map-processor-schema.patch"
+            },
+            "drupal/search_api_field_map" : {
+                "Schema error in field storage: https://www.drupal.org/project/search_api_field_map/issues/3111078": "https://www.drupal.org/files/issues/2020-02-04/3111078-field_map-fix-schema.patch",
+                "Schema error in field display: https://www.drupal.org/project/search_api_field_map/issues/3111080": "https://www.drupal.org/files/issues/2020-02-04/3111080-field-map-widget-schema.patch"
+            },
+            "drupal/search_api_solr" : {
+                "Default configuration hash schema mapping": "patches/search-api-solr-default-config-hash-mapping.patch"
             }
         }
     }
