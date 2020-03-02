@@ -45,11 +45,7 @@ function features_search_api_config_default_search_api_index() {
         },
         "search_api_alter_add_hierarchy" : { "status" : 0, "weight" : "-45", "settings" : { "fields" : [] } },
         "search_api_alter_node_access" : { "status" : 0, "weight" : "-44", "settings" : [] },
-        "site_name" : {
-          "status" : 1,
-          "weight" : "-43",
-          "settings" : { "site_name" : "" }
-        },
+        "site_name" : { "status" : 1, "weight" : "-43", "settings" : { "site_name" : "" } },
         "federated_field" : {
           "status" : 1,
           "weight" : "-42",
@@ -179,8 +175,35 @@ function features_search_api_config_default_search_api_index() {
  */
 function features_search_api_config_default_search_api_server() {
   $items = array();
+  $items['drupal_8_schema'] = entity_import('search_api_server', '{
+    "name" : "Drupal 8 schema",
+    "machine_name" : "drupal_8_schema",
+    "description" : "",
+    "class" : "search_api_solr_service",
+    "options" : {
+      "clean_ids" : true,
+      "site_hash" : true,
+      "scheme" : "http",
+      "host" : "localhost",
+      "port" : "8983",
+      "path" : "\\/solr\\/drupal8",
+      "http_user" : "",
+      "http_pass" : "",
+      "excerpt" : 0,
+      "retrieve_data" : 0,
+      "highlight_data" : 0,
+      "skip_schema_check" : 0,
+      "solr_version" : "",
+      "http_method" : "AUTO",
+      "log_query" : 0,
+      "log_response" : 0,
+      "commits_disabled" : 0
+    },
+    "enabled" : "1",
+    "rdf_mapping" : []
+  }');
   $items['local_server'] = entity_import('search_api_server', '{
-    "name" : "Local server",
+    "name" : "Drupal 7 schema - default",
     "machine_name" : "local_server",
     "description" : "",
     "class" : "search_api_solr_service",
