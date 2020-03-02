@@ -33,4 +33,18 @@ filter:
 proxy:
   isDisabled: 0
 autocomplete:
-  isEnabled: 0
+  isEnabled: 1
+  proxy:
+    isDisabled: 0
+  direct:
+    url: ''
+  appendWildcard: 1
+  use_search_app_creds: 0
+  username: ''
+  password: ''
+  suggestionRows: ''
+  numChars: ''
+  mode: result
+  result:
+    titleText: ''
+    hideDirectionsText: 0

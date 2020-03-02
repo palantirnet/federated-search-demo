@@ -17,13 +17,11 @@ dependencies:
     - search_api_solr.solr_field_type.text_phonetic_und_7_0_0
     - search_api_solr.solr_field_type.text_und_7_0_0
     - search_api_solr.solr_request_dispatcher.request_dispatcher_httpcaching_default_7_0_0
-    - search_api_solr.solr_request_dispatcher.request_dispatcher_httpcachingnever_default_7_0_0
     - search_api_solr.solr_request_handler.request_handler_autocomplete_default_7_0_0
     - search_api_solr.solr_request_handler.request_handler_elevate_default_7_0_0
     - search_api_solr.solr_request_handler.request_handler_extract_default_7_0_0
     - search_api_solr.solr_request_handler.request_handler_mlt_default_7_0_0
     - search_api_solr.solr_request_handler.request_handler_replicationmaster_default_7_0_0
-    - search_api_solr.solr_request_handler.request_handler_replicationslave_default_7_0_0
     - search_api_solr.solr_request_handler.request_handler_select_default_7_0_0
     - search_api_solr.solr_request_handler.request_handler_spell_default_7_0_0
     - search_api_solr.solr_request_handler.request_handler_suggest_default_7_0_0
@@ -31,7 +29,7 @@ dependencies:
   module:
     - search_api_solr
 id: local_server
-name: 'Local server'
+name: 'Drupal 7 schema - default'
 description: ''
 backend: search_api_solr
 backend_config:
@@ -53,8 +51,10 @@ backend_config:
     solr_install_dir: ../../..
   disabled_field_types: {  }
   disabled_caches: {  }
-  disabled_request_handlers: {  }
-  disabled_request_dispatchers: {  }
+  disabled_request_handlers:
+    - request_handler_replicationslave_default_7_0_0
+  disabled_request_dispatchers:
+    - request_dispatcher_httpcachingnever_default_7_0_0
   rows: 10
   retrieve_data: false
   highlight_data: false
