@@ -29,7 +29,7 @@ dependencies:
   module:
     - search_api_solr
 id: local_server
-name: 'Local server'
+name: 'Drupal 7 schema - default'
 description: ''
 backend: search_api_solr
 backend_config:

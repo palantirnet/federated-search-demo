@@ -91,5 +91,32 @@ function features_search_api_config_default_fe_block_settings() {
     'visibility' => 0,
   );
 
+  $export['user-login'] = array(
+    'cache' => -1,
+    'custom' => 0,
+    'delta' => 'login',
+    'module' => 'user',
+    'node_types' => array(),
+    'pages' => 'search-app
+search-app*',
+    'roles' => array(),
+    'themes' => array(
+      'bartik' => array(
+        'region' => 'sidebar_first',
+        'status' => 1,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'seven' => array(
+        'region' => 'content',
+        'status' => 1,
+        'theme' => 'seven',
+        'weight' => 10,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
+  );
+
   return $export;
 }
