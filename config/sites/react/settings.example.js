@@ -73,5 +73,5 @@ const config = {
   //   },
   // },
 };
-const div = document.getElementById('root');
+const div = document.getElementById('fs-root');
 div.setAttribute('data-federated-search-app-config', JSON.stringify(config));
