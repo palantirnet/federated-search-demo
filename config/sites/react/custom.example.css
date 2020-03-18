@@ -17,3 +17,15 @@ td.CalendarDay {
   padding: 0;
   margin: 0;
 }
+
+/**
+ * Search filters
+ */
+/* The container for the search filters */
+aside.fs-aside {
+  width: 30%;
+  margin-left: 0; }
+
+#fs-root .fs-main, #fs-root .fs-search-form, #fs-root .fs-search-scope {
+  width: 65%;
+}
