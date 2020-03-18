@@ -14,17 +14,13 @@ aside.layout-container, div.layout-container {
  * Search filters
  */
 /* The container for the search filters */
-#fs-root aside.fs-l-25-75--1 {
+aside.fs-aside {
   background-color: white;
-  width: 22%;
+  width: 30%;
   margin-left: 0; }
 
-#fs-root div.fs-l-25-75--2 {
-  width: 75%;
-}
-
-#fs-root .container {
-  width: 100%;
+#fs-root .fs-main, #fs-root .fs-search-form, #fs-root .fs-search-scope {
+  width: 65%;
 }
 
 /* Search filters */
