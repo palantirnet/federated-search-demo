@@ -251,6 +251,14 @@ If you just want to get up and running, from the project root run `phing install
    - This links each of the two modules: `search_api_federated_solr` and `search_api_field_map` from the D8/D7 single site docroot to the `/src` directory and also into the D8/D7 Domain Access-enabled docroot. This means all changes made in `/src/search_api_...` will propagate to both sites simultaneously. The `phing init` command is run automatically by any of the installer scripts.
 8. (optional) Run `phing init-git` to run authenticated git checkouts. These git checkouts point to GitHub and have `drupal` aliased remotes to drupal.org (`git remote show`).
 
+### Updating Drupal 8 core
+
+Until we move to Drupal 9, you may run into issues with incompatible versions of `symfony/event-dispatcher`. Search API Solr requires version 4; Drupal 8 core version 3.
+
+To get around this issue, we use `composer require symfony/event-dispatcher:"4.3.3 as 3.4.99"` in both the `web/d8` and `web/d8-domain` directories.
+
+See https://www.drupal.org/project/drupal/issues/2876675
+
 ### Clear the search index
 
 If you rebuild the Drupal sites you might end up with orphaned content in Solr. To clear:
