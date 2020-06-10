@@ -17,7 +17,7 @@
     },
     "sort-packages": true,
     "platform": {
-      "php": "7.1.16"
+      "php": "7.3.18"
     }
   },
   "repositories": [

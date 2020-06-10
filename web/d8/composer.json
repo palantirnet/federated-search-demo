@@ -34,13 +34,13 @@
         "drupal/coder": "^8.0",
         "drupal/config_inspector": "^1.1",
         "drupal/config_installer": "^1.8",
-        "drupal/core": "^8.8",
+        "drupal/core": "^8.9",
         "drupal/default_content": "^1.0@alpha",
         "drupal/devel": "^2.1",
         "drupal/search_api_federated_solr": "3.x-dev",
         "drupal/token": "^1.7",
         "solarium/solarium": "^5.1",
-        "symfony/event-dispatcher": "^4.3"
+        "symfony/event-dispatcher": "4.3.3 as 3.4.99"
     },
     "require-dev": {
     },
@@ -60,9 +60,6 @@
             "drush/contrib/{$name}": ["type:drupal-drush"]
         },
         "patches": {
-            "drupal/core": {
-              "Allow symfony/event-dispatcher 4+ to be installed in Drupal 8: https://www.drupal.org/project/drupal/issues/2876675": "https://www.drupal.org/files/issues/2019-09-17/2876675-48.Fix-symfony-version-requirements-for-symfonyeventdispatcher.patch"
-            },
             "drupal/config_installer": {
                 "Allow config installer to find themes: https://www.drupal.org/node/2975675": "https://www.drupal.org/files/issues/2019-06-21/2975675-8.patch"
             },
