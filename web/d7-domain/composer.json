@@ -32,7 +32,7 @@
     "drupal/admin_menu": "^3.0@RC",
     "drupal/devel": "^1.6",
     "drupal/domain": "^3.17",
-    "drupal/drupal": "7.69",
+    "drupal/drupal": "~7",
     "drupal/entityreference": "^1.5",
     "drupal/features": "^2.10",
     "drupal/features_extra": "^1.0",
@@ -68,4 +68,3 @@
     ]
   }
 }
-
