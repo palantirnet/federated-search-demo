@@ -96,10 +96,11 @@ Vagrant.configure(2) do |config|
             inline: "composer install --ignore-platform-reqs"
         }
     end
-    config.trigger.after [:up, :reload] do |trigger|
-        trigger.name = "Composer self-update"
-        trigger.run_remote = {
-            inline: "sudo -H composer self-update"
-        }
-    end
+    # Restore this after updating to Composer 2.
+    #config.trigger.after [:up, :reload] do |trigger|
+    #    trigger.name = "Composer self-update"
+    #    trigger.run_remote = {
+    #        inline: "sudo -H composer self-update"
+    #    }
+    #end
 end
