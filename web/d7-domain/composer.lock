@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f78a8c24e8b60adfc4e765a87c68b018",
+    "content-hash": "158e72c8343b3390d5f04c9112e97f52",
     "packages": [
         {
             "name": "composer/installers",
@@ -762,26 +762,23 @@
         },
         {
             "name": "drupal/drupal",
-            "version": "7.69.0",
+            "version": "7.77.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/drupal.git",
-                "reference": "7.69"
+                "reference": "7.77"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/drupal-7.69.zip",
-                "reference": "7.69",
-                "shasum": "424bbf205fc6f8b28b348d42206b395fca26724f"
+                "url": "https://ftp.drupal.org/files/projects/drupal-7.77.zip",
+                "reference": "7.77",
+                "shasum": "3a1bc25eb3577b2670bc35a821626a45b217eb58"
             },
             "type": "drupal-core",
             "extra": {
-                "branch-alias": {
-                    "dev-7.x": "7.x-dev"
-                },
                 "drupal": {
-                    "version": "7.69",
-                    "datestamp": "1576698943",
+                    "version": "7.77",
+                    "datestamp": "1607003422",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -923,7 +920,7 @@
             "description": "Enables modules to work with any entity type and to provide entities.",
             "homepage": "https://www.drupal.org/project/entity",
             "support": {
-                "source": "http://cgit.drupalcode.org/entity"
+                "source": "https://git.drupalcode.org/project/entity"
             }
         },
         {
@@ -1026,9 +1023,6 @@
             },
             "type": "drupal-module",
             "extra": {
-                "branch-alias": {
-                    "dev-2.x": "2.x-dev"
-                },
                 "drupal": {
                     "version": "7.x-2.11",
                     "datestamp": "1541189192",
@@ -1058,6 +1052,10 @@
                 {
                     "name": "febbraro",
                     "homepage": "https://www.drupal.org/user/43670"
+                },
+                {
+                    "name": "flocondetoile",
+                    "homepage": "https://www.drupal.org/user/2006064"
                 },
                 {
                     "name": "jmiccolis",
@@ -1160,7 +1158,7 @@
             ],
             "homepage": "https://www.drupal.org/project/features_extra",
             "support": {
-                "source": "http://cgit.drupalcode.org/features_extra"
+                "source": "https://git.drupalcode.org/project/features_extra"
             }
         },
         {
@@ -1251,9 +1249,6 @@
             },
             "type": "drupal-module",
             "extra": {
-                "branch-alias": {
-                    "dev-1.x": "1.x-dev"
-                },
                 "drupal": {
                     "version": "7.x-1.26",
                     "datestamp": "1552334580",
@@ -1308,9 +1303,6 @@
             },
             "type": "drupal-module",
             "extra": {
-                "branch-alias": {
-                    "dev-2.x": "2.x-dev"
-                },
                 "drupal": {
                     "version": "7.x-2.6",
                     "datestamp": "1580139481",
@@ -1379,9 +1371,6 @@
             },
             "type": "drupal-module",
             "extra": {
-                "branch-alias": {
-                    "dev-1.x": "1.x-dev"
-                },
                 "drupal": {
                     "version": "7.x-1.15",
                     "datestamp": "1573123085",
@@ -1492,7 +1481,7 @@
             "description": "Enforces variable values defined by modules that need settings set to operate properly.",
             "homepage": "https://www.drupal.org/project/strongarm",
             "support": {
-                "source": "http://cgit.drupalcode.org/strongarm"
+                "source": "https://git.drupalcode.org/project/strongarm"
             }
         },
         {
@@ -1514,9 +1503,6 @@
             },
             "type": "drupal-module",
             "extra": {
-                "branch-alias": {
-                    "dev-1.x": "1.x-dev"
-                },
                 "drupal": {
                     "version": "7.x-1.7",
                     "datestamp": "1485316084",
@@ -1559,7 +1545,7 @@
             "description": "Provides a user interface for the Token API and some missing core tokens.",
             "homepage": "https://www.drupal.org/project/token",
             "support": {
-                "source": "http://cgit.drupalcode.org/token"
+                "source": "https://git.drupalcode.org/project/token"
             }
         },
         {
@@ -1868,6 +1854,7 @@
                     "email": "jakub.onderka@gmail.com"
                 }
             ],
+            "abandoned": "php-parallel-lint/php-console-color",
             "time": "2018-09-29T17:23:10+00:00"
         },
         {
@@ -1914,6 +1901,7 @@
                 }
             ],
             "description": "Highlight PHP code in terminal",
+            "abandoned": "php-parallel-lint/php-console-highlighter",
             "time": "2018-09-29T18:48:56+00:00"
         },
         {
@@ -2778,5 +2766,6 @@
     "platform-dev": [],
     "platform-overrides": {
         "php": "7.3"
-    }
+    },
+    "plugin-api-version": "1.1.0"
 }

@@ -30,7 +30,7 @@ class FeatureContext extends RawDrupalContext implements SnippetAcceptingContext
 
     /**
      * @Given I click the :arg1 element
-     * 
+     *
      * See https://stackoverflow.com/questions/33649518/how-can-i-click-a-span-in-behat.
      */
     public function iClickTheElement($selector)
@@ -52,7 +52,9 @@ class FeatureContext extends RawDrupalContext implements SnippetAcceptingContext
       */
     public function beforeStep()
     {
+      if ($this->getSession()->isStarted()) {
         $this->getSession()->resizeWindow(1920, 1080, 'current');
+      }
     }
 
 }
