@@ -263,7 +263,7 @@
             </then>
             <else>
               <mkdir dir="src" mode="777" />
-              <exec command="git clone --branch=8.x-3.x https://github.com/palantirnet/search_api_federated_solr.git" dir="src" checkreturn="true" />
+              <exec command="git clone --branch=4.x https://github.com/palantirnet/search_api_federated_solr.git" dir="src" checkreturn="true" />
               <exec command="git clone --branch=8.x-3.x https://github.com/palantirnet/search_api_field_map.git" dir="src" checkreturn="true" />
               <exec command="git clone --branch=7.x-2.x https://github.com/palantirnet/search_api_federated_solr.git search_api_federated_solr-7.x" dir="src" checkreturn="true" />
             </else>
@@ -281,8 +281,8 @@
               <mkdir dir="src" mode="777" />
             </then>
         </if>
-        <echo message="git clone --branch=8.x-3.x git@github.com:palantirnet/search_api_federated_solr.git" />
-        <exec command="git clone --branch=8.x-3.x git@github.com:palantirnet/search_api_federated_solr.git" dir="src" checkreturn="true" />
+        <echo message="git clone --branch=4.x git@github.com:palantirnet/search_api_federated_solr.git" />
+        <exec command="git clone --branch=4.x git@github.com:palantirnet/search_api_federated_solr.git" dir="src" checkreturn="true" />
         <exec command="git remote add drupal git@git.drupal.org:project/search_api_federated_solr.git" dir="src/search_api_federated_solr" checkreturn="true" />
         <echo message="git clone --branch=8.x-3.x git@github.com:palantirnet/search_api_field_map.git" />
         <exec command="git clone --branch=8.x-3.x git@github.com:palantirnet/search_api_field_map.git" dir="src" checkreturn="true" />
