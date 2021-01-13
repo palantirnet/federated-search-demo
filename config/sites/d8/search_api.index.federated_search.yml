@@ -35,6 +35,9 @@ third_party_settings:
     multilingual:
       limit_to_content_language: false
       include_language_independent: true
+    term_modifiers:
+      slop: 10000000
+      fuzzy: 2
 id: federated_search
 name: 'Federated search'
 description: ''

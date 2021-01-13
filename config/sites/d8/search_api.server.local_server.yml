@@ -49,6 +49,7 @@ backend_config:
     http_method: AUTO
     jmx: false
     solr_install_dir: ../../..
+    skip_schema_check: false
   disabled_field_types: {  }
   disabled_caches: {  }
   disabled_request_handlers:
@@ -58,9 +59,10 @@ backend_config:
   rows: 10
   retrieve_data: false
   highlight_data: false
-  skip_schema_check: false
   server_prefix: ''
   domain: generic
   environment: default
   optimize: false
   site_hash: false
+  index_single_documents_fallback_count: 10
+  fallback_multiple: true
