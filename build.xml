@@ -153,6 +153,8 @@
             <option name="account-name">admin</option>
             <option name="account-pass">admin</option>
             <option name="site-name">${site.name}</option>
+            <param>minimal</param>
+            <option name="existing-config" />
         </drush>
 
     </target>
