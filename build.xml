@@ -390,6 +390,11 @@
         <exec command="drush @d8 search-api:index federated_search -y" />
         <echo message="Drupal 8 indexed." />
 
+        <!-- Index Drupal 9 -->
+        <exec command="drush @d9 search-api:reset-tracker federated_search -y" />
+        <exec command="drush @d9 search-api:index federated_search -y" />
+        <echo message="Drupal 9 indexed." />
+
         <if>
             <equals arg1="${index.domains}" arg2="y" />
             <then>
