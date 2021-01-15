@@ -24,4 +24,8 @@ settings:
   level: 1
   depth: 0
   expand_all_items: false
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    pages: "/search-app\r\n/search-app*"
+    negate: true

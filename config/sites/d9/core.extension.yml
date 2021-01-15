@@ -38,7 +38,6 @@ module:
   path_alias: 0
   quickedit: 0
   rdf: 0
-  search: 0
   search_api: 0
   search_api_federated_solr: 0
   search_api_field_map: 0

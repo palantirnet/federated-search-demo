@@ -24,5 +24,9 @@ content:
 hidden:
   body: true
   comment: true
+  field_age: true
   field_image: true
   field_tags: true
+  field_traits: true
+  langcode: true
+  search_api_excerpt: true
