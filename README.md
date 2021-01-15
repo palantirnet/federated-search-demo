@@ -92,8 +92,9 @@ You may be interested in creating your own development environment and comparing
    - [http://d7-1.fs-demo.local](http://d7-1.fs-demo.local)
    - [http://d7-2.fs-demo.local](http://d7-2.fs-demo.local)
    - [http://d7-3.fs-demo.local](http://d7-3.fs-demo.local)
-10. View the Solr index at [http://federated-search-demo.local:8983/solr/#/drupal8/query](http://federated-search-demo.local:8983/solr/#/drupal8/query).
-11. See the bare React app (without Drupal) at [http://react.fs-demo.local](http://react.fs-demo.local)
+10. Visit your D9 (standalone) site at [http://d9.fs-demo.local](http://d9.fs-demo.local)
+11. View the Solr index at [http://federated-search-demo.local:8983/solr/#/drupal8/query](http://federated-search-demo.local:8983/solr/#/drupal8/query).
+12. See the bare React app (without Drupal) at [http://react.fs-demo.local](http://react.fs-demo.local)
 
 You can log in to any of the Drupal sites at `/user` with `admin/admin`.
 
@@ -107,7 +108,7 @@ To run project-related commands other than `vagrant up` and `vagrant ssh`:
 * You'll be in your project root, at the path `/var/www/federated-search-demo.local/`
 * You can run `composer`, `drush`, and `phing` commands from here
 * Go to the path `/var/www/federated-search-demo.local/web/*` to add new modules to each site.
-* Use drush on the D8 sites - try `drush site:alias` or `drush @d8 status`
+* Use drush on the D8 and D9 sites - try `drush site:alias` or `drush @d8 status`
 * Use drush on the D7 site by navigating into the d7 directory:
 
    ```
@@ -241,12 +242,15 @@ If you just want to get up and running, from the project root run `phing install
 2. Download the most current dependencies for D8 (domain access): `composer install --working-dir=web/d8-domain`
 3. Download the most current dependencies for D7: `composer install --working-dir=web/d7`
 4. Download the most current dependencies for D7: `composer install --working-dir=web/d7-domain`
+5. Download the most current dependencies for D9 (standalone): `composer install --working-dir=web/d9`
 5. Reinstall Drupal 8:
    - Standalone: `phing install-d8 -Ddrush.root=web/d8/docroot`
    - Domain site: `phing install-d8-domain -Ddrush.root=web/d8-domain/docroot`
 6. Reinstall Drupal 7: `phing install-d7`
    - Standalone: `phing install-d7 -Ddrush.root=web/d7/docroot`
    - Domain site: `phing install-d7-domain -Ddrush.root=web/d7-domain/docroot`
+5. Reinstall Drupal 9:
+    - Standalone: `phing install-d9 -Ddrush.root=web/d9/docroot`
 7. Build the `/src` directory and checkout modules there: `phing init`
    - This links each of the two modules: `search_api_federated_solr` and `search_api_field_map` from the D8/D7 single site docroot to the `/src` directory and also into the D8/D7 Domain Access-enabled docroot. This means all changes made in `/src/search_api_...` will propagate to both sites simultaneously. The `phing init` command is run automatically by any of the installer scripts.
 8. (optional) Run `phing init-git` to run authenticated git checkouts. These git checkouts point to GitHub and have `drupal` aliased remotes to drupal.org (`git remote show`).
@@ -327,10 +331,12 @@ This repo is structured a little differently than usual, since it contains 4 ind
 │   ├── config_split  # Not using this at the moment
 │   └── sites  # D8 site config goes here
 │       └── d8
+│       └── d9
 ├── drush
 │   └── sites # Drush aliases go here.
 │       ├── d8-domain.site.yml
 │       └── d8.site.yml
+│       └── d9.site.yml
 ├── features  # Tests could eventually go here.
 │   ├── bootstrap
 │   │   └── FeatureContext.php
@@ -347,6 +353,11 @@ This repo is structured a little differently than usual, since it contains 4 ind
     │   ├── docroot
     │   └── vendor
     ├── d8
+    │   ├── composer.json
+    │   ├── composer.lock
+    │   ├── docroot
+    │   └── vendor
+    ├── d9
     │   ├── composer.json
     │   ├── composer.lock
     │   ├── docroot
