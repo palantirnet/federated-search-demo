@@ -19,6 +19,11 @@ web/d8*/docroot/core
 web/d8*/docroot/modules/contrib
 web/d8*/docroot/themes/contrib/
 web/d8*/docroot/profiles/contrib/
+web/d9*/docroot/core
+web/d9*/docroot/modules/contrib
+web/d9*/docroot/themes/contrib/
+web/d9*/docroot/profiles/contrib/
+
 
 # Ignore regular Composer dependencies
 /vendor/

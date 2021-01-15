@@ -12,6 +12,7 @@
         <phingcall target="install-d7-domain" />
         <phingcall target="install-d8" />
         <phingcall target="install-d8-domain" />
+        <phingcall target="install-d9" />
         <phingcall target="react" />
         <property name="index.domains" value="y" />
         <phingcall target="solr-reindex" />
@@ -22,11 +23,42 @@
     <target name="install-no-domain" description="Install all three Drupal sites in the Federated Search Demo">
         <phingcall target="install-d7" />
         <phingcall target="install-d8" />
+        <phingcall target="install-d9" />
         <phingcall target="react" />
         <property name="index.domains" value="n" />
         <phingcall target="solr-reindex" />
     </target>
 
+    <!-- Target: install-d8 -->
+    <target name="install-d9" description="Install one of the Drupal 9 sites; specify which site with -Ddrush.root=web/d9/docroot">
+        <phingcall target="init" />
+        <property name="drush.root" value="web/d9/docroot" />
+        <property name="site.name" value="Federated Search Drupal 9" />
+
+        <exec command="composer install" dir="${drush.root}/.." passthru="true" />
+        <phingcall target="install-drupal9-by-path" />
+
+        <!-- Create demo content -->
+        <drush command="pm-enable" assume="yes">
+            <param>federated_default_content</param>
+        </drush>
+        <!-- Copy demo files -->
+        <copy todir="${drush.root}/sites/default/files" mode="777">
+            <fileset dir="${drush.root}/modules/custom/federated_default_content/assets">
+                <include name="**/*.jpg" />
+            </fileset>
+        </copy>
+        <!-- Uninstall the demo content modules -->
+        <drush command="pm-uninstall" assume="yes">
+            <param>federated_default_content</param>
+        </drush>
+
+        <drush command="search-api:clear" assume="yes">
+            <param>federated_search</param>
+        </drush>
+
+        <exec command="drush @d9 search-api:index federated_search -y" />
+    </target>
 
     <!-- Target: install-d8 -->
     <target name="install-d8" description="Install one of the Drupal 8 sites; specify which site with -Ddrush.root=web/d8/docroot">
@@ -99,6 +131,40 @@
 
     <!-- Target: install-drupal-by-path -->
     <target name="install-drupal-by-path" hidden="true">
+        <phingcall target="preinstall-drupal-by-path" />
+
+        <!-- Install the site. -->
+        <drush command="site-install" assume="yes">
+            <option name="account-name">admin</option>
+            <option name="account-pass">admin</option>
+            <option name="site-name">${site.name}</option>
+            <!-- We should be able to use the existing-config flag, but cannot.
+                 See https://www.drupal.org/project/drupal/issues/2982052 -->
+            <param>config_installer</param>
+        </drush>
+
+        <!-- The public files directory, and everything in it, needs to be world writable. -->
+        <exec command="chmod -R 777 ${drush.root}/${drupal.files}" checkreturn="true" />
+    </target>
+
+    <!-- Target: install-drupal-by-path -->
+    <target name="install-drupal9-by-path" hidden="true">
+        <phingcall target="preinstall-drupal-by-path" />
+
+        <!-- Install the site. -->
+        <drush command="site-install" assume="yes">
+            <option name="account-name">admin</option>
+            <option name="account-pass">admin</option>
+            <option name="site-name">${site.name}</option>
+            <option name="existing-config" />
+        </drush>
+
+        <!-- The public files directory, and everything in it, needs to be world writable. -->
+        <exec command="chmod -R 777 ${drush.root}/${drupal.files}" checkreturn="true" />
+    </target>
+
+    <!-- Target: install-drupal-by-path -->
+    <target name="preinstall-drupal-by-path" hidden="true">
         <drush command="status" returnProperty="drupal.site_padded"><option name="field" value="site" /></drush>
         <php function="trim" returnProperty="drupal.site"><param value="${drupal.site_padded}" /></php>
 
@@ -132,19 +198,6 @@
                 <mkdir dir="${drush.root}/${drupal.private}" mode="777" />
             </then>
         </if>
-
-        <!-- Install the site. -->
-        <drush command="site-install" assume="yes">
-            <option name="account-name">admin</option>
-            <option name="account-pass">admin</option>
-            <option name="site-name">${site.name}</option>
-            <!-- We should be able to use the existing-config flag, but cannot.
-                 See https://www.drupal.org/project/drupal/issues/2982052 -->
-            <param>config_installer</param>
-        </drush>
-
-        <!-- The public files directory, and everything in it, needs to be world writable. -->
-        <exec command="chmod -R 777 ${drush.root}/${drupal.files}" checkreturn="true" />
     </target>
 
 

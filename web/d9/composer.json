@@ -1,0 +1,68 @@
+{
+    "name": "palantirnet/federated-search-demo-d8",
+    "description": "Federated Search setup for Drupal 8 testing.",
+    "type": "project",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Palantir.net",
+            "email": "info@palantir.net"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "platform": {
+            "php": "7.3"
+        },
+        "preferred-install": {
+            "*": "dist"
+        },
+        "sort-packages": true
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        }
+    ],
+    "require": {
+        "composer/installers": "^1.6",
+        "cweagans/composer-patches": "^1.6",
+        "drupal-composer/drupal-scaffold": "^2.5",
+        "drupal/admin_toolbar": "^2.2",
+        "drupal/coder": "^8.0",
+        "drupal/config_inspector": "^1.1",
+        "drupal/core": "^9.0",
+        "drupal/default_content": "^1.0@alpha",
+        "drupal/devel": "^4.1",
+        "drupal/search_api_federated_solr": "4.x-dev",
+        "drupal/search_api_solr": "^4.1",
+        "drupal/token": "^1.7",
+        "solarium/solarium": "^6.0",
+        "symfony/event-dispatcher": "^4.4"
+    },
+    "require-dev": {
+    },
+    "conflict": {
+        "drupal/drupal": "*"
+    },
+    "scripts": {
+        "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
+        "post-create-project-cmd": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold"
+    },
+    "extra": {
+        "installer-paths": {
+            "docroot/core": ["type:drupal-core"],
+            "docroot/modules/contrib/{$name}": ["type:drupal-module"],
+            "docroot/profiles/contrib/{$name}": ["type:drupal-profile"],
+            "docroot/themes/contrib/{$name}": ["type:drupal-theme"],
+            "drush/contrib/{$name}": ["type:drupal-drush"]
+        },
+        "patches": {
+            "drupal/default_content": {
+                "Do not reimport existing entities: https://www.drupal.org/project/default_content/issues/2698425": "https://www.drupal.org/files/issues/2018-12-11/default_content-dont-reimport-2698425-109.patch"
+            }
+        }
+    }
+}

@@ -1,8 +1,18 @@
 ---
-- name: Add Solr 7.x config to drupal7 and drupal8 indeces.
+- name: Add Solr 7.x config to drupal7, drupal8, and drupal9 indeces.
   become: yes
   command: "cp -r {{solr_conf}}/{{ item.name }}/custom/{{ item.subdir }}/. /var/solr/data/{{ item.name }}/conf"
   with_items: "{{ solr_config }}"
+
+- name: Allow stream body requests to drupal9
+  uri:
+    url: http://federated-search-demo.local:8983/solr/drupal9/config
+    method: POST
+    headers:
+      Content-type: application/json
+    body_format: json
+    body: '{"set-property": {"requestDispatcher.requestParsers.enableRemoteStreaming": true}, "set-property": {"requestDispatcher.requestParsers.enableStreamBody": true}}'
+  become: true
 
 - name: Allow stream body requests to drupal8
   uri:
