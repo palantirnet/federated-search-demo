@@ -29,7 +29,7 @@
         <phingcall target="solr-reindex" />
     </target>
 
-    <!-- Target: install-d8 -->
+    <!-- Target: install-d9 -->
     <target name="install-d9" description="Install one of the Drupal 9 sites; specify which site with -Ddrush.root=web/d9/docroot">
         <phingcall target="init" />
         <property name="drush.root" value="web/d9/docroot" />
@@ -142,9 +142,6 @@
                  See https://www.drupal.org/project/drupal/issues/2982052 -->
             <param>config_installer</param>
         </drush>
-
-        <!-- The public files directory, and everything in it, needs to be world writable. -->
-        <exec command="chmod -R 777 ${drush.root}/${drupal.files}" checkreturn="true" />
     </target>
 
     <!-- Target: install-drupal-by-path -->
@@ -159,11 +156,9 @@
             <option name="existing-config" />
         </drush>
 
-        <!-- The public files directory, and everything in it, needs to be world writable. -->
-        <exec command="chmod -R 777 ${drush.root}/${drupal.files}" checkreturn="true" />
     </target>
 
-    <!-- Target: install-drupal-by-path -->
+    <!-- Target: preinstall-drupal-by-path -->
     <target name="preinstall-drupal-by-path" hidden="true">
         <drush command="status" returnProperty="drupal.site_padded"><option name="field" value="site" /></drush>
         <php function="trim" returnProperty="drupal.site"><param value="${drupal.site_padded}" /></php>
@@ -198,6 +193,8 @@
                 <mkdir dir="${drush.root}/${drupal.private}" mode="777" />
             </then>
         </if>
+        <!-- The public files directory, and everything in it, needs to be world writable. -->
+        <exec command="chmod -R 777 ${drush.root}/${drupal.files}" checkreturn="true" />
     </target>
 
 
