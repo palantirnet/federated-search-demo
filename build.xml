@@ -156,8 +156,6 @@
             <option name="existing-config" />
         </drush>
 
-        <!-- The public files directory, and everything in it, needs to be world writable. -->
-        <exec command="chmod -R 777 ${drush.root}/${drupal.files}" checkreturn="true" />
     </target>
 
     <!-- Target: preinstall-drupal-by-path -->
