@@ -1,11 +1,9 @@
-uuid: d0d5ceb7-9c81-4df5-8929-a3aa1af866d2
+uuid: 7cdcfd21-e5e3-4ab7-9768-da1afd0dde15
 langcode: en
 status: true
 dependencies:
   config:
     - field.field.node.page.body
-    - field.field.node.page.field_age
-    - field.field.node.page.field_traits
     - node.type.page
   module:
     - text
@@ -24,25 +22,7 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_age:
-    weight: 102
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
-  field_traits:
-    weight: 103
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
   links:
     weight: 101
     region: content
-hidden:
-  langcode: true
-  search_api_excerpt: true
+hidden: {  }

@@ -148,12 +148,11 @@
     <target name="install-drupal9-by-path" hidden="true">
         <phingcall target="preinstall-drupal-by-path" />
 
-        <!-- Install the site. -->
+        <!-- Install the site without config. -->
         <drush command="site-install" assume="yes">
             <option name="account-name">admin</option>
             <option name="account-pass">admin</option>
             <option name="site-name">${site.name}</option>
-            <option name="existing-config" />
         </drush>
 
     </target>

@@ -1,4 +1,4 @@
-uuid: 894d5741-97b9-499a-98ab-68361c2a4605
+uuid: 3846030b-a39d-413e-b233-c9b35e108d32
 langcode: en
 status: true
 dependencies:
@@ -24,9 +24,4 @@ settings:
   level: 1
   depth: 0
   expand_all_items: false
-visibility:
-  request_path:
-    id: request_path
-    pages: "/search-app\r\n/search-app*"
-    negate: true
-    context_mapping: {  }
+visibility: {  }

@@ -61,9 +61,6 @@
             "drush/contrib/{$name}": ["type:drupal-drush"]
         },
         "patches": {
-            "drupal/core": {
-                "Allow an install hook in profiles installing from configuration": "https://www.drupal.org/files/issues/2020-12-21/2982052-58-Allow_install_hook_profiles_installing_from_configuration.patch"
-            },
             "drupal/default_content": {
                 "Do not reimport existing entities: https://www.drupal.org/project/default_content/issues/2698425": "https://www.drupal.org/files/issues/2018-12-11/default_content-dont-reimport-2698425-109.patch"
             }
