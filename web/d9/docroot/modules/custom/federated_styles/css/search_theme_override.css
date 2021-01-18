@@ -130,7 +130,6 @@ button.fs-search-form__submit, button.fs-search-form__submit:active, button.fs-s
   padding: .35em !important;
   min-width: auto !important;
   margin: 0 !important;
-  height: 24px !important;
 }
 
 .fs-search-form__autocomplete-container .react-autosuggest__input:focus {
