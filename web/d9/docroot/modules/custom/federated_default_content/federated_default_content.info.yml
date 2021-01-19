@@ -2,26 +2,10 @@ name: 'Federated Search Demo default content'
 type: module
 description: 'Imports additional default content for testing search'
 package: 'Federated Search Demo'
-core: 8.x
 core_version_requirement: ^8 || ^9
 dependencies:
   - drupal:default_content
 default_content:
-  file:
-    - 13cd32cf-dad1-46dc-8cdf-b82f7d9065f1
-    - 70e2c88b-1bfd-44c4-8287-5678ea85e29e
-    - d3b37611-170f-4553-976b-1b18c6d5539b
-  node:
-    - 0a22e102-8410-4c83-b789-782fb17f1393
-    - 05f3dd291-a3bf-4455-b454-a580726453c2
-    - 8df2d7ac-e7ce-4e81-b67d-3c3e46273983
-    - 8e6f71ca-83e5-4c67-bede-e9149a5c5345
-    - 021d4698-66ba-4f5b-a95a-209768b58a8c
-    - 63ade9b6-97e8-4203-9faf-a5b5fc65ff03
-    - 71ba0879-f592-486d-8ff4-9595444778fb
-    - 9047bf3b-ae93-4e5d-b448-be92bd079407
-    - a4782db6-832c-4190-b654-6cfec21be155
-    - f1277919-2dbb-44a2-a15e-a6f1bb140e72
   taxonomy_term:
     - 2d45c3a1-4ab3-431b-a9e8-1212c5f4f6b4
     - 5a419857-a179-469e-94d7-48402ad2e7d0
