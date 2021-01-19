@@ -29,11 +29,11 @@
     "require": {
         "composer/installers": "^1.6",
         "cweagans/composer-patches": "^1.6",
-        "drupal-composer/drupal-scaffold": "^2.5",
         "drupal/admin_toolbar": "^2.2",
         "drupal/coder": "^8.0",
         "drupal/config_inspector": "^1.1",
         "drupal/core": "^9.1",
+        "drupal/core-composer-scaffold": "^9.1",
         "drupal/default_content": "^1.0@alpha",
         "drupal/devel": "^4.1",
         "drupal/search_api_federated_solr": "4.x-dev",
@@ -47,10 +47,6 @@
     "conflict": {
         "drupal/drupal": "*"
     },
-    "scripts": {
-        "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
-        "post-create-project-cmd": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold"
-    },
     "extra": {
         "installer-paths": {
             "docroot/core": ["type:drupal-core"],
@@ -58,6 +54,11 @@
             "docroot/profiles/contrib/{$name}": ["type:drupal-profile"],
             "docroot/themes/contrib/{$name}": ["type:drupal-theme"],
             "drush/contrib/{$name}": ["type:drupal-drush"]
+        },
+        "drupal-scaffold": {
+            "locations": {
+                "web-root": "./docroot"
+            }
         },
         "patches": {
             "drupal/default_content": {
