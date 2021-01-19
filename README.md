@@ -25,13 +25,13 @@ There are two demo builds included in the package, and you should be sure to che
 
 ### solr-7
 
-*This is now the default branch.*
+The `solr-7` branch contains release 4.0 and runs Drupal 7.77, 8.9.12, and 9.1.2; testing against Solr 7. The Drupal 8 and 9 versions rely on Search API Solr 4.x.
 
-The `solr-7` branch will contain release 3.0 and is compatible with Drupal 7.69, 8.82 and higher, and Solr 7. It relies on Search API Solr 8.3, and will be Drupal 9 compatible.
-
-This branch uses Search API Federated Solr version 8.x-3.x. All new development is done on this branch.
+This branch uses Search API Federated Solr version 4.x. All new development is done on this branch.
 
 ### solr-4
+
+This branch is no longer maintained.
 
 The `solr-4` branch contains release 1.0 and is compatible with Drupal 7.69, 8.6 - 8.82, and Solr 4 - 6. Most important, it relies on Search API Solr 8.1, which is no longer maintained. This branch is stable and appropriate for deployment to Acquia, provided your site is not using Solr 7.
 
@@ -81,7 +81,7 @@ You may be interested in creating your own development environment and comparing
 4. Log in to the virtual machine (the VM): `vagrant ssh`
 5. Build, install, and enable demo content: `phing install-all`
   * When prompted, you may choose to empty the current SOLR index. This action is recommended when re-installing all sites, but not one site.
-  * If you wish to install without Domain Access, run `phing install-no-domain`. In that case, two sites will be built with 20 pieces of content.
+  * If you wish to install without Domain Access, run `phing install-no-domain`. In that case, three sites will be built with 30 pieces of content.
 6. Visit your D8 (standalone) site at [http://d8.fs-demo.local](http://d8.fs-demo.local)
 7. Visit your D8 (domain access) site at:
    - [http://d8-1.fs-demo.local](http://d8-1.fs-demo.local)
@@ -136,7 +136,7 @@ We create three vocabularies in Drupal 7:
 * Color
 * Traits
 
-In Drupal 8, the Color vocabulary is not present. This difference shows how sites with different taxonomies can be integrated in search results.
+In Drupal 8 and 9, the Color vocabulary is not present. This difference shows how sites with different taxonomies can be integrated in search results.
 
 Each content page is assigned to the available vocabularies. This setup allows our search index to provide filters by each term.
 
@@ -144,7 +144,7 @@ Note that term mapping in Federated Search lets you alias terms. In the Drupal 7
 
 ### Images
 
-Some of the dogs -- but not all -- have images. These show how the index handles image display. The following dogs should have images: `Irish Terrier, English Terrier, Newfoundland, Pointer, Greyhound, Dachshund, Maltese, Cumberland Sheepdog, Dalmation, Toy Spaniel`.
+Some of the dogs -- but not all -- have images. These show how the index handles image display. The following dogs should have images: `Irish Terrier, English Terrier, Newfoundland, Pointer, Greyhound, Dachshund, Maltese, Cumberland Sheepdog, Dalmation, Toy Spaniel, Mastiff, Deer Hound, St. Bernard`.
 
 Note that sometimes the image cache must be primed, so if you see a broken image on first page load, reload the page. If an image has the url `default`, it means the index has not been built properly. Run `phing solr-reindex` to correct the issue.
 
@@ -152,34 +152,38 @@ Images are [public domain](https://freevintageillustrations.com/faq/) and source
 
 ## Sample searches
 
-By default, the sites will show all content when no search keywords are entered. There should be 32 items in the default result set.
+By default, the sites will show all content when no search keywords are entered. There should be 42 items in the default result set.
 
-* Domain 1 - Drupal 7 (3 results)
-* Domain 2 - Drupal 7 (2 results)
-* Domain 3 - Drupal 7 (3 results)
-* Drupal 7 - Federated Search (10 results)
-* Federated Search Domain 1 (2 results)
-* Federated Search Domain 2 (2 results)
-* Federated Search Domain 3 (3 results)
-* Federated Search Drupal 8 (10 results)
+* Drupal 8 (10 results, Drupal 8)
+* Drupal 8 - One (2 results. Drupal 8 with Domain Access)
+* Drupal 8 - Two (2 results, Drupal 8 with Domain Access)
+* Drupal 8 - Three (3 results, Drupal 8 with Domain Access)
+* Drupal 9 (10 results, Drupal 9)
+* Search Domain 1 (3 results, Drupal 7 with Domain Access)
+* Search Domain 2 (2 results, Drupal 7 with Domain Access)
+* Search Domain 3 (3 results, Drupal 7 with Domain Access)
+* Search Drupal 7 (10 results, Drupal 7)
 
-Note: Theses numbers add up to more than 32 because some content is assigned to multiple domains.
+Note: These numbers add up to more than 42 because some content is assigned to multiple domains.
 
 If you did not install the domain sites, then there will be 20 items:
 
-* Drupal 7 - Federated Search (10 results)
-* Federated Search Drupal 8 (10 results)
+* Drupal 8 (10 results)
+* Drupal 9 (10 results)
+* Search Drupal 7 (10 results)
 
-A good sample search is for `terrier`, which should return 5 results (4 without domain support):
+A good sample search is for `terrier`, which should return 6 results (5 without domain support):
 
 * English Terrier (D7)
 * Jack Russell Terrier (D8)
 * Irish Terrier (D7)
 * Boston Terrier (D8)
 * Norfolk Terrier (D8 Domain 1)
+* Welsh Terrier (D9)
 
-These four search results should be identical:
+These five search results should be identical:
 
+* http://d9.fs-demo.local/search-app?search=terrier
 * http://d8.fs-demo.local/search-app?search=terrier
 * http://d7.fs-demo.local/search-app?search=terrier
 * http://d8-1.fs-demo.local/search-app?search=terrier
@@ -257,7 +261,7 @@ If you just want to get up and running, from the project root run `phing install
 
 ### Updating Drupal 8 core
 
-Until we move to Drupal 9, you may run into issues with incompatible versions of `symfony/event-dispatcher`. Search API Solr requires version 4; Drupal 8 core version 3.
+When installing Drupal 8, you may run into issues with incompatible versions of `symfony/event-dispatcher`. Search API Solr requires version 4; Drupal 8 core version 3.
 
 To get around this issue, we use `composer require symfony/event-dispatcher:"4.3.3 as 3.4.99"` in both the `web/d8` and `web/d8-domain` directories.
 
@@ -289,9 +293,10 @@ You can restart the Solr service from the project within the vm with `sudo servi
 
 ## Working with styles
 
-The default CSS for the search application page can be overwritten by a local file. See the Federated Styles module included in the Drupal 8 project for an example.
+The default CSS for the search application page can be overwritten by a local file. See the Federated Styles module included in the Drupal 8 and 9 projects for an example.
 
 `/web/d8/docroot/modules/custom/federated_styles`
+`/web/d9/docroot/modules/custom/federated_styles`
 
 ## Testing without using Drupal
 
