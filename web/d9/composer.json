@@ -1,6 +1,6 @@
 {
-    "name": "palantirnet/federated-search-demo-d8",
-    "description": "Federated Search setup for Drupal 8 testing.",
+    "name": "palantirnet/federated-search-demo-d9",
+    "description": "Federated Search setup for Drupal 9 testing.",
     "type": "project",
     "license": "proprietary",
     "authors": [
