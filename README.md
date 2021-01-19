@@ -324,7 +324,7 @@ The settings for Behat are in `/behat.xml` and tests are in the `/features` dire
 
 ## Directory structure
 
-This repo is structured a little differently than usual, since it contains 4 independent Drupal docroots. Here're some important pieces:
+This repo is structured a little differently than usual, since it contains 5 independent Drupal docroots and a React docroot. Here are some important pieces:
 
 ```
 
@@ -357,7 +357,17 @@ This repo is structured a little differently than usual, since it contains 4 ind
     │   ├── composer.lock
     │   ├── docroot
     │   └── vendor
+    ├── d7-domain
+    │   ├── composer.json
+    │   ├── composer.lock
+    │   ├── docroot
+    │   └── vendor
     ├── d8
+    │   ├── composer.json
+    │   ├── composer.lock
+    │   ├── docroot
+    │   └── vendor
+    ├── d8-domain
     │   ├── composer.json
     │   ├── composer.lock
     │   ├── docroot
@@ -367,7 +377,9 @@ This repo is structured a little differently than usual, since it contains 4 ind
     │   ├── composer.lock
     │   ├── docroot
     │   └── vendor
-    │   # Directories for the domain-enabled docroots go here
+    ├── react
+    │   ├── app
+    │   ├── index.html
 ```
 
 ## Deployment
@@ -375,4 +387,4 @@ This repo is structured a little differently than usual, since it contains 4 ind
 This project is for demo purposes only and is not to be deployed.
 
 ----
-Copyright 2018, 2019, 2020 Palantir.net, Inc.
+Copyright 2018-2021 Palantir.net, Inc.
