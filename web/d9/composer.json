@@ -40,8 +40,7 @@
         "drupal/search_api_solr": "^4.1",
         "drupal/token": "^1.7",
         "drush/drush": "^10.3",
-        "solarium/solarium": "^6.0",
-        "symfony/event-dispatcher": "^4.4"
+        "solarium/solarium": "^6.0"
     },
     "require-dev": {
     },
