@@ -1,0 +1,236 @@
+{
+  "_links": {
+    "self": {
+      "href": "http:\/\/d9.fs-demo.local\/node\/20?_format=hal_json"
+    },
+    "type": {
+      "href": "http:\/\/drupal.org\/rest\/type\/node\/article"
+    },
+    "http:\/\/drupal.org\/rest\/relation\/node\/article\/revision_uid": [
+      {
+        "href": "http:\/\/d9.fs-demo.local\/user\/1?_format=hal_json"
+      }
+    ],
+    "http:\/\/drupal.org\/rest\/relation\/node\/article\/uid": [
+      {
+        "href": "http:\/\/d9.fs-demo.local\/user\/1?_format=hal_json",
+        "lang": "en"
+      }
+    ],
+    "http:\/\/drupal.org\/rest\/relation\/node\/article\/field_age": [
+      {
+        "href": "http:\/\/d9.fs-demo.local\/taxonomy\/term\/3?_format=hal_json"
+      }
+    ],
+    "http:\/\/drupal.org\/rest\/relation\/node\/article\/field_image": [
+      {
+        "href": "http:\/\/d9.fs-demo.local\/sites\/default\/files\/2021-01\/vintage-st-bernard-dogs-illustration-public-domain.jpg",
+        "lang": "en"
+      }
+    ],
+    "http:\/\/drupal.org\/rest\/relation\/node\/article\/field_traits": [
+      {
+        "href": "http:\/\/d9.fs-demo.local\/taxonomy\/term\/6?_format=hal_json"
+      }
+    ]
+  },
+  "nid": [
+    {
+      "value": 10
+    }
+  ],
+  "uuid": [
+    {
+      "value": "da088af8-843f-44aa-befa-6668455f76c0"
+    }
+  ],
+  "vid": [
+    {
+      "value": 10
+    }
+  ],
+  "langcode": [
+    {
+      "value": "en",
+      "lang": "en"
+    }
+  ],
+  "type": [
+    {
+      "target_id": "article"
+    }
+  ],
+  "revision_timestamp": [
+    {
+      "value": "2021-01-19T17:13:06+00:00",
+      "format": "Y-m-d\\TH:i:sP"
+    }
+  ],
+  "_embedded": {
+    "http:\/\/drupal.org\/rest\/relation\/node\/article\/revision_uid": [
+      {
+        "_links": {
+          "self": {
+            "href": "http:\/\/d9.fs-demo.local\/user\/1?_format=hal_json"
+          },
+          "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+          }
+        },
+        "uuid": [
+          {
+            "value": "dfd0be6a-b997-43c6-8a24-7b54e7ff5554"
+          }
+        ]
+      }
+    ],
+    "http:\/\/drupal.org\/rest\/relation\/node\/article\/uid": [
+      {
+        "_links": {
+          "self": {
+            "href": "http:\/\/d9.fs-demo.local\/user\/1?_format=hal_json"
+          },
+          "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+          }
+        },
+        "uuid": [
+          {
+            "value": "dfd0be6a-b997-43c6-8a24-7b54e7ff5554"
+          }
+        ],
+        "lang": "en"
+      }
+    ],
+    "http:\/\/drupal.org\/rest\/relation\/node\/article\/field_age": [
+      {
+        "_links": {
+          "self": {
+            "href": "http:\/\/d9.fs-demo.local\/taxonomy\/term\/3?_format=hal_json"
+          },
+          "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/age"
+          }
+        },
+        "uuid": [
+          {
+            "value": "5a419857-a179-469e-94d7-48402ad2e7d0"
+          }
+        ]
+      }
+    ],
+    "http:\/\/drupal.org\/rest\/relation\/node\/article\/field_image": [
+      {
+        "_links": {
+          "self": {
+            "href": "http:\/\/d9.fs-demo.local\/sites\/default\/files\/2021-01\/vintage-st-bernard-dogs-illustration-public-domain.jpg"
+          },
+          "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+          }
+        },
+        "uuid": [
+          {
+            "value": "27397bee-4c96-4f23-aec6-dbf54fdee883"
+          }
+        ],
+        "lang": "en"
+      }
+    ],
+    "http:\/\/drupal.org\/rest\/relation\/node\/article\/field_traits": [
+      {
+        "_links": {
+          "self": {
+            "href": "http:\/\/d9.fs-demo.local\/taxonomy\/term\/6?_format=hal_json"
+          },
+          "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/traits"
+          }
+        },
+        "uuid": [
+          {
+            "value": "ae53caf7-0ace-4c06-9314-d3c5b58fe489"
+          }
+        ]
+      }
+    ]
+  },
+  "status": [
+    {
+      "value": true,
+      "lang": "en"
+    }
+  ],
+  "title": [
+    {
+      "value": "St. Bernard",
+      "lang": "en"
+    }
+  ],
+  "created": [
+    {
+      "value": "2021-01-19T17:07:54+00:00",
+      "lang": "en",
+      "format": "Y-m-d\\TH:i:sP"
+    }
+  ],
+  "changed": [
+    {
+      "value": "2021-01-19T17:13:06+00:00",
+      "lang": "en",
+      "format": "Y-m-d\\TH:i:sP"
+    }
+  ],
+  "promote": [
+    {
+      "value": true,
+      "lang": "en"
+    }
+  ],
+  "sticky": [
+    {
+      "value": false,
+      "lang": "en"
+    }
+  ],
+  "default_langcode": [
+    {
+      "value": true,
+      "lang": "en"
+    }
+  ],
+  "revision_translation_affected": [
+    {
+      "value": true,
+      "lang": "en"
+    }
+  ],
+  "path": [
+    {
+      "alias": null,
+      "pid": null,
+      "langcode": "en",
+      "lang": "en"
+    }
+  ],
+  "body": [
+    {
+      "value": "<p>Doggo ipsum dat tungg tho doggorino fluffer. I am bekom fat heckin good boys and girls shoober big ol, borkf puggorino heckin angery woofer, what a nice floof noodle horse. you are doin me a concern wow very biscit long water shoob. Heckin very jealous pupper heck the neighborhood pupper, shooberino wow very biscit. Most angery pupper I have ever seen heckin angery woofer long water shoob blop, extremely cuuuuuute vvv. Heckin clouds extremely cuuuuuute smol borking doggo with a long snoot for pats wow such tempt ur givin me a spook blep such treat most angery pupper I have ever seen, corgo lotsa pats you are doing me the shock doing me a frighten pupper most angery pupper I have ever seen. such treat noodle horse big ol. Mlem very taste wow doing me a frighten you are doin me a concern boofers smol borking doggo with a long snoot for pats big ol, you are doing me the shock heckin angery woofer lotsa pats ur givin me a spook. Long woofer pupper lotsa pats pats lotsa pats very jealous pupper long water shoob, maximum borkdrive thicc lotsa pats doggo. Length boy much ruin diet shooberino fat boi, borkdrive mlem.<\/p>\r\n\r\n<p>Big ol very good spot long bois big ol pupper, puggo. Ruff you are doin me a concern stop it fren porgo clouds shibe, wrinkler very hand that feed shibe smol borking doggo with a long snoot for pats very good spot floofs, borkf waggy wags extremely cuuuuuute blop. shibe. Smol borking doggo with a long snoot for pats very good spot yapper fat boi stop it fren fluffer the neighborhood pupper, you are doin me a concern snoot stop it fren heckin. Mlem vvv yapper wrinkler, heckin. Adorable doggo snoot woofer, waggy wags. Borking doggo heckin angery woofer wrinkler aqua doggo wrinkler corgo, the neighborhood pupper shibe borking doggo adorable doggo. Corgo borkf waggy wags mlem, woofer extremely cuuuuuute. Borking doggo very good spot the neighborhood pupper doggo porgo, much ruin diet fluffer smol borking doggo with a long snoot for pats aqua doggo, doing me a frighten what a nice floof big ol.&nbsp; Big ol lotsa pats clouds blep pupperino long bois length boy you are doing me a frighten pupperino, smol borking doggo wrinkler you are doin me a concern heckin angery woofer doggorino.<\/p>\r\n\r\n<p>Doggorino borking doggo fat boi, such treat. most angery pupper I have ever seen pupper clouds. Vvv h*ck shoober long woofer boofers much ruin diet, what a nice floof ruff wow such tempt wrinkler. You are doing me a frighten h*ck he made many woofs shoob, very jealous pupper big ol pupper. Vvv long water shoob super chub long doggo, heckin angery woofer. What a nice floof wrinkler mlem what a nice floof borkf woofer smol borking doggo with a long snoot for pats maximum borkdrive, borkdrive thicc super chub heckin ur givin me a spook bork. Shoober smol borking doggo with a long snoot for pats heckin angery woofer ur givin me a spook, much ruin diet ur givin me a spook. Porgo you are doing me the shock shoob such treat, shoob. Boof most angery pupper I have ever seen ruff wow such tempt stop it fren shibe, the neighborhood pupper bork doggorino. He made many woofs noodle horse thicc many pats most angery pupper I have ever seen he made many woofs adorable doggo what a nice floof, lotsa pats super chub doing me a frighten pupperino ur givin me a spook adorable doggo doge shoober, very taste wow long bois vvv fluffer much ruin diet heck.<\/p>\r\n",
+      "format": "basic_html",
+      "processed": "<p>Doggo ipsum dat tungg tho doggorino fluffer. I am bekom fat heckin good boys and girls shoober big ol, borkf puggorino heckin angery woofer, what a nice floof noodle horse. you are doin me a concern wow very biscit long water shoob. Heckin very jealous pupper heck the neighborhood pupper, shooberino wow very biscit. Most angery pupper I have ever seen heckin angery woofer long water shoob blop, extremely cuuuuuute vvv. Heckin clouds extremely cuuuuuute smol borking doggo with a long snoot for pats wow such tempt ur givin me a spook blep such treat most angery pupper I have ever seen, corgo lotsa pats you are doing me the shock doing me a frighten pupper most angery pupper I have ever seen. such treat noodle horse big ol. Mlem very taste wow doing me a frighten you are doin me a concern boofers smol borking doggo with a long snoot for pats big ol, you are doing me the shock heckin angery woofer lotsa pats ur givin me a spook. Long woofer pupper lotsa pats pats lotsa pats very jealous pupper long water shoob, maximum borkdrive thicc lotsa pats doggo. Length boy much ruin diet shooberino fat boi, borkdrive mlem.<\/p>\n\n<p>Big ol very good spot long bois big ol pupper, puggo. Ruff you are doin me a concern stop it fren porgo clouds shibe, wrinkler very hand that feed shibe smol borking doggo with a long snoot for pats very good spot floofs, borkf waggy wags extremely cuuuuuute blop. shibe. Smol borking doggo with a long snoot for pats very good spot yapper fat boi stop it fren fluffer the neighborhood pupper, you are doin me a concern snoot stop it fren heckin. Mlem vvv yapper wrinkler, heckin. Adorable doggo snoot woofer, waggy wags. Borking doggo heckin angery woofer wrinkler aqua doggo wrinkler corgo, the neighborhood pupper shibe borking doggo adorable doggo. Corgo borkf waggy wags mlem, woofer extremely cuuuuuute. Borking doggo very good spot the neighborhood pupper doggo porgo, much ruin diet fluffer smol borking doggo with a long snoot for pats aqua doggo, doing me a frighten what a nice floof big ol.\u00a0 Big ol lotsa pats clouds blep pupperino long bois length boy you are doing me a frighten pupperino, smol borking doggo wrinkler you are doin me a concern heckin angery woofer doggorino.<\/p>\n\n<p>Doggorino borking doggo fat boi, such treat. most angery pupper I have ever seen pupper clouds. Vvv h*ck shoober long woofer boofers much ruin diet, what a nice floof ruff wow such tempt wrinkler. You are doing me a frighten h*ck he made many woofs shoob, very jealous pupper big ol pupper. Vvv long water shoob super chub long doggo, heckin angery woofer. What a nice floof wrinkler mlem what a nice floof borkf woofer smol borking doggo with a long snoot for pats maximum borkdrive, borkdrive thicc super chub heckin ur givin me a spook bork. Shoober smol borking doggo with a long snoot for pats heckin angery woofer ur givin me a spook, much ruin diet ur givin me a spook. Porgo you are doing me the shock shoob such treat, shoob. Boof most angery pupper I have ever seen ruff wow such tempt stop it fren shibe, the neighborhood pupper bork doggorino. He made many woofs noodle horse thicc many pats most angery pupper I have ever seen he made many woofs adorable doggo what a nice floof, lotsa pats super chub doing me a frighten pupperino ur givin me a spook adorable doggo doge shoober, very taste wow long bois vvv fluffer much ruin diet heck.<\/p>",
+      "summary": "",
+      "lang": "en"
+    }
+  ],
+  "comment": [
+    {
+      "status": 2,
+      "cid": 0,
+      "last_comment_timestamp": 1611076101,
+      "last_comment_name": null,
+      "last_comment_uid": 1,
+      "comment_count": 0,
+      "lang": "en"
+    }
+  ]
+}

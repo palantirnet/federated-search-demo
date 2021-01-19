@@ -1,0 +1,204 @@
+{
+  "_links": {
+    "self": {
+      "href": "http:\/\/d9.fs-demo.local\/node\/12?_format=hal_json"
+    },
+    "type": {
+      "href": "http:\/\/drupal.org\/rest\/type\/node\/page"
+    },
+    "http:\/\/drupal.org\/rest\/relation\/node\/page\/revision_uid": [
+      {
+        "href": "http:\/\/d9.fs-demo.local\/user\/1?_format=hal_json"
+      }
+    ],
+    "http:\/\/drupal.org\/rest\/relation\/node\/page\/uid": [
+      {
+        "href": "http:\/\/d9.fs-demo.local\/user\/1?_format=hal_json",
+        "lang": "en"
+      }
+    ],
+    "http:\/\/drupal.org\/rest\/relation\/node\/page\/field_age": [
+      {
+        "href": "http:\/\/d9.fs-demo.local\/taxonomy\/term\/1?_format=hal_json",
+        "lang": "en"
+      }
+    ],
+    "http:\/\/drupal.org\/rest\/relation\/node\/page\/field_traits": [
+      {
+        "href": "http:\/\/d9.fs-demo.local\/taxonomy\/term\/5?_format=hal_json",
+        "lang": "en"
+      }
+    ]
+  },
+  "nid": [
+    {
+      "value": 2
+    }
+  ],
+  "uuid": [
+    {
+      "value": "e7cc5c36-01b1-4c53-8b0e-8bc5b8cd75de"
+    }
+  ],
+  "vid": [
+    {
+      "value": 2
+    }
+  ],
+  "langcode": [
+    {
+      "value": "en",
+      "lang": "en"
+    }
+  ],
+  "type": [
+    {
+      "target_id": "page"
+    }
+  ],
+  "revision_timestamp": [
+    {
+      "value": "2021-01-19T17:14:54+00:00",
+      "format": "Y-m-d\\TH:i:sP"
+    }
+  ],
+  "_embedded": {
+    "http:\/\/drupal.org\/rest\/relation\/node\/page\/revision_uid": [
+      {
+        "_links": {
+          "self": {
+            "href": "http:\/\/d9.fs-demo.local\/user\/1?_format=hal_json"
+          },
+          "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+          }
+        },
+        "uuid": [
+          {
+            "value": "dfd0be6a-b997-43c6-8a24-7b54e7ff5554"
+          }
+        ]
+      }
+    ],
+    "http:\/\/drupal.org\/rest\/relation\/node\/page\/uid": [
+      {
+        "_links": {
+          "self": {
+            "href": "http:\/\/d9.fs-demo.local\/user\/1?_format=hal_json"
+          },
+          "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+          }
+        },
+        "uuid": [
+          {
+            "value": "dfd0be6a-b997-43c6-8a24-7b54e7ff5554"
+          }
+        ],
+        "lang": "en"
+      }
+    ],
+    "http:\/\/drupal.org\/rest\/relation\/node\/page\/field_age": [
+      {
+        "_links": {
+          "self": {
+            "href": "http:\/\/d9.fs-demo.local\/taxonomy\/term\/1?_format=hal_json"
+          },
+          "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/age"
+          }
+        },
+        "uuid": [
+          {
+            "value": "76efd0d2-9781-4ff5-a789-3425796a30b3"
+          }
+        ],
+        "lang": "en"
+      }
+    ],
+    "http:\/\/drupal.org\/rest\/relation\/node\/page\/field_traits": [
+      {
+        "_links": {
+          "self": {
+            "href": "http:\/\/d9.fs-demo.local\/taxonomy\/term\/5?_format=hal_json"
+          },
+          "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/traits"
+          }
+        },
+        "uuid": [
+          {
+            "value": "85347fc5-9df2-493d-bfcc-146045e86ae9"
+          }
+        ],
+        "lang": "en"
+      }
+    ]
+  },
+  "status": [
+    {
+      "value": true,
+      "lang": "en"
+    }
+  ],
+  "title": [
+    {
+      "value": "Beagle",
+      "lang": "en"
+    }
+  ],
+  "created": [
+    {
+      "value": "2021-01-19T16:59:31+00:00",
+      "lang": "en",
+      "format": "Y-m-d\\TH:i:sP"
+    }
+  ],
+  "changed": [
+    {
+      "value": "2021-01-19T17:14:54+00:00",
+      "lang": "en",
+      "format": "Y-m-d\\TH:i:sP"
+    }
+  ],
+  "promote": [
+    {
+      "value": false
+    }
+  ],
+  "sticky": [
+    {
+      "value": false,
+      "lang": "en"
+    }
+  ],
+  "default_langcode": [
+    {
+      "value": true,
+      "lang": "en"
+    }
+  ],
+  "revision_translation_affected": [
+    {
+      "value": true,
+      "lang": "en"
+    }
+  ],
+  "path": [
+    {
+      "alias": null,
+      "pid": null,
+      "langcode": "en",
+      "lang": "en"
+    }
+  ],
+  "body": [
+    {
+      "value": "<p>Doggo ipsum lotsa pats big ol you are doing me a frighten big ol pupper woofer, such treat boofers much ruin diet big ol pupper, h*ck ur givin me a spook yapper. blep heckin angery woofer. Tungg what a nice floof porgo boofers long bois, bork shoober. You are doing me a frighten thicc porgo, noodle horse. Bork long woofer much ruin diet borking doggo maximum borkdrive h*ck borkf, shooberino corgo what a nice floof most angery pupper I have ever seen.<\/p>\r\n\r\n<p>Very hand that feed shibe vvv mlem h*ck many pats clouds, doggo boofers super chub big ol. Sub woofer noodle horse the neighborhood pupper, tungg. Long water shoob pupper such treat lotsa pats smol borking doggo with a long snoot for pats super chub lotsa pats heckin good boys and girls, pupperino shoober doge waggy wags I am bekom fat vvv. Heckin extremely cuuuuuute doggorino many pats pupperino, maximum borkdrive long woofer woofer.<\/p>\r\n\r\n<p>Tungg dat tungg tho boof heckin good boys such treat dat tungg tho, wrinkler very taste wow long water shoob the neighborhood pupper. heckin good boys snoot.&nbsp; Heckin good boys snoot smol borking doggo with a long snoot for pats noodle horse shoob, long water shoob boofers you are doin me a concern many pats the neighborhood pupper, heckin tungg such treat. Maximum borkdrive puggo heckin good boys smol, shoob doge. Heckin angery woofer very good spot doggo, corgo. Heckin good boys and girls sub woofer stop it fren what a nice floof super chub heckin good boys, long woofer mlem many pats big ol shibe, puggo h*ck borking doggo noodle horse. Shibe stop it fren smol borking doggo with a long snoot for pats he made many woofs, pupperino yapper.<\/p>\r\n",
+      "format": "basic_html",
+      "processed": "<p>Doggo ipsum lotsa pats big ol you are doing me a frighten big ol pupper woofer, such treat boofers much ruin diet big ol pupper, h*ck ur givin me a spook yapper. blep heckin angery woofer. Tungg what a nice floof porgo boofers long bois, bork shoober. You are doing me a frighten thicc porgo, noodle horse. Bork long woofer much ruin diet borking doggo maximum borkdrive h*ck borkf, shooberino corgo what a nice floof most angery pupper I have ever seen.<\/p>\n\n<p>Very hand that feed shibe vvv mlem h*ck many pats clouds, doggo boofers super chub big ol. Sub woofer noodle horse the neighborhood pupper, tungg. Long water shoob pupper such treat lotsa pats smol borking doggo with a long snoot for pats super chub lotsa pats heckin good boys and girls, pupperino shoober doge waggy wags I am bekom fat vvv. Heckin extremely cuuuuuute doggorino many pats pupperino, maximum borkdrive long woofer woofer.<\/p>\n\n<p>Tungg dat tungg tho boof heckin good boys such treat dat tungg tho, wrinkler very taste wow long water shoob the neighborhood pupper. heckin good boys snoot.\u00a0 Heckin good boys snoot smol borking doggo with a long snoot for pats noodle horse shoob, long water shoob boofers you are doin me a concern many pats the neighborhood pupper, heckin tungg such treat. Maximum borkdrive puggo heckin good boys smol, shoob doge. Heckin angery woofer very good spot doggo, corgo. Heckin good boys and girls sub woofer stop it fren what a nice floof super chub heckin good boys, long woofer mlem many pats big ol shibe, puggo h*ck borking doggo noodle horse. Shibe stop it fren smol borking doggo with a long snoot for pats he made many woofs, pupperino yapper.<\/p>",
+      "summary": "",
+      "lang": "en"
+    }
+  ]
+}

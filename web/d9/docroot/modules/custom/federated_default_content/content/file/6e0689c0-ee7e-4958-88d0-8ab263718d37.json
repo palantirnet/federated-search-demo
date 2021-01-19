@@ -1,0 +1,87 @@
+{
+  "_links": {
+    "self": {
+      "href": "http:\/\/d9.fs-demo.local\/sites\/default\/files\/2021-01\/vintage-deerhound-illustration-public-domain.jpg"
+    },
+    "type": {
+      "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+    },
+    "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+      {
+        "href": "http:\/\/d9.fs-demo.local\/user\/1?_format=hal_json"
+      }
+    ]
+  },
+  "fid": [
+    {
+      "value": 2
+    }
+  ],
+  "uuid": [
+    {
+      "value": "6e0689c0-ee7e-4958-88d0-8ab263718d37"
+    }
+  ],
+  "langcode": [
+    {
+      "value": "en"
+    }
+  ],
+  "_embedded": {
+    "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+      {
+        "_links": {
+          "self": {
+            "href": "http:\/\/d9.fs-demo.local\/user\/1?_format=hal_json"
+          },
+          "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+          }
+        },
+        "uuid": [
+          {
+            "value": "dfd0be6a-b997-43c6-8a24-7b54e7ff5554"
+          }
+        ]
+      }
+    ]
+  },
+  "filename": [
+    {
+      "value": "vintage-deerhound-illustration-public-domain.jpg"
+    }
+  ],
+  "uri": [
+    {
+      "value": "public:\/\/2021-01\/vintage-deerhound-illustration-public-domain.jpg",
+      "url": "\/sites\/default\/files\/2021-01\/vintage-deerhound-illustration-public-domain.jpg"
+    }
+  ],
+  "filemime": [
+    {
+      "value": "image\/jpeg"
+    }
+  ],
+  "filesize": [
+    {
+      "value": 1314006
+    }
+  ],
+  "status": [
+    {
+      "value": true
+    }
+  ],
+  "created": [
+    {
+      "value": "2021-01-19T17:07:43+00:00",
+      "format": "Y-m-d\\TH:i:sP"
+    }
+  ],
+  "changed": [
+    {
+      "value": "2021-01-19T17:07:48+00:00",
+      "format": "Y-m-d\\TH:i:sP"
+    }
+  ]
+}

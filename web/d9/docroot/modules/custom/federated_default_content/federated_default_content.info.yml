@@ -6,6 +6,21 @@ core_version_requirement: ^8 || ^9
 dependencies:
   - drupal:default_content
 default_content:
+  file:
+    - 11fb5b19-42ae-4587-addd-7d5ff4593426
+    - 6e0689c0-ee7e-4958-88d0-8ab263718d37
+    - 27397bee-4c96-4f23-aec6-dbf54fdee883
+  node:
+    - 37082e20-e28e-4f62-810f-eb24310b1883
+    - e7cc5c36-01b1-4c53-8b0e-8bc5b8cd75de
+    - 52409384-7d6d-4675-b010-86edac8eaad9
+    - b68be5af-7127-4b57-91a7-cdb1137ea93d
+    - bc66fa16-47a0-4805-ad9e-a2bc01cae4fe
+    - d93cabe9-2d4d-4329-82b2-45280fbaeab9
+    - 548e1e9c-14b7-4a88-987c-b0cd38f188b9
+    - ba0dcb50-7552-4af8-bf56-14cfaa185409
+    - 59602673-08d3-4855-ab70-4619efc0ec53
+    - da088af8-843f-44aa-befa-6668455f76c0
   taxonomy_term:
     - 2d45c3a1-4ab3-431b-a9e8-1212c5f4f6b4
     - 5a419857-a179-469e-94d7-48402ad2e7d0

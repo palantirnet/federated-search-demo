@@ -1,0 +1,236 @@
+{
+  "_links": {
+    "self": {
+      "href": "http:\/\/d9.fs-demo.local\/node\/18?_format=hal_json"
+    },
+    "type": {
+      "href": "http:\/\/drupal.org\/rest\/type\/node\/article"
+    },
+    "http:\/\/drupal.org\/rest\/relation\/node\/article\/revision_uid": [
+      {
+        "href": "http:\/\/d9.fs-demo.local\/user\/1?_format=hal_json"
+      }
+    ],
+    "http:\/\/drupal.org\/rest\/relation\/node\/article\/uid": [
+      {
+        "href": "http:\/\/d9.fs-demo.local\/user\/1?_format=hal_json",
+        "lang": "en"
+      }
+    ],
+    "http:\/\/drupal.org\/rest\/relation\/node\/article\/field_age": [
+      {
+        "href": "http:\/\/d9.fs-demo.local\/taxonomy\/term\/2?_format=hal_json"
+      }
+    ],
+    "http:\/\/drupal.org\/rest\/relation\/node\/article\/field_image": [
+      {
+        "href": "http:\/\/d9.fs-demo.local\/sites\/default\/files\/2021-01\/vintage-mastiff-illustration-public-domain.jpg",
+        "lang": "en"
+      }
+    ],
+    "http:\/\/drupal.org\/rest\/relation\/node\/article\/field_traits": [
+      {
+        "href": "http:\/\/d9.fs-demo.local\/taxonomy\/term\/4?_format=hal_json"
+      }
+    ]
+  },
+  "nid": [
+    {
+      "value": 8
+    }
+  ],
+  "uuid": [
+    {
+      "value": "ba0dcb50-7552-4af8-bf56-14cfaa185409"
+    }
+  ],
+  "vid": [
+    {
+      "value": 8
+    }
+  ],
+  "langcode": [
+    {
+      "value": "en",
+      "lang": "en"
+    }
+  ],
+  "type": [
+    {
+      "target_id": "article"
+    }
+  ],
+  "revision_timestamp": [
+    {
+      "value": "2021-01-19T17:13:26+00:00",
+      "format": "Y-m-d\\TH:i:sP"
+    }
+  ],
+  "_embedded": {
+    "http:\/\/drupal.org\/rest\/relation\/node\/article\/revision_uid": [
+      {
+        "_links": {
+          "self": {
+            "href": "http:\/\/d9.fs-demo.local\/user\/1?_format=hal_json"
+          },
+          "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+          }
+        },
+        "uuid": [
+          {
+            "value": "dfd0be6a-b997-43c6-8a24-7b54e7ff5554"
+          }
+        ]
+      }
+    ],
+    "http:\/\/drupal.org\/rest\/relation\/node\/article\/uid": [
+      {
+        "_links": {
+          "self": {
+            "href": "http:\/\/d9.fs-demo.local\/user\/1?_format=hal_json"
+          },
+          "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+          }
+        },
+        "uuid": [
+          {
+            "value": "dfd0be6a-b997-43c6-8a24-7b54e7ff5554"
+          }
+        ],
+        "lang": "en"
+      }
+    ],
+    "http:\/\/drupal.org\/rest\/relation\/node\/article\/field_age": [
+      {
+        "_links": {
+          "self": {
+            "href": "http:\/\/d9.fs-demo.local\/taxonomy\/term\/2?_format=hal_json"
+          },
+          "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/age"
+          }
+        },
+        "uuid": [
+          {
+            "value": "2d45c3a1-4ab3-431b-a9e8-1212c5f4f6b4"
+          }
+        ]
+      }
+    ],
+    "http:\/\/drupal.org\/rest\/relation\/node\/article\/field_image": [
+      {
+        "_links": {
+          "self": {
+            "href": "http:\/\/d9.fs-demo.local\/sites\/default\/files\/2021-01\/vintage-mastiff-illustration-public-domain.jpg"
+          },
+          "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+          }
+        },
+        "uuid": [
+          {
+            "value": "11fb5b19-42ae-4587-addd-7d5ff4593426"
+          }
+        ],
+        "lang": "en"
+      }
+    ],
+    "http:\/\/drupal.org\/rest\/relation\/node\/article\/field_traits": [
+      {
+        "_links": {
+          "self": {
+            "href": "http:\/\/d9.fs-demo.local\/taxonomy\/term\/4?_format=hal_json"
+          },
+          "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/traits"
+          }
+        },
+        "uuid": [
+          {
+            "value": "031ef1d1-7853-4118-a7a0-b64785d65a2f"
+          }
+        ]
+      }
+    ]
+  },
+  "status": [
+    {
+      "value": true,
+      "lang": "en"
+    }
+  ],
+  "title": [
+    {
+      "value": "Mastiff",
+      "lang": "en"
+    }
+  ],
+  "created": [
+    {
+      "value": "2021-01-19T17:02:48+00:00",
+      "lang": "en",
+      "format": "Y-m-d\\TH:i:sP"
+    }
+  ],
+  "changed": [
+    {
+      "value": "2021-01-19T17:13:26+00:00",
+      "lang": "en",
+      "format": "Y-m-d\\TH:i:sP"
+    }
+  ],
+  "promote": [
+    {
+      "value": true,
+      "lang": "en"
+    }
+  ],
+  "sticky": [
+    {
+      "value": false,
+      "lang": "en"
+    }
+  ],
+  "default_langcode": [
+    {
+      "value": true,
+      "lang": "en"
+    }
+  ],
+  "revision_translation_affected": [
+    {
+      "value": true,
+      "lang": "en"
+    }
+  ],
+  "path": [
+    {
+      "alias": null,
+      "pid": null,
+      "langcode": "en",
+      "lang": "en"
+    }
+  ],
+  "body": [
+    {
+      "value": "<p>Doggo ipsum corgo blop long doggo wow very biscit, shibe. Sub woofer the neighborhood pupper doing me a frighten waggy wags lotsa pats, heckin big ol he made many woofs clouds, blep very jealous pupper pupper. Corgo blop smol noodle horse, ur givin me a spook pupper length boy, smol borking doggo with a long snoot for pats snoot. long doggo maximum borkdrive. most angery pupper I have ever seen big ol. Very jealous pupper heckin good boys and girls length boy wrinkler smol pupper, such treat long woofer wrinkler. Heckin good boys you are doin me a concern much ruin diet maximum borkdrive puggorino sub woofer floofs, fat boi woofer pats wow such tempt. Most angery pupper I have ever seen shibe you are doing me a frighten most angery pupper I have ever seen, borkdrive stop it fren mlem, most angery pupper I have ever seen yapper. Shoober heckin good boys fat boi ruff boof, very jealous pupper very good spot long doggo puggo many pats, such treat wow very biscit very good spot.<\/p>\r\n\r\n<p>Heck shoober puggorino noodle horse dat tungg tho, heckin wow such tempt shibe maximum borkdrive puggo, pats what a nice floof wow such tempt. You are doin me a concern very good spot dat tungg tho tungg long water shoob, big ol pupper woofer you are doing me the shock, shooberino puggorino borkdrive. Length boy doing me a frighten wow such tempt long water shoob, shoober. Boof I am bekom fat shoober woofer many pats, puggo blep wrinkler. Long bois waggy wags big ol pupper noodle horse, shoob. Long bois pupperino vvv smol borking doggo with a long snoot for pats you are doing me a frighten he made many woofs, very jealous pupper what a nice floof big ol smol, super chub extremely cuuuuuute clouds very jealous pupper. Doge dat tungg tho smol borking doggo with a long snoot for pats he made many woofs fluffer super chub such treat corgo, dat tungg tho heckin angery woofer heck lotsa pats floofs. You are doing me the shock doggo noodle horse puggorino, much ruin diet.<\/p>\r\n\r\n<p>Very taste wow smol borking doggo with a long snoot for pats corgo long bois puggo, sub woofer boofers. Snoot very taste wow doge adorable doggo much ruin diet long woofer, very taste wow fluffer extremely cuuuuuute doge. Doggo floofs fat boi he made many woofs ruff, what a nice floof long woofer. I am bekom fat doggo heckin good boys and girls very good spot many pats such treat, wow such tempt big ol shoober long doggo. Heck mlem porgo floofs yapper shoober, yapper puggo mlem clouds. Aqua doggo smol borking doggo with a long snoot for pats smol noodle horse woofer you are doing me a frighten aqua doggo, doggo yapper heckin good boys and girls I am bekom fat. Shoober you are doin me a concern doing me a frighten long doggo pupperino corgo, heckin angery woofer wow such tempt heckin angery woofer. Shoober sub woofer dat tungg tho pupperino boof, such treat heckin good boys aqua doggo.&nbsp; Heckin good boys aqua doggo heckin good boys and girls much ruin diet you are doing me the shock borkf, smol blep he made many woofs. Length boy heckin good boys and girls big ol adorable doggo, aqua doggo.<\/p>\r\n",
+      "format": "basic_html",
+      "processed": "<p>Doggo ipsum corgo blop long doggo wow very biscit, shibe. Sub woofer the neighborhood pupper doing me a frighten waggy wags lotsa pats, heckin big ol he made many woofs clouds, blep very jealous pupper pupper. Corgo blop smol noodle horse, ur givin me a spook pupper length boy, smol borking doggo with a long snoot for pats snoot. long doggo maximum borkdrive. most angery pupper I have ever seen big ol. Very jealous pupper heckin good boys and girls length boy wrinkler smol pupper, such treat long woofer wrinkler. Heckin good boys you are doin me a concern much ruin diet maximum borkdrive puggorino sub woofer floofs, fat boi woofer pats wow such tempt. Most angery pupper I have ever seen shibe you are doing me a frighten most angery pupper I have ever seen, borkdrive stop it fren mlem, most angery pupper I have ever seen yapper. Shoober heckin good boys fat boi ruff boof, very jealous pupper very good spot long doggo puggo many pats, such treat wow very biscit very good spot.<\/p>\n\n<p>Heck shoober puggorino noodle horse dat tungg tho, heckin wow such tempt shibe maximum borkdrive puggo, pats what a nice floof wow such tempt. You are doin me a concern very good spot dat tungg tho tungg long water shoob, big ol pupper woofer you are doing me the shock, shooberino puggorino borkdrive. Length boy doing me a frighten wow such tempt long water shoob, shoober. Boof I am bekom fat shoober woofer many pats, puggo blep wrinkler. Long bois waggy wags big ol pupper noodle horse, shoob. Long bois pupperino vvv smol borking doggo with a long snoot for pats you are doing me a frighten he made many woofs, very jealous pupper what a nice floof big ol smol, super chub extremely cuuuuuute clouds very jealous pupper. Doge dat tungg tho smol borking doggo with a long snoot for pats he made many woofs fluffer super chub such treat corgo, dat tungg tho heckin angery woofer heck lotsa pats floofs. You are doing me the shock doggo noodle horse puggorino, much ruin diet.<\/p>\n\n<p>Very taste wow smol borking doggo with a long snoot for pats corgo long bois puggo, sub woofer boofers. Snoot very taste wow doge adorable doggo much ruin diet long woofer, very taste wow fluffer extremely cuuuuuute doge. Doggo floofs fat boi he made many woofs ruff, what a nice floof long woofer. I am bekom fat doggo heckin good boys and girls very good spot many pats such treat, wow such tempt big ol shoober long doggo. Heck mlem porgo floofs yapper shoober, yapper puggo mlem clouds. Aqua doggo smol borking doggo with a long snoot for pats smol noodle horse woofer you are doing me a frighten aqua doggo, doggo yapper heckin good boys and girls I am bekom fat. Shoober you are doin me a concern doing me a frighten long doggo pupperino corgo, heckin angery woofer wow such tempt heckin angery woofer. Shoober sub woofer dat tungg tho pupperino boof, such treat heckin good boys aqua doggo.\u00a0 Heckin good boys aqua doggo heckin good boys and girls much ruin diet you are doing me the shock borkf, smol blep he made many woofs. Length boy heckin good boys and girls big ol adorable doggo, aqua doggo.<\/p>",
+      "summary": "",
+      "lang": "en"
+    }
+  ],
+  "comment": [
+    {
+      "status": 2,
+      "cid": 0,
+      "last_comment_timestamp": 1611075838,
+      "last_comment_name": null,
+      "last_comment_uid": 1,
+      "comment_count": 0,
+      "lang": "en"
+    }
+  ]
+}
