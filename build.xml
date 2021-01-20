@@ -52,11 +52,12 @@
         <drush command="pm-uninstall" assume="yes">
             <param>federated_default_content</param>
         </drush>
-
+        <!-- Clear the cache. -->
+        <exec command="drush @d9 cr" />
+        <!-- Clear the search index and rebuild. -->
         <drush command="search-api:clear" assume="yes">
             <param>federated_search</param>
         </drush>
-
         <exec command="drush @d9 search-api:index federated_search -y" />
     </target>
 
@@ -83,7 +84,9 @@
         <drush command="pm-uninstall" assume="yes">
             <param>federated_default_content</param>
         </drush>
-
+        <!-- Clear the cache. -->
+        <exec command="drush @d8 cr" />
+        <!-- Clear the search index and rebuild. -->
         <drush command="search-api:clear" assume="yes">
             <param>federated_search</param>
         </drush>
@@ -115,7 +118,9 @@
         <drush command="pm-uninstall" assume="yes">
             <param>federated_default_content</param>
         </drush>
-
+        <!-- Clear the cache. -->
+        <exec command="drush @d8-domain.one cr" />
+        <!-- Clear the search index and rebuild. -->
         <drush command="search-api:clear" assume="yes">
             <param>federated_search</param>
         </drush>
