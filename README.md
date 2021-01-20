@@ -130,6 +130,10 @@ To run project-related commands other than `vagrant up` and `vagrant ssh`:
 
 This version of the demo site is all about dogs. We use simple core content types (basic page and article) supplemented by taxonomy terms. The content titles are meaningful (they are all dog breeds). Content body is lorem ipsum text.
 
+### Date facets
+When content is created, it is auto-assigned to a random publication date within the past two weeks from building the site(s). 
+
+### Term facets
 We create three vocabularies in Drupal 7:
 
 * Age
