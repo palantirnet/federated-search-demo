@@ -52,13 +52,14 @@
         <drush command="pm-uninstall" assume="yes">
             <param>federated_default_content</param>
         </drush>
-        <!-- Clear the cache. -->
-        <exec command="drush @d9 cr" />
         <!-- Clear the search index and rebuild. -->
         <drush command="search-api:clear" assume="yes">
             <param>federated_search</param>
         </drush>
         <exec command="drush @d9 search-api:index federated_search -y" />
+
+        <!-- Clear the cache. -->
+        <exec command="drush @d9 cr" />
     </target>
 
     <!-- Target: install-d8 -->
@@ -84,14 +85,15 @@
         <drush command="pm-uninstall" assume="yes">
             <param>federated_default_content</param>
         </drush>
-        <!-- Clear the cache. -->
-        <exec command="drush @d8 cr" />
+
         <!-- Clear the search index and rebuild. -->
         <drush command="search-api:clear" assume="yes">
             <param>federated_search</param>
         </drush>
-
         <exec command="drush @d8 search-api:index federated_search -y" />
+
+        <!-- Clear the cache. -->
+        <exec command="drush @d8 cr" />
     </target>
 
 
@@ -118,13 +120,11 @@
         <drush command="pm-uninstall" assume="yes">
             <param>federated_default_content</param>
         </drush>
-        <!-- Clear the cache. -->
-        <exec command="drush @d8-domain.one cr" />
+
         <!-- Clear the search index and rebuild. -->
         <drush command="search-api:clear" assume="yes">
             <param>federated_search</param>
         </drush>
-
         <exec command="drush @d8-domain.one search-api:index federated_search -y" />
 
         <!-- Rebuild node acces permissions. No direct drush command for this
@@ -132,6 +132,9 @@
         <drush command="php-eval">
            <param>'node_access_rebuild();'</param>
         </drush>
+
+        <!-- Clear the cache. -->
+        <exec command="drush @d8-domain.one cr" />
     </target>
 
     <!-- Target: install-drupal-by-path -->
