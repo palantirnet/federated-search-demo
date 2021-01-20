@@ -22,4 +22,5 @@ function federated_default_content_uuid_node_features_rebuild_alter(&$node, $mod
   // Go back 14 days.
   $start = $current - (14 * 24 * 60 * 60);
   $node->created = rand($start, $current);
+  $node->date = format_date($node->created, 'custom', 'Y-m-d H:i:s O');
 }
