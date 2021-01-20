@@ -1,0 +1,61 @@
+uuid: e2b4f74d-58d0-4296-aecd-d139e0815e77
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.age.field_federated_terms
+    - taxonomy.vocabulary.age
+  module:
+    - path
+    - search_api_federated_solr
+    - text
+id: taxonomy_term.age.default
+targetEntityType: taxonomy_term
+bundle: age
+mode: default
+content:
+  description:
+    type: text_textarea
+    weight: 1
+    region: content
+    settings:
+      placeholder: ''
+      rows: 5
+    third_party_settings: {  }
+  field_federated_terms:
+    weight: 2
+    settings:
+      size: 75
+      placeholder: ''
+    third_party_settings: {  }
+    type: federated_terms_textfield
+    region: content
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 4
+    region: content
+    third_party_settings: {  }
+hidden: {  }

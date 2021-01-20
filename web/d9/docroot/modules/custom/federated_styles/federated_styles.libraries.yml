@@ -1,0 +1,5 @@
+# Define search theme library
+search-theme:
+  css:
+    theme:
+      css/search_theme_override.css: {}

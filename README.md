@@ -25,13 +25,13 @@ There are two demo builds included in the package, and you should be sure to che
 
 ### solr-7
 
-*This is now the default branch.*
+The `solr-7` branch contains release 4.0 and runs Drupal 7.78, 8.9.13, and 9.1.3; testing against Solr 7. The Drupal 8 and 9 versions rely on Search API Solr 4.x.
 
-The `solr-7` branch will contain release 3.0 and is compatible with Drupal 7.69, 8.82 and higher, and Solr 7. It relies on Search API Solr 8.3, and will be Drupal 9 compatible.
-
-This branch uses Search API Federated Solr version 8.x-3.x. All new development is done on this branch.
+This branch uses Search API Federated Solr version 4.x. All new development is done on this branch.
 
 ### solr-4
+
+This branch is no longer maintained.
 
 The `solr-4` branch contains release 1.0 and is compatible with Drupal 7.69, 8.6 - 8.82, and Solr 4 - 6. Most important, it relies on Search API Solr 8.1, which is no longer maintained. This branch is stable and appropriate for deployment to Acquia, provided your site is not using Solr 7.
 
@@ -81,7 +81,7 @@ You may be interested in creating your own development environment and comparing
 4. Log in to the virtual machine (the VM): `vagrant ssh`
 5. Build, install, and enable demo content: `phing install-all`
   * When prompted, you may choose to empty the current SOLR index. This action is recommended when re-installing all sites, but not one site.
-  * If you wish to install without Domain Access, run `phing install-no-domain`. In that case, two sites will be built with 20 pieces of content.
+  * If you wish to install without Domain Access, run `phing install-no-domain`. In that case, three sites will be built with 30 pieces of content.
 6. Visit your D8 (standalone) site at [http://d8.fs-demo.local](http://d8.fs-demo.local)
 7. Visit your D8 (domain access) site at:
    - [http://d8-1.fs-demo.local](http://d8-1.fs-demo.local)
@@ -92,8 +92,9 @@ You may be interested in creating your own development environment and comparing
    - [http://d7-1.fs-demo.local](http://d7-1.fs-demo.local)
    - [http://d7-2.fs-demo.local](http://d7-2.fs-demo.local)
    - [http://d7-3.fs-demo.local](http://d7-3.fs-demo.local)
-10. View the Solr index at [http://federated-search-demo.local:8983/solr/#/drupal8/query](http://federated-search-demo.local:8983/solr/#/drupal8/query).
-11. See the bare React app (without Drupal) at [http://react.fs-demo.local](http://react.fs-demo.local)
+10. Visit your D9 (standalone) site at [http://d9.fs-demo.local](http://d9.fs-demo.local)
+11. View the Solr index at [http://federated-search-demo.local:8983/solr/#/drupal8/query](http://federated-search-demo.local:8983/solr/#/drupal8/query).
+12. See the bare React app (without Drupal) at [http://react.fs-demo.local](http://react.fs-demo.local)
 
 You can log in to any of the Drupal sites at `/user` with `admin/admin`.
 
@@ -107,7 +108,7 @@ To run project-related commands other than `vagrant up` and `vagrant ssh`:
 * You'll be in your project root, at the path `/var/www/federated-search-demo.local/`
 * You can run `composer`, `drush`, and `phing` commands from here
 * Go to the path `/var/www/federated-search-demo.local/web/*` to add new modules to each site.
-* Use drush on the D8 sites - try `drush site:alias` or `drush @d8 status`
+* Use drush on the D8 and D9 sites - try `drush site:alias` or `drush @d8 status`
 * Use drush on the D7 site by navigating into the d7 directory:
 
    ```
@@ -129,13 +130,17 @@ To run project-related commands other than `vagrant up` and `vagrant ssh`:
 
 This version of the demo site is all about dogs. We use simple core content types (basic page and article) supplemented by taxonomy terms. The content titles are meaningful (they are all dog breeds). Content body is lorem ipsum text.
 
+### Date facets
+When content is created, it is auto-assigned to a random publication date within the past two weeks from building the site(s).
+
+### Term facets
 We create three vocabularies in Drupal 7:
 
 * Age
 * Color
 * Traits
 
-In Drupal 8, the Color vocabulary is not present. This difference shows how sites with different taxonomies can be integrated in search results.
+In Drupal 8 and 9, the Color vocabulary is not present. This difference shows how sites with different taxonomies can be integrated in search results.
 
 Each content page is assigned to the available vocabularies. This setup allows our search index to provide filters by each term.
 
@@ -143,7 +148,7 @@ Note that term mapping in Federated Search lets you alias terms. In the Drupal 7
 
 ### Images
 
-Some of the dogs -- but not all -- have images. These show how the index handles image display. The following dogs should have images: `Irish Terrier, English Terrier, Newfoundland, Pointer, Greyhound, Dachshund, Maltese, Cumberland Sheepdog, Dalmation, Toy Spaniel`.
+Some of the dogs -- but not all -- have images. These show how the index handles image display. The following dogs should have images: `Irish Terrier, English Terrier, Newfoundland, Pointer, Greyhound, Dachshund, Maltese, Cumberland Sheepdog, Dalmation, Toy Spaniel, Mastiff, Deer Hound, St. Bernard`.
 
 Note that sometimes the image cache must be primed, so if you see a broken image on first page load, reload the page. If an image has the url `default`, it means the index has not been built properly. Run `phing solr-reindex` to correct the issue.
 
@@ -151,34 +156,38 @@ Images are [public domain](https://freevintageillustrations.com/faq/) and source
 
 ## Sample searches
 
-By default, the sites will show all content when no search keywords are entered. There should be 32 items in the default result set.
+By default, the sites will show all content when no search keywords are entered. There should be 42 items in the default result set.
 
-* Domain 1 - Drupal 7 (3 results)
-* Domain 2 - Drupal 7 (2 results)
-* Domain 3 - Drupal 7 (3 results)
-* Drupal 7 - Federated Search (10 results)
-* Federated Search Domain 1 (2 results)
-* Federated Search Domain 2 (2 results)
-* Federated Search Domain 3 (3 results)
-* Federated Search Drupal 8 (10 results)
+* Drupal 8 (10 results, Drupal 8)
+* Drupal 8 - One (2 results. Drupal 8 with Domain Access)
+* Drupal 8 - Two (2 results, Drupal 8 with Domain Access)
+* Drupal 8 - Three (3 results, Drupal 8 with Domain Access)
+* Drupal 9 (10 results, Drupal 9)
+* Search Domain 1 (3 results, Drupal 7 with Domain Access)
+* Search Domain 2 (2 results, Drupal 7 with Domain Access)
+* Search Domain 3 (3 results, Drupal 7 with Domain Access)
+* Search Drupal 7 (10 results, Drupal 7)
 
-Note: Theses numbers add up to more than 32 because some content is assigned to multiple domains.
+Note: These numbers add up to more than 42 because some content is assigned to multiple domains.
 
 If you did not install the domain sites, then there will be 20 items:
 
-* Drupal 7 - Federated Search (10 results)
-* Federated Search Drupal 8 (10 results)
+* Drupal 8 (10 results)
+* Drupal 9 (10 results)
+* Search Drupal 7 (10 results)
 
-A good sample search is for `terrier`, which should return 5 results (4 without domain support):
+A good sample search is for `terrier`, which should return 6 results (5 without domain support):
 
 * English Terrier (D7)
 * Jack Russell Terrier (D8)
 * Irish Terrier (D7)
 * Boston Terrier (D8)
 * Norfolk Terrier (D8 Domain 1)
+* Welsh Terrier (D9)
 
-These four search results should be identical:
+These five search results should be identical:
 
+* http://d9.fs-demo.local/search-app?search=terrier
 * http://d8.fs-demo.local/search-app?search=terrier
 * http://d7.fs-demo.local/search-app?search=terrier
 * http://d8-1.fs-demo.local/search-app?search=terrier
@@ -241,19 +250,22 @@ If you just want to get up and running, from the project root run `phing install
 2. Download the most current dependencies for D8 (domain access): `composer install --working-dir=web/d8-domain`
 3. Download the most current dependencies for D7: `composer install --working-dir=web/d7`
 4. Download the most current dependencies for D7: `composer install --working-dir=web/d7-domain`
+5. Download the most current dependencies for D9 (standalone): `composer install --working-dir=web/d9`
 5. Reinstall Drupal 8:
    - Standalone: `phing install-d8 -Ddrush.root=web/d8/docroot`
    - Domain site: `phing install-d8-domain -Ddrush.root=web/d8-domain/docroot`
 6. Reinstall Drupal 7: `phing install-d7`
    - Standalone: `phing install-d7 -Ddrush.root=web/d7/docroot`
    - Domain site: `phing install-d7-domain -Ddrush.root=web/d7-domain/docroot`
+5. Reinstall Drupal 9:
+    - Standalone: `phing install-d9 -Ddrush.root=web/d9/docroot`
 7. Build the `/src` directory and checkout modules there: `phing init`
    - This links each of the two modules: `search_api_federated_solr` and `search_api_field_map` from the D8/D7 single site docroot to the `/src` directory and also into the D8/D7 Domain Access-enabled docroot. This means all changes made in `/src/search_api_...` will propagate to both sites simultaneously. The `phing init` command is run automatically by any of the installer scripts.
 8. (optional) Run `phing init-git` to run authenticated git checkouts. These git checkouts point to GitHub and have `drupal` aliased remotes to drupal.org (`git remote show`).
 
 ### Updating Drupal 8 core
 
-Until we move to Drupal 9, you may run into issues with incompatible versions of `symfony/event-dispatcher`. Search API Solr requires version 4; Drupal 8 core version 3.
+When installing Drupal 8, you may run into issues with incompatible versions of `symfony/event-dispatcher`. Search API Solr requires version 4; Drupal 8 core version 3.
 
 To get around this issue, we use `composer require symfony/event-dispatcher:"4.3.3 as 3.4.99"` in both the `web/d8` and `web/d8-domain` directories.
 
@@ -285,9 +297,10 @@ You can restart the Solr service from the project within the vm with `sudo servi
 
 ## Working with styles
 
-The default CSS for the search application page can be overwritten by a local file. See the Federated Styles module included in the Drupal 8 project for an example.
+The default CSS for the search application page can be overwritten by a local file. See the Federated Styles module included in the Drupal 8 and 9 projects for an example.
 
 `/web/d8/docroot/modules/custom/federated_styles`
+`/web/d9/docroot/modules/custom/federated_styles`
 
 ## Testing without using Drupal
 
@@ -315,7 +328,7 @@ The settings for Behat are in `/behat.xml` and tests are in the `/features` dire
 
 ## Directory structure
 
-This repo is structured a little differently than usual, since it contains 4 independent Drupal docroots. Here're some important pieces:
+This repo is structured a little differently than usual, since it contains 5 independent Drupal docroots and a React docroot. Here are some important pieces:
 
 ```
 
@@ -327,10 +340,12 @@ This repo is structured a little differently than usual, since it contains 4 ind
 │   ├── config_split  # Not using this at the moment
 │   └── sites  # D8 site config goes here
 │       └── d8
+│       └── d9
 ├── drush
 │   └── sites # Drush aliases go here.
 │       ├── d8-domain.site.yml
 │       └── d8.site.yml
+│       └── d9.site.yml
 ├── features  # Tests could eventually go here.
 │   ├── bootstrap
 │   │   └── FeatureContext.php
@@ -346,12 +361,29 @@ This repo is structured a little differently than usual, since it contains 4 ind
     │   ├── composer.lock
     │   ├── docroot
     │   └── vendor
+    ├── d7-domain
+    │   ├── composer.json
+    │   ├── composer.lock
+    │   ├── docroot
+    │   └── vendor
     ├── d8
     │   ├── composer.json
     │   ├── composer.lock
     │   ├── docroot
     │   └── vendor
-    │   # Directories for the domain-enabled docroots go here
+    ├── d8-domain
+    │   ├── composer.json
+    │   ├── composer.lock
+    │   ├── docroot
+    │   └── vendor
+    ├── d9
+    │   ├── composer.json
+    │   ├── composer.lock
+    │   ├── docroot
+    │   └── vendor
+    ├── react
+    │   ├── app
+    │   ├── index.html
 ```
 
 ## Deployment
@@ -359,4 +391,4 @@ This repo is structured a little differently than usual, since it contains 4 ind
 This project is for demo purposes only and is not to be deployed.
 
 ----
-Copyright 2018, 2019, 2020 Palantir.net, Inc.
+Copyright 2018-2021 Palantir.net, Inc.

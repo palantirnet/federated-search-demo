@@ -1,0 +1,17 @@
+uuid: 6ca2132a-54da-43bb-b4d2-2800678e7a6c
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: AE_L5K4gUUzxlRbULerDr9fEszruFHLSgUv1bQ9IZlI
+name: search_api_federated_solr_image
+label: 'Federated image'
+effects:
+  53bfd1aa-5a4e-4750-b0d2-1a1ae1f04bce:
+    uuid: 53bfd1aa-5a4e-4750-b0d2-1a1ae1f04bce
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 425
+      height: 239
+      anchor: center-center

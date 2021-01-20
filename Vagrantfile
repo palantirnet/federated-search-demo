@@ -13,6 +13,7 @@ end
 project     = 'federated-search-demo'
 hostname    = "#{project}.local"
 extra_hostnames = [
+  'd9.fs-demo.local',
   'd8.fs-demo.local',
   'd7.fs-demo.local',
   'd7-1.fs-demo.local',

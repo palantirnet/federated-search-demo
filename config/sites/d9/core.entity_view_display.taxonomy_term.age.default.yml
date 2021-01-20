@@ -1,0 +1,32 @@
+uuid: a9f4e306-47dd-4687-8589-baaafc7ea994
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.age.field_federated_terms
+    - taxonomy.vocabulary.age
+  module:
+    - text
+id: taxonomy_term.age.default
+targetEntityType: taxonomy_term
+bundle: age
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_federated_terms:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

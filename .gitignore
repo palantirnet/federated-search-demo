@@ -19,6 +19,17 @@ web/d8*/docroot/core
 web/d8*/docroot/modules/contrib
 web/d8*/docroot/themes/contrib/
 web/d8*/docroot/profiles/contrib/
+web/d9*/.editorconfig
+web/d9*/.gitattributes
+web/d9*/docroot/*.txt
+web/d9*/docroot/*/.gitignore
+web/d9*/docroot/example.gitignore
+web/d9*/docroot/core
+web/d9*/docroot/modules/contrib
+web/d9*/docroot/themes/contrib/
+web/d9*/docroot/profiles/contrib/
+web/d9*/docroot/sites/README.txt
+
 
 # Ignore regular Composer dependencies
 /vendor/

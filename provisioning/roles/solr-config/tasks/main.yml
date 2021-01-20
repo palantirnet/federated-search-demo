@@ -1,6 +1,16 @@
 ---
-- name: Add Solr 7.x config to drupal7 and drupal8 indeces.
-  become: yes
+- name: Create config directories.
+  become: true
+  file:
+    path: "/var/solr/data/{{ item.name }}"
+    state: directory
+    owner: vagrant
+    group: vagrant
+    mode: 0775
+  with_items: "{{ solr_config }}"
+
+- name: Add Solr 7.x config to drupal7, drupal8, and drupal9 indeces.
+  become: true
   command: "cp -r {{solr_conf}}/{{ item.name }}/custom/{{ item.subdir }}/. /var/solr/data/{{ item.name }}/conf"
   with_items: "{{ solr_config }}"
 

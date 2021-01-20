@@ -6,3 +6,21 @@
  */
 
 include_once 'federated_default_content.features.inc';
+
+/**
+ * Handles specific import tasks for a node.
+ *
+ * In our case, set the pubdate to within the last 14 days.
+ *
+ * @param object $node
+ *   The node to import.
+ * @param string $module
+ *   The module to import for.
+ */
+function federated_default_content_uuid_node_features_rebuild_alter(&$node, $module) {
+  $current = REQUEST_TIME;
+  // Go back 14 days.
+  $start = $current - (14 * 24 * 60 * 60);
+  $node->created = rand($start, $current);
+  $node->date = format_date($node->created, 'custom', 'Y-m-d H:i:s O');
+}

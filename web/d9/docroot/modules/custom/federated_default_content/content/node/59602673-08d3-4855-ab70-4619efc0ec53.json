@@ -1,0 +1,254 @@
+{
+  "_links": {
+    "self": {
+      "href": "http:\/\/d9.fs-demo.local\/node\/19?_format=hal_json"
+    },
+    "type": {
+      "href": "http:\/\/drupal.org\/rest\/type\/node\/article"
+    },
+    "http:\/\/drupal.org\/rest\/relation\/node\/article\/revision_uid": [
+      {
+        "href": "http:\/\/d9.fs-demo.local\/user\/1?_format=hal_json"
+      }
+    ],
+    "http:\/\/drupal.org\/rest\/relation\/node\/article\/uid": [
+      {
+        "href": "http:\/\/d9.fs-demo.local\/user\/1?_format=hal_json",
+        "lang": "en"
+      }
+    ],
+    "http:\/\/drupal.org\/rest\/relation\/node\/article\/field_age": [
+      {
+        "href": "http:\/\/d9.fs-demo.local\/taxonomy\/term\/1?_format=hal_json"
+      }
+    ],
+    "http:\/\/drupal.org\/rest\/relation\/node\/article\/field_image": [
+      {
+        "href": "http:\/\/d9.fs-demo.local\/sites\/default\/files\/2021-01\/vintage-deerhound-illustration-public-domain.jpg",
+        "lang": "en"
+      }
+    ],
+    "http:\/\/drupal.org\/rest\/relation\/node\/article\/field_traits": [
+      {
+        "href": "http:\/\/d9.fs-demo.local\/taxonomy\/term\/4?_format=hal_json"
+      },
+      {
+        "href": "http:\/\/d9.fs-demo.local\/taxonomy\/term\/5?_format=hal_json"
+      }
+    ]
+  },
+  "nid": [
+    {
+      "value": 9
+    }
+  ],
+  "uuid": [
+    {
+      "value": "59602673-08d3-4855-ab70-4619efc0ec53"
+    }
+  ],
+  "vid": [
+    {
+      "value": 9
+    }
+  ],
+  "langcode": [
+    {
+      "value": "en",
+      "lang": "en"
+    }
+  ],
+  "type": [
+    {
+      "target_id": "article"
+    }
+  ],
+  "revision_timestamp": [
+    {
+      "value": "2021-01-19T17:13:16+00:00",
+      "format": "Y-m-d\\TH:i:sP"
+    }
+  ],
+  "_embedded": {
+    "http:\/\/drupal.org\/rest\/relation\/node\/article\/revision_uid": [
+      {
+        "_links": {
+          "self": {
+            "href": "http:\/\/d9.fs-demo.local\/user\/1?_format=hal_json"
+          },
+          "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+          }
+        },
+        "uuid": [
+          {
+            "value": "dfd0be6a-b997-43c6-8a24-7b54e7ff5554"
+          }
+        ]
+      }
+    ],
+    "http:\/\/drupal.org\/rest\/relation\/node\/article\/uid": [
+      {
+        "_links": {
+          "self": {
+            "href": "http:\/\/d9.fs-demo.local\/user\/1?_format=hal_json"
+          },
+          "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+          }
+        },
+        "uuid": [
+          {
+            "value": "dfd0be6a-b997-43c6-8a24-7b54e7ff5554"
+          }
+        ],
+        "lang": "en"
+      }
+    ],
+    "http:\/\/drupal.org\/rest\/relation\/node\/article\/field_age": [
+      {
+        "_links": {
+          "self": {
+            "href": "http:\/\/d9.fs-demo.local\/taxonomy\/term\/1?_format=hal_json"
+          },
+          "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/age"
+          }
+        },
+        "uuid": [
+          {
+            "value": "76efd0d2-9781-4ff5-a789-3425796a30b3"
+          }
+        ]
+      }
+    ],
+    "http:\/\/drupal.org\/rest\/relation\/node\/article\/field_image": [
+      {
+        "_links": {
+          "self": {
+            "href": "http:\/\/d9.fs-demo.local\/sites\/default\/files\/2021-01\/vintage-deerhound-illustration-public-domain.jpg"
+          },
+          "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+          }
+        },
+        "uuid": [
+          {
+            "value": "6e0689c0-ee7e-4958-88d0-8ab263718d37"
+          }
+        ],
+        "lang": "en"
+      }
+    ],
+    "http:\/\/drupal.org\/rest\/relation\/node\/article\/field_traits": [
+      {
+        "_links": {
+          "self": {
+            "href": "http:\/\/d9.fs-demo.local\/taxonomy\/term\/4?_format=hal_json"
+          },
+          "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/traits"
+          }
+        },
+        "uuid": [
+          {
+            "value": "031ef1d1-7853-4118-a7a0-b64785d65a2f"
+          }
+        ]
+      },
+      {
+        "_links": {
+          "self": {
+            "href": "http:\/\/d9.fs-demo.local\/taxonomy\/term\/5?_format=hal_json"
+          },
+          "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/traits"
+          }
+        },
+        "uuid": [
+          {
+            "value": "85347fc5-9df2-493d-bfcc-146045e86ae9"
+          }
+        ]
+      }
+    ]
+  },
+  "status": [
+    {
+      "value": true,
+      "lang": "en"
+    }
+  ],
+  "title": [
+    {
+      "value": "Deer Hound",
+      "lang": "en"
+    }
+  ],
+  "created": [
+    {
+      "value": "2021-01-19T17:07:23+00:00",
+      "lang": "en",
+      "format": "Y-m-d\\TH:i:sP"
+    }
+  ],
+  "changed": [
+    {
+      "value": "2021-01-19T17:13:16+00:00",
+      "lang": "en",
+      "format": "Y-m-d\\TH:i:sP"
+    }
+  ],
+  "promote": [
+    {
+      "value": true,
+      "lang": "en"
+    }
+  ],
+  "sticky": [
+    {
+      "value": false,
+      "lang": "en"
+    }
+  ],
+  "default_langcode": [
+    {
+      "value": true,
+      "lang": "en"
+    }
+  ],
+  "revision_translation_affected": [
+    {
+      "value": true,
+      "lang": "en"
+    }
+  ],
+  "path": [
+    {
+      "alias": null,
+      "pid": null,
+      "langcode": "en",
+      "lang": "en"
+    }
+  ],
+  "body": [
+    {
+      "value": "<p>Doggo ipsum thicc dat tungg tho clouds very jealous pupper fluffer porgo you are doing me a frighten, boof borking doggo very hand that feed shibe you are doing me the shock tungg. Puggo heckin angery woofer dat tungg tho fat boi floofs mlem adorable doggo, vvv mlem what a nice floof snoot. Very jealous pupper wrinkler shoob super chub long bois woofer, boofers stop it fren puggorino ur givin me a spook, corgo heckin angery woofer sub woofer long bois. What a nice floof the neighborhood pupper pupperino blop, doggorino pupper.<\/p>\r\n\r\n<p>He made many woofs thicc dat tungg tho, such treat.&nbsp; dat tungg tho such treat. Long doggo maximum borkdrive ur givin me a spook doge shoob, very taste wow I am bekom fat. Aqua doggo floofs mlem porgo noodle horse, h*ck snoot. Shoob the neighborhood pupper smol borking doggo with a long snoot for pats super chub wrinkler, doggo ur givin me a spook. You are doin me a concern adorable doggo shoober wrinkler heckin angery woofer vvv, what a nice floof big ol pupper aqua doggo long woofer. H*ck pupperino doggo doge ur givin me a spook puggo corgo, very jealous pupper big ol shoob shooberino floofs. Woofer noodle horse corgo heckin angery woofer borkdrive corgo, doge heckin angery woofer extremely cuuuuuute. Clouds shoob super chub yapper noodle horse, shooberino pupper. Pats smol bork boofers, mlem tungg, heck very good spot. pupperino heck ur givin me a spook. Heckin big ol snoot clouds I am bekom fat, wow such tempt blop.<\/p>\r\n\r\n<p>I am bekom fat shooberino I am bekom fat boof, such treat. Waggy wags heckin good boys you are doing me the shock h*ck you are doing me the shock, porgo maximum borkdrive such treat. Long doggo ur givin me a spook clouds many pats borking doggo, dat tungg tho heckin. Woofer extremely cuuuuuute shoober such treat corgo, clouds yapper borking doggo. Ruff smol borking doggo with a long snoot for pats long woofer super chub fat boi porgo, doge porgo very hand that feed shibe ur givin me a spook. H*ck heck boofers puggo, borkdrive.<\/p>\r\n",
+      "format": "basic_html",
+      "processed": "<p>Doggo ipsum thicc dat tungg tho clouds very jealous pupper fluffer porgo you are doing me a frighten, boof borking doggo very hand that feed shibe you are doing me the shock tungg. Puggo heckin angery woofer dat tungg tho fat boi floofs mlem adorable doggo, vvv mlem what a nice floof snoot. Very jealous pupper wrinkler shoob super chub long bois woofer, boofers stop it fren puggorino ur givin me a spook, corgo heckin angery woofer sub woofer long bois. What a nice floof the neighborhood pupper pupperino blop, doggorino pupper.<\/p>\n\n<p>He made many woofs thicc dat tungg tho, such treat.\u00a0 dat tungg tho such treat. Long doggo maximum borkdrive ur givin me a spook doge shoob, very taste wow I am bekom fat. Aqua doggo floofs mlem porgo noodle horse, h*ck snoot. Shoob the neighborhood pupper smol borking doggo with a long snoot for pats super chub wrinkler, doggo ur givin me a spook. You are doin me a concern adorable doggo shoober wrinkler heckin angery woofer vvv, what a nice floof big ol pupper aqua doggo long woofer. H*ck pupperino doggo doge ur givin me a spook puggo corgo, very jealous pupper big ol shoob shooberino floofs. Woofer noodle horse corgo heckin angery woofer borkdrive corgo, doge heckin angery woofer extremely cuuuuuute. Clouds shoob super chub yapper noodle horse, shooberino pupper. Pats smol bork boofers, mlem tungg, heck very good spot. pupperino heck ur givin me a spook. Heckin big ol snoot clouds I am bekom fat, wow such tempt blop.<\/p>\n\n<p>I am bekom fat shooberino I am bekom fat boof, such treat. Waggy wags heckin good boys you are doing me the shock h*ck you are doing me the shock, porgo maximum borkdrive such treat. Long doggo ur givin me a spook clouds many pats borking doggo, dat tungg tho heckin. Woofer extremely cuuuuuute shoober such treat corgo, clouds yapper borking doggo. Ruff smol borking doggo with a long snoot for pats long woofer super chub fat boi porgo, doge porgo very hand that feed shibe ur givin me a spook. H*ck heck boofers puggo, borkdrive.<\/p>",
+      "summary": "",
+      "lang": "en"
+    }
+  ],
+  "comment": [
+    {
+      "status": 2,
+      "cid": 0,
+      "last_comment_timestamp": 1611076068,
+      "last_comment_name": null,
+      "last_comment_uid": 1,
+      "comment_count": 0,
+      "lang": "en"
+    }
+  ]
+}

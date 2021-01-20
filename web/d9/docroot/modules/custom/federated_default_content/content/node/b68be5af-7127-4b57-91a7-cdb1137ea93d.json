@@ -1,0 +1,224 @@
+{
+  "_links": {
+    "self": {
+      "href": "http:\/\/d9.fs-demo.local\/node\/14?_format=hal_json"
+    },
+    "type": {
+      "href": "http:\/\/drupal.org\/rest\/type\/node\/page"
+    },
+    "http:\/\/drupal.org\/rest\/relation\/node\/page\/revision_uid": [
+      {
+        "href": "http:\/\/d9.fs-demo.local\/user\/1?_format=hal_json"
+      }
+    ],
+    "http:\/\/drupal.org\/rest\/relation\/node\/page\/uid": [
+      {
+        "href": "http:\/\/d9.fs-demo.local\/user\/1?_format=hal_json",
+        "lang": "en"
+      }
+    ],
+    "http:\/\/drupal.org\/rest\/relation\/node\/page\/field_age": [
+      {
+        "href": "http:\/\/d9.fs-demo.local\/taxonomy\/term\/1?_format=hal_json",
+        "lang": "en"
+      }
+    ],
+    "http:\/\/drupal.org\/rest\/relation\/node\/page\/field_traits": [
+      {
+        "href": "http:\/\/d9.fs-demo.local\/taxonomy\/term\/5?_format=hal_json",
+        "lang": "en"
+      },
+      {
+        "href": "http:\/\/d9.fs-demo.local\/taxonomy\/term\/6?_format=hal_json",
+        "lang": "en"
+      }
+    ]
+  },
+  "nid": [
+    {
+      "value": 4
+    }
+  ],
+  "uuid": [
+    {
+      "value": "b68be5af-7127-4b57-91a7-cdb1137ea93d"
+    }
+  ],
+  "vid": [
+    {
+      "value": 4
+    }
+  ],
+  "langcode": [
+    {
+      "value": "en",
+      "lang": "en"
+    }
+  ],
+  "type": [
+    {
+      "target_id": "page"
+    }
+  ],
+  "revision_timestamp": [
+    {
+      "value": "2021-01-19T17:14:17+00:00",
+      "format": "Y-m-d\\TH:i:sP"
+    }
+  ],
+  "_embedded": {
+    "http:\/\/drupal.org\/rest\/relation\/node\/page\/revision_uid": [
+      {
+        "_links": {
+          "self": {
+            "href": "http:\/\/d9.fs-demo.local\/user\/1?_format=hal_json"
+          },
+          "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+          }
+        },
+        "uuid": [
+          {
+            "value": "dfd0be6a-b997-43c6-8a24-7b54e7ff5554"
+          }
+        ]
+      }
+    ],
+    "http:\/\/drupal.org\/rest\/relation\/node\/page\/uid": [
+      {
+        "_links": {
+          "self": {
+            "href": "http:\/\/d9.fs-demo.local\/user\/1?_format=hal_json"
+          },
+          "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+          }
+        },
+        "uuid": [
+          {
+            "value": "dfd0be6a-b997-43c6-8a24-7b54e7ff5554"
+          }
+        ],
+        "lang": "en"
+      }
+    ],
+    "http:\/\/drupal.org\/rest\/relation\/node\/page\/field_age": [
+      {
+        "_links": {
+          "self": {
+            "href": "http:\/\/d9.fs-demo.local\/taxonomy\/term\/1?_format=hal_json"
+          },
+          "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/age"
+          }
+        },
+        "uuid": [
+          {
+            "value": "76efd0d2-9781-4ff5-a789-3425796a30b3"
+          }
+        ],
+        "lang": "en"
+      }
+    ],
+    "http:\/\/drupal.org\/rest\/relation\/node\/page\/field_traits": [
+      {
+        "_links": {
+          "self": {
+            "href": "http:\/\/d9.fs-demo.local\/taxonomy\/term\/5?_format=hal_json"
+          },
+          "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/traits"
+          }
+        },
+        "uuid": [
+          {
+            "value": "85347fc5-9df2-493d-bfcc-146045e86ae9"
+          }
+        ],
+        "lang": "en"
+      },
+      {
+        "_links": {
+          "self": {
+            "href": "http:\/\/d9.fs-demo.local\/taxonomy\/term\/6?_format=hal_json"
+          },
+          "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/traits"
+          }
+        },
+        "uuid": [
+          {
+            "value": "ae53caf7-0ace-4c06-9314-d3c5b58fe489"
+          }
+        ],
+        "lang": "en"
+      }
+    ]
+  },
+  "status": [
+    {
+      "value": true,
+      "lang": "en"
+    }
+  ],
+  "title": [
+    {
+      "value": "Irish Wolfhound",
+      "lang": "en"
+    }
+  ],
+  "created": [
+    {
+      "value": "2021-01-19T17:00:24+00:00",
+      "lang": "en",
+      "format": "Y-m-d\\TH:i:sP"
+    }
+  ],
+  "changed": [
+    {
+      "value": "2021-01-19T17:14:17+00:00",
+      "lang": "en",
+      "format": "Y-m-d\\TH:i:sP"
+    }
+  ],
+  "promote": [
+    {
+      "value": false
+    }
+  ],
+  "sticky": [
+    {
+      "value": false,
+      "lang": "en"
+    }
+  ],
+  "default_langcode": [
+    {
+      "value": true,
+      "lang": "en"
+    }
+  ],
+  "revision_translation_affected": [
+    {
+      "value": true,
+      "lang": "en"
+    }
+  ],
+  "path": [
+    {
+      "alias": null,
+      "pid": null,
+      "langcode": "en",
+      "lang": "en"
+    }
+  ],
+  "body": [
+    {
+      "value": "<p>Doggo ipsum you are doing me the shock such treat super chub big ol, mlem tungg. Borkf he made many woofs sub woofer such treat I am bekom fat what a nice floof shooberino, blop super chub very jealous pupper puggorino super chub. Sub woofer thicc dat tungg tho shoob, maximum borkdrive. Doge wow very biscit pats super chub, fluffer dat tungg tho. Snoot doge porgo many pats, doggorino big ol pupper. Ruff woofer aqua doggo boofers, heckin good boys and girls. Heckin good boys snoot borkf very jealous pupper, yapper big ol.<\/p>\r\n\r\n<p>Long bois doge woofer length boy shoob very jealous pupper, the neighborhood pupper snoot heck. Aqua doggo corgo long woofer he made many woofs wow such tempt, extremely cuuuuuute shoober. Extremely cuuuuuute heckin good boys noodle horse very jealous pupper borkf woofer, clouds heck puggorino heckin angery woofer ur givin me a spook, I am bekom fat borkf heck boof.&nbsp; I am bekom fat he made many woofs borkf, length boy. Smol borking doggo with a long snoot for pats ur givin me a spook heckin good boys smol, extremely cuuuuuute blop heckin angery woofer doing me a frighten, long woofer big ol pupper.<\/p>\r\n\r\n<p>Blop heck doge shoob, woofer. Pupperino borkdrive heckin woofer blep wrinkler, doggorino long doggo puggorino long bois. Boof borkdrive boof pupper wrinkler, smol the neighborhood pupper. Borkdrive shooberino many pats very good spot, corgo. Vvv puggorino he made many woofs sub woofer heckin, heckin good boys and girls doge tungg. Ur givin me a spook pupper many pats very taste wow borkdrive tungg, dat tungg tho fat boi dat tungg tho doggo. clouds heckin good boys floofs. Big ol clouds doge you are doing me the shock borking doggo you are doing me the shock, borking doggo I am bekom fat waggy wags smol yapper, h*ck heckin good boys and girls thicc corgo. Heckin good boys snoot smol borking doggo with a long snoot for pats noodle horse puggorino, doggorino corgo. Boofers aqua doggo big ol, yapper.<\/p>\r\n",
+      "format": "basic_html",
+      "processed": "<p>Doggo ipsum you are doing me the shock such treat super chub big ol, mlem tungg. Borkf he made many woofs sub woofer such treat I am bekom fat what a nice floof shooberino, blop super chub very jealous pupper puggorino super chub. Sub woofer thicc dat tungg tho shoob, maximum borkdrive. Doge wow very biscit pats super chub, fluffer dat tungg tho. Snoot doge porgo many pats, doggorino big ol pupper. Ruff woofer aqua doggo boofers, heckin good boys and girls. Heckin good boys snoot borkf very jealous pupper, yapper big ol.<\/p>\n\n<p>Long bois doge woofer length boy shoob very jealous pupper, the neighborhood pupper snoot heck. Aqua doggo corgo long woofer he made many woofs wow such tempt, extremely cuuuuuute shoober. Extremely cuuuuuute heckin good boys noodle horse very jealous pupper borkf woofer, clouds heck puggorino heckin angery woofer ur givin me a spook, I am bekom fat borkf heck boof.\u00a0 I am bekom fat he made many woofs borkf, length boy. Smol borking doggo with a long snoot for pats ur givin me a spook heckin good boys smol, extremely cuuuuuute blop heckin angery woofer doing me a frighten, long woofer big ol pupper.<\/p>\n\n<p>Blop heck doge shoob, woofer. Pupperino borkdrive heckin woofer blep wrinkler, doggorino long doggo puggorino long bois. Boof borkdrive boof pupper wrinkler, smol the neighborhood pupper. Borkdrive shooberino many pats very good spot, corgo. Vvv puggorino he made many woofs sub woofer heckin, heckin good boys and girls doge tungg. Ur givin me a spook pupper many pats very taste wow borkdrive tungg, dat tungg tho fat boi dat tungg tho doggo. clouds heckin good boys floofs. Big ol clouds doge you are doing me the shock borking doggo you are doing me the shock, borking doggo I am bekom fat waggy wags smol yapper, h*ck heckin good boys and girls thicc corgo. Heckin good boys snoot smol borking doggo with a long snoot for pats noodle horse puggorino, doggorino corgo. Boofers aqua doggo big ol, yapper.<\/p>",
+      "summary": "",
+      "lang": "en"
+    }
+  ]
+}
