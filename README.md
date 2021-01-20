@@ -25,7 +25,7 @@ There are two demo builds included in the package, and you should be sure to che
 
 ### solr-7
 
-The `solr-7` branch contains release 4.0 and runs Drupal 7.77, 8.9.12, and 9.1.2; testing against Solr 7. The Drupal 8 and 9 versions rely on Search API Solr 4.x.
+The `solr-7` branch contains release 4.0 and runs Drupal 7.78, 8.9.13, and 9.1.3; testing against Solr 7. The Drupal 8 and 9 versions rely on Search API Solr 4.x.
 
 This branch uses Search API Federated Solr version 4.x. All new development is done on this branch.
 
@@ -131,7 +131,7 @@ To run project-related commands other than `vagrant up` and `vagrant ssh`:
 This version of the demo site is all about dogs. We use simple core content types (basic page and article) supplemented by taxonomy terms. The content titles are meaningful (they are all dog breeds). Content body is lorem ipsum text.
 
 ### Date facets
-When content is created, it is auto-assigned to a random publication date within the past two weeks from building the site(s). 
+When content is created, it is auto-assigned to a random publication date within the past two weeks from building the site(s).
 
 ### Term facets
 We create three vocabularies in Drupal 7:
