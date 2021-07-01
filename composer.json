@@ -42,5 +42,12 @@
     "drush/drush": "^10.1",
     "palantirnet/phing-drush-task": "dev-master",
     "phing/phing": "^2.16"
+  },
+  "extra": {
+    "patches": {
+        "palantirnet/the-vagrant": {
+            "GPG Yarn Issues with installing with latest version of the build ": "https://patch-diff.githubusercontent.com/raw/palantirnet/the-vagrant/pull/80.patch"
+        }
+    }
   }
 }
