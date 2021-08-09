@@ -1585,9 +1585,6 @@
             },
             "type": "drupal-profile",
             "extra": {
-                "branch-alias": {
-                    "dev-1.x": "1.x-dev"
-                },
                 "drupal": {
                     "version": "8.x-1.8",
                     "datestamp": "1524572284",
@@ -1942,9 +1939,6 @@
             },
             "type": "drupal-module",
             "extra": {
-                "branch-alias": {
-                    "dev-2.x": "2.x-dev"
-                },
                 "drupal": {
                     "version": "8.x-2.1",
                     "datestamp": "1556799496",
@@ -1989,18 +1983,6 @@
                 {
                     "name": "See contributors",
                     "homepage": "https://www.drupal.org/node/3236/committers"
-                },
-                {
-                    "name": "pcambra",
-                    "homepage": "https://www.drupal.org/user/122101"
-                },
-                {
-                    "name": "salvis",
-                    "homepage": "https://www.drupal.org/user/82964"
-                },
-                {
-                    "name": "willzyx",
-                    "homepage": "https://www.drupal.org/user/1043862"
                 }
             ],
             "description": "Various blocks, pages, and functions for developers.",
@@ -2089,11 +2071,11 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/search_api_federated_solr.git",
-                "reference": "31972f1cacf43f21e93313c21175809dbcb9edf3"
+                "reference": "0dec7bf5b1d10e8ba62bf7b80ed7a85fd770e9a3"
             },
             "require": {
-                "drupal/core": "^8.0",
-                "drupal/search_api_field_map": "3.x-dev",
+                "drupal/core": "^8 || ^9",
+                "drupal/search_api_field_map": "^3.0",
                 "drupal/search_api_solr": "^3.8",
                 "drupal/token": "^1.1"
             },
@@ -2103,8 +2085,8 @@
                     "dev-3.x": "3.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-3.x-dev",
-                    "datestamp": "1580148492",
+                    "version": "8.x-3.0+6-dev",
+                    "datestamp": "1589814959",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Dev releases are not covered by Drupal security advisories."
@@ -2149,7 +2131,7 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/search_api_federated_solr"
             },
-            "time": "2020-01-27T18:13:43+00:00"
+            "time": "2020-05-18T15:15:31+00:00"
         },
         {
             "name": "drupal/search_api_field_map",
@@ -2157,11 +2139,11 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/search_api_field_map.git",
-                "reference": "6c73279e25ec8e548e7e80e6bf712ae8f45b2226"
+                "reference": "4d67149c60f6580f617ef5d9c58cd711df8ad987"
             },
             "require": {
-                "drupal/core": "^8.0",
-                "drupal/search_api_solr": "^3.8",
+                "drupal/core": "^8 || ^9",
+                "drupal/search_api": "^1.0",
                 "drupal/token": "^1.1"
             },
             "type": "drupal-module",
@@ -2170,8 +2152,8 @@
                     "dev-3.x": "3.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-3.x-dev",
-                    "datestamp": "1580149727",
+                    "version": "8.x-3.2+1-dev",
+                    "datestamp": "1611003008",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Dev releases are not covered by Drupal security advisories."
@@ -2208,7 +2190,7 @@
                     "homepage": "https://www.drupal.org/user/3224074"
                 }
             ],
-            "description": "Allows indexing multiple Drupal sites into a single Solr search index by field.",
+            "description": "Allows indexing multiple Drupal sites into a single search index by field.",
             "homepage": "https://www.drupal.org/project/search_api_field_map",
             "keywords": [
                 "Drupal"
@@ -2216,7 +2198,7 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/search_api_field_map"
             },
-            "time": "2020-01-27T18:06:49+00:00"
+            "time": "2021-01-18T20:49:32+00:00"
         },
         {
             "name": "drupal/search_api_solr",
@@ -2338,7 +2320,7 @@
             "extra": {
                 "drupal": {
                     "version": "8.x-1.7",
-                    "datestamp": "1587893588",
+                    "datestamp": "1589314266",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -3191,16 +3173,16 @@
         },
         {
             "name": "pear/archive_tar",
-            "version": "1.4.11",
+            "version": "1.4.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pear/Archive_Tar.git",
-                "reference": "17d355cb7d3c4ff08e5729f29cd7660145208d9d"
+                "reference": "4d761c5334c790e45ef3245f0864b8955c562caa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pear/Archive_Tar/zipball/17d355cb7d3c4ff08e5729f29cd7660145208d9d",
-                "reference": "17d355cb7d3c4ff08e5729f29cd7660145208d9d",
+                "url": "https://api.github.com/repos/pear/Archive_Tar/zipball/4d761c5334c790e45ef3245f0864b8955c562caa",
+                "reference": "4d761c5334c790e45ef3245f0864b8955c562caa",
                 "shasum": ""
             },
             "require": {
@@ -3253,7 +3235,17 @@
                 "archive",
                 "tar"
             ],
-            "time": "2020-11-19T22:10:24+00:00"
+            "funding": [
+                {
+                    "url": "https://github.com/mrook",
+                    "type": "github"
+                },
+                {
+                    "url": "https://www.patreon.com/michielrook",
+                    "type": "patreon"
+                }
+            ],
+            "time": "2021-07-20T13:53:39+00:00"
         },
         {
             "name": "pear/console_getopt",
@@ -3348,23 +3340,23 @@
         },
         {
             "name": "pear/pear_exception",
-            "version": "v1.0.1",
+            "version": "v1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pear/PEAR_Exception.git",
-                "reference": "dbb42a5a0e45f3adcf99babfb2a1ba77b8ac36a7"
+                "reference": "b14fbe2ddb0b9f94f5b24cf08783d599f776fff0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pear/PEAR_Exception/zipball/dbb42a5a0e45f3adcf99babfb2a1ba77b8ac36a7",
-                "reference": "dbb42a5a0e45f3adcf99babfb2a1ba77b8ac36a7",
+                "url": "https://api.github.com/repos/pear/PEAR_Exception/zipball/b14fbe2ddb0b9f94f5b24cf08783d599f776fff0",
+                "reference": "b14fbe2ddb0b9f94f5b24cf08783d599f776fff0",
                 "shasum": ""
             },
             "require": {
-                "php": ">=4.4.0"
+                "php": ">=5.2.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "*"
+                "phpunit/phpunit": "<9"
             },
             "type": "class",
             "extra": {
@@ -3399,7 +3391,7 @@
             "keywords": [
                 "exception"
             ],
-            "time": "2019-12-10T10:24:42+00:00"
+            "time": "2021-03-21T15:43:46+00:00"
         },
         {
             "name": "psr/cache",
