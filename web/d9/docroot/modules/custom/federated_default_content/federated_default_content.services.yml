@@ -1,0 +1,5 @@
+services:
+  federated_default_content.import:
+    class: '\Drupal\federated_default_content\EventSubscriber\CustomDateSubscriber'
+    tags:
+      - { name: 'event_subscriber' }

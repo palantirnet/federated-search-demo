@@ -1,0 +1,87 @@
+{
+  "_links": {
+    "self": {
+      "href": "http:\/\/d9.fs-demo.local\/sites\/default\/files\/2021-01\/vintage-mastiff-illustration-public-domain.jpg"
+    },
+    "type": {
+      "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+    },
+    "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+      {
+        "href": "http:\/\/d9.fs-demo.local\/user\/1?_format=hal_json"
+      }
+    ]
+  },
+  "fid": [
+    {
+      "value": 1
+    }
+  ],
+  "uuid": [
+    {
+      "value": "11fb5b19-42ae-4587-addd-7d5ff4593426"
+    }
+  ],
+  "langcode": [
+    {
+      "value": "en"
+    }
+  ],
+  "_embedded": {
+    "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+      {
+        "_links": {
+          "self": {
+            "href": "http:\/\/d9.fs-demo.local\/user\/1?_format=hal_json"
+          },
+          "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+          }
+        },
+        "uuid": [
+          {
+            "value": "dfd0be6a-b997-43c6-8a24-7b54e7ff5554"
+          }
+        ]
+      }
+    ]
+  },
+  "filename": [
+    {
+      "value": "vintage-mastiff-illustration-public-domain.jpg"
+    }
+  ],
+  "uri": [
+    {
+      "value": "public:\/\/2021-01\/vintage-mastiff-illustration-public-domain.jpg",
+      "url": "\/sites\/default\/files\/2021-01\/vintage-mastiff-illustration-public-domain.jpg"
+    }
+  ],
+  "filemime": [
+    {
+      "value": "image\/jpeg"
+    }
+  ],
+  "filesize": [
+    {
+      "value": 1135138
+    }
+  ],
+  "status": [
+    {
+      "value": true
+    }
+  ],
+  "created": [
+    {
+      "value": "2021-01-19T17:06:57+00:00",
+      "format": "Y-m-d\\TH:i:sP"
+    }
+  ],
+  "changed": [
+    {
+      "value": "2021-01-19T17:07:07+00:00",
+      "format": "Y-m-d\\TH:i:sP"
+    }
+  ]
+}
