@@ -39,26 +39,17 @@ This branch uses Search API Federated Solr version 8.x-2.x. No new development i
 
 ### Switching versions
 
-If you switch between the `solr-7` and `solr-4` branches, you will need to rebuild your environment with `vagrant provision`. You may also need to run `vagrant box update.`
+If you switch between the `solr-7` and `solr-4` branches, you will need to rebuild your environment with `ddev restart`.
 
 ## Development Environment
 
-The development environment is based on [palantirnet/the-vagrant](https://github.com/palantirnet/the-vagrant). To run the environment, you will need:
+The development environment is based on [palantirnet/drupal-10-development](https://github.com/palantirnet/drupal-10-development). To run the environment, you will need:
 
 * Mac OS X >= 10.10. _This stack may run under other host operating systems, but is not regularly tested. For details on installing these dependencies on your Mac, see our [Mac setup doc [internal]](https://github.com/palantirnet/documentation/wiki/Mac-Setup)._
-* [Composer](https://getcomposer.org)
-* [virtualBox](https://www.virtualbox.org/wiki/Downloads) >= 5.0
-* [ansible](https://github.com/ansible/ansible) >= 2.8 `brew install ansible`
-* [vagrant](https://www.vagrantup.com/) >= 2.2
-* Vagrant plugins:
-  * [vagrant-hostmanager](https://github.com/smdahlen/vagrant-hostmanager) `vagrant plugin install vagrant-hostmanager`
-  * [vagrant-auto_network](https://github.com/oscar-stack/vagrant-auto_network) `vagrant plugin install vagrant-auto_network`
-
-If you update Vagrant, you may need to update your vagrant plugins with `vagrant plugin update`.
 
 ## Development Environment Components
 
-The development environment inside the virtual machine will be automatically configured by Vagrant.
+The development environment inside the virtual machine will be automatically configured by ddev.
 
 You may be interested in creating your own development environment and comparing it against the tested version.
 
@@ -75,10 +66,11 @@ You may be interested in creating your own development environment and comparing
 2. From inside the project root, run:
 
   ```
-    vagrant up
+    composer install
+    ddev start
   ```
 3. You will be prompted for the administration password on your host machine
-4. Log in to the virtual machine (the VM): `vagrant ssh`
+4. Log in to the virtual machine (the VM): `ddev ssh`
 5. Build, install, and enable demo content: `phing install-all`
   * When prompted, you may choose to empty the current SOLR index. This action is recommended when re-installing all sites, but not one site.
   * If you wish to install without Domain Access, run `phing install-no-domain`. In that case, two sites will be built with 20 pieces of content.
@@ -101,9 +93,9 @@ You can log in to any of the Drupal sites at `/user` with `admin/admin`.
 
 You can edit code, update documentation, and run git commands by opening files directly from your host machine.
 
-To run project-related commands other than `vagrant up` and `vagrant ssh`:
+To run project-related commands other than `ddev start` and `ddev ssh`:
 
-* SSH into the VM with `vagrant ssh`
+* SSH into the VM with `ddev ssh`
 * You'll be in your project root, at the path `/var/www/federated-search-demo.local/`
 * You can run `composer`, `drush`, and `phing` commands from here
 * Go to the path `/var/www/federated-search-demo.local/web/*` to add new modules to each site.
@@ -229,7 +221,7 @@ With the VM running, you can visit the SOLR index at http://federated-search-dem
 
 ## Drupal Development
 
-You can refresh/reset your local Drupal site at any time. SSH into your VM with `vagrant ssh` and then follow one of the steps below:
+You can refresh/reset your local Drupal site at any time. SSH into your VM with `ddev ssh` and then follow one of the steps below:
 
 ### Rebuild all the things
 
@@ -277,7 +269,7 @@ These files were copied from the `search_api_solr` module and updated to meet te
 
 As part of provisioning this box, the custom Solr config from `conf/solr/drupal[7/8]/custom/` will be copied to the directory where Solr expects its config to live (`/var/solr/drupal[7/8]/conf/`).
 
-Once you've made an update to a config file in `conf/solr/drupal[7/8]/custom/`, you'll need to reprovision your vm using `vagrant up --provision` if your vm is not already up or `vagrant provision` if your vm is already up.
+Once you've made an update to a config file in `conf/solr/drupal[7/8]/custom/`, you'll need to reprovision your vm using `ddev start` if your vm is not already up or `ddev restart` if your vm is already up.
 
 ### Restarting Solr
 
