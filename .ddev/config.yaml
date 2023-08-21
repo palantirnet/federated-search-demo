@@ -1,4 +1,4 @@
-name: drupal-10-development
+name: fs-demo
 type: drupal10
 docroot: web
 php_version: "8.2"
@@ -6,8 +6,8 @@ webserver_type: nginx-fpm
 router_http_port: "80"
 router_https_port: "443"
 xdebug_enabled: false
-additional_hostnames: ["d10"]
-additional_fqdns: []
+additional_hostnames: []
+additional_fqdns: ["d8.fs-demo.local", "d8-1.fs-demo.local", "d8-2.fs-demo.local", "d8-3.fs-demo.local", "d7.fs-demo.local", "d7-1.fs-demo.local", "d7-2.fs-demo.local", "d7-3.fs-demo.local", "react.fs-demo.local"]
 database:
   type: mariadb
   version: "10.4"
