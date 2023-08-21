@@ -1,0 +1,31 @@
+#!/bin/bash
+
+## Description: Run phpstan on a specific module.
+## Usage: stan MODULE_NAME
+## Example: "ddev stan admin_toolbar"
+## Example: "ddev stan admin_toolbar -l 8"
+
+if [ $# -eq 0 ]
+then
+  echo "You must specify a module; e.g. 'ddev stan admin_toolbar'"
+  exit
+fi
+
+if [ ! -d "web/modules/contrib/$1" ]
+then
+  echo "The specified module [$1] does not exist in /web/modules/contrib."
+  exit
+fi
+
+# Level setting.
+LEVEL=2
+if [ $# -eq 3 ]
+then
+  LEVEL=$3
+fi
+
+echo "======================"
+echo "Running PHPStan against: /web/modules/contrib/$1 at level ${LEVEL}"
+echo "======================"
+
+vendor/bin/phpstan analyse web/modules/contrib/$1 --level=${LEVEL}
